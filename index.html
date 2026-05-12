@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CCLV - PQD v2.0 Mapeo Colaborativo</title>
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--or:#FF4201;--bk:#28272B;--gr:#27985F;--bl:#0069A7;--yw:#FFC72F;--g1:#F5F4F2;--g2:#E8E6E2;--g4:#B0ADA8;--g6:#6B6866}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Montserrat,sans-serif;background:var(--g1);color:var(--bk);min-height:100vh;font-size:12px}
+.hdr{background:var(--bk);padding:14px 20px 0;position:relative;overflow:hidden}
+.hdr::after{content:"";position:absolute;bottom:-1px;left:0;right:0;height:22px;background:var(--g1);clip-path:ellipse(54% 100% at 50% 100%)}
+.hi{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:12px;padding-bottom:18px}
+.brand{display:flex;align-items:center;gap:10px}
+.bsub{font-size:9px;font-weight:700;color:var(--or);letter-spacing:1.5px;text-transform:uppercase;margin-top:2px}
+.ht{text-align:right}
+.ht h1{font-family:"PT Serif",Georgia,serif;font-size:14px;font-weight:700;color:#fff;line-height:1.3;margin:0}
+.ht p{font-size:9px;color:var(--g4);margin-top:2px}
+.dot{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:5px;vertical-align:middle;transition:background .3s}
+.dot.ok{background:var(--gr)}.dot.sv{background:var(--yw);animation:pu 1s infinite}.dot.er{background:#f87171}
+@keyframes pu{0%,100%{opacity:1}50%{opacity:.3}}
+.stats{display:flex;gap:10px;flex-wrap:wrap;padding:16px 20px 0;align-items:stretch}
+.sc{background:#fff;border-radius:10px;box-shadow:0 2px 8px rgba(40,39,43,.07);padding:8px 14px;min-width:80px;border-top:3px solid var(--g2)}
+.sc.or{border-top-color:var(--or)}.sc.gr{border-top-color:var(--gr)}.sc.yw{border-top-color:var(--yw)}
+.sn{font-family:"PT Serif",Georgia,serif;font-size:26px;font-weight:700;line-height:1}
+.sc.or .sn{color:var(--or)}.sc.gr .sn{color:var(--gr)}.sc.yw .sn{color:#b8860b}
+.sl{font-size:9px;font-weight:700;color:var(--g6);text-transform:uppercase;letter-spacing:.8px;margin-top:2px}
+.pc{flex:1;min-width:160px;background:#fff;border-radius:10px;box-shadow:0 2px 8px rgba(40,39,43,.07);padding:8px 14px;display:flex;flex-direction:column;justify-content:center}
+.pla{font-size:9px;font-weight:700;color:var(--g6);text-transform:uppercase;letter-spacing:.8px;margin-bottom:6px;display:flex;justify-content:space-between}
+.pla span{font-family:"PT Serif",Georgia,serif;font-size:14px;color:var(--or)}
+.ptr{height:5px;background:var(--g2);border-radius:3px;overflow:hidden}
+.pfi{height:100%;background:linear-gradient(90deg,var(--or),#ff6b35);border-radius:3px;transition:width .4s}
+.tb{display:flex;gap:8px;flex-wrap:wrap;padding:14px 20px 0;align-items:center}
+.btn{font-family:Montserrat,sans-serif;font-size:10px;font-weight:700;padding:7px 14px;border:none;cursor:pointer;border-radius:0 7px 7px 0;letter-spacing:.5px;text-transform:uppercase;white-space:nowrap}
+.bor{background:var(--or);color:#fff}.bor:hover{background:#e03800}
+.bbk{background:var(--bk);color:#fff}
+.bol{background:#fff;color:var(--bk);border:1.5px solid var(--g2)}
+.bred{background:#fff0ed;color:var(--or);border:1.5px solid #ffd0c4}
+.fi{display:flex;gap:5px;flex-wrap:wrap;padding:10px 20px 0;align-items:center}
+.tab{font-family:Montserrat,sans-serif;font-size:9px;font-weight:700;padding:5px 10px;border-radius:0 5px 5px 0;border:1.5px solid var(--g2);background:#fff;color:var(--g6);cursor:pointer;text-transform:uppercase;letter-spacing:.5px;white-space:nowrap}
+.tab:hover{border-color:var(--or);color:var(--or)}.tab.active{background:var(--or);color:#fff;border-color:var(--or)}
+.srch{flex:1;min-width:200px;font-family:Montserrat,sans-serif;font-size:11px;padding:6px 12px;border:1.5px solid var(--g2);border-radius:0 7px 7px 0;background:#fff;outline:none}
+.srch:focus{border-color:var(--or)}
+.leg{margin:10px 20px 0;background:#fff;border-radius:10px;box-shadow:0 2px 8px rgba(40,39,43,.07);padding:8px 14px;display:flex;gap:12px;flex-wrap:wrap;align-items:center;font-size:9px;font-weight:600}
+.li{display:flex;align-items:center;gap:4px}
+.ld2{width:7px;height:7px;border-radius:2px;flex-shrink:0;display:inline-block}
+.tw{margin:12px 20px 24px;background:#fff;border-radius:10px;box-shadow:0 2px 8px rgba(40,39,43,.07);border:1px solid var(--g2);overflow-x:auto}
+table{border-collapse:collapse;font-size:11px;table-layout:fixed;width:1700px}
+col.c0{width:65px}col.c1{width:145px}col.c2{width:215px}col.c3{width:115px}
+col.c4{width:108px}col.c5{width:115px}col.c6{width:145px}col.c7{width:105px}
+col.c8{width:94px}col.c9{width:94px}col.c10{width:145px}col.c11{width:195px}
+col.c12{width:128px}col.c13{width:145px}
+.thg{padding:6px 10px;font-family:Montserrat,sans-serif;font-size:9px;font-weight:800;letter-spacing:1px;text-transform:uppercase;text-align:center;border-bottom:1px solid rgba(255,255,255,.15)}
+.tgi{background:var(--bk);color:var(--g4)}.tgm{background:var(--or);color:#fff}.tgp{background:var(--bl);color:#fff}
+thead tr.cols{background:var(--g1);border-bottom:2px solid var(--or)}
+th{padding:7px 8px;text-align:left;font-family:Montserrat,sans-serif;font-size:9px;font-weight:700;color:var(--g6);letter-spacing:.5px;text-transform:uppercase;overflow:hidden;white-space:normal;word-break:break-word;vertical-align:bottom;line-height:1.3;border-right:1px solid var(--g1)}
+th.ec{color:var(--or)}th.ep{color:var(--bl)}th.blc{border-left:2px solid var(--or)}th.blb{border-left:2px solid var(--bl)}
+tbody tr{border-bottom:1px solid var(--g1)}tbody tr:hover{background:#fff8f6}
+td{padding:7px 8px;vertical-align:top;border-right:1px solid var(--g1);overflow:hidden}
+td.blc{border-left:2px solid #ffe4da}td.blb{border-left:2px solid #ddeef8}
+.secr td{padding:4px 10px;font-family:Montserrat,sans-serif;font-size:9px;font-weight:800;letter-spacing:1px;text-transform:uppercase;background:var(--g1);color:var(--g4);border-bottom:1px solid var(--g2)}
+.did{font-family:"PT Serif",Georgia,serif;font-size:11px;font-weight:700;color:var(--or);white-space:nowrap;display:block}
+.dn{font-weight:700;color:var(--bk);font-size:11px;line-height:1.4;overflow-wrap:break-word}
+.dd{font-size:10px;color:var(--g6);line-height:1.4;margin-top:2px;overflow-wrap:break-word}
+.dv{font-size:9px;color:var(--g4);font-family:"Courier New",monospace;margin-top:2px}
+.dty{font-size:9px;color:var(--g6);font-family:"Courier New",monospace}
+.dfi{font-size:9px;color:var(--bl);font-family:"Courier New",monospace;font-weight:600;overflow-wrap:break-word}
+.badge{display:inline-block;padding:2px 7px;border-radius:0 4px 4px 0;font-size:8px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;margin-top:3px}
+.ci,.cp{width:100%;display:block;background:transparent;border:none;border-bottom:1.5px solid var(--g2);font-size:11px;padding:2px 3px;outline:none;resize:none;min-height:22px;line-height:1.4;overflow:hidden}
+.ci{font-family:Montserrat,sans-serif;color:var(--bk)}.ci:focus{border-bottom-color:var(--or);background:#fff8f6}
+.ci::placeholder{color:var(--g2)}
+.cp{font-family:"Courier New",monospace;font-size:10px;color:var(--bl)}.cp:focus{border-bottom-color:var(--bl);background:#f0f7fd}
+.cp::placeholder{color:#b8d4e8}
+.cs,.csp{width:100%;display:block;font-family:Montserrat,sans-serif;font-size:10px;font-weight:600;padding:3px 5px;border-radius:0 5px 5px 0;outline:none;cursor:pointer}
+.cs{background:var(--g1);border:1.5px solid var(--g2);color:var(--bk)}.cs:focus{border-color:var(--or)}
+.csp{background:#f0f7fd;border:1.5px solid #b8d4e8;color:var(--bl)}.csp:focus{border-color:var(--bl)}
+.ov{position:fixed;inset:0;background:var(--bk);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:200}
+.oi{width:56px;height:56px;border-radius:50%;background:var(--or);display:flex;align-items:center;justify-content:center;margin-bottom:20px;animation:pu 1.2s infinite}
+.ov h2{font-family:"PT Serif",Georgia,serif;font-size:22px;color:#fff;font-weight:700}
+.ov p{font-size:11px;color:var(--g4);margin-top:6px}
+.mdbg{display:none;position:fixed;inset:0;background:rgba(40,39,43,.75);z-index:100;align-items:center;justify-content:center}
+.mdbg.open{display:flex}
+.md{background:#fff;border-radius:12px;width:90%;max-width:860px;max-height:85vh;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.25)}
+.mdh{background:var(--bk);padding:14px 18px;display:flex;justify-content:space-between;align-items:center}
+.mdh h2{font-family:"PT Serif",Georgia,serif;font-size:16px;font-weight:700;color:#fff}
+.mdh h2 em{color:var(--or);font-style:normal}
+.mdc{background:none;border:none;color:var(--g4);font-size:20px;cursor:pointer}
+.mdb{padding:18px;overflow-y:auto;flex:1;background:var(--g1)}
+.mdb pre{background:var(--bk);border-radius:8px;padding:16px;font-family:"Courier New",monospace;font-size:11px;color:#4ade80;white-space:pre-wrap;word-break:break-all;line-height:1.6}
+.mdf{padding:10px 18px;background:#fff;border-top:1px solid var(--g2);display:flex;gap:8px;justify-content:flex-end}
+.toast{position:fixed;bottom:20px;right:20px;background:var(--bk);color:#fff;border-left:4px solid var(--or);border-radius:0 8px 8px 0;padding:9px 16px;font-family:Montserrat,sans-serif;font-size:11px;font-weight:700;opacity:0;transition:opacity .2s;pointer-events:none;z-index:999}
+.toast.show{opacity:1}
+.empty{text-align:center;padding:48px;color:var(--g4);font-family:"PT Serif",Georgia,serif;font-size:16px;font-style:italic}
+</style>
+
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:_dlc_DocId msdt:dt="string">TCVK3UAYQW2M-958545478-44124</mso:_dlc_DocId>
+<mso:_dlc_DocIdItemGuid msdt:dt="string">a204184f-b221-4578-bb63-8a366662f5d8</mso:_dlc_DocIdItemGuid>
+<mso:_dlc_DocIdUrl msdt:dt="string">https://bolsadesantiago.sharepoint.com/sites/GerenciaRiesgoyCumplimiento/GerenciaRiesgoFinanciero/_layouts/15/DocIdRedir.aspx?ID=TCVK3UAYQW2M-958545478-44124, TCVK3UAYQW2M-958545478-44124</mso:_dlc_DocIdUrl>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+<body>
+<div class="ov" id="ov">
+  <div class="oi"><svg viewBox="0 0 22 22" width="28" height="28"><path d="M14 3L6 11.5H11L8 19L16 10.5H11L14 3Z" fill="white"/></svg></div>
+  <h2>Cargando datos...</h2><p>Conectando con Supabase</p>
+</div>
+<div class="hdr">
+  <div class="hi">
+    <div class="brand">
+      <img id="logo-img" alt="nuam" style="height:36px;width:auto">
+      <div><div class="bsub">3 paises - 1 mercado</div></div>
+    </div>
+    <div class="ht">
+      <h1>PQD v2.0 - Mapeo de Fuentes hacia Pipeline</h1>
+      <p><span class="dot ok" id="dot"></span><span id="slbl">Conectado - cambios guardados para todo el equipo</span></p>
+    </div>
+  </div>
+</div>
+<div class="stats">
+  <div class="sc or"><div class="sn" id="stot">0</div><div class="sl">Total</div></div>
+  <div class="sc gr"><div class="sn" id="scom">0</div><div class="sl">Completos</div></div>
+  <div class="sc yw"><div class="sn" id="spar">0</div><div class="sl">Parciales</div></div>
+  <div class="sc"><div class="sn" id="spen">0</div><div class="sl">Pendientes</div></div>
+  <div class="pc">
+    <div class="pla">Progreso del equipo <span id="pct">0%</span></div>
+    <div class="ptr"><div class="pfi" id="pfi" style="width:0%"></div></div>
+  </div>
+</div>
+<div class="tb">
+  <button class="btn bor" onclick="exportPipeline()">Exportar config pipeline JSON</button>
+  <button class="btn bbk" onclick="exportCSV()">Exportar CSV</button>
+  <button class="btn bol" onclick="loadData()">Actualizar</button>
+  <button class="btn bred" onclick="clearAll()">Limpiar todo</button>
+</div>
+<div class="fi">
+  <div class="tab active" onclick="setSec(this,'ALL')">Todos</div>
+  <div class="tab" onclick="setSec(this,'4')">4 Default</div>
+  <div class="tab" onclick="setSec(this,'5')">5 Haircuts</div>
+  <div class="tab" onclick="setSec(this,'6')">6 IM</div>
+  <div class="tab" onclick="setSec(this,'7')">7 Liquidez</div>
+  <div class="tab" onclick="setSec(this,'12')">12 Settlement</div>
+  <div class="tab" onclick="setSec(this,'13')">13 Defaults</div>
+  <div class="tab" onclick="setSec(this,'14')">14 Segregacion</div>
+  <div class="tab" onclick="setSec(this,'15')">15 Negocio</div>
+  <div class="tab" onclick="setSec(this,'16')">16 Inversiones</div>
+  <div class="tab" onclick="setSec(this,'17')">17 Operacional</div>
+  <div class="tab" onclick="setSec(this,'18')">18 Participantes</div>
+  <div class="tab" onclick="setSec(this,'19')">19 Clientes</div>
+  <div class="tab" onclick="setSec(this,'23')">23 Volumenes</div>
+  <input class="srch" type="text" id="q" placeholder="Buscar referencia, titulo o descripcion..." oninput="render()">
+</div>
+<div class="leg">
+  <span style="color:var(--g6);font-weight:700;text-transform:uppercase;letter-spacing:.8px">Estado:</span>
+  <span class="li"><span class="ld2" style="background:var(--gr)"></span>Completo</span>
+  <span class="li"><span class="ld2" style="background:var(--yw)"></span>Parcial</span>
+  <span class="li"><span class="ld2" style="background:var(--g4)"></span>Pendiente</span>
+  <span class="li"><span class="ld2" style="background:var(--bl)"></span>N/A</span>
+  <span style="color:var(--g2);margin:0 4px">|</span>
+  <span style="color:var(--bl);font-weight:700">Columnas azules = config pipeline Python</span>
+  <span style="color:var(--g2);margin:0 4px">|</span>
+  <span style="color:var(--gr);font-weight:700">Supabase - tiempo real para todo el equipo</span>
+</div>
+<div class="tw">
+<table>
+  <colgroup><col class="c0"><col class="c1"><col class="c2"><col class="c3"><col class="c4"><col class="c5"><col class="c6"><col class="c7"><col class="c8"><col class="c9"><col class="c10"><col class="c11"><col class="c12"><col class="c13"></colgroup>
+  <thead>
+    <tr>
+      <th colspan="6" class="thg tgi">Informacion del disclosure - solo lectura</th>
+      <th colspan="3" class="thg tgm">Mapeo de negocio</th>
+      <th colspan="5" class="thg tgp">Configuracion del pipeline Python</th>
+    </tr>
+    <tr class="cols">
+      <th>Ref.</th><th>Titulo</th><th>Descripcion</th><th>Sub-campos</th><th>Tipo dato</th><th>DataFile</th>
+      <th class="ec blc">Sistema / BD</th><th class="ec">Responsable</th><th class="ec">Estado</th>
+      <th class="ep blb">Tipo fuente</th><th class="ep">Conexion / Ruta</th><th class="ep">Query SQL</th><th class="ep">Transformacion</th><th class="ep">Notas</th>
+    </tr>
+  </thead>
+  <tbody id="tbody"></tbody>
+</table>
+</div>
+<div class="mdbg" id="modal">
+  <div class="md">
+    <div class="mdh"><h2>Config Pipeline - <em>JSON</em></h2><button class="mdc" onclick="closeModal()">X</button></div>
+    <div class="mdb">
+      <p style="font-size:11px;color:var(--g6);margin-bottom:12px;font-weight:600">Guarda como pqd_pipeline_config.json y ejecuta con python pqd_pipeline.py --quarter YYYY-MM-DD</p>
+      <pre id="jo"></pre>
+    </div>
+    <div class="mdf">
+      <button class="btn bor" onclick="downloadJSON()">Descargar JSON</button>
+      <button class="btn bol" onclick="closeModal()">Cerrar</button>
+    </div>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+<script>var LOGO_B64="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";</script>
+<script>
+var SB_URL = "https://bijqiicmdvuwpnqgwmwe.supabase.co";
+var SB_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJpanFpaWNtZHZ1d3BucWd3bXdlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg2MDU3NTAsImV4cCI6MjA5NDE4MTc1MH0.G-5fJlulaEL5_g8jdUTN74zK6sKGdVEipUAPOnQxdNs";
+
+var TBL = 'pqd_mapeo';
+var H = {
+  'apikey': SB_KEY,
+  'Authorization': 'Bearer ' + SB_KEY,
+  'Content-Type': 'application/json',
+  'Prefer': 'return=representation'
+};
+
+// Set logo via JS to keep base64 out of HTML parsing
+document.getElementById('logo-img').src = 'data:image/png;base64,' + LOGO_B64;
+
+async function sbGet() {
+  var r = await fetch(SB_URL + '/rest/v1/' + TBL + '?select=*', {headers: H});
+  return r.json();
+}
+async function sbUpsert(row) {
+  await fetch(SB_URL + '/rest/v1/' + TBL, {
+    method: 'POST',
+    headers: Object.assign({}, H, {'Prefer': 'resolution=merge-duplicates,return=representation'}),
+    body: JSON.stringify(row)
+  });
+}
+async function sbDel() {
+  await fetch(SB_URL + '/rest/v1/' + TBL + '?id=gte.0', {method: 'DELETE', headers: H});
+}
+
+var SMAP = {
+  '4': {label:'Seccion 4 - Recursos de Default', color:'#FF4201', bg:'#fff0ed'},
+  '5': {label:'Seccion 5 - Colateral y Haircuts', color:'#27985F', bg:'#edf7f2'},
+  '6': {label:'Seccion 6 - Initial Margin', color:'#0069A7', bg:'#e6f2f9'},
+  '7': {label:'Seccion 7 - Riesgo de Liquidez', color:'#8B6914', bg:'#fff8e6'},
+  '12':{label:'Seccion 12 - Settlement', color:'#1a6b40', bg:'#edf7f2'},
+  '13':{label:'Seccion 13 - Defaults', color:'#c43000', bg:'#fff0ed'},
+  '14':{label:'Seccion 14 - Segregacion', color:'#2d4fb5', bg:'#f0f4ff'},
+  '15':{label:'Seccion 15 - Negocio', color:'#6b3db5', bg:'#f5f0ff'},
+  '16':{label:'Seccion 16 - Inversiones', color:'#7a5c00', bg:'#fdf5e0'},
+  '17':{label:'Seccion 17 - Operacional', color:'#0069A7', bg:'#e6f2f9'},
+  '18':{label:'Seccion 18 - Participantes', color:'#FF4201', bg:'#fff0ed'},
+  '19':{label:'Seccion 19 - Clientes', color:'#27985F', bg:'#edf7f2'},
+  '23':{label:'Seccion 23 - Volumenes', color:'#7a5c00', bg:'#fdf5e0'}
+};
+
+var D = [
+  {ref:'4.1.1',sec:'4',title:'Recursos de default totales',desc:'Capital propio prefundado Antes (Before)',vals:'',dtype:'Numerico 2dp Moneda',file:'AggregatedDataFile'},
+  {ref:'4.1.2',sec:'4',title:'Recursos de default totales',desc:'Capital propio prefundado Junto (Alongside)',vals:'',dtype:'Numerico 2dp Moneda',file:'AggregatedDataFile'},
+  {ref:'4.1.3',sec:'4',title:'Recursos de default totales',desc:'Capital propio prefundado Despues (After). Ej: Fondo de Reserva CCLV',vals:'',dtype:'Numerico 2dp Moneda',file:'AggregatedDataFile'},
+  {ref:'4.1.4',sec:'4',title:'Recursos de default totales',desc:'Contribuciones prefundadas de participantes Requeridas',vals:'',dtype:'Numerico 2dp Moneda',file:'AggregatedDataFile'},
+  {ref:'4.1.5',sec:'4',title:'Recursos de default totales',desc:'Contribuciones prefundadas Depositadas post-haircut',vals:'',dtype:'Numerico 2dp Moneda',file:'AggregatedDataFile'},
+  {ref:'4.1.7',sec:'4',title:'Recursos de default totales',desc:'Comprometidos Fondos propios para cubrir un default',vals:'',dtype:'Numerico 2dp Moneda',file:'AggregatedDataFile'},
+  {ref:'4.1.8',sec:'4',title:'Recursos de default totales',desc:'Comprometidos Compromisos agregados de participantes para el primer default',vals:'',dtype:'Numerico 2dp Moneda',file:'AggregatedDataFile'},
+  {ref:'4.3.1',sec:'4',title:'Default prefundados por tipo',desc:'Efectivo en banco central emisor de la moneda',vals:'PreHaircut / PostHaircut',dtype:'Numerico 2dp Moneda',file:'DataFile_4_3'},
+  {ref:'4.3.3',sec:'4',title:'Default prefundados por tipo',desc:'Efectivo asegurado en bancos comerciales incl reverse repo',vals:'PreHaircut / PostHaircut',dtype:'Numerico 2dp Moneda',file:'DataFile_4_3'},
+  {ref:'4.3.5',sec:'4',title:'Default prefundados por tipo',desc:'Bonos soberanos domesticos no efectivo',vals:'PreHaircut / PostHaircut',dtype:'Numerico 2dp Moneda',file:'DataFile_4_3'},
+  {ref:'4.3.15',sec:'4',title:'Default prefundados TOTAL',desc:'Total general Pre y Post-Haircut',vals:'PreHaircut / PostHaircut',dtype:'Numerico 2dp Moneda',file:'DataFile_4_3'},
+  {ref:'4.4.1',sec:'4',title:'Riesgo de credito',desc:'Indicar si la CCP esta sujeta a Cover 1 o Cover 2',vals:'',dtype:'Texto',file:'AggregatedDataFile'},
+  {ref:'4.4.3',sec:'4',title:'Riesgo de credito',desc:'Mayor perdida por estres por default del participante mas grande Pico y Media 12 meses',vals:'PeakDay12M / MeanAvg12M',dtype:'Numerico 2dp',file:'DataFile_4_4a'},
+  {ref:'4.4.6',sec:'4',title:'Riesgo de credito',desc:'Mayor exposicion real al participante mas grande Pico y Media 12 meses',vals:'PeakDay12M / MeanAvg12M',dtype:'Numerico 2dp Moneda',file:'DataFile_4_4a'},
+  {ref:'5.1.1',sec:'5',title:'Activos elegibles como IM y haircuts',desc:'Descripcion o link de activos aceptados y sus haircuts',vals:'',dtype:'Texto',file:'AggregatedDataFile'},
+  {ref:'5.3.1',sec:'5',title:'Pruebas de haircuts',desc:'Intervalo de confianza objetivo en el calculo de haircuts',vals:'',dtype:'Numerico 2dp pct',file:'AggregatedDataFile'},
+  {ref:'5.3.3',sec:'5',title:'Pruebas de haircuts',desc:'Periodo de observacion historica para testear los haircuts en dias',vals:'',dtype:'Numerico 0dp',file:'AggregatedDataFile'},
+  {ref:'6.1.1',sec:'6',title:'IM total requerido',desc:'IM requerido por servicio House_Net Client_Gross Client_Net Total',vals:'House_Net / Client_Gross / Client_Net / Total',dtype:'Numerico 2dp Moneda',file:'DataFile_6_1'},
+  {ref:'6.2.1',sec:'6',title:'IM mantenido por tipo de activo',desc:'Efectivo en banco central emisor Casa/Cliente Pre/Post-Haircut',vals:'HouseIM Pre/Post / ClientIM Pre/Post',dtype:'Numerico 2dp Moneda',file:'DataFile_6_2'},
+  {ref:'6.2.3',sec:'6',title:'IM mantenido por tipo de activo',desc:'Efectivo asegurado en bancos comerciales Pre/Post-Haircut',vals:'HouseIM Pre/Post / ClientIM Pre/Post',dtype:'Numerico 2dp Moneda',file:'DataFile_6_2'},
+  {ref:'6.2.15',sec:'6',title:'IM mantenido TOTAL',desc:'IM total mantenido desglosado por Casa y Cliente',vals:'HouseIM Pre/Post / ClientIM Pre/Post',dtype:'Numerico 2dp Moneda',file:'DataFile_6_2'},
+  {ref:'6.4.1',sec:'6',title:'Modelo IM Tipo',desc:'Tipo de modelo de IM por servicio de compensacion',vals:'',dtype:'Texto',file:'AggregatedDataFile'},
+  {ref:'6.4.5',sec:'6',title:'Modelo IM Nivel de confianza',desc:'Nivel de confianza unilateral del modelo de IM',vals:'',dtype:'Numerico 2dp pct',file:'AggregatedDataFile'},
+  {ref:'6.4.11',sec:'6',title:'Modelo IM Periodo de cierre',desc:'Periodo de cierre/liquidacion asumido en el modelo en dias',vals:'',dtype:'Texto',file:'AggregatedDataFile'},
+  {ref:'6.5.1.1',sec:'6',title:'Back-testing del IM',desc:'Veces en 12 meses en que la cobertura de margen bajo la exposicion MtM real',vals:'',dtype:'Numerico 0dp',file:'AggregatedDataFile'},
+  {ref:'6.5.3',sec:'6',title:'Back-testing del IM',desc:'Nivel de cobertura alcanzado realmente',vals:'',dtype:'Numerico 2dp pct',file:'AggregatedDataFile'},
+  {ref:'6.6.1',sec:'6',title:'Variacion de margen Promedio',desc:'Promedio diario de variacion de margen total pagada en el trimestre',vals:'',dtype:'Numerico 2dp Moneda',file:'AggregatedDataFile'},
+  {ref:'6.8.1',sec:'6',title:'Llamada de margen IM Maximo',desc:'Maxima llamada de margen inicial agregada en un dia habil del periodo',vals:'',dtype:'Numerico 2dp Moneda',file:'AggregatedDataFile'},
+  {ref:'7.1.1',sec:'7',title:'Liquidez Nivel de cobertura',desc:'Indicar si el servicio mantiene suficientes recursos liquidos para Cover 1 o Cover 2',vals:'',dtype:'Texto',file:'AggregatedDataFile'},
+  {ref:'7.1.2',sec:'7',title:'Recursos liquidos calificados',desc:'Efectivo en banco central emisor de la moneda',vals:'TamanoYComposicion',dtype:'Numerico 2dp Moneda',file:'DataFile_7_1'},
+  {ref:'7.1.4',sec:'7',title:'Recursos liquidos calificados',desc:'Efectivo asegurado en bancos comerciales incl reverse repo',vals:'TamanoYComposicion',dtype:'Numerico 2dp Moneda',file:'DataFile_7_1'},
+  {ref:'7.1.6',sec:'7',title:'Recursos liquidos calificados',desc:'Lineas de credito comprometidas aseguradas',vals:'TamanoYComposicion',dtype:'Numerico 2dp Moneda',file:'DataFile_7_1'},
+  {ref:'7.3.1',sec:'7',title:'Mayor obligacion de pago estimada',desc:'Mayor obligacion de pago estimada por default del participante mas grande',vals:'PagoMismoDia / PagoIntraday / PagoMultidia',dtype:'Numerico 2dp Moneda',file:'DataFile_7_3'},
+  {ref:'7.3.2',sec:'7',title:'Dias de brecha de liquidez',desc:'Dias habiles en que la obligacion estimada excedio los recursos liquidos',vals:'',dtype:'Numerico 0dp',file:'AggregatedDataFile'},
+  {ref:'12.1.1',sec:'12',title:'Liquidacion por valor DvP',desc:'Porcentaje de liquidaciones por valor usando DvP Entrega contra Pago',vals:'',dtype:'Numerico 2dp pct',file:'AggregatedDataFile'},
+  {ref:'12.1.2',sec:'12',title:'Liquidacion por valor DvD',desc:'Porcentaje de liquidaciones por valor usando DvD Entrega contra Entrega',vals:'',dtype:'Numerico 2dp pct',file:'AggregatedDataFile'},
+  {ref:'12.2.1',sec:'12',title:'Liquidacion por volumen DvP',desc:'Porcentaje de liquidaciones por volumen usando DvP',vals:'',dtype:'Numerico 2dp pct',file:'AggregatedDataFile'},
+  {ref:'13.1.1',sec:'13',title:'Defaults cuantitativo',desc:'Monto de perdida versus monto de margen inicial por evento de default',vals:'',dtype:'Texto',file:'AggregatedDataFile'},
+  {ref:'14.1.1',sec:'14',title:'Segregacion de clientes',desc:'Posiciones en cuentas individualmente segregadas porcentaje del nocional',vals:'',dtype:'Numerico 2dp pct',file:'AggregatedDataFile'},
+  {ref:'14.1.2',sec:'14',title:'Segregacion de clientes',desc:'Posiciones en cuentas omnibus solo-cliente excl LSOC',vals:'',dtype:'Numerico 2dp pct',file:'AggregatedDataFile'},
+  {ref:'15.2.1',sec:'15',title:'Divulgaciones financieras',desc:'Ingresos totales del periodo',vals:'',dtype:'Numerico 2dp Moneda',file:'AggregatedDataFile'},
+  {ref:'15.2.2',sec:'15',title:'Divulgaciones financieras',desc:'Gastos totales del periodo',vals:'',dtype:'Numerico 2dp Moneda',file:'AggregatedDataFile'},
+  {ref:'15.2.3',sec:'15',title:'Divulgaciones financieras',desc:'Utilidades Ingresos menos Gastos',vals:'',dtype:'Numerico 2dp Moneda',file:'AggregatedDataFile'},
+  {ref:'15.2.4',sec:'15',title:'Divulgaciones financieras',desc:'Activos totales en balance',vals:'',dtype:'Numerico 2dp Moneda',file:'AggregatedDataFile'},
+  {ref:'15.2.5',sec:'15',title:'Divulgaciones financieras',desc:'Pasivos totales en balance',vals:'',dtype:'Numerico 2dp Moneda',file:'AggregatedDataFile'},
+  {ref:'16.1.1',sec:'16',title:'Efectivo recibido de participantes',desc:'Total de efectivo recibido como margen inicial',vals:'',dtype:'Numerico 2dp Moneda',file:'AggregatedDataFile'},
+  {ref:'16.1.2',sec:'16',title:'Efectivo recibido de participantes',desc:'Total de efectivo recibido como contribucion al fondo de default',vals:'',dtype:'Numerico 2dp Moneda',file:'AggregatedDataFile'},
+  {ref:'16.2.1',sec:'16',title:'Como se invierte el efectivo',desc:'Porcentaje del efectivo mantenido como depositos TOTAL',vals:'',dtype:'Numerico 2dp pct',file:'AggregatedDataFile'},
+  {ref:'16.2.6',sec:'16',title:'Como se invierte el efectivo',desc:'Porcentaje en fondos del mercado monetario money market funds',vals:'',dtype:'Numerico 2dp pct',file:'AggregatedDataFile'},
+  {ref:'17.1.1',sec:'17',title:'Disponibilidad operacional Objetivo',desc:'Objetivo de disponibilidad del sistema de compensacion ej 99.99 pct en 12 meses',vals:'',dtype:'Numerico 2dp pct',file:'AggregatedDataFile'},
+  {ref:'17.2.1',sec:'17',title:'Disponibilidad operacional Real',desc:'Disponibilidad real del sistema en los ultimos 12 meses',vals:'',dtype:'Numerico 2dp pct',file:'AggregatedDataFile'},
+  {ref:'17.3.1',sec:'17',title:'Fallas del sistema',desc:'Numero total de fallas y duracion en el sistema ultimos 12 meses',vals:'DuracionFalla HH:MM:SS',dtype:'Duracion HH:MM:SS',file:'DataFile_17_3'},
+  {ref:'18.1.1.1',sec:'18',title:'Numero de miembros compensadores',desc:'Miembros compensadores generales liquidan por si mismos y por clientes',vals:'',dtype:'Numerico 0dp',file:'AggregatedDataFile'},
+  {ref:'18.1.1.2',sec:'18',title:'Numero de miembros compensadores',desc:'Miembros compensadores directos liquidan solo por si mismos',vals:'',dtype:'Numerico 0dp',file:'AggregatedDataFile'},
+  {ref:'18.1.3.1',sec:'18',title:'Geografia de participantes',desc:'Numero de participantes domesticos',vals:'',dtype:'Numerico 0dp',file:'AggregatedDataFile'},
+  {ref:'18.1.3.2',sec:'18',title:'Geografia de participantes',desc:'Numero de participantes extranjeros',vals:'',dtype:'Numerico 0dp',file:'AggregatedDataFile'},
+  {ref:'18.2.2',sec:'18',title:'Concentracion posiciones 25 o mas CMs',desc:'Porcentaje posiciones abiertas en manos de los 5 CMs mas grandes Promedio y Pico',vals:'Promedio / Pico',dtype:'Numerico 2dp pct',file:'DataFile_18_2'},
+  {ref:'18.3.2',sec:'18',title:'Concentracion IM 25 o mas CMs',desc:'Porcentaje de IM depositado por los 5 CMs mas grandes Promedio y Pico',vals:'Promedio / Pico',dtype:'Numerico 2dp pct',file:'DataFile_18_2'},
+  {ref:'19.1.1',sec:'19',title:'Participacion escalonada',desc:'Numero de clientes si es conocido por la CCP',vals:'',dtype:'Numerico 0dp',file:'AggregatedDataFile'},
+  {ref:'19.1.2',sec:'19',title:'Participacion escalonada',desc:'Numero de miembros directos que liquidan para clientes',vals:'',dtype:'Numerico 0dp',file:'AggregatedDataFile'},
+  {ref:'23.1.1',sec:'23',title:'Volumenes diarios promedio',desc:'Volumenes diarios promedio por clase de activo instrumento moneda y OTC/ETD',vals:'OTC / ETD',dtype:'Numerico 0dp',file:'DataFile_23'},
+  {ref:'23.1.2',sec:'23',title:'Valor nocional promedio',desc:'Valor nocional promedio de operaciones compensadas',vals:'OTC / ETD',dtype:'Numerico 2dp Moneda',file:'DataFile_23'},
+  {ref:'23.2.1',sec:'23',title:'Nocional bruto pendiente',desc:'Nocional bruto pendiente de operaciones novadas pero no liquidadas',vals:'OTC / ETD',dtype:'Numerico 2dp Moneda',file:'DataFile_23'}
+];
+
+var mapeo = {}, curSec = 'ALL', timers = {};
+
+function sync(state, msg) {
+  var d = document.getElementById('dot');
+  d.className = 'dot ' + state;
+  document.getElementById('slbl').textContent = msg;
+}
+
+async function loadData() {
+  sync('sv', 'Cargando...');
+  try {
+    var rows = await sbGet();
+    mapeo = {};
+    if (Array.isArray(rows)) rows.forEach(function(r){ mapeo[r.ref] = r; });
+    render();
+    updateStats();
+    sync('ok', 'Conectado - cambios guardados para todo el equipo');
+    showToast('Datos actualizados');
+  } catch(e) {
+    sync('er', 'Error de conexion con Supabase');
+    showToast('Error de conexion');
+  }
+  document.getElementById('ov').style.display = 'none';
+}
+
+function saveField(ref, field, value) {
+  if (!mapeo[ref]) mapeo[ref] = {ref: ref};
+  mapeo[ref][field] = value;
+  updateStats();
+  sync('sv', 'Guardando...');
+  clearTimeout(timers[ref]);
+  timers[ref] = setTimeout(async function() {
+    try {
+      await sbUpsert(mapeo[ref]);
+      sync('ok', 'Guardado - visible para todo el equipo');
+      showToast('Guardado');
+    } catch(e) {
+      sync('er', 'Error al guardar');
+    }
+  }, 800);
+}
+
+function setSec(el, sec) {
+  document.querySelectorAll('.tab').forEach(function(t){ t.classList.remove('active'); });
+  el.classList.add('active');
+  curSec = sec;
+  render();
+}
+
+function esc(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function render() {
+  var q = document.getElementById('q').value.toLowerCase();
+  var rows = D.filter(function(d) {
+    return (curSec === 'ALL' || d.sec === curSec) &&
+      (!q || [d.ref,d.title,d.desc,d.vals,d.file].some(function(x){ return x.toLowerCase().indexOf(q) >= 0; }));
+  });
+  var tbody = document.getElementById('tbody');
+  if (!rows.length) { tbody.innerHTML = '<tr><td colspan="14" class="empty">Sin resultados.</td></tr>'; return; }
+  var html = '', lastSec = null;
+  rows.forEach(function(d) {
+    if (d.sec !== lastSec) {
+      var sm = SMAP[d.sec];
+      html += '<tr class="secr"><td colspan="14">' + sm.label + '</td></tr>';
+      lastSec = d.sec;
+    }
+    var m = mapeo[d.ref] || {};
+    var est = m.estado || 'pendiente';
+    var bc = {completo:'#27985F',parcial:'#FFC72F',pendiente:'#B0ADA8',na:'#0069A7'}[est] || '#B0ADA8';
+    var sm = SMAP[d.sec];
+    var sel = function(f,v){ return m[f]===v?'selected':''; };
+    html += '<tr style="border-left:4px solid '+bc+'">' +
+      '<td><span class="did">'+d.ref+'</span><span class="badge" style="background:'+sm.bg+';color:'+sm.color+';border-left:2px solid '+sm.color+'">'+d.sec+'</span></td>' +
+      '<td><div class="dn">'+esc(d.title)+'</div></td>' +
+      '<td><div class="dd">'+esc(d.desc)+'</div></td>' +
+      '<td><div class="dv">'+esc(d.vals||'-')+'</div></td>' +
+      '<td><span class="dty">'+esc(d.dtype)+'</span></td>' +
+      '<td><span class="dfi">'+esc(d.file)+'</span></td>' +
+      '<td class="blc"><textarea class="ci" rows="1" placeholder="Ej: Oracle Risk, Murex..." oninput="saveField(''+d.ref+'','sistema',this.value)">'+esc(m.sistema||'')+'</textarea></td>' +
+      '<td><input class="ci" type="text" style="min-height:22px" placeholder="Nombre / area" value="'+esc(m.responsable||'')+'" oninput="saveField(''+d.ref+'','responsable',this.value)"></td>' +
+      '<td><select class="cs" onchange="saveField(''+d.ref+'','estado',this.value);render()">' +
+        '<option value="pendiente" '+sel('estado','pendiente')+'>Pendiente</option>' +
+        '<option value="parcial" '+sel('estado','parcial')+'>Parcial</option>' +
+        '<option value="completo" '+sel('estado','completo')+'>Completo</option>' +
+        '<option value="na" '+sel('estado','na')+'>N/A</option>' +
+      '</select></td>' +
+      '<td class="blb"><select class="csp" onchange="saveField(''+d.ref+'','tipo_fuente',this.value)">' +
+        '<option value="" '+((!m.tipo_fuente)?'selected':'')+'>-</option>' +
+        '<option value="SQL" '+sel('tipo_fuente','SQL')+'>SQL</option>' +
+        '<option value="API" '+sel('tipo_fuente','API')+'>API</option>' +
+        '<option value="CSV/Excel" '+sel('tipo_fuente','CSV/Excel')+'>CSV/Excel</option>' +
+        '<option value="Manual" '+sel('tipo_fuente','Manual')+'>Manual</option>' +
+        '<option value="Calculo" '+sel('tipo_fuente','Calculo')+'>Calculo</option>' +
+      '</select></td>' +
+      '<td><textarea class="cp" rows="1" placeholder="oracle_risk / /data/im.csv" oninput="saveField(''+d.ref+'','conexion',this.value)">'+esc(m.conexion||'')+'</textarea></td>' +
+      '<td><textarea class="cp" rows="2" placeholder="SELECT ... FROM ... WHERE fecha = :q" oninput="saveField(''+d.ref+'','query',this.value)">'+esc(m.query||'')+'</textarea></td>' +
+      '<td><select class="csp" onchange="saveField(''+d.ref+'','transformacion',this.value)">' +
+        '<option value="" '+((!m.transformacion)?'selected':'')+'>Sin transformacion</option>' +
+        '<option value="valor_directo" '+sel('transformacion','valor_directo')+'>Valor directo</option>' +
+        '<option value="suma" '+sel('transformacion','suma')+'>Suma</option>' +
+        '<option value="promedio" '+sel('transformacion','promedio')+'>Promedio</option>' +
+        '<option value="maximo" '+sel('transformacion','maximo')+'>Maximo</option>' +
+        '<option value="ratio_pct" '+sel('transformacion','ratio_pct')+'>Ratio pct</option>' +
+        '<option value="logica_compleja" '+sel('transformacion','logica_compleja')+'>Logica compleja</option>' +
+        '<option value="texto_manual" '+sel('transformacion','texto_manual')+'>Texto manual</option>' +
+      '</select></td>' +
+      '<td><textarea class="cp" rows="1" placeholder="Notas tecnicas..." oninput="saveField(''+d.ref+'','notas',this.value)">'+esc(m.notas||'')+'</textarea></td>' +
+    '</tr>';
+  });
+  tbody.innerHTML = html;
+}
+
+function updateStats() {
+  var comp=0, parc=0, pend=0;
+  D.forEach(function(d) {
+    var m = mapeo[d.ref] || {};
+    var filled = ['sistema','tipo_fuente','query'].filter(function(f){ return m[f] && m[f].trim(); }).length;
+    var est = m.estado || 'pendiente';
+    if (est==='completo'||est==='na') comp++;
+    else if (est==='parcial'||filled>0) parc++;
+    else pend++;
+  });
+  document.getElementById('stot').textContent = D.length;
+  document.getElementById('scom').textContent = comp;
+  document.getElementById('spar').textContent = parc;
+  document.getElementById('spen').textContent = pend;
+  var pct = Math.round((comp/D.length)*100);
+  document.getElementById('pct').textContent = pct + '%';
+  document.getElementById('pfi').style.width = pct + '%';
+}
+
+function buildConfig() {
+  var byFile = {};
+  D.forEach(function(d) {
+    var m = mapeo[d.ref] || {};
+    if (!m.tipo_fuente && !m.query && !m.conexion) return;
+    if (!byFile[d.file]) byFile[d.file] = [];
+    byFile[d.file].push({
+      disclosure_ref: d.ref, titulo: d.title, tipo_dato: d.dtype,
+      tipo_fuente: m.tipo_fuente||null, sistema: m.sistema||null,
+      conexion: m.conexion||null, query_o_ruta: m.query||null,
+      transformacion: m.transformacion||'valor_directo',
+      responsable: m.responsable||null, estado: m.estado||'pendiente', notas: m.notas||null
+    });
+  });
+  return {version:'1.0', ccp:'CCLV', template:'PQD_v2_CCP_Global',
+    generado_en: new Date().toISOString(),
+    instrucciones: 'Usar con pqd_pipeline.py. Cada DataFile genera un CSV independiente.',
+    datafiles: byFile};
+}
+
+function exportPipeline() {
+  var cfg = buildConfig();
+  if (!Object.keys(cfg.datafiles).length) { showToast('Sin disclosures configurados'); return; }
+  document.getElementById('jo').textContent = JSON.stringify(cfg, null, 2);
+  document.getElementById('modal').classList.add('open');
+}
+function downloadJSON() {
+  var blob = new Blob([JSON.stringify(buildConfig(),null,2)],{type:'application/json'});
+  var a = document.createElement('a'); a.href = URL.createObjectURL(blob);
+  a.download = 'pqd_pipeline_config_' + new Date().toISOString().slice(0,10) + '.json'; a.click();
+  showToast('JSON descargado');
+}
+function closeModal() { document.getElementById('modal').classList.remove('open'); }
+
+function exportCSV() {
+  var h = ['Ref','Titulo','DataFile','Sistema','Responsable','Estado','TipoFuente','Conexion','Query','Transformacion','Notas'];
+  var rows = D.map(function(d) {
+    var m = mapeo[d.ref] || {};
+    return [d.ref,d.title,d.file,m.sistema||'',m.responsable||'',m.estado||'pendiente',
+            m.tipo_fuente||'',m.conexion||'',m.query||'',m.transformacion||'',m.notas||'']
+      .map(function(v){ return '"'+String(v).replace(/"/g,'""')+'"'; }).join(',');
+  });
+  var blob = new Blob(['﻿'+h.join(',')+'
+'+rows.join('
+')],{type:'text/csv;charset=utf-8;'});
+  var a = document.createElement('a'); a.href = URL.createObjectURL(blob);
+  a.download = 'CCLV_PQD_mapeo_' + new Date().toISOString().slice(0,10) + '.csv'; a.click();
+  showToast('CSV exportado');
+}
+
+async function clearAll() {
+  if (!confirm('Borrar TODO el mapeo del equipo en Supabase? Esta accion no se puede deshacer.')) return;
+  await sbDel();
+  mapeo = {};
+  render(); updateStats();
+  showToast('Datos borrados');
+}
+
+var toastT;
+function showToast(msg) {
+  var t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  clearTimeout(toastT);
+  toastT = setTimeout(function(){ t.classList.remove('show'); }, 2000);
+}
+
+setInterval(async function() {
+  try {
+    var rows = await sbGet();
+    if (Array.isArray(rows)) {
+      rows.forEach(function(r){ mapeo[r.ref] = r; });
+      render(); updateStats();
+    }
+  } catch(e) {}
+}, 30000);
+
+loadData();
+</script>
+</body>
+</html>
