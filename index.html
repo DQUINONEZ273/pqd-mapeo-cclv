@@ -95,9 +95,37 @@ td.blc{border-left:2px solid #ffe4da}td.blb{border-left:2px solid #ddeef8}td.bla
 .toast{position:fixed;bottom:20px;right:20px;background:var(--bk);color:#fff;border-left:4px solid var(--or);border-radius:0 8px 8px 0;padding:9px 16px;font-family:Montserrat,sans-serif;font-size:11px;font-weight:700;opacity:0;transition:opacity .2s;pointer-events:none;z-index:999}
 .toast.show{opacity:1}
 .empty{text-align:center;padding:48px;color:var(--g4);font-family:"PT Serif",Georgia,serif;font-size:16px;font-style:italic}
+
+.pw-screen{position:fixed;inset:0;background:var(--bk);display:flex;align-items:center;justify-content:center;z-index:999}
+.pw-box{background:#1e1d1a;border-radius:16px;padding:40px;width:360px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.pw-logo{margin:0 auto 24px}
+.pw-title{font-family:"PT Serif",Georgia,serif;font-size:20px;font-weight:700;color:#fff;margin-bottom:6px}
+.pw-sub{font-size:11px;color:var(--g4);margin-bottom:28px}
+.pw-input{width:100%;font-family:Montserrat,sans-serif;font-size:14px;font-weight:700;padding:12px 16px;border-radius:0 8px 8px 0;border:2px solid #3a3936;background:#28272B;color:#fff;outline:none;text-align:center;letter-spacing:3px;margin-bottom:12px}
+.pw-input:focus{border-color:var(--or)}
+.pw-input::placeholder{letter-spacing:0;font-weight:400;color:var(--g4)}
+.pw-btn{width:100%;font-family:Montserrat,sans-serif;font-size:11px;font-weight:800;padding:12px;border:none;border-radius:0 8px 8px 0;background:var(--or);color:#fff;cursor:pointer;letter-spacing:1px;text-transform:uppercase;transition:background .15s}
+.pw-btn:hover{background:#e03800}
+.pw-error{font-size:11px;color:#f87171;margin-top:10px;min-height:16px;font-weight:600}
 </style>
 </head>
 <body>
+
+<div class="pw-screen" id="pw-screen">
+  <div class="pw-box">
+    <div class="pw-logo">
+      <div style="width:48px;height:48px;border-radius:50%;background:var(--or);display:flex;align-items:center;justify-content:center;margin:0 auto">
+        <svg viewBox="0 0 22 22" width="26" height="26"><path d="M14 3L6 11.5H11L8 19L16 10.5H11L14 3Z" fill="white"/></svg>
+      </div>
+    </div>
+    <div class="pw-title">PQD v2.0 — CCLV</div>
+    <div class="pw-sub">Mapeo Colaborativo de Fuentes<br>Gerencia de Riesgo Financiero</div>
+    <input class="pw-input" type="password" id="pw-input" placeholder="Ingresa la contrasena" autocomplete="off">
+    <button class="pw-btn" id="pw-btn">Ingresar</button>
+    <div class="pw-error" id="pw-error"></div>
+  </div>
+</div>
+
 <div class="ov" id="ov">
   <div class="oi"><svg viewBox="0 0 22 22" width="28" height="28"><path d="M14 3L6 11.5H11L8 19L16 10.5H11L14 3Z" fill="white"/></svg></div>
   <h2>Cargando datos...</h2><p>Conectando con Supabase — 205 disclosures PQD v2.0</p>
@@ -647,6 +675,44 @@ setInterval(function(){
 }, 30000);
 
 loadData();
+
+(function() {
+  var HASH = "e8f0d5c2b7a1f3e6d9c4b8a2f5e1d7c3b6a9f2e8d4c1b7a3f6e2d8c5b9a1f4";
+  function simpleHash(s) {
+    var h = 0;
+    for (var i = 0; i < s.length; i++) {
+      h = (Math.imul(31, h) + s.charCodeAt(i)) | 0;
+    }
+    return Math.abs(h).toString(16).padStart(8,'0');
+  }
+  var correctHash = simpleHash("RISKCCLVPQD");
+
+  function checkPassword() {
+    var val = document.getElementById("pw-input").value;
+    if (simpleHash(val) === correctHash) {
+      document.getElementById("pw-screen").style.display = "none";
+      sessionStorage.setItem("pqd_auth", correctHash);
+    } else {
+      var err = document.getElementById("pw-error");
+      err.textContent = "Contrasena incorrecta. Intentalo nuevamente.";
+      document.getElementById("pw-input").value = "";
+      document.getElementById("pw-input").focus();
+      setTimeout(function(){ err.textContent = ""; }, 3000);
+    }
+  }
+
+  // Check if already authenticated this session
+  if (sessionStorage.getItem("pqd_auth") === simpleHash("RISKCCLVPQD")) {
+    document.getElementById("pw-screen").style.display = "none";
+  }
+
+  document.getElementById("pw-btn").addEventListener("click", checkPassword);
+  document.getElementById("pw-input").addEventListener("keydown", function(e) {
+    if (e.key === "Enter") checkPassword();
+  });
+  document.getElementById("pw-input").focus();
+})();
+
 </script>
 </body>
 </html>
