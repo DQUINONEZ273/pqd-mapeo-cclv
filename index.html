@@ -3,714 +3,802 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CCLV — PQD v2.0 · Mapeo Colaborativo · 205 disclosures</title>
-<link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+<title>CCLV - PQD v2.0 - 2026Q1</title>
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--or:#FF4201;--bk:#28272B;--gr:#27985F;--bl:#0069A7;--yw:#FFC72F;--g1:#F5F4F2;--g2:#E8E6E2;--g4:#B0ADA8;--g6:#6B6866}
+:root{--or:#FF4201;--bk:#28272B;--gr:#27985F;--bl:#0069A7;--yw:#FFC72F;--pu:#6b3db5;--g1:#F5F4F2;--g2:#E8E6E2;--g3:#D4D1CC;--g4:#B0ADA8;--g6:#6B6866;--sidebar:240px}
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Montserrat,sans-serif;background:var(--g1);color:var(--bk);min-height:100vh;font-size:12px}
-.hdr{background:var(--bk);padding:14px 20px 18px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
-.brand{display:flex;align-items:center;gap:10px}
-.brand-icon{width:36px;height:36px;border-radius:50%;background:var(--or);display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.brand-name{font-family:"PT Serif",Georgia,serif;font-size:18px;font-weight:700;color:#fff}
-.brand-sub{font-size:9px;font-weight:700;color:var(--or);letter-spacing:1.5px;text-transform:uppercase}
-.ht h1{font-family:"PT Serif",Georgia,serif;font-size:13px;font-weight:700;color:#fff;text-align:right;margin:0}
-.ht p{font-size:9px;color:var(--g4);margin-top:2px;text-align:right}
-.dot{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:5px;vertical-align:middle}
-.dot.ok{background:var(--gr)}.dot.sv{background:var(--yw);animation:pu 1s infinite}.dot.er{background:#f87171}
-@keyframes pu{0%,100%{opacity:1}50%{opacity:.3}}
-.stats{display:flex;gap:10px;flex-wrap:wrap;padding:16px 20px 0}
-.sc{background:#fff;border-radius:10px;box-shadow:0 2px 8px rgba(40,39,43,.07);padding:8px 14px;min-width:80px;border-top:3px solid var(--g2)}
-.sc.or{border-top-color:var(--or)}.sc.gr{border-top-color:var(--gr)}.sc.yw{border-top-color:var(--yw)}.sc.bl{border-top-color:var(--bl)}
-.sn{font-family:"PT Serif",Georgia,serif;font-size:24px;font-weight:700;line-height:1}
-.sc.or .sn{color:var(--or)}.sc.gr .sn{color:var(--gr)}.sc.yw .sn{color:#b8860b}.sc.bl .sn{color:var(--bl)}
-.sl{font-size:9px;font-weight:700;color:var(--g6);text-transform:uppercase;letter-spacing:.8px;margin-top:2px}
-.pc{flex:1;min-width:160px;background:#fff;border-radius:10px;box-shadow:0 2px 8px rgba(40,39,43,.07);padding:8px 14px;display:flex;flex-direction:column;justify-content:center}
-.pla{font-size:9px;font-weight:700;color:var(--g6);text-transform:uppercase;margin-bottom:6px;display:flex;justify-content:space-between}
-.pla span{font-family:"PT Serif",Georgia,serif;font-size:14px;color:var(--or)}
-.ptr{height:5px;background:var(--g2);border-radius:3px;overflow:hidden}
-.pfi{height:100%;background:linear-gradient(90deg,var(--or),#ff6b35);border-radius:3px;transition:width .4s}
-.tb{display:flex;gap:8px;flex-wrap:wrap;padding:14px 20px 0}
-.btn{font-family:Montserrat,sans-serif;font-size:10px;font-weight:700;padding:7px 14px;border:none;cursor:pointer;border-radius:0 7px 7px 0;letter-spacing:.5px;text-transform:uppercase;white-space:nowrap}
-.bor{background:var(--or);color:#fff}.bbk{background:var(--bk);color:#fff}
-.bol{background:#fff;color:var(--bk);border:1.5px solid var(--g2)}
-.bred{background:#fff0ed;color:var(--or);border:1.5px solid #ffd0c4}
-.fi{display:flex;gap:5px;flex-wrap:wrap;padding:10px 20px 0}
-.tab{font-family:Montserrat,sans-serif;font-size:9px;font-weight:700;padding:5px 10px;border-radius:0 5px 5px 0;border:1.5px solid var(--g2);background:#fff;color:var(--g6);cursor:pointer;text-transform:uppercase;white-space:nowrap}
-.tab:hover{border-color:var(--or);color:var(--or)}.tab.active{background:var(--or);color:#fff;border-color:var(--or)}
-.srch{flex:1;min-width:200px;font-family:Montserrat,sans-serif;font-size:11px;padding:6px 12px;border:1.5px solid var(--g2);border-radius:0 7px 7px 0;background:#fff;outline:none}
-.srch:focus{border-color:var(--or)}
-.leg{margin:10px 20px 0;background:#fff;border-radius:10px;padding:8px 14px;display:flex;gap:12px;flex-wrap:wrap;align-items:center;font-size:9px;font-weight:600}
-.li{display:flex;align-items:center;gap:4px}
-.ld{width:7px;height:7px;border-radius:2px;display:inline-block}
-.tw{margin:12px 20px 24px;background:#fff;border-radius:10px;box-shadow:0 2px 8px rgba(40,39,43,.07);border:1px solid var(--g2);overflow-x:auto}
-table{border-collapse:collapse;font-size:11px;table-layout:fixed;width:2000px}
-col.c0{width:70px}col.c1{width:130px}col.c2{width:200px}col.c3{width:120px}
-col.c4{width:100px}col.c5{width:110px}col.c6{width:80px}
-col.c7{width:90px}col.c8{width:90px}col.c9{width:90px}
-col.c10{width:90px}col.c11{width:140px}col.c12{width:90px}col.c13{width:180px}col.c14{width:180px}col.c15{width:160px}
-.thg{padding:6px 10px;font-family:Montserrat,sans-serif;font-size:9px;font-weight:800;letter-spacing:1px;text-transform:uppercase;text-align:center;border-bottom:1px solid rgba(255,255,255,.15)}
-.tgi{background:var(--bk);color:var(--g4)}.tgm{background:var(--or);color:#fff}.tgp{background:var(--bl);color:#fff}.tga{background:#27985F;color:#fff}
-thead tr.cols{background:var(--g1);border-bottom:2px solid var(--or)}
-th{padding:7px 8px;text-align:left;font-family:Montserrat,sans-serif;font-size:9px;font-weight:700;color:var(--g6);letter-spacing:.5px;text-transform:uppercase;overflow:hidden;white-space:normal;word-break:break-word;vertical-align:bottom;line-height:1.3;border-right:1px solid var(--g1)}
-th.ec{color:var(--or)}th.ep{color:var(--bl)}th.ea{color:#27985F}th.blc{border-left:2px solid var(--or)}th.blb{border-left:2px solid var(--bl)}th.bla{border-left:2px solid #27985F}
-tbody tr{border-bottom:1px solid var(--g1)}tbody tr:hover{background:#fff8f6}
-tbody tr.row-na{background:#f8fff8}tbody tr.row-na:hover{background:#f0fff0}
-td{padding:7px 8px;vertical-align:top;border-right:1px solid var(--g1);overflow:hidden}
-td.blc{border-left:2px solid #ffe4da}td.blb{border-left:2px solid #ddeef8}td.bla{border-left:2px solid #d4edda}
-.secr td{padding:4px 10px;font-family:Montserrat,sans-serif;font-size:9px;font-weight:800;letter-spacing:1px;text-transform:uppercase;background:var(--g1);color:var(--g4);border-bottom:1px solid var(--g2)}
-.did{font-family:"PT Serif",Georgia,serif;font-size:11px;font-weight:700;color:var(--or);white-space:nowrap;display:block}
-.dn{font-weight:700;color:var(--bk);font-size:10px;line-height:1.4;overflow-wrap:break-word}
-.dd{font-size:10px;color:var(--g6);line-height:1.4;margin-top:2px;overflow-wrap:break-word}
-.dv{font-size:9px;color:var(--g4);font-family:monospace;margin-top:2px}
-.dty{font-size:9px;color:var(--g6);font-family:monospace}
-.dfi{font-size:9px;color:var(--bl);font-family:monospace;font-weight:600}
-.dfr{font-size:9px;color:var(--g4);font-family:monospace}
-.badge{display:inline-block;padding:2px 6px;border-radius:0 4px 4px 0;font-size:8px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;margin-top:3px}
-.tag-si{display:inline-block;padding:2px 8px;border-radius:3px;font-size:9px;font-weight:700;background:#d4edda;color:#155724}
-.tag-na{display:inline-block;padding:2px 8px;border-radius:3px;font-size:9px;font-weight:700;background:#cce5ff;color:#004085}
-.just-text{font-size:9px;color:#155724;line-height:1.4;overflow-wrap:break-word}
-.just-na{font-size:9px;color:#0056b3;line-height:1.4;overflow-wrap:break-word;font-style:italic}
-.ci,.cp{width:100%;display:block;background:transparent;border:none;border-bottom:1.5px solid var(--g2);font-size:11px;padding:2px 3px;outline:none;resize:none;min-height:22px;line-height:1.4;overflow:hidden}
-.ci{font-family:Montserrat,sans-serif;color:var(--bk)}.ci:focus{border-bottom-color:var(--or);background:#fff8f6}
-.ci::placeholder{color:var(--g2)}
-.cp{font-family:monospace;font-size:10px;color:var(--bl)}.cp:focus{border-bottom-color:var(--bl);background:#f0f7fd}
-.cp::placeholder{color:#b8d4e8}
-.cs,.csp{width:100%;display:block;font-family:Montserrat,sans-serif;font-size:10px;font-weight:600;padding:3px 5px;border-radius:0 5px 5px 0;outline:none;cursor:pointer}
-.cs{background:var(--g1);border:1.5px solid var(--g2);color:var(--bk)}
-.csp{background:#f0f7fd;border:1.5px solid #b8d4e8;color:var(--bl)}
-.ov{position:fixed;inset:0;background:var(--bk);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:200}
-.oi{width:56px;height:56px;border-radius:50%;background:var(--or);display:flex;align-items:center;justify-content:center;margin-bottom:20px;animation:pu 1.2s infinite}
-.ov h2{font-family:"PT Serif",Georgia,serif;font-size:22px;color:#fff;font-weight:700}
-.ov p{font-size:11px;color:var(--g4);margin-top:6px}
-.mdbg{display:none;position:fixed;inset:0;background:rgba(40,39,43,.75);z-index:100;align-items:center;justify-content:center}
-.mdbg.open{display:flex}
-.md{background:#fff;border-radius:12px;width:90%;max-width:860px;max-height:85vh;display:flex;flex-direction:column;overflow:hidden}
-.mdh{background:var(--bk);padding:14px 18px;display:flex;justify-content:space-between;align-items:center}
-.mdh h2{font-family:"PT Serif",Georgia,serif;font-size:16px;font-weight:700;color:#fff}
-.mdc{background:none;border:none;color:var(--g4);font-size:20px;cursor:pointer}
-.mdb{padding:18px;overflow-y:auto;flex:1;background:var(--g1)}
-.mdb pre{background:var(--bk);border-radius:8px;padding:16px;font-family:monospace;font-size:11px;color:#4ade80;white-space:pre-wrap;word-break:break-all;line-height:1.6}
-.mdf{padding:10px 18px;background:#fff;border-top:1px solid var(--g2);display:flex;gap:8px;justify-content:flex-end}
-.toast{position:fixed;bottom:20px;right:20px;background:var(--bk);color:#fff;border-left:4px solid var(--or);border-radius:0 8px 8px 0;padding:9px 16px;font-family:Montserrat,sans-serif;font-size:11px;font-weight:700;opacity:0;transition:opacity .2s;pointer-events:none;z-index:999}
-.toast.show{opacity:1}
-.empty{text-align:center;padding:48px;color:var(--g4);font-family:"PT Serif",Georgia,serif;font-size:16px;font-style:italic}
+body{font-family:Montserrat,sans-serif;background:var(--g1);color:var(--bk);min-height:100vh;display:flex;flex-direction:column;font-size:12px;overflow:hidden;height:100vh}
 
-.pw-screen{position:fixed;inset:0;background:var(--bk);display:flex;align-items:center;justify-content:center;z-index:999}
-.pw-box{background:#1e1d1a;border-radius:16px;padding:40px;width:360px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.5)}
-.pw-logo{margin:0 auto 24px}
-.pw-title{font-family:"PT Serif",Georgia,serif;font-size:20px;font-weight:700;color:#fff;margin-bottom:6px}
-.pw-sub{font-size:11px;color:var(--g4);margin-bottom:28px}
-.pw-input{width:100%;font-family:Montserrat,sans-serif;font-size:14px;font-weight:700;padding:12px 16px;border-radius:0 8px 8px 0;border:2px solid #3a3936;background:#28272B;color:#fff;outline:none;text-align:center;letter-spacing:3px;margin-bottom:12px}
+/* PASSWORD */
+.pw{position:fixed;inset:0;background:var(--bk);display:flex;align-items:center;justify-content:center;z-index:999}
+.pw-box{background:#1e1d1a;border-radius:16px;padding:40px;width:340px;text-align:center}
+.pw-box h2{font-family:"PT Serif",Georgia,serif;font-size:18px;color:#fff;margin:16px 0 4px}
+.pw-box p{font-size:10px;color:var(--g4);margin-bottom:24px}
+.pw-input{width:100%;font-family:Montserrat,sans-serif;font-size:13px;font-weight:700;padding:11px 14px;border-radius:0 8px 8px 0;border:2px solid #3a3936;background:#28272B;color:#fff;outline:none;text-align:center;letter-spacing:2px;margin-bottom:10px}
 .pw-input:focus{border-color:var(--or)}
 .pw-input::placeholder{letter-spacing:0;font-weight:400;color:var(--g4)}
-.pw-btn{width:100%;font-family:Montserrat,sans-serif;font-size:11px;font-weight:800;padding:12px;border:none;border-radius:0 8px 8px 0;background:var(--or);color:#fff;cursor:pointer;letter-spacing:1px;text-transform:uppercase;transition:background .15s}
-.pw-btn:hover{background:#e03800}
-.pw-error{font-size:11px;color:#f87171;margin-top:10px;min-height:16px;font-weight:600}
+.pw-btn{width:100%;font-family:Montserrat,sans-serif;font-size:11px;font-weight:800;padding:11px;border:none;border-radius:0 8px 8px 0;background:var(--or);color:#fff;cursor:pointer;letter-spacing:1px;text-transform:uppercase}
+.pw-err{font-size:10px;color:#f87171;margin-top:8px;min-height:14px;font-weight:600}
+
+/* TOPBAR */
+.topbar{background:var(--bk);padding:0 16px;height:52px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;gap:12px}
+.brand{display:flex;align-items:center;gap:10px}
+.brand-sub{font-size:8px;font-weight:700;color:var(--or);letter-spacing:1.5px;text-transform:uppercase}
+.topbar-title{font-family:"PT Serif",Georgia,serif;font-size:13px;color:#fff;font-weight:700}
+.topbar-right{display:flex;align-items:center;gap:8px}
+.dot{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:4px;vertical-align:middle}
+.dot.ok{background:var(--gr)}.dot.sv{background:var(--yw);animation:pu 1s infinite}.dot.er{background:#f87171}
+@keyframes pu{0%,100%{opacity:1}50%{opacity:.3}}
+.sync-lbl{font-size:9px;color:var(--g4)}
+.btn-top{font-family:Montserrat,sans-serif;font-size:9px;font-weight:700;padding:6px 12px;border:none;cursor:pointer;border-radius:0 6px 6px 0;letter-spacing:.5px;text-transform:uppercase;white-space:nowrap}
+.btn-or{background:var(--or);color:#fff}
+.btn-bk{background:#3f3d3a;color:#fff}
+.btn-gr{background:var(--gr);color:#fff}
+
+/* MAIN LAYOUT */
+.main{display:flex;flex:1;overflow:hidden}
+
+/* SIDEBAR */
+.sidebar{width:var(--sidebar);background:var(--bk);display:flex;flex-direction:column;overflow-y:auto;flex-shrink:0}
+.sidebar-section{padding:12px 12px 4px;font-size:8px;font-weight:800;color:var(--g4);letter-spacing:1.5px;text-transform:uppercase}
+.nav-item{display:flex;align-items:center;padding:8px 14px;cursor:pointer;gap:8px;border-left:3px solid transparent;transition:all .15s}
+.nav-item:hover{background:rgba(255,255,255,.06)}
+.nav-item.active{background:rgba(255,66,1,.12);border-left-color:var(--or)}
+.nav-icon{font-size:14px;width:18px;text-align:center;flex-shrink:0}
+.nav-label{font-size:10px;font-weight:600;color:var(--g4);flex:1;line-height:1.3}
+.nav-item.active .nav-label{color:#fff}
+.nav-badge{font-size:8px;font-weight:800;padding:2px 6px;border-radius:10px;background:rgba(255,255,255,.1);color:var(--g4)}
+.nav-item.active .nav-badge{background:var(--or);color:#fff}
+.nav-prog{margin-top:2px;height:2px;background:rgba(255,255,255,.08);border-radius:1px;overflow:hidden}
+.nav-prog-fill{height:100%;background:var(--or);border-radius:1px;transition:width .3s}
+.sidebar-divider{height:1px;background:rgba(255,255,255,.07);margin:8px 12px}
+
+/* CONTENT AREA */
+.content{flex:1;overflow-y:auto;padding:0}
+.content-header{padding:16px 20px 12px;border-bottom:1px solid var(--g2);background:#fff;position:sticky;top:0;z-index:10}
+.content-header h2{font-family:"PT Serif",Georgia,serif;font-size:16px;font-weight:700;color:var(--bk)}
+.content-header p{font-size:10px;color:var(--g6);margin-top:2px}
+.content-body{padding:16px 20px 32px}
+
+/* STATS ROW */
+.stats-row{display:flex;gap:10px;margin-bottom:16px;flex-wrap:wrap}
+.stat{background:#fff;border-radius:8px;padding:8px 14px;min-width:80px;border-top:3px solid var(--g2);box-shadow:0 1px 4px rgba(40,39,43,.06)}
+.stat.or{border-top-color:var(--or)}.stat.gr{border-top-color:var(--gr)}.stat.yw{border-top-color:var(--yw)}.stat.bl{border-top-color:var(--bl)}
+.stat-n{font-family:"PT Serif",Georgia,serif;font-size:22px;font-weight:700;line-height:1}
+.stat.or .stat-n{color:var(--or)}.stat.gr .stat-n{color:var(--gr)}.stat.yw .stat-n{color:#b8860b}.stat.bl .stat-n{color:var(--bl)}
+.stat-l{font-size:8px;font-weight:700;color:var(--g6);text-transform:uppercase;letter-spacing:.8px;margin-top:2px}
+.prog-card{flex:1;min-width:140px;background:#fff;border-radius:8px;padding:8px 14px;box-shadow:0 1px 4px rgba(40,39,43,.06);display:flex;flex-direction:column;justify-content:center}
+.prog-lbl{font-size:8px;font-weight:700;color:var(--g6);text-transform:uppercase;letter-spacing:.8px;margin-bottom:5px;display:flex;justify-content:space-between}
+.prog-lbl span{font-family:"PT Serif",Georgia,serif;font-size:13px;color:var(--or)}
+.prog-track{height:4px;background:var(--g2);border-radius:2px;overflow:hidden}
+.prog-fill{height:100%;background:linear-gradient(90deg,var(--or),#ff6b35);border-radius:2px;transition:width .4s}
+
+/* DISCLOSURE CARD */
+.disc-card{background:#fff;border-radius:10px;box-shadow:0 1px 6px rgba(40,39,43,.07);margin-bottom:12px;overflow:hidden;border:1px solid var(--g2)}
+.disc-card.na{opacity:.75}
+.disc-header{display:flex;align-items:center;gap:10px;padding:10px 14px;cursor:pointer;user-select:none;border-bottom:1px solid transparent;transition:background .1s}
+.disc-header:hover{background:var(--g1)}
+.disc-header.open{border-bottom-color:var(--g2)}
+.disc-ref{font-family:"PT Serif",Georgia,serif;font-size:13px;font-weight:700;color:var(--or);white-space:nowrap;min-width:52px}
+.disc-info{flex:1}
+.disc-title{font-size:11px;font-weight:700;color:var(--bk);line-height:1.3}
+.disc-desc{font-size:10px;color:var(--g6);margin-top:1px;line-height:1.4}
+.disc-tags{display:flex;gap:6px;align-items:center;flex-shrink:0}
+.tag{display:inline-block;padding:2px 8px;border-radius:3px;font-size:8px;font-weight:800;letter-spacing:.5px;text-transform:uppercase}
+.tag-si{background:#d4edda;color:#155724}
+.tag-na{background:#cce5ff;color:#004085}
+.tag-df{background:#f0f7fd;color:var(--bl);font-family:monospace;letter-spacing:0;font-weight:600}
+.est-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.chevron{font-size:10px;color:var(--g4);transition:transform .2s;flex-shrink:0}
+.disc-header.open .chevron{transform:rotate(90deg)}
+
+/* DISC BODY */
+.disc-body{display:none;padding:0}
+.disc-body.open{display:block}
+
+/* TABS */
+.tabs{display:flex;border-bottom:1px solid var(--g2);background:var(--g1);padding:0 14px}
+.tab-btn{font-family:Montserrat,sans-serif;font-size:10px;font-weight:700;padding:8px 14px;border:none;background:transparent;cursor:pointer;color:var(--g4);border-bottom:2px solid transparent;margin-bottom:-1px;letter-spacing:.3px}
+.tab-btn.active{color:var(--or);border-bottom-color:var(--or)}
+.tab-pane{display:none;padding:14px}
+.tab-pane.active{display:block}
+
+/* MAPEO TAB */
+.mapeo-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+.field-group{display:flex;flex-direction:column;gap:3px}
+.field-group.wide{grid-column:span 2}
+.field-group.full{grid-column:span 3}
+.field-label{font-size:9px;font-weight:700;color:var(--g6);text-transform:uppercase;letter-spacing:.5px}
+.field-input{font-family:Montserrat,sans-serif;font-size:11px;padding:6px 8px;border:1.5px solid var(--g2);border-radius:0 5px 5px 0;background:var(--g1);color:var(--bk);outline:none;resize:none;width:100%;transition:border-color .15s}
+.field-input:focus{border-color:var(--or);background:#fff}
+.field-input::placeholder{color:var(--g3)}
+select.field-input{cursor:pointer}
+.est-sel{border-radius:0 5px 5px 0}
+.na-justif{background:#f0f8ff;border:1.5px solid #b8d4e8;border-radius:0 5px 5px 0;padding:8px;font-size:10px;color:var(--bl);line-height:1.5;font-style:italic}
+
+/* VALORES TAB */
+.valores-hint{font-size:10px;color:var(--g4);font-style:italic;margin-bottom:12px}
+.val-table{width:100%;border-collapse:collapse;font-size:11px}
+.val-table th{padding:6px 8px;text-align:left;font-family:Montserrat,sans-serif;font-size:9px;font-weight:700;color:var(--g6);text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid var(--or);background:var(--g1)}
+.val-table td{padding:5px 6px;border-bottom:1px solid var(--g1);vertical-align:middle}
+.val-table tr:hover td{background:var(--g1)}
+.svc-badge{display:inline-block;padding:2px 7px;border-radius:3px;font-size:9px;font-weight:700;white-space:nowrap}
+.svc-SCC{background:#fff0ed;color:var(--or)}
+.svc-SCC_RV{background:#fff0ed;color:var(--or)}
+.svc-SCL{background:#e6f2f9;color:var(--bl)}
+.svc-SCL_PH{background:#e6f2f9;color:var(--bl)}
+.svc-SCL_PM{background:#e6f2f9;color:var(--bl)}
+.svc-SCL_SM{background:#e6f2f9;color:var(--bl)}
+.svc-ALL{background:#edf7f2;color:var(--gr)}
+.desc-lbl{font-size:9px;color:var(--g4);font-family:monospace}
+.val-input{font-family:Montserrat,sans-serif;font-size:11px;padding:4px 7px;border:1.5px solid var(--g2);border-radius:0 4px 4px 0;background:#fff;color:var(--bk);outline:none;width:100%;transition:border-color .15s}
+.val-input:focus{border-color:var(--pu);background:#fdf8ff}
+.val-input::placeholder{color:var(--g3)}
+.fuente-lbl{font-size:9px;color:var(--g4);font-style:italic;text-align:right}
+
+/* TOAST */
+.toast{position:fixed;bottom:20px;right:20px;background:var(--bk);color:#fff;border-left:4px solid var(--or);border-radius:0 8px 8px 0;padding:9px 16px;font-size:11px;font-weight:700;opacity:0;transition:opacity .2s;pointer-events:none;z-index:999}
+.toast.show{opacity:1}
+
+/* EMPTY STATE */
+.empty{text-align:center;padding:60px 20px;color:var(--g4)}
+.empty h3{font-family:"PT Serif",Georgia,serif;font-size:18px;margin-bottom:8px}
+.empty p{font-size:11px}
+
+/* SEARCH */
+.search-bar{padding:10px 20px 0}
+.search-input{width:100%;font-family:Montserrat,sans-serif;font-size:11px;padding:7px 12px;border:1.5px solid var(--g2);border-radius:0 7px 7px 0;background:#fff;outline:none}
+.search-input:focus{border-color:var(--or)}
+
+/* EXPORT MODAL */
+.modal-bg{display:none;position:fixed;inset:0;background:rgba(40,39,43,.75);z-index:100;align-items:center;justify-content:center}
+.modal-bg.open{display:flex}
+.modal{background:#fff;border-radius:12px;width:90%;max-width:700px;max-height:80vh;display:flex;flex-direction:column;overflow:hidden}
+.modal-h{background:var(--bk);padding:14px 18px;display:flex;justify-content:space-between;align-items:center}
+.modal-h h2{font-family:"PT Serif",Georgia,serif;font-size:15px;color:#fff;font-weight:700}
+.modal-close{background:none;border:none;color:var(--g4);font-size:18px;cursor:pointer}
+.modal-b{padding:16px;overflow-y:auto;flex:1;background:var(--g1)}
+.modal-f{padding:10px 16px;background:#fff;border-top:1px solid var(--g2);display:flex;gap:8px;justify-content:flex-end}
 </style>
 </head>
 <body>
 
-<div class="pw-screen" id="pw-screen">
+<div class="pw" id="pw">
   <div class="pw-box">
-    <div class="pw-logo">
-      <img src="data:image/png;base64,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" alt="nuam" style="height:48px;width:auto;display:block;margin:0 auto">
-    </div>
-    <div class="pw-title">PQD v2.0 — CCLV</div>
-    <div class="pw-sub">Mapeo Colaborativo de Fuentes<br>Gerencia de Riesgo Financiero</div>
+    <img src="data:image/png;base64,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" alt="nuam" style="height:36px;width:auto;display:block;margin:0 auto">
+    <h2>PQD v2.0 - CCLV</h2>
+    <p>Mapeo Colaborativo de Fuentes · 2026Q1<br>Gerencia de Riesgo Financiero</p>
     <input class="pw-input" type="password" id="pw-input" placeholder="Ingresa la contrasena" autocomplete="off">
     <button class="pw-btn" id="pw-btn">Ingresar</button>
-    <div class="pw-error" id="pw-error"></div>
+    <div class="pw-err" id="pw-err"></div>
   </div>
 </div>
 
-<div class="ov" id="ov">
-  <div class="oi"><svg viewBox="0 0 22 22" width="28" height="28"><path d="M14 3L6 11.5H11L8 19L16 10.5H11L14 3Z" fill="white"/></svg></div>
-  <h2>Cargando datos...</h2><p>Conectando con Supabase — 205 disclosures PQD v2.0</p>
-</div>
-<div class="hdr">
+<div class="topbar">
   <div class="brand">
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAG0AAAAmCAYAAADOZxX5AAABCGlDQ1BJQ0MgUHJvZmlsZQAAeJxjYGA8wQAELAYMDLl5JUVB7k4KEZFRCuwPGBiBEAwSk4sLGHADoKpv1yBqL+viUYcLcKakFicD6Q9ArFIEtBxopAiQLZIOYWuA2EkQtg2IXV5SUAJkB4DYRSFBzkB2CpCtkY7ETkJiJxcUgdT3ANk2uTmlyQh3M/Ck5oUGA2kOIJZhKGYIYnBncAL5H6IkfxEDg8VXBgbmCQixpJkMDNtbGRgkbiHEVBYwMPC3MDBsO48QQ4RJQWJRIliIBYiZ0tIYGD4tZ2DgjWRgEL7AwMAVDQsIHG5TALvNnSEfCNMZchhSgSKeDHkMyQx6QJYRgwGDIYMZAKbWPz9HbOBQAAAQeUlEQVR42u1be3Cc1XX/nXvv9+1Db9uy8RM/AGPxqI0aYhxbK9uQNECHpwKlbdLQFtMZhtImxmk6jiwmacZMKKE0nRBSKJAyjZeBpgVjxhOkNdg4JoJisIzBQG3jl2xLWmm1j++7957+sd+uV7IkC4yNU/v+oW9Xe/bee+6555zfeSwwwuBmCAD4eIEzN3mV8ycfLHQvAAAGCGfH6Te4CRIADjeEbvevlFm+SrC3VCY7F7nXUMnnZ8epH0NqDAMCAO9cFJ4y3fF3KMERGHhw4GY92hppM7/HABHAZ4/w1A8x5H+b8gKZKPQDSnEEFhqAggVLQhRoFgTwWTN5mgiNmyApDnMgFrqyzOUm+DAAVIlm2rPHdhoJraA5a+rq3BrSDwHM9lhtGpV2ndXCkzfUgHcxSIpDdzfs/JYb4jp4MIJGBBzEzSB0gNAZCGk8GHHYEvNJdFY7T47QGBBIwLy/KDy13PFXQsOChvF5JWYULUN//kh9vUPt7T6GACvcDIGOUWhiJwiNsNQytNAHI1iKwxwPDQMA6sClczJAaBqe1+JexoOHW+O4PBUu9RD8FNcvvfgj0NNgIaQa1Zoy1+Z9WamWMSwkhG/o/T9uvXFOHHHTWldbfuGEnnMjLKYAZrpkmiEET5fEUyVhgmbs78yF75y2sb8DzaDhDn804cdIAjmloVBwZieCnLkJsmiNRsEbN0OgBVxYUw0AHw2hq8oc/1iBDRQzxfGMScbc5WHVdbdkTJbKUN4QBnrFebiiQphVy7l/JmAxA1S8GIvVciHsAquPXUcEGyNBacNy2xHP+S+K92+jowfG+XCDuCumHogoMxMAsr7cU7PBv3vwARPAj9TDubVC/YtLdhwk4GvxZmWbvq+wnw8WuhdMcvRq8LGImAAGwRrI/f0snqe23EslF54La3TF5Oqw4gvsIAslALYABFHSJ3qnS4u1FPe2AwDHoCgODUAeagw1RgR/SbGZyeByBvXlmLanNK2jFn9rKT9qAPiQOx5CfhESw0R1zOg+1ODcWxkxq+EzwDDIH74tMbnCMqzQgAJPAUCiBdbG8pekTNhGhHA1RImgh7zTGq4wLb2LnYcfaPWXrxpEEYK9LuxgFgDA2D0A7h5qpmwSIlzJTa6LKghAGTsOwH34EAKACcPWhh1cP6LukEEZ7F39jerpj2ov+OZFdR261DWEwddEXFw0LE/EiIARJf5+/xLnyS1HoisokezpbHC/WqHMD8JCz4PgIusF+nJJP+hbrH7xVq7qbtp0pI8BEgH4MF8ev/NvXJfnwMBQ/qYwGNZyIAzKi8UwplUI+13oQNwKEg5cOAjDQRiAsgwWBIYg1WfpAQBsmyAxPs+KZUpZHwYGWfiwwx6WBRywUxEyf7u8Uf2CADvI9/RYH8b6MAz0HMcqdRdpGb0DrgeNwtRZAJr9aMTeNrXz/YepZeBeGEhaHwYaOegh5rOB9REcjobMHZfXpNYejLnLa12zNuzwPBAXaQbQg1V5yP7ZvFDPi5vmT4mgGaQoAb19QWRSufS+Aw0PDEkUCEkGGmcCsTEQETzBZ7A2dIQJhyxoHzP2WPBen8XWtKXZ4xyzXCguT2bEj8Zu8H9aMENFMEAsCqjUACbn02ZB0IGGF8MMAZAjeK70ECoL2T/qjjnrKe4/zjEoJKBBkCXo9nhptTwtASb4TnvwgWbRk9W8wdohsw1kARZATVjwxfCgy5W9Y2/MfZDi3ruBfzJ0dH6yjIzvo73U7xV9IUEojXlRxVdEyVwBy/BztIvBu0AgcPAdAjEACapTHldEQ/ylS/jgd6kFK1VrDGoa+f8mw1wNjwACjIXPFt3G4AAIJkQ8rwSI7P44F/1ySojOS19NJkuD7QML1dJaVz+oHC5PZcVT1Rv85YHA7DD+URpGV1li9mKgwxtSPRqc+6rDZiU0bJTst5tjeAqJzwaU1M+ERTsw/VWvA0BsJNrVs8dW3DOpZ6dLXCsko8LYGIB3Cya2xCkLtvgo3Gobhpurr1E9Wi7s7fDZt0TOXhu6YcaG9JtD0R6KOX86zjVPwoMNkb3znfmVD6raXOV0G8l80J8W6zXTbgP5sa95//96ZYfnb+nqBQj+YvGWknxpcNCZmZtSO/LWEwIxKEpAH2lw7x3j6tVQjHRWrL+97YZvclNcIi+wEb3FKwv3li1cCo0OEOoC2g4o1EEfbKVk4COsJFz4l9qdSfDe+ywRYTMgVjGYRjCTK3Z09d01UWTdQGM8i7EAgJmgosoedV9UqJAMGB1QiMPvs9QdgBXFDA6z6QkQokBzcMH3Q2IiTHeb7S4YTEdi3Hg3+0V18ebenQD+6ujMfvDMgZshRAtbA+pSBZvLEM1oUKuaEvkgOgHd2+g8WOGYe0CMTI7+J5GuvHkN4hbx0SWVsxlhqQW2NAnNMViKwx5sKMaSVkpWVotzALz3WUJ4AmwLNYvDsR/eFFW8kA1XWc4Lp7AnCyiXeBw4j3iPF7sMFd5wLA/zewclNTSxCvgvfo+bQPQz2O5YkZZBzFHJ56gC9ASANgCN+YxGHrh3gBggYjvAdE2qTxHFodfMnxJJRQ48VeaYm2DBnhG792Sca6/e0tXLzRCfNi479lxP0ggC2PcWltdOdv/hmaiyDQAP7x11yd8Tq63wQCBEw/I4CCSRJLACAEoMvZECALVAriR6kcva2/2O+ujE6dH9z0YUz4eB9kCpg5nQtbM39+/lJkhqOfnB8KdNjzEf5YYA7lfZx6KubYA3bN3jMx1SnNhdVqO76iIH5DEdAakdC6Jzp0dyz7iSZ0HD00TUmVE3Tnut/52SgPHkMEy6GMwI4t6SmIgCU1YcqwL/U+mXXDkCDEQKsKAE9McxZ25U2muthvWZtmV9da8k7Re0QQWqlTEyVCXNky7x2M+7iqhGYz4YnA1iB8PAtOlurs0VXAWNHCSFenPilqmbcq0cgJJTtXkNuSNEJgYGMWAG+8/7gvdrd8G/bUZRK9mAtxVoKgQug2AWBMFGrK1O5NYNF6hlF1MG9PlXL0alaZaL5pEdwdXBiXlwKNSdlfeM3eCt4Xo4lCiimFMycoZ+VaZoGZhZESrX19dUXdXe1QusImAVc/C8q75sPFGuHAyGIeqz9N/FA2B2Cr6Amc9/6LzzQgDw7M7JBgBmI0U7UM4X1XWEwUdOixaLUQlNCfSX2EoG4MOFm8yK1WM2eA9xPRxqP7UC4xjUKnjrV/jyjYiLy1zLkxsqejsyjaovbwS/z4WnAKod4io4oEyO1k3aoF8vWIUkoz3KRLCsw8LeuGzKR9sY0HdM+WjAvdVMIYBqYdlAfb79MaMSmmbk+GhJQMOBm8qKJ6oT/neK2YlPdOJkANYDMNnwaMMGNBqAKCKvFKilHf6fx8Q3Jhr7ilJc7VqeNKTxsnlOPZ8OHMipOxmakIDNI1z921SjeqYszDdTDn5I8qwBczCAENDXj3YLaAjMBEMzHVNeMSW8mOOAhAJPBgBYjOAl8/wW+Ccm2FFhJQFoyutYDg6ctCdeqkj8/e3cBInEsb5kFFKrggMFB4oZtUpbGr7KiigcKKj8UxTM2cz8oU9L+O90eqGlOUtvQdLQdXZFyBnask/LJTNfy+4qFmZbwAyIPV7V7emceAEuOQPQY/DddIZee9tzbpLgcYV9g7lswDKEmuJnwJgR7yGhPKANSQchE6D4IU/KIhTwH4EDRcyRkTUtSPCmjGqLWv13CKMsm8WWLbbmZkYLr4oDLZ9EYEG2I2PlMyJnP7AG0IzUoUgydwxtIywSQMbSpkyWfgIDDV8oT4vdgCkWMvPakn5jTV3d5VdOeP/WsOA/FJZnK+KIZkobondzTL9a1nr9L+OIGwZEIVQIquuYs+lIH4Brjyxxbo2Cb5Xg2cQQPtFHni+f+2XfxY8ta2/3uxucR/ycrRQS0KxeCRTFAEC/EY8hx9NhAW3pwJDRSMBT2sj1yBoDDashoLXbBXgDY9LgrNJG7Ijk7E+shREGMm3w1qiLfvsXhZb0LFHL1l4+prJY6T5NxlApo+bYsaZ/uD0PDhUAJgzTP3M6jFE36QzOWJ9w5bazJMAdwScG+c2jBziMOWaA2mKQjSUtAQTAFioLQaX4uPvC0bYFboZAW74NgwDm0ouQgC0N7gfwNEJbwoB5j8NT8bLEjgKfVYlPkFDgJkiOQf2udFmd4D7pbDfZ74CAuQky0DQqaENBcM2AaA7MZZF2KJMMiMHNRtyc/19hLs5fCFGcp7RPJ9/dJoK1xXBznBXYJziIwbQFc5ldon6WbVR3n+DcYlRrAqTOdIEFvkQml7pfBcNUvey92AyIr18Rqe/2Mtvq25F5Y0Fk4hhlqmiDt/2lSyeUzR/f3ehre5ja9G8AwIGdLaTYva/BnRNxaELNr3NthbmPLFYLlBTjNnfW/PorWw/2b11YVWN8VE2tSXbBhOZvz4RfX/RqspsA+26sfNw5ysxIW7JZD3rGxvRWArhrSXiRErb2Q6p5idYf7KczXcO2xWrLZoie54m4RwBlvkGyIqFvTjY66yU4Vd6mb+hvVAdyoBWecNdVI7fZgnskaKpn8UJFm/6GWSL+M80yZBjZcoev7/ewvCqhf9TbqB4PSVzOjH3WovY3rH+/ntxrJPE/9Vrx3JiQabI+H4y0msuONLhXR5T9sWU6rBnTiOiFqlZvWU+jejQkaI4h3icsTdttQ9eKM1VobTFIAngK9VynyM7LaKzu1+IfyxVu6mxwz2ftf43AM1NXqn8H8PqYNv+JSs5+j5kPRF828zLsfsWy8IPkgwJzurrNv8Hz8WhI2GsAIM1y4yEtVrybce+VhEtmi/BkR1CvAx77Zqbse3tTYokA5gJMEWH/WltaV97qLyCmNgK3b11YVRMV+IucxcNa434BvnAyZW85Y4XWGDxd8DlCoC8q+bqoMkv6Df+4z4hc9avoNqBdIYnbPKZnAUCCZ2or3gCA6tZ0+74sfR8ADENERD7oZeIuZqSbARGFWVQt7a0Xhv1lgjiXtEwAlGZ0Xr2lq1cK8i1T18Gm8WUpKx6ShAX9S+QjIcHns+G3p7jpqUSccch+ISL5Fhb8c0vqzTNWaPHxhewMNllDYzNMLxrIlzWLS2ZtzO1OLVYrFTDtQMq5IiL4se5FoRlZK592pV3WHXNv7l+qfj41YjYCgCRUMnEhdVVDQOSLf3CeU+Hi64bF03u085wARcoARWBFhFoGSFp2lMBYdAKA6PNBfVkW2T4WT2zuGbs1lY587BvyjKAPk1o87Wsxt8eTyTNWaF+LwzAgxm7Qr/VbuiMk6IcEXknAE9zMQgDnGvC3pm7MbDag+6XClVUJ/6kcy5VhaVZIxrkZdq4DAJ/V88RyY/612GCFeOnqdTtzfR5WOi5/u1yYiWmm+yO+SPuS9ximxwngnHF6PMa/JiNVvgbPYcLbZHlnSNhZV4w58urmqb3JDHCNZNxU7uCnEJTom9T//hmP+4+X3SntdTlZv35lgPpizmsQ+K1l3q6IzmOLL+wa7y+5OA7vU6Wx/t8LrgmypHWPio21haR0vvxkCcHrRthCux+1wA6gDX49UzpH8dc0Qf9nWwxycSIotdRDUTv8/bHQ9HJpriOLKitxeHd/9D8u3tzb1RqDahwPRh0YbRCUgP4/0ClJwBQ5EhcAAAAASUVORK5CYII=" alt="nuam" style="height:38px;width:auto;display:block">
-    <div style="margin-left:4px"><div class="brand-sub">3 paises · 1 mercado</div></div>
+    <img src="data:image/png;base64,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" alt="nuam" style="height:30px;width:auto">
+    <div><div class="brand-sub">3 paises · 1 mercado</div></div>
   </div>
-  <div class="ht">
-    <h1>PQD v2.0 — Mapeo Completo de Fuentes CCLV (205 disclosures)</h1>
-    <p><span class="dot ok" id="dot"></span><span id="slbl">Conectado - cambios guardados para todo el equipo</span></p>
-  </div>
-</div>
-<div class="stats">
-  <div class="sc or"><div class="sn" id="stot">0</div><div class="sl">Total</div></div>
-  <div class="sc gr"><div class="sn" id="scom">0</div><div class="sl">Completos</div></div>
-  <div class="sc yw"><div class="sn" id="spar">0</div><div class="sl">Parciales</div></div>
-  <div class="sc"><div class="sn" id="spen">0</div><div class="sl">Pendientes</div></div>
-  <div class="sc bl"><div class="sn" id="sna">0</div><div class="sl">No aplica</div></div>
-  <div class="pc">
-    <div class="pla">Progreso del equipo <span id="pct">0%</span></div>
-    <div class="ptr"><div class="pfi" id="pfi" style="width:0%"></div></div>
+  <div class="topbar-title">PQD v2.0 &nbsp;·&nbsp; CCLV &nbsp;·&nbsp; 2026Q1</div>
+  <div class="topbar-right">
+    <span class="dot ok" id="dot"></span><span class="sync-lbl" id="slbl">Conectado</span>
+    <button class="btn-top btn-or" id="btn-export">Exportar reporte CSV</button>
+    <button class="btn-top btn-bk" id="btn-refresh">Actualizar</button>
   </div>
 </div>
-<div class="tb">
-  <button class="btn bor" id="btn-pipeline">Exportar config pipeline JSON</button>
-  <button class="btn bbk" id="btn-csv">Exportar CSV</button>
-  <button class="btn bol" id="btn-refresh">Actualizar</button>
-  <button class="btn bred" id="btn-clear">Limpiar todo</button>
-</div>
-<div class="fi" id="tabs">
-  <div class="tab active" data-sec="ALL">Todos</div>
-  <div class="tab" data-sec="SI">Solo aplica a CCLV</div>
-  <div class="tab" data-sec="NA_DEF">Solo no aplican</div>
-  <div class="tab" data-sec="4">4 Default</div>
-  <div class="tab" data-sec="5">5 Haircuts</div>
-  <div class="tab" data-sec="6">6 Margen Inicial</div>
-  <div class="tab" data-sec="7">7 Liquidez</div>
-  <div class="tab" data-sec="12">12 Liquidacion</div>
-  <div class="tab" data-sec="13">13 Defaults</div>
-  <div class="tab" data-sec="14">14 Segregacion</div>
-  <div class="tab" data-sec="15">15 Negocio</div>
-  <div class="tab" data-sec="16">16 Inversiones</div>
-  <div class="tab" data-sec="17">17 Operacional</div>
-  <div class="tab" data-sec="18">18 Participantes</div>
-  <div class="tab" data-sec="19">19 Clientes</div>
-  <div class="tab" data-sec="20">20 Vinculos FMI</div>
-  <div class="tab" data-sec="23">23 Volumenes</div>
-  <input class="srch" type="text" id="q" placeholder="Buscar referencia, titulo o descripcion...">
-</div>
-<div class="leg">
-  <span style="color:var(--g6);font-weight:700;text-transform:uppercase">Estado mapeo:</span>
-  <span class="li"><span class="ld" style="background:var(--gr)"></span>Completo</span>
-  <span class="li"><span class="ld" style="background:var(--yw)"></span>Parcial</span>
-  <span class="li"><span class="ld" style="background:var(--g4)"></span>Pendiente</span>
-  <span style="color:var(--g2);margin:0 4px">|</span>
-  <span style="color:var(--gr);font-weight:700">Verde = aplica a CCLV</span>
-  <span style="color:var(--g2);margin:0 4px">|</span>
-  <span style="color:var(--bl);font-weight:700">Azul claro = no aplica (con justificacion)</span>
-  <span style="color:var(--g2);margin:0 4px">|</span>
-  <span style="color:var(--bl);font-weight:700">Columnas azules = configuracion del pipeline Python</span>
-</div>
-<div class="tw">
-<table>
-  <colgroup>
-    <col class="c0"><col class="c1"><col class="c2"><col class="c3"><col class="c4">
-    <col class="c5"><col class="c6"><col class="c7"><col class="c8"><col class="c9">
-    <col class="c10"><col class="c11"><col class="c12"><col class="c13"><col class="c14"><col class="c15">
-  </colgroup>
-  <thead>
-    <tr>
-      <th colspan="7" class="thg tgi">Informacion del disclosure PQD v2.0 (solo lectura)</th>
-      <th colspan="3" class="thg tgm">Mapeo de negocio</th>
-      <th colspan="3" class="thg tgp">Configuracion del pipeline Python</th>
-      <th colspan="3" class="thg tga">Aplicabilidad a CCLV</th>
-    </tr>
-    <tr class="cols">
-      <th>Ref.</th><th>Titulo</th><th>Descripcion</th><th>Sub-campos</th>
-      <th>Tipo de dato</th><th>DataFile</th><th>Frecuencia</th>
-      <th class="ec blc">Sistema / BD</th><th class="ec">Responsable</th><th class="ec">Estado</th>
-      <th class="ep blb">Tipo de fuente</th><th class="ep">Query SQL / Ruta</th><th class="ep">Transformacion</th>
-      <th class="ea bla">Aplica a CCLV</th><th class="ea">Justificacion (si no aplica)</th><th class="ea">Notas adicionales</th>
-    </tr>
-  </thead>
-  <tbody id="tbody"></tbody>
-</table>
-</div>
-<div class="mdbg" id="modal">
-  <div class="md">
-    <div class="mdh"><h2>Config Pipeline JSON</h2><button class="mdc" id="btn-close-modal">X</button></div>
-    <div class="mdb"><pre id="jo"></pre></div>
-    <div class="mdf">
-      <button class="btn bor" id="btn-dl-json">Descargar JSON</button>
-      <button class="btn bol" id="btn-close-modal2">Cerrar</button>
+
+<div class="main">
+  <div class="sidebar" id="sidebar">
+    <div class="sidebar-section">Resumen</div>
+    <div class="nav-item active" data-sec="ALL" id="nav-ALL">
+      <div class="nav-icon">📋</div>
+      <div>
+        <div class="nav-label">Todos los disclosures</div>
+        <div class="nav-prog"><div class="nav-prog-fill" id="npf-ALL" style="width:0%"></div></div>
+      </div>
+      <div class="nav-badge" id="nb-ALL">0</div>
+    </div>
+    <div class="sidebar-divider"></div>
+    <div class="sidebar-section">Secciones</div>
+    <div class="nav-item" data-sec="4"><div class="nav-icon">🛡</div><div><div class="nav-label">Sec. 4 · Recursos Default</div><div class="nav-prog"><div class="nav-prog-fill" id="npf-4" style="width:0%"></div></div></div><div class="nav-badge" id="nb-4">0</div></div>
+    <div class="nav-item" data-sec="5"><div class="nav-icon">✂</div><div><div class="nav-label">Sec. 5 · Haircuts</div><div class="nav-prog"><div class="nav-prog-fill" id="npf-5" style="width:0%"></div></div></div><div class="nav-badge" id="nb-5">0</div></div>
+    <div class="nav-item" data-sec="6"><div class="nav-icon">📊</div><div><div class="nav-label">Sec. 6 · Margen Inicial</div><div class="nav-prog"><div class="nav-prog-fill" id="npf-6" style="width:0%"></div></div></div><div class="nav-badge" id="nb-6">0</div></div>
+    <div class="nav-item" data-sec="7"><div class="nav-icon">💧</div><div><div class="nav-label">Sec. 7 · Liquidez</div><div class="nav-prog"><div class="nav-prog-fill" id="npf-7" style="width:0%"></div></div></div><div class="nav-badge" id="nb-7">0</div></div>
+    <div class="nav-item" data-sec="12"><div class="nav-icon">🔄</div><div><div class="nav-label">Sec. 12 · Liquidacion</div><div class="nav-prog"><div class="nav-prog-fill" id="npf-12" style="width:0%"></div></div></div><div class="nav-badge" id="nb-12">0</div></div>
+    <div class="nav-item" data-sec="13"><div class="nav-icon">⚠</div><div><div class="nav-label">Sec. 13 · Defaults</div><div class="nav-prog"><div class="nav-prog-fill" id="npf-13" style="width:0%"></div></div></div><div class="nav-badge" id="nb-13">0</div></div>
+    <div class="nav-item" data-sec="14"><div class="nav-icon">🔒</div><div><div class="nav-label">Sec. 14 · Segregacion</div><div class="nav-prog"><div class="nav-prog-fill" id="npf-14" style="width:0%"></div></div></div><div class="nav-badge" id="nb-14">0</div></div>
+    <div class="nav-item" data-sec="15"><div class="nav-icon">💼</div><div><div class="nav-label">Sec. 15 · Negocio</div><div class="nav-prog"><div class="nav-prog-fill" id="npf-15" style="width:0%"></div></div></div><div class="nav-badge" id="nb-15">0</div></div>
+    <div class="nav-item" data-sec="16"><div class="nav-icon">💰</div><div><div class="nav-label">Sec. 16 · Inversiones</div><div class="nav-prog"><div class="nav-prog-fill" id="npf-16" style="width:0%"></div></div></div><div class="nav-badge" id="nb-16">0</div></div>
+    <div class="nav-item" data-sec="17"><div class="nav-icon">⚙</div><div><div class="nav-label">Sec. 17 · Operacional</div><div class="nav-prog"><div class="nav-prog-fill" id="npf-17" style="width:0%"></div></div></div><div class="nav-badge" id="nb-17">0</div></div>
+    <div class="nav-item" data-sec="18"><div class="nav-icon">👥</div><div><div class="nav-label">Sec. 18 · Participantes</div><div class="nav-prog"><div class="nav-prog-fill" id="npf-18" style="width:0%"></div></div></div><div class="nav-badge" id="nb-18">0</div></div>
+    <div class="nav-item" data-sec="19"><div class="nav-icon">🏦</div><div><div class="nav-label">Sec. 19 · Clientes</div><div class="nav-prog"><div class="nav-prog-fill" id="npf-19" style="width:0%"></div></div></div><div class="nav-badge" id="nb-19">0</div></div>
+    <div class="nav-item" data-sec="23"><div class="nav-icon">📈</div><div><div class="nav-label">Sec. 23 · Volumenes</div><div class="nav-prog"><div class="nav-prog-fill" id="npf-23" style="width:0%"></div></div></div><div class="nav-badge" id="nb-23">0</div></div>
+  </div>
+
+  <div class="content" id="content">
+    <div class="content-header">
+      <h2 id="sec-title">Todos los disclosures</h2>
+      <p id="sec-desc">123 disclosures · Moneda CLP · Fecha reporte 2026-03-31</p>
+    </div>
+    <div class="search-bar">
+      <input class="search-input" type="text" id="q" placeholder="Buscar por referencia, titulo o descripcion...">
+    </div>
+    <div class="content-body">
+      <div class="stats-row">
+        <div class="stat or"><div class="stat-n" id="st-total">0</div><div class="stat-l">Total</div></div>
+        <div class="stat gr"><div class="stat-n" id="st-comp">0</div><div class="stat-l">Completos</div></div>
+        <div class="stat yw"><div class="stat-n" id="st-parc">0</div><div class="stat-l">Parciales</div></div>
+        <div class="stat"><div class="stat-n" id="st-pend">0</div><div class="stat-l">Pendientes</div></div>
+        <div class="prog-card"><div class="prog-lbl">Progreso del equipo <span id="st-pct">0%</span></div><div class="prog-track"><div class="prog-fill" id="prog-fill" style="width:0%"></div></div></div>
+      </div>
+      <div id="cards"></div>
     </div>
   </div>
 </div>
+
+<!-- EXPORT MODAL -->
+<div class="modal-bg" id="modal">
+  <div class="modal">
+    <div class="modal-h"><h2>Exportar reporte PQD 2026Q1</h2><button class="modal-close" id="modal-close">✕</button></div>
+    <div class="modal-b" id="modal-body"></div>
+    <div class="modal-f">
+      <button class="btn-top btn-gr" id="btn-dl-csv">Descargar CSV reporte</button>
+      <button class="btn-top btn-bk" id="btn-dl-json">Descargar config pipeline JSON</button>
+      <button class="btn-top btn-bk" style="background:#3f3d3a" id="modal-close2">Cerrar</button>
+    </div>
+  </div>
+</div>
+
 <div class="toast" id="toast"></div>
 <script>
-var SB_URL = "https://bijqiicmdvuwpnqgwmwe.supabase.co";
-var SB_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJpanFpaWNtZHZ1d3BucWd3bXdlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg2MDU3NTAsImV4cCI6MjA5NDE4MTc1MH0.G-5fJlulaEL5_g8jdUTN74zK6sKGdVEipUAPOnQxdNs";
-var TBL = "pqd_mapeo";
-var H = {apikey: SB_KEY, Authorization: "Bearer " + SB_KEY, "Content-Type": "application/json", Prefer: "return=representation"};
+var SB_URL="https://bijqiicmdvuwpnqgwmwe.supabase.co";
+var SB_KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJpanFpaWNtZHZ1d3BucWd3bXdlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg2MDU3NTAsImV4cCI6MjA5NDE4MTc1MH0.G-5fJlulaEL5_g8jdUTN74zK6sKGdVEipUAPOnQxdNs";
 
-function sbGet() { return fetch(SB_URL + "/rest/v1/" + TBL + "?select=*", {headers: H}).then(function(r){return r.json();}); }
-function sbUpsert(row) { return fetch(SB_URL + "/rest/v1/" + TBL, {method: "POST", headers: Object.assign({}, H, {Prefer: "resolution=merge-duplicates,return=representation"}), body: JSON.stringify(row)}); }
-function sbDel() { return fetch(SB_URL + "/rest/v1/" + TBL + "?id=gte.0", {method: "DELETE", headers: H}); }
+var H={apikey:SB_KEY,"Authorization":"Bearer "+SB_KEY,"Content-Type":"application/json","Prefer":"return=representation"};
+function sbGet(){return fetch(SB_URL+"/rest/v1/pqd_mapeo?select=*",{headers:H}).then(function(r){return r.json();});}
+function sbUpsert(row){return fetch(SB_URL+"/rest/v1/pqd_mapeo",{method:"POST",headers:Object.assign({},H,{"Prefer":"resolution=merge-duplicates,return=representation"}),body:JSON.stringify(row)});}
 
-var SMAP = {
-"4":{label:"Sec. 4 - Recursos de Default",color:"#FF4201",bg:"#fff0ed"},
-"5":{label:"Sec. 5 - Colateral y Haircuts",color:"#27985F",bg:"#edf7f2"},
-"6":{label:"Sec. 6 - Margen Inicial",color:"#0069A7",bg:"#e6f2f9"},
-"7":{label:"Sec. 7 - Riesgo de Liquidez",color:"#8B6914",bg:"#fff8e6"},
-"12":{label:"Sec. 12 - Liquidacion",color:"#1a6b40",bg:"#edf7f2"},
-"13":{label:"Sec. 13 - Defaults",color:"#c43000",bg:"#fff0ed"},
-"14":{label:"Sec. 14 - Segregacion de Clientes",color:"#2d4fb5",bg:"#f0f4ff"},
-"15":{label:"Sec. 15 - Riesgo de Negocio",color:"#6b3db5",bg:"#f5f0ff"},
-"16":{label:"Sec. 16 - Inversiones y Efectivo",color:"#7a5c00",bg:"#fdf5e0"},
-"17":{label:"Sec. 17 - Riesgo Operacional",color:"#0069A7",bg:"#e6f2f9"},
-"18":{label:"Sec. 18 - Participantes",color:"#FF4201",bg:"#fff0ed"},
-"19":{label:"Sec. 19 - Clientes",color:"#27985F",bg:"#edf7f2"},
-"20":{label:"Sec. 20 - Vinculos FMI",color:"#6b3db5",bg:"#f5f0ff"},
-"23":{label:"Sec. 23 - Volumenes y Mercado",color:"#7a5c00",bg:"#fdf5e0"}
+var SMAP={
+  "4":{label:"Sec. 4 - Recursos de Default",color:"#FF4201"},
+  "5":{label:"Sec. 5 - Colateral y Haircuts",color:"#27985F"},
+  "6":{label:"Sec. 6 - Margen Inicial",color:"#0069A7"},
+  "7":{label:"Sec. 7 - Riesgo de Liquidez",color:"#8B6914"},
+  "12":{label:"Sec. 12 - Liquidacion",color:"#1a6b40"},
+  "13":{label:"Sec. 13 - Defaults",color:"#c43000"},
+  "14":{label:"Sec. 14 - Segregacion",color:"#2d4fb5"},
+  "15":{label:"Sec. 15 - Negocio",color:"#6b3db5"},
+  "16":{label:"Sec. 16 - Inversiones",color:"#7a5c00"},
+  "17":{label:"Sec. 17 - Operacional",color:"#0069A7"},
+  "18":{label:"Sec. 18 - Participantes",color:"#FF4201"},
+  "19":{label:"Sec. 19 - Clientes",color:"#27985F"},
+  "23":{label:"Sec. 23 - Volumenes",color:"#7a5c00"}
 };
-var D = [
-{ref:"4.1.1",sec:"4",title:"Recursos de default totales",desc:"Capital propio prefundado - Antes (Before); al cierre del trimestre",vals:"N/A",dtype:"Numerico 2dp, Moneda",file:"AggregatedDataFile",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"4.1.2",sec:"4",title:"Recursos de default totales",desc:"Capital propio prefundado - Junto (Alongside); al cierre del trimestre",vals:"N/A",dtype:"Numerico 2dp, Moneda",file:"AggregatedDataFile",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"4.1.3",sec:"4",title:"Recursos de default totales",desc:"Capital propio prefundado - Despues (After); al cierre del trimestre",vals:"N/A",dtype:"Numerico 2dp, Moneda",file:"AggregatedDataFile",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"4.1.4",sec:"4",title:"Recursos de default totales",desc:"Contribuciones prefundadas de participantes - Requeridas; al cierre del trimestre",vals:"N/A",dtype:"Numerico 2dp, Moneda",file:"AggregatedDataFile",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"4.1.5",sec:"4",title:"Recursos de default totales",desc:"Contribuciones prefundadas de participantes - Depositadas post-haircut; al cierre del trimestre",vals:"N/A",dtype:"Numerico 2dp, Moneda",file:"AggregatedDataFile",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"4.1.6",sec:"4",title:"Recursos de default totales",desc:"Prefundados - Otros; al cierre del trimestre",vals:"N/A",dtype:"Numerico 2dp, Moneda",file:"AggregatedDataFile",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"4.1.7",sec:"4",title:"Recursos de default totales",desc:"Comprometidos - Fondos propios o parentales comprometidos para cubrir un default de participante",vals:"N/A",dtype:"Numerico 2dp, Moneda",file:"AggregatedDataFile",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"4.1.8",sec:"4",title:"Recursos de default totales",desc:"Comprometidos - Compromisos agregados de participantes para cubrir el primer default",vals:"N/A",dtype:"Numerico 2dp, Moneda",file:"AggregatedDataFile",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"4.1.9",sec:"4",title:"Recursos de default totales",desc:"Comprometidos - Monto maximo para reconstituir el fondo de default tras un segundo default",vals:"N/A",dtype:"Texto",file:"AggregatedDataFile",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"4.1.10",sec:"4",title:"Recursos de default totales",desc:"Comprometidos - Otros; al cierre del trimestre",vals:"N/A",dtype:"Numerico 2dp, Moneda",file:"AggregatedDataFile",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"4.2.1",sec:"4",title:"Kccp",desc:"Kccp - Solo aplica a CCPs que son o buscan ser qualifying CCP bajo regulacion vigente",vals:"N/A",dtype:"Numerico 2dp",file:"AggregatedDataFile",freq:"Cierre trimestre",aplica:"na",just:"CCLV no es ni busca ser una qualifying CCP bajo la regulacion vigente. Reportar N/A."},
-{ref:"4.3.1",sec:"4",title:"Recursos default prefundados por tipo",desc:"Efectivo depositado en banco central emisor de la moneda; Pre y Post-Haircut",vals:"PreHaircut / PostHaircut",dtype:"Numerico 2dp, Moneda",file:"DataFile_4_3",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"4.3.2",sec:"4",title:"Recursos default prefundados por tipo",desc:"Efectivo depositado en otros bancos centrales; Pre y Post-Haircut",vals:"PreHaircut / PostHaircut",dtype:"Numerico 2dp, Moneda",file:"DataFile_4_3",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"4.3.3",sec:"4",title:"Recursos default prefundados por tipo",desc:"Efectivo asegurado en bancos comerciales (incl. reverse repo); Pre y Post-Haircut",vals:"PreHaircut / PostHaircut",dtype:"Numerico 2dp, Moneda",file:"DataFile_4_3",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"4.3.4",sec:"4",title:"Recursos default prefundados por tipo",desc:"Efectivo no asegurado en bancos comerciales; Pre y Post-Haircut",vals:"PreHaircut / PostHaircut",dtype:"Numerico 2dp, Moneda",file:"DataFile_4_3",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"4.3.5",sec:"4",title:"Recursos default prefundados por tipo",desc:"Bonos soberanos domesticos (no efectivo); Pre y Post-Haircut",vals:"PreHaircut / PostHaircut",dtype:"Numerico 2dp, Moneda",file:"DataFile_4_3",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"4.3.6",sec:"4",title:"Recursos default prefundados por tipo",desc:"Bonos soberanos extranjeros (no efectivo); Pre y Post-Haircut",vals:"PreHaircut / PostHaircut",dtype:"Numerico 2dp, Moneda",file:"DataFile_4_3",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"4.3.7",sec:"4",title:"Recursos default prefundados por tipo",desc:"Bonos de agencia (no efectivo); Pre y Post-Haircut",vals:"PreHaircut / PostHaircut",dtype:"Numerico 2dp, Moneda",file:"DataFile_4_3",freq:"Cierre trimestre",aplica:"na",just:"Pendiente confirmar: verificar si CCLV acepta bonos de agencia como colateral elegible."},
-{ref:"4.3.8",sec:"4",title:"Recursos default prefundados por tipo",desc:"Bonos municipales/estatales (no efectivo); Pre y Post-Haircut",vals:"PreHaircut / PostHaircut",dtype:"Numerico 2dp, Moneda",file:"DataFile_4_3",freq:"Cierre trimestre",aplica:"na",just:"Pendiente confirmar: verificar si CCLV acepta bonos municipales como colateral elegible."},
-{ref:"4.3.9",sec:"4",title:"Recursos default prefundados por tipo",desc:"Bonos corporativos (no efectivo); Pre y Post-Haircut",vals:"PreHaircut / PostHaircut",dtype:"Numerico 2dp, Moneda",file:"DataFile_4_3",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"4.3.10",sec:"4",title:"Recursos default prefundados por tipo",desc:"Acciones/Equity (no efectivo); Pre y Post-Haircut",vals:"PreHaircut / PostHaircut",dtype:"Numerico 2dp, Moneda",file:"DataFile_4_3",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"4.3.11",sec:"4",title:"Recursos default prefundados por tipo",desc:"Commodities - Oro (no efectivo); Pre y Post-Haircut",vals:"PreHaircut / PostHaircut",dtype:"Numerico 2dp, Moneda",file:"DataFile_4_3",freq:"Cierre trimestre",aplica:"na",just:"Pendiente confirmar: verificar si CCLV acepta oro como colateral elegible."},
-{ref:"4.3.12",sec:"4",title:"Recursos default prefundados por tipo",desc:"Commodities - Otros (no efectivo); Pre y Post-Haircut",vals:"PreHaircut / PostHaircut",dtype:"Numerico 2dp, Moneda",file:"DataFile_4_3",freq:"Cierre trimestre",aplica:"na",just:"Pendiente confirmar: verificar si CCLV acepta otros commodities como colateral elegible."},
-{ref:"4.3.13",sec:"4",title:"Recursos default prefundados por tipo",desc:"Fondos mutuos / UCITs (no efectivo); Pre y Post-Haircut",vals:"PreHaircut / PostHaircut",dtype:"Numerico 2dp, Moneda",file:"DataFile_4_3",freq:"Cierre trimestre",aplica:"na",just:"Pendiente confirmar: verificar si CCLV acepta fondos mutuos o UCITs como colateral elegible."},
-{ref:"4.3.14",sec:"4",title:"Recursos default prefundados por tipo",desc:"Otros activos no efectivo; Pre y Post-Haircut",vals:"PreHaircut / PostHaircut",dtype:"Numerico 2dp, Moneda",file:"DataFile_4_3",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"4.3.15",sec:"4",title:"Recursos default prefundados - TOTAL",desc:"Total general; Pre y Post-Haircut",vals:"PreHaircut / PostHaircut",dtype:"Numerico 2dp, Moneda",file:"DataFile_4_3",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"4.4.1",sec:"4",title:"Divulgaciones de riesgo de credito",desc:"Indicar si la CCP esta sujeta a requisito minimo de Cover 1 o Cover 2 en relacion a los recursos de default prefundados totales",vals:"N/A",dtype:"Texto",file:"AggregatedDataFile",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"4.4.2",sec:"4",title:"Divulgaciones de riesgo de credito",desc:"Dias habiles asumidos para cerrar el default de un participante al calcular las exposiciones de credito, por servicio de compensacion",vals:"N/A",dtype:"Texto",file:"AggregatedDataFile",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"4.4.3",sec:"4",title:"Divulgaciones de riesgo de credito",desc:"Mayor perdida estimada por estres (sobre el margen inicial) por default del participante mas grande en condiciones extremas - Pico y Media 12 meses",vals:"PeakDay12M / MeanAvg12M",dtype:"Numerico 2dp",file:"DataFile_4_4a",freq:"Trimestral 12 meses",aplica:"si",just:""},
-{ref:"4.4.4",sec:"4",title:"Divulgaciones de riesgo de credito",desc:"Numero de dias habiles en que el monto de 4.4.3 excedio los recursos de default prefundados reales",vals:"N/A",dtype:"Numerico 0dp",file:"AggregatedDataFile",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"4.4.5",sec:"4",title:"Divulgaciones de riesgo de credito",desc:"Monto por el que 4.4.3 excedio los recursos de default prefundados reales",vals:"MontoExcedido",dtype:"Numerico 2dp, Moneda",file:"DataFile_4_4b",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"4.4.6",sec:"4",title:"Divulgaciones de riesgo de credito",desc:"Mayor exposicion de credito real (sobre el margen inicial) al participante mas grande y sus afiliados - Pico y Media 12 meses",vals:"PeakDay12M / MeanAvg12M",dtype:"Numerico 2dp, Moneda",file:"DataFile_4_4a",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"4.4.7",sec:"4",title:"Divulgaciones de riesgo de credito",desc:"Mayor perdida estimada por estres por default de los DOS participantes mas grandes en condiciones extremas - Pico y Media 12 meses",vals:"PeakDay12M / MeanAvg12M",dtype:"Numerico 2dp, Moneda",file:"DataFile_4_4a",freq:"Trimestral 12 meses",aplica:"si",just:""},
-{ref:"4.4.8",sec:"4",title:"Divulgaciones de riesgo de credito",desc:"Numero de dias habiles en que el monto de 4.4.7 excedio los recursos de default prefundados reales",vals:"N/A",dtype:"Numerico 0dp",file:"AggregatedDataFile",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"4.4.9",sec:"4",title:"Divulgaciones de riesgo de credito",desc:"Monto por el que 4.4.7 excedio los recursos de default prefundados reales",vals:"MontoExcedido",dtype:"Numerico 2dp, Moneda",file:"DataFile_4_4b",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"4.4.10",sec:"4",title:"Divulgaciones de riesgo de credito",desc:"Mayor exposicion de credito real a los DOS participantes mas grandes y sus afiliados - Pico y Media 12 meses",vals:"PeakDay12M / MeanAvg12M",dtype:"Numerico 2dp, Moneda",file:"DataFile_4_4a",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"5.1.1",sec:"5",title:"Activos elegibles como margen inicial y haircuts",desc:"Activos elegibles como margen inicial y los respectivos haircuts aplicados (descripcion o enlace)",vals:"N/A",dtype:"Texto",file:"AggregatedDataFile",freq:"Ad-Hoc",aplica:"si",just:""},
-{ref:"5.2.1",sec:"5",title:"Activos elegibles para fondo de default y haircuts",desc:"Activos elegibles para contribuciones prefundadas al fondo de default y haircuts (si difieren de 5.1)",vals:"N/A",dtype:"Texto",file:"AggregatedDataFile",freq:"Ad-Hoc",aplica:"si",just:""},
-{ref:"5.3.1",sec:"5",title:"Resultados de pruebas de haircuts",desc:"Intervalo de confianza objetivo utilizado en el calculo de haircuts",vals:"N/A",dtype:"Numerico 2dp, %",file:"AggregatedDataFile",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"5.3.2",sec:"5",title:"Resultados de pruebas de haircuts",desc:"Periodo de tenencia/liquidacion asumido para los activos aceptados como garantia",vals:"N/A",dtype:"Texto",file:"AggregatedDataFile",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"5.3.3",sec:"5",title:"Resultados de pruebas de haircuts",desc:"Periodo de observacion historica utilizado para testear los haircuts (numero de dias)",vals:"N/A",dtype:"Numerico 0dp",file:"AggregatedDataFile",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"5.3.4",sec:"5",title:"Resultados de pruebas de haircuts",desc:"Numero de dias del periodo de observacion en que la caida de valor durante el periodo asumido supero el haircut de un activo",vals:"N/A",dtype:"Numerico 0dp",file:"AggregatedDataFile",freq:"Trimestral",aplica:"si",just:""},
-{ref:"6.1.1",sec:"6",title:"Margen inicial total requerido",desc:"Margen inicial total requerido por servicio; desglosado por Casa (House_Net), Cliente Bruto (Client_Gross), Cliente Neto (Client_Net) y Total",vals:"House_Net / Client_Gross / Client_Net / Total",dtype:"Numerico 2dp, Moneda",file:"DataFile_6_1",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"6.2.1",sec:"6",title:"Margen inicial total mantenido por tipo",desc:"Efectivo en banco central emisor de la moneda; Casa y Cliente; Pre y Post-Haircut",vals:"HouseIM Pre/Post / ClientIM Pre/Post / TotalIM Pre/Post",dtype:"Numerico 2dp, Moneda",file:"DataFile_6_2",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"6.2.2",sec:"6",title:"Margen inicial total mantenido por tipo",desc:"Efectivo en otros bancos centrales; Casa y Cliente; Pre y Post-Haircut",vals:"HouseIM Pre/Post / ClientIM Pre/Post / TotalIM Pre/Post",dtype:"Numerico 2dp, Moneda",file:"DataFile_6_2",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"6.2.3",sec:"6",title:"Margen inicial total mantenido por tipo",desc:"Efectivo asegurado en bancos comerciales (incl. reverse repo); Pre y Post-Haircut",vals:"HouseIM Pre/Post / ClientIM Pre/Post / TotalIM Pre/Post",dtype:"Numerico 2dp, Moneda",file:"DataFile_6_2",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"6.2.4",sec:"6",title:"Margen inicial total mantenido por tipo",desc:"Efectivo no asegurado en bancos comerciales; Casa y Cliente; Pre y Post-Haircut",vals:"HouseIM Pre/Post / ClientIM Pre/Post / TotalIM Pre/Post",dtype:"Numerico 2dp, Moneda",file:"DataFile_6_2",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"6.2.5",sec:"6",title:"Margen inicial total mantenido por tipo",desc:"Bonos soberanos domesticos (no efectivo); Pre y Post-Haircut",vals:"HouseIM Pre/Post / ClientIM Pre/Post / TotalIM Pre/Post",dtype:"Numerico 2dp, Moneda",file:"DataFile_6_2",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"6.2.6",sec:"6",title:"Margen inicial total mantenido por tipo",desc:"Bonos soberanos extranjeros (no efectivo); Pre y Post-Haircut",vals:"HouseIM Pre/Post / ClientIM Pre/Post / TotalIM Pre/Post",dtype:"Numerico 2dp, Moneda",file:"DataFile_6_2",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"6.2.7",sec:"6",title:"Margen inicial total mantenido por tipo",desc:"Bonos de agencia (no efectivo); Pre y Post-Haircut",vals:"HouseIM Pre/Post / ClientIM Pre/Post / TotalIM Pre/Post",dtype:"Numerico 2dp, Moneda",file:"DataFile_6_2",freq:"Cierre trimestre",aplica:"na",just:"Pendiente confirmar: verificar si CCLV acepta bonos de agencia como garantia de margen inicial."},
-{ref:"6.2.8",sec:"6",title:"Margen inicial total mantenido por tipo",desc:"Bonos municipales/estatales (no efectivo); Pre y Post-Haircut",vals:"HouseIM Pre/Post / ClientIM Pre/Post / TotalIM Pre/Post",dtype:"Numerico 2dp, Moneda",file:"DataFile_6_2",freq:"Cierre trimestre",aplica:"na",just:"Pendiente confirmar: verificar si CCLV acepta bonos municipales como garantia de margen inicial."},
-{ref:"6.2.9",sec:"6",title:"Margen inicial total mantenido por tipo",desc:"Bonos corporativos (no efectivo); Pre y Post-Haircut",vals:"HouseIM Pre/Post / ClientIM Pre/Post / TotalIM Pre/Post",dtype:"Numerico 2dp, Moneda",file:"DataFile_6_2",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"6.2.10",sec:"6",title:"Margen inicial total mantenido por tipo",desc:"Acciones/Equity (no efectivo); Pre y Post-Haircut",vals:"HouseIM Pre/Post / ClientIM Pre/Post / TotalIM Pre/Post",dtype:"Numerico 2dp, Moneda",file:"DataFile_6_2",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"6.2.11",sec:"6",title:"Margen inicial total mantenido por tipo",desc:"Commodities - Oro (no efectivo); Pre y Post-Haircut",vals:"HouseIM Pre/Post / ClientIM Pre/Post / TotalIM Pre/Post",dtype:"Numerico 2dp, Moneda",file:"DataFile_6_2",freq:"Cierre trimestre",aplica:"na",just:"Pendiente confirmar: verificar si CCLV acepta oro como garantia de margen inicial."},
-{ref:"6.2.12",sec:"6",title:"Margen inicial total mantenido por tipo",desc:"Commodities - Otros (no efectivo); Pre y Post-Haircut",vals:"HouseIM Pre/Post / ClientIM Pre/Post / TotalIM Pre/Post",dtype:"Numerico 2dp, Moneda",file:"DataFile_6_2",freq:"Cierre trimestre",aplica:"na",just:"Pendiente confirmar: verificar si CCLV acepta otros commodities como garantia de margen inicial."},
-{ref:"6.2.13",sec:"6",title:"Margen inicial total mantenido por tipo",desc:"Fondos mutuos / UCITs (no efectivo); Pre y Post-Haircut",vals:"HouseIM Pre/Post / ClientIM Pre/Post / TotalIM Pre/Post",dtype:"Numerico 2dp, Moneda",file:"DataFile_6_2",freq:"Cierre trimestre",aplica:"na",just:"Pendiente confirmar: verificar si CCLV acepta fondos mutuos o UCITs como garantia de margen inicial."},
-{ref:"6.2.14",sec:"6",title:"Margen inicial total mantenido por tipo",desc:"Otros activos no efectivo; Casa y Cliente; Pre y Post-Haircut",vals:"HouseIM Pre/Post / ClientIM Pre/Post / TotalIM Pre/Post",dtype:"Numerico 2dp, Moneda",file:"DataFile_6_2",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"6.2.15",sec:"6",title:"Margen inicial total mantenido - TOTAL",desc:"Margen inicial total mantenido desglosado por Casa y Cliente (si existe segregacion)",vals:"HouseIM Pre/Post / ClientIM Pre/Post",dtype:"Numerico 2dp, Moneda",file:"DataFile_6_2",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"6.3.1",sec:"6",title:"Tasas de margen inicial en contratos individuales",desc:"Tasas de margen inicial en contratos individuales donde la CCP establece dichas tasas",vals:"N/A",dtype:"Texto",file:"AggregatedDataFile",freq:"Ad-Hoc",aplica:"si",just:""},
-{ref:"6.4.1",sec:"6",title:"Modelo de margen inicial - Tipo",desc:"Tipo de modelo de margen inicial usado por servicio de compensacion",vals:"",dtype:"Texto",file:"AggregatedDataFile",freq:"Trimestral",aplica:"si",just:""},
-{ref:"6.4.2",sec:"6",title:"Modelo de margen inicial - Fecha cambio de tipo",desc:"Fecha efectiva del cambio de tipo de modelo de margen inicial",vals:"",dtype:"Fecha ISO 8601 AAAA-MM-DD",file:"AggregatedDataFile",freq:"Trimestral",aplica:"si",just:""},
-{ref:"6.4.3",sec:"6",title:"Modelo de margen inicial - Nombre",desc:"Nombre del modelo de margen inicial aplicado a cada servicio de compensacion",vals:"",dtype:"Texto",file:"AggregatedDataFile",freq:"Trimestral",aplica:"si",just:""},
-{ref:"6.4.4",sec:"6",title:"Modelo de margen inicial - Fecha cambio de nombre",desc:"Fecha efectiva del cambio de nombre del modelo de margen inicial",vals:"",dtype:"Fecha ISO 8601 AAAA-MM-DD",file:"AggregatedDataFile",freq:"Trimestral",aplica:"si",just:""},
-{ref:"6.4.5",sec:"6",title:"Modelo de margen inicial - Nivel de confianza",desc:"Nivel de confianza unilateral utilizado en el modelo de margen inicial",vals:"",dtype:"Numerico 2dp, %",file:"AggregatedDataFile",freq:"Trimestral",aplica:"si",just:""},
-{ref:"6.4.6",sec:"6",title:"Modelo de margen inicial - Fecha cambio nivel de confianza",desc:"Fecha efectiva del cambio de nivel de confianza",vals:"",dtype:"Fecha ISO 8601 AAAA-MM-DD",file:"AggregatedDataFile",freq:"Trimestral",aplica:"si",just:""},
-{ref:"6.4.7",sec:"6",title:"Modelo de margen inicial - Periodo de observacion",desc:"Periodo de observacion historica utilizado en el modelo",vals:"",dtype:"Texto",file:"AggregatedDataFile",freq:"Trimestral",aplica:"si",just:""},
-{ref:"6.4.8",sec:"6",title:"Modelo de margen inicial - Fecha cambio periodo observacion",desc:"Fecha efectiva del cambio de periodo de observacion",vals:"",dtype:"Fecha ISO 8601 AAAA-MM-DD",file:"AggregatedDataFile",freq:"Trimestral",aplica:"si",just:""},
-{ref:"6.4.9",sec:"6",title:"Modelo de margen inicial - Ajustes",desc:"Ajustes aplicados al modelo de margen inicial",vals:"",dtype:"Texto",file:"AggregatedDataFile",freq:"Trimestral",aplica:"si",just:""},
-{ref:"6.4.10",sec:"6",title:"Modelo de margen inicial - Fecha cambio ajustes",desc:"Fecha efectiva del cambio de ajustes",vals:"",dtype:"Fecha ISO 8601 AAAA-MM-DD",file:"AggregatedDataFile",freq:"Trimestral",aplica:"si",just:""},
-{ref:"6.4.11",sec:"6",title:"Modelo de margen inicial - Periodo de cierre",desc:"Periodo de cierre/liquidacion asumido en el modelo (dias)",vals:"",dtype:"Texto",file:"AggregatedDataFile",freq:"Trimestral",aplica:"si",just:""},
-{ref:"6.4.12",sec:"6",title:"Modelo de margen inicial - Fecha cambio periodo cierre",desc:"Fecha efectiva del cambio de periodo de cierre",vals:"",dtype:"Fecha ISO 8601 AAAA-MM-DD",file:"AggregatedDataFile",freq:"Trimestral",aplica:"si",just:""},
-{ref:"6.4.13",sec:"6",title:"Modelo de margen inicial - Enlace a tasas de margen",desc:"Enlace a las tasas de margen inicial",vals:"",dtype:"Texto",file:"AggregatedDataFile",freq:"Trimestral",aplica:"si",just:""},
-{ref:"6.4.14",sec:"6",title:"Modelo de margen inicial - Frecuencia de revision de parametros",desc:"Con que frecuencia se revisan y recalibran los parametros del modelo de margen inicial",vals:"",dtype:"Texto",file:"AggregatedDataFile",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"6.4.15",sec:"6",title:"Modelo de margen inicial - Fecha cambio frecuencia revision",desc:"Fecha efectiva del cambio de frecuencia de revision de parametros",vals:"",dtype:"Fecha ISO 8601 AAAA-MM-DD",file:"AggregatedDataFile",freq:"Trimestral",aplica:"si",just:""},
-{ref:"6.5.1.1",sec:"6",title:"Resultados de back-testing del margen inicial",desc:"Numero de veces en los ultimos 12 meses en que la cobertura de margen cayo por debajo de la exposicion MtM real de alguna cuenta",vals:"N/A",dtype:"Numerico 0dp",file:"AggregatedDataFile",freq:"Trimestral 12 meses",aplica:"si",just:""},
-{ref:"6.5.1.2",sec:"6",title:"Resultados de back-testing del margen inicial",desc:"Frecuencia de medicion de resultados diarios de back-testing (intradiario/continuo/una vez al dia)",vals:"N/A",dtype:"Texto",file:"AggregatedDataFile",freq:"Trimestral 12 meses",aplica:"si",just:""},
-{ref:"6.5.1.3",sec:"6",title:"Resultados de back-testing del margen inicial",desc:"Hora del dia de medicion si el back-testing se realiza una vez al dia",vals:"N/A",dtype:"Texto",file:"AggregatedDataFile",freq:"Trimestral 12 meses",aplica:"si",just:""},
-{ref:"6.5.2",sec:"6",title:"Resultados de back-testing del margen inicial",desc:"Numero de observaciones (cuentas multiplicado por dias cubiertos en el back-test)",vals:"N/A",dtype:"Numerico 0dp",file:"AggregatedDataFile",freq:"Trimestral 12 meses",aplica:"si",just:""},
-{ref:"6.5.3",sec:"6",title:"Resultados de back-testing del margen inicial",desc:"Nivel de cobertura alcanzado realmente",vals:"N/A",dtype:"Numerico 2dp, %",file:"AggregatedDataFile",freq:"Trimestral 12 meses",aplica:"si",just:""},
-{ref:"6.5.4",sec:"6",title:"Resultados de back-testing del margen inicial",desc:"Donde hubo brechas de cobertura: tamano pico de la exposicion no cubierta en 12 meses",vals:"N/A",dtype:"Numerico 2dp, Moneda",file:"AggregatedDataFile",freq:"Trimestral 12 meses",aplica:"si",just:""},
-{ref:"6.5.5",sec:"6",title:"Resultados de back-testing del margen inicial",desc:"Donde hubo brechas de cobertura: tamano promedio de la exposicion no cubierta en 12 meses",vals:"N/A",dtype:"Numerico 2dp, Moneda",file:"AggregatedDataFile",freq:"Trimestral 12 meses",aplica:"si",just:""},
-{ref:"6.6.1",sec:"6",title:"Variacion de margen total pagada - Promedio diario",desc:"Promedio diario de la variacion de margen total pagada a la CCP por los participantes cada dia habil del trimestre",vals:"N/A",dtype:"Numerico 2dp, Moneda",file:"AggregatedDataFile",freq:"Trimestral",aplica:"si",just:""},
-{ref:"6.7.1",sec:"6",title:"Variacion de margen total pagada - Maximo",desc:"Maximo de variacion de margen total pagada a la CCP en cualquier dia habil del periodo",vals:"N/A",dtype:"Numerico 2dp, Moneda",file:"AggregatedDataFile",freq:"Trimestral",aplica:"si",just:""},
-{ref:"6.8.1",sec:"6",title:"Llamada de margen inicial agregada - Maximo",desc:"Maxima llamada de margen inicial agregada en cualquier dia habil del periodo",vals:"N/A",dtype:"Numerico 2dp, Moneda",file:"AggregatedDataFile",freq:"Trimestral",aplica:"si",just:""},
-{ref:"7.1.1",sec:"7",title:"Riesgo de liquidez - Nivel de cobertura",desc:"Indicar si el servicio de compensacion mantiene suficientes recursos liquidos para Cover 1 o Cover 2",vals:"N/A",dtype:"Texto",file:"AggregatedDataFile",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"7.1.2",sec:"7",title:"Recursos liquidos calificados",desc:"Efectivo depositado en banco central emisor de la moneda de la obligacion",vals:"TamanoYComposicion",dtype:"Numerico 2dp, Moneda",file:"DataFile_7_1",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"7.1.3",sec:"7",title:"Recursos liquidos calificados",desc:"Efectivo depositado en otros bancos centrales",vals:"TamanoYComposicion",dtype:"Numerico 2dp, Moneda",file:"DataFile_7_1",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"7.1.4",sec:"7",title:"Recursos liquidos calificados",desc:"Efectivo asegurado en bancos comerciales (incl. reverse repo)",vals:"TamanoYComposicion",dtype:"Numerico 2dp, Moneda",file:"DataFile_7_1",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"7.1.5",sec:"7",title:"Recursos liquidos calificados",desc:"Efectivo no asegurado en bancos comerciales",vals:"TamanoYComposicion",dtype:"Numerico 2dp, Moneda",file:"DataFile_7_1",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"7.1.6",sec:"7",title:"Recursos liquidos calificados",desc:"Lineas de credito comprometidas aseguradas (incl. swaps FX y repos comprometidos)",vals:"TamanoYComposicion",dtype:"Numerico 2dp, Moneda",file:"DataFile_7_1",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"7.1.7",sec:"7",title:"Recursos liquidos calificados",desc:"Lineas de credito comprometidas no aseguradas (disponibles sin aportar garantia)",vals:"TamanoYComposicion",dtype:"Numerico 2dp, Moneda",file:"DataFile_7_1",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"7.1.8",sec:"7",title:"Recursos liquidos calificados",desc:"Colateral altamente negociable en custodia/inversiones convertibles en efectivo con acuerdos de financiamiento prearreglados",vals:"TamanoYComposicion",dtype:"Numerico 2dp, Moneda",file:"DataFile_7_1",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"7.1.9",sec:"7",title:"Recursos liquidos calificados",desc:"Otros recursos liquidos calificados",vals:"TamanoYComposicion",dtype:"Numerico 2dp, Moneda",file:"DataFile_7_1",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"7.1.10",sec:"7",title:"Riesgo de liquidez - Acceso a banco central",desc:"Indicar si la CCP tiene acceso rutinario a facilidades de liquidez del banco central",vals:"N/A",dtype:"Texto",file:"AggregatedDataFile",freq:"Trimestral",aplica:"si",just:""},
-{ref:"7.1.11",sec:"7",title:"Riesgo de liquidez - Calendario de pagos",desc:"Detalles sobre el calendario de pagos y la gobernanza para la asignacion de pagos",vals:"N/A",dtype:"Texto",file:"AggregatedDataFile",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"7.2.1",sec:"7",title:"Recursos de liquidez suplementarios",desc:"Tamano y composicion de recursos de liquidez suplementarios por encima de los recursos calificados de 7.1",vals:"N/A",dtype:"Numerico 2dp, Moneda",file:"AggregatedDataFile",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"7.3.1",sec:"7",title:"Mayor obligacion de pago estimada (estres)",desc:"Mayor obligacion de pago estimada en el mismo dia/intradiario/multidias causada por default del participante mas grande en condiciones extremas; medida prospectiva",vals:"PagoMismoDia / PagoIntradiario / PagoMultidia",dtype:"Numerico 2dp, Moneda",file:"DataFile_7_3",freq:"Trimestral",aplica:"si",just:""},
-{ref:"7.3.2",sec:"7",title:"Dias de brecha de liquidez",desc:"Numero de dias habiles en que la obligacion de pago estimada excedio los recursos liquidos calificados disponibles",vals:"N/A",dtype:"Numerico 0dp",file:"AggregatedDataFile",freq:"Trimestral",aplica:"si",just:""},
-{ref:"7.3.3",sec:"7",title:"Monto de brecha de liquidez",desc:"Monto del exceso de la obligacion de pago sobre los recursos liquidos calificados por cada dia de brecha",vals:"MontoExcedido",dtype:"Numerico 2dp, Moneda",file:"DataFile_7_3a",freq:"Trimestral",aplica:"si",just:""},
-{ref:"7.3.4",sec:"7",title:"Mayor obligacion de pago real (historico)",desc:"Mayor obligacion de pago real intradiaria y multidias de un solo participante en los ultimos 12 meses - dia pico",vals:"PagoMismoDia / PagoIntradiario / PagoMultidia",dtype:"Numerico 2dp, Moneda",file:"DataFile_7_3",freq:"Trimestral",aplica:"si",just:""},
-{ref:"7.3.5",sec:"7",title:"Mayor obligacion de pago estimada por moneda (estres)",desc:"Mayor obligacion de pago estimada por moneda relevante causada por default del participante mas grande; medida prospectiva",vals:"PagoMismoDia / PagoIntradiario / PagoMultidia",dtype:"Numerico 2dp, Moneda",file:"DataFile_7_3",freq:"Trimestral",aplica:"si",just:""},
-{ref:"7.3.6",sec:"7",title:"Dias de brecha de liquidez por moneda",desc:"Numero de dias habiles en que los montos excedieron los recursos liquidos calificados en cada moneda relevante",vals:"DiasUSD / DiasEUR / DiasGBP",dtype:"Numerico 0dp",file:"DataFile_7_3b",freq:"Trimestral",aplica:"si",just:""},
-{ref:"7.3.7",sec:"7",title:"Monto de brecha de liquidez por moneda",desc:"Monto del exceso por cada dia y por moneda relevante",vals:"MontoExcedido",dtype:"Numerico 2dp, Moneda",file:"DataFile_7_3a",freq:"Trimestral",aplica:"si",just:""},
-{ref:"12.1.1",sec:"12",title:"Mecanismo de liquidacion por valor",desc:"Porcentaje de liquidaciones por valor usando DvP (Entrega contra Pago)",vals:"N/A",dtype:"Numerico 2dp, %",file:"AggregatedDataFile",freq:"Trimestral",aplica:"si",just:""},
-{ref:"12.1.2",sec:"12",title:"Mecanismo de liquidacion por valor",desc:"Porcentaje de liquidaciones por valor usando DvD (Entrega contra Entrega)",vals:"N/A",dtype:"Numerico 2dp, %",file:"AggregatedDataFile",freq:"Trimestral",aplica:"si",just:""},
-{ref:"12.1.3",sec:"12",title:"Mecanismo de liquidacion por valor",desc:"Porcentaje de liquidaciones por valor usando PvP (Pago contra Pago)",vals:"N/A",dtype:"Numerico 2dp, %",file:"AggregatedDataFile",freq:"Trimestral",aplica:"na",just:"Pendiente confirmar: verificar si CCLV opera algun mecanismo PvP."},
-{ref:"12.2.1",sec:"12",title:"Mecanismo de liquidacion por volumen",desc:"Porcentaje de liquidaciones por volumen usando DvP",vals:"N/A",dtype:"Numerico 2dp, %",file:"AggregatedDataFile",freq:"Trimestral",aplica:"si",just:""},
-{ref:"12.2.2",sec:"12",title:"Mecanismo de liquidacion por volumen",desc:"Porcentaje de liquidaciones por volumen usando DvD",vals:"N/A",dtype:"Numerico 2dp, %",file:"AggregatedDataFile",freq:"Trimestral",aplica:"si",just:""},
-{ref:"12.2.3",sec:"12",title:"Mecanismo de liquidacion por volumen",desc:"Porcentaje de liquidaciones por volumen usando PvP",vals:"N/A",dtype:"Numerico 2dp, %",file:"AggregatedDataFile",freq:"Trimestral",aplica:"na",just:"Pendiente confirmar: verificar si CCLV opera algun mecanismo PvP."},
-{ref:"13.1.1",sec:"13",title:"Informacion cuantitativa sobre defaults",desc:"Monto de perdida versus monto de margen inicial (por cada evento de default de participante)",vals:"N/A",dtype:"Texto",file:"AggregatedDataFile",freq:"Ad-hoc",aplica:"si",just:""},
-{ref:"13.1.2",sec:"13",title:"Informacion cuantitativa sobre defaults",desc:"Monto de otros recursos financieros usados para cubrir perdidas mas alla del margen inicial",vals:"N/A",dtype:"Texto",file:"AggregatedDataFile",freq:"Ad-hoc",aplica:"si",just:""},
-{ref:"13.1.3.1",sec:"13",title:"Informacion cuantitativa sobre defaults",desc:"Proporcion de posiciones de clientes cerradas tras un default de participante",vals:"N/A",dtype:"Texto",file:"AggregatedDataFile",freq:"Ad-hoc",aplica:"si",just:""},
-{ref:"13.1.3.2",sec:"13",title:"Informacion cuantitativa sobre defaults",desc:"Proporcion de posiciones de clientes portadas a un miembro sobreviviente tras un default",vals:"-",dtype:"Texto",file:"AggregatedDataFile",freq:"Ad-Hoc",aplica:"si",just:""},
-{ref:"13.1.4",sec:"13",title:"Informacion cuantitativa sobre defaults",desc:"Referencias a otro material publicado relacionado con los defaults",vals:"-",dtype:"Texto",file:"AggregatedDataFile",freq:"Ad-Hoc",aplica:"si",just:""},
-{ref:"14.1.1",sec:"14",title:"Posiciones de clientes - Tipo de segregacion",desc:"Posiciones de clientes en cuentas individualmente segregadas (porcentaje del nocional compensado)",vals:"N/A",dtype:"Numerico 2dp, %",file:"AggregatedDataFile",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"14.1.2",sec:"14",title:"Posiciones de clientes - Tipo de segregacion",desc:"Posiciones de clientes en cuentas omnibus solo-cliente (distinto de cuentas LSOC)",vals:"N/A",dtype:"Numerico 2dp, %",file:"AggregatedDataFile",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"14.1.3",sec:"14",title:"Posiciones de clientes - Tipo de segregacion",desc:"Posiciones de clientes en cuentas LSOC (legalmente segregadas pero operacionalmente mezcladas)",vals:"N/A",dtype:"Numerico 2dp, %",file:"AggregatedDataFile",freq:"Cierre trimestre",aplica:"na",just:"Pendiente confirmar: verificar si CCLV opera cuentas LSOC."},
-{ref:"14.1.4",sec:"14",title:"Posiciones de clientes - Tipo de segregacion",desc:"Posiciones de clientes en cuentas mezcladas (casa y cliente conjuntas)",vals:"N/A",dtype:"Numerico 2dp, %",file:"AggregatedDataFile",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"15.1.1",sec:"15",title:"Riesgo de negocio general",desc:"Valor de activos liquidos netos financiados con capital propio",vals:"N/A",dtype:"Numerico 2dp, Moneda",file:"AggregatedDataFile",freq:"Anual",aplica:"si",just:""},
-{ref:"15.1.2",sec:"15",title:"Riesgo de negocio general",desc:"Seis meses de gastos operativos corrientes (proxy del capital requerido para plan de cierre)",vals:"N/A",dtype:"Numerico 2dp, Moneda",file:"AggregatedDataFile",freq:"Anual",aplica:"si",just:""},
-{ref:"15.2.1",sec:"15",title:"Divulgaciones financieras",desc:"Ingresos totales del periodo de reporte",vals:"N/A",dtype:"Numerico 2dp, Moneda",file:"AggregatedDataFile",freq:"Anual",aplica:"si",just:""},
-{ref:"15.2.2",sec:"15",title:"Divulgaciones financieras",desc:"Gastos totales del periodo de reporte",vals:"N/A",dtype:"Numerico 2dp, Moneda",file:"AggregatedDataFile",freq:"Anual",aplica:"si",just:""},
-{ref:"15.2.3",sec:"15",title:"Divulgaciones financieras",desc:"Utilidades (Ingresos totales menos Gastos totales)",vals:"N/A",dtype:"Numerico 2dp, Moneda",file:"AggregatedDataFile",freq:"Anual",aplica:"si",just:""},
-{ref:"15.2.4",sec:"15",title:"Divulgaciones financieras",desc:"Activos totales en balance",vals:"N/A",dtype:"Numerico 2dp, Moneda",file:"AggregatedDataFile",freq:"Anual",aplica:"si",just:""},
-{ref:"15.2.5",sec:"15",title:"Divulgaciones financieras",desc:"Pasivos totales en balance",vals:"N/A",dtype:"Numerico 2dp, Moneda",file:"AggregatedDataFile",freq:"Anual",aplica:"si",just:""},
-{ref:"15.2.6",sec:"15",title:"Divulgaciones financieras",desc:"Explicar si el colateral aportado por los participantes se registra dentro o fuera del balance de la CCP",vals:"N/A",dtype:"Texto",file:"AggregatedDataFile",freq:"Anual",aplica:"si",just:""},
-{ref:"15.2.7",sec:"15",title:"Divulgaciones financieras",desc:"Elementos adicionales segun sea necesario",vals:"N/A",dtype:"Texto",file:"AggregatedDataFile",freq:"Anual",aplica:"si",just:""},
-{ref:"15.3.1",sec:"15",title:"Desglose de ingresos",desc:"Porcentaje de los ingresos totales provenientes de comisiones por servicios de compensacion",vals:"N/A",dtype:"Numerico 2dp, %",file:"AggregatedDataFile",freq:"Anual",aplica:"si",just:""},
-{ref:"15.3.2",sec:"15",title:"Desglose de ingresos",desc:"Porcentaje de los ingresos totales provenientes de la reinversion (o rehipotecacion) de activos aportados por los participantes",vals:"N/A",dtype:"Numerico 2dp, %",file:"AggregatedDataFile",freq:"Anual",aplica:"si",just:""},
-{ref:"16.1.1",sec:"16",title:"Efectivo recibido de participantes",desc:"Total de efectivo (no valores) recibido de participantes como margen inicial",vals:"N/A",dtype:"Numerico 2dp, Moneda",file:"AggregatedDataFile",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"16.1.2",sec:"16",title:"Efectivo recibido de participantes",desc:"Total de efectivo (no valores) recibido de participantes como contribucion al fondo de default",vals:"N/A",dtype:"Numerico 2dp, Moneda",file:"AggregatedDataFile",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"16.2.1",sec:"16",title:"Como se mantiene/invierte el efectivo de participantes",desc:"Porcentaje del efectivo total de participantes mantenido como depositos en efectivo (incl. reverse repo) - TOTAL",vals:"N/A",dtype:"Numerico 2dp, %",file:"AggregatedDataFile",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"16.2.2",sec:"16",title:"Como se mantiene/invierte el efectivo de participantes",desc:"Porcentaje mantenido como depositos en efectivo en bancos centrales emisores de la moneda depositada",vals:"N/A",dtype:"Numerico 2dp, %",file:"AggregatedDataFile",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"16.2.3",sec:"16",title:"Como se mantiene/invierte el efectivo de participantes",desc:"Porcentaje mantenido como depositos en efectivo en otros bancos centrales",vals:"N/A",dtype:"Numerico 2dp, %",file:"AggregatedDataFile",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"16.2.4",sec:"16",title:"Como se mantiene/invierte el efectivo de participantes",desc:"Porcentaje mantenido en bancos comerciales (asegurado, incl. reverse repo)",vals:"N/A",dtype:"Numerico 2dp, %",file:"AggregatedDataFile",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"16.2.5",sec:"16",title:"Como se mantiene/invierte el efectivo de participantes",desc:"Porcentaje mantenido en bancos comerciales (no asegurado)",vals:"N/A",dtype:"Numerico 2dp, %",file:"AggregatedDataFile",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"16.2.6",sec:"16",title:"Como se mantiene/invierte el efectivo de participantes",desc:"Porcentaje mantenido en fondos del mercado monetario",vals:"N/A",dtype:"Numerico 2dp, %",file:"AggregatedDataFile",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"16.2.7",sec:"16",title:"Como se mantiene/invierte el efectivo de participantes",desc:"Porcentaje mantenido en otras formas no capturadas anteriormente",vals:"N/A",dtype:"Numerico 2dp, %",file:"AggregatedDataFile",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"16.2.8",sec:"16",title:"Como se mantiene/invierte el efectivo de participantes",desc:"Desglose porcentual por moneda de depositos en efectivo (incl. reverse repo) y fondos monetarios; USD EUR GBP y moneda local",vals:"Porcentaje_USD / Porcentaje_EUR / Porcentaje_GBP",dtype:"Numerico 2dp, %",file:"DataFile_16_2",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"16.2.9",sec:"16",title:"Como se mantiene/invierte el efectivo de participantes",desc:"Vencimiento promedio ponderado de depositos en efectivo (incl. reverse repo) y fondos monetarios",vals:"N/A",dtype:"Numerico 2dp",file:"AggregatedDataFile",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"16.2.10",sec:"16",title:"Como se mantiene/invierte el efectivo de participantes",desc:"Porcentaje del efectivo total invertido en valores - Bonos soberanos domesticos",vals:"N/A",dtype:"Numerico 2dp, %",file:"AggregatedDataFile",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"16.2.11",sec:"16",title:"Como se mantiene/invierte el efectivo de participantes",desc:"Porcentaje del efectivo total invertido en valores - Otros bonos soberanos",vals:"N/A",dtype:"Numerico 2dp, %",file:"AggregatedDataFile",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"16.2.12",sec:"16",title:"Como se mantiene/invierte el efectivo de participantes",desc:"Porcentaje del efectivo total invertido en valores - Bonos de agencia",vals:"N/A",dtype:"Numerico 2dp, %",file:"AggregatedDataFile",freq:"Cierre trimestre",aplica:"na",just:"Pendiente confirmar: verificar si CCLV invierte en bonos de agencia."},
-{ref:"16.2.13",sec:"16",title:"Como se mantiene/invierte el efectivo de participantes",desc:"Porcentaje del efectivo total invertido en valores - Bonos municipales/estatales",vals:"N/A",dtype:"Numerico 2dp, %",file:"AggregatedDataFile",freq:"Cierre trimestre",aplica:"na",just:"Pendiente confirmar: verificar si CCLV invierte en bonos municipales."},
-{ref:"16.2.14",sec:"16",title:"Como se mantiene/invierte el efectivo de participantes",desc:"Porcentaje del efectivo total invertido en valores - Otros instrumentos",vals:"N/A",dtype:"Numerico 2dp, %",file:"AggregatedDataFile",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"16.2.15",sec:"16",title:"Como se mantiene/invierte el efectivo de participantes",desc:"Desglose porcentual por moneda de estos valores; indicar moneda local en comentarios",vals:"USD / EUR / GBP",dtype:"Numerico 2dp, %",file:"DataFile_16_2",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"16.2.16",sec:"16",title:"Como se mantiene/invierte el efectivo de participantes",desc:"Vencimiento promedio ponderado del portafolio de valores",vals:"N/A",dtype:"Numerico 2dp",file:"AggregatedDataFile",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"16.2.17",sec:"16",title:"Como se mantiene/invierte el efectivo de participantes",desc:"Estimacion del riesgo del portafolio de inversion (excl. depositos en BC y bancos comerciales) - VaR 99% un dia o equivalente",vals:"N/A",dtype:"Texto",file:"AggregatedDataFile",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"16.2.18",sec:"16",title:"Como se mantiene/invierte el efectivo de participantes",desc:"Indicar si la politica de inversion establece un limite sobre la proporcion asignable a una sola contraparte y el tamano de ese limite",vals:"N/A",dtype:"Texto",file:"AggregatedDataFile",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"16.2.19",sec:"16",title:"Como se mantiene/invierte el efectivo de participantes",desc:"Numero de veces en el trimestre anterior en que se supero el limite de inversion por contraparte",vals:"N/A",dtype:"Numerico 0dp",file:"AggregatedDataFile",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"16.2.20",sec:"16",title:"Como se mantiene/invierte el efectivo de participantes",desc:"Porcentaje del efectivo total de participantes mantenido como valores (no efectivo)",vals:"N/A",dtype:"Numerico 2dp, %",file:"AggregatedDataFile",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"16.3.1",sec:"16",title:"Rehipotecacion de activos de participantes",desc:"Valor total de activos no monetarios de participantes rehipotecados - Margen inicial",vals:"N/A",dtype:"Numerico 2dp, Moneda",file:"AggregatedDataFile",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"16.3.2",sec:"16",title:"Rehipotecacion de activos de participantes",desc:"Valor total de activos no monetarios de participantes rehipotecados - Fondo de default",vals:"N/A",dtype:"Numerico 2dp, Moneda",file:"AggregatedDataFile",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"16.3.3",sec:"16",title:"Rehipotecacion de activos - Vencimientos IM",desc:"Rehipotecacion de activos no monetarios (margen inicial) por vencimiento: O/N-1D / 1D-1S / 1S-1M / 1M-1A / 1A-2A / 2A+",vals:"ON_1D / 1D_1S / 1S_1M / 1M_1A / 1A_2A / 2A+",dtype:"Numerico 2dp, Moneda",file:"DataFile_16_3",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"16.3.4",sec:"16",title:"Rehipotecacion de activos - Vencimientos Fondo Default",desc:"Rehipotecacion de activos no monetarios (fondo de default) por vencimiento: O/N-1D / 1D-1S / 1S-1M / 1M-1A / 1A-2A / 2A+",vals:"ON_1D / 1D_1S / 1S_1M / 1M_1A / 1A_2A / 2A+",dtype:"Numerico 2dp, Moneda",file:"DataFile_16_3",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"17.1.1",sec:"17",title:"Disponibilidad operacional - Objetivo",desc:"Objetivo de disponibilidad operacional del sistema central de compensacion en el periodo especificado (ej: 99,99% en 12 meses)",vals:"N/A",dtype:"Numerico 2dp, %",file:"AggregatedDataFile",freq:"Trimestral 12 meses",aplica:"si",just:""},
-{ref:"17.2.1",sec:"17",title:"Disponibilidad operacional - Real",desc:"Disponibilidad real del sistema central de compensacion en los ultimos 12 meses",vals:"N/A",dtype:"Numerico 2dp, %",file:"AggregatedDataFile",freq:"Trimestral 12 meses",aplica:"si",just:""},
-{ref:"17.3.1",sec:"17",title:"Fallas del sistema",desc:"Numero total de fallas y duracion que afectaron el sistema central de compensacion en los ultimos 12 meses",vals:"DuracionFalla (HH:MM:SS)",dtype:"Duracion HH:MM:SS",file:"DataFile_17_3",freq:"Trimestral 12 meses",aplica:"si",just:""},
-{ref:"17.4.1",sec:"17",title:"Objetivo de tiempo de recuperacion (RTO)",desc:"Objetivo(s) de tiempo de recuperacion del sistema central de compensacion (ej: dentro de dos horas)",vals:"N/A",dtype:"Texto",file:"AggregatedDataFile",freq:"Trimestral 12 meses",aplica:"si",just:""},
-{ref:"18.1.1.1",sec:"18",title:"Numero de miembros compensadores",desc:"Numero de miembros compensadores generales (liquidan por si mismos y por clientes)",vals:"N/A",dtype:"Numerico 0dp",file:"AggregatedDataFile",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"18.1.1.2",sec:"18",title:"Numero de miembros compensadores",desc:"Numero de miembros compensadores directos (liquidan solo por si mismos)",vals:"N/A",dtype:"Numerico 0dp",file:"AggregatedDataFile",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"18.1.1.3",sec:"18",title:"Numero de miembros compensadores",desc:"Numero de miembros en otras categorias (describir en comentarios)",vals:"N/A",dtype:"Numerico 0dp",file:"AggregatedDataFile",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"18.1.2.1",sec:"18",title:"Tipo de entidad participante",desc:"Numero de participantes que son bancos centrales",vals:"N/A",dtype:"Numerico 0dp",file:"AggregatedDataFile",freq:"Cierre trimestre",aplica:"na",just:"Pendiente confirmar: verificar si CCLV tiene bancos centrales como miembros compensadores."},
-{ref:"18.1.2.2",sec:"18",title:"Tipo de entidad participante",desc:"Numero de participantes que son otras CCPs",vals:"N/A",dtype:"Numerico 0dp",file:"AggregatedDataFile",freq:"Cierre trimestre",aplica:"na",just:"Pendiente confirmar: verificar si CCLV tiene otras CCPs como miembros compensadores."},
-{ref:"18.1.2.3",sec:"18",title:"Tipo de entidad participante",desc:"Numero de participantes bancarios",vals:"N/A",dtype:"Numerico 0dp",file:"AggregatedDataFile",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"18.1.2.4",sec:"18",title:"Tipo de entidad participante",desc:"Numero de otros participantes (describir en comentarios)",vals:"N/A",dtype:"Numerico 0dp",file:"AggregatedDataFile",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"18.1.3.1",sec:"18",title:"Geografia de participantes",desc:"Numero de participantes domesticos (constituidos en la misma jurisdiccion que la CCP)",vals:"N/A",dtype:"Numerico 0dp",file:"AggregatedDataFile",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"18.1.3.2",sec:"18",title:"Geografia de participantes",desc:"Numero de participantes extranjeros (constituidos en distinta jurisdiccion)",vals:"N/A",dtype:"Numerico 0dp",file:"AggregatedDataFile",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"18.2.1",sec:"18",title:"Concentracion de posiciones abiertas (10-24 miembros)",desc:"Porcentaje de posiciones abiertas en manos de los 5 CMs mas grandes (para servicios con 10-24 miembros) - Promedio y Pico del trimestre",vals:"Promedio / Pico",dtype:"Numerico 2dp, %",file:"DataFile_18_2",freq:"Trimestral",aplica:"na",just:"Pendiente confirmar: aplicar si CCLV tiene entre 10 y 24 miembros en el servicio. Si tiene 25 o mas, usar 18.2.2 y 18.2.3."},
-{ref:"18.2.2",sec:"18",title:"Concentracion de posiciones abiertas (25 o mas miembros)",desc:"Porcentaje de posiciones abiertas en manos de los 5 CMs mas grandes (para servicios con 25+ miembros) - Promedio y Pico del trimestre",vals:"Promedio / Pico",dtype:"Numerico 2dp, %",file:"DataFile_18_2",freq:"Trimestral",aplica:"si",just:""},
-{ref:"18.2.3",sec:"18",title:"Concentracion de posiciones abiertas (25 o mas miembros)",desc:"Porcentaje de posiciones abiertas en manos de los 10 CMs mas grandes (para servicios con 25+ miembros) - Promedio y Pico del trimestre",vals:"Promedio / Pico",dtype:"Numerico 2dp, %",file:"DataFile_18_2",freq:"Trimestral",aplica:"si",just:""},
-{ref:"18.3.1",sec:"18",title:"Concentracion de margen inicial (10-24 miembros)",desc:"Porcentaje de margen inicial depositado por los 5 CMs mas grandes (para servicios con 10-24 miembros) - Promedio y Pico del trimestre",vals:"Promedio / Pico",dtype:"Numerico 2dp, %",file:"DataFile_18_2",freq:"Trimestral",aplica:"na",just:"Pendiente confirmar: aplicar si CCLV tiene entre 10 y 24 miembros en el servicio. Si tiene 25 o mas, usar 18.3.2 y 18.3.3."},
-{ref:"18.3.2",sec:"18",title:"Concentracion de margen inicial (25 o mas miembros)",desc:"Porcentaje de margen inicial depositado por los 5 CMs mas grandes (para servicios con 25+ miembros) - Promedio y Pico del trimestre",vals:"Promedio / Pico",dtype:"Numerico 2dp, %",file:"DataFile_18_2",freq:"Trimestral",aplica:"si",just:""},
-{ref:"18.3.3",sec:"18",title:"Concentracion de margen inicial (25 o mas miembros)",desc:"Porcentaje de margen inicial depositado por los 10 CMs mas grandes (para servicios con 25+ miembros) - Promedio y Pico del trimestre",vals:"Promedio / Pico",dtype:"Numerico 2dp, %",file:"DataFile_18_2",freq:"Trimestral",aplica:"si",just:""},
-{ref:"18.4.1",sec:"18",title:"Concentracion fondo de default (10-24 miembros)",desc:"Porcentaje del fondo de default aportado por los 5 CMs mas grandes (fondos segregados con 10-24 miembros)",vals:"N/A",dtype:"Numerico 2dp, %",file:"AggregatedDataFile",freq:"Cierre trimestre",aplica:"na",just:"Pendiente confirmar: aplicar si CCLV tiene entre 10 y 24 miembros en el fondo. Si tiene 25 o mas, usar 18.4.2 y 18.4.3."},
-{ref:"18.4.2",sec:"18",title:"Concentracion fondo de default (25 o mas miembros)",desc:"Porcentaje del fondo de default aportado por los 5 CMs mas grandes (fondos segregados con 25+ miembros)",vals:"N/A",dtype:"Numerico 2dp, %",file:"AggregatedDataFile",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"18.4.3",sec:"18",title:"Concentracion fondo de default (25 o mas miembros)",desc:"Porcentaje del fondo de default aportado por los 10 CMs mas grandes (fondos segregados con 25+ miembros)",vals:"N/A",dtype:"Numerico 2dp, %",file:"AggregatedDataFile",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"19.1.1",sec:"19",title:"Participacion escalonada - clientes",desc:"Numero de clientes (si es conocido por la CCP)",vals:"N/A",dtype:"Numerico 0dp",file:"AggregatedDataFile",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"19.1.2",sec:"19",title:"Participacion escalonada - clientes",desc:"Numero de miembros directos que liquidan para clientes",vals:"N/A",dtype:"Numerico 0dp",file:"AggregatedDataFile",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"19.1.3.1",sec:"19",title:"Concentracion de compensacion de clientes",desc:"Porcentaje de transacciones de clientes atribuibles a los 5 CMs mas grandes (CCP con 10+ miembros) - Pico",vals:"N/A",dtype:"Numerico 2dp, %",file:"AggregatedDataFile",freq:"Trimestral",aplica:"si",just:""},
-{ref:"19.1.3.2",sec:"19",title:"Concentracion de compensacion de clientes",desc:"Porcentaje de transacciones de clientes atribuibles a los 5 CMs mas grandes (CCP con 10+ miembros) - Promedio",vals:"-",dtype:"Numerico 2dp, %",file:"AggregatedDataFile",freq:"Trimestral",aplica:"si",just:""},
-{ref:"19.1.4.1",sec:"19",title:"Concentracion de compensacion de clientes",desc:"Porcentaje de transacciones de clientes atribuibles a los 10 CMs mas grandes (CCP con 25+ miembros) - Pico",vals:"N/A",dtype:"Numerico 2dp, %",file:"AggregatedDataFile",freq:"Trimestral",aplica:"si",just:""},
-{ref:"19.1.4.2",sec:"19",title:"Concentracion de compensacion de clientes",desc:"Porcentaje de transacciones de clientes atribuibles a los 10 CMs mas grandes (CCP con 25+ miembros) - Promedio",vals:"-",dtype:"Numerico 2dp, %",file:"AggregatedDataFile",freq:"Trimestral",aplica:"si",just:""},
-{ref:"20.1.1",sec:"20",title:"Vinculos FMI - Valor de operaciones",desc:"Valor de operaciones compensadas a traves de cada vinculo como porcentaje del total de valores compensados",vals:"",dtype:"Numerico 2dp, %",file:"DataFile_20a",freq:"Cierre trimestre",aplica:"na",just:"Pendiente confirmar: reportar N/A si CCLV no tiene vinculos FMI activos en el periodo."},
-{ref:"20.2.1",sec:"20",title:"Vinculos FMI - IM aportado",desc:"Margen inicial o recursos financieros equivalentes aportados a cada CCP vinculada para cubrir la exposicion futura potencial",vals:"",dtype:"Numerico 2dp, Moneda",file:"DataFile_20a",freq:"Cierre trimestre",aplica:"na",just:"Pendiente confirmar: reportar N/A si CCLV no tiene vinculos FMI activos en el periodo."},
-{ref:"20.3.1",sec:"20",title:"Vinculos FMI - IM recibido",desc:"Margen inicial o recursos financieros equivalentes recibidos de cada CCP vinculada (a valor de mercado y post-haircut)",vals:"",dtype:"Numerico 2dp, Moneda",file:"DataFile_20b",freq:"Cierre trimestre",aplica:"na",just:"Pendiente confirmar: reportar N/A si CCLV no tiene vinculos FMI activos en el periodo."},
-{ref:"20.4.1.1",sec:"20",title:"Vinculos FMI - Resultados de back-testing",desc:"Numero de veces en 12 meses en que la cobertura cayo por debajo de la exposicion MtM real frente a la CCP vinculada",vals:"",dtype:"Numerico 0dp",file:"DataFile_20a",freq:"Trimestral 12 meses",aplica:"na",just:"Pendiente confirmar: reportar N/A si CCLV no tiene vinculos FMI activos en el periodo."},
-{ref:"20.4.1.2",sec:"20",title:"Vinculos FMI - Resultados de back-testing",desc:"Frecuencia de medicion de resultados de back-testing - indicar si es intradiario/continuo/una vez al dia",vals:"",dtype:"Texto",file:"DataFile_20a",freq:"Trimestral 12 meses",aplica:"na",just:"Pendiente confirmar: reportar N/A si CCLV no tiene vinculos FMI activos en el periodo."},
-{ref:"20.4.1.3",sec:"20",title:"Vinculos FMI - Resultados de back-testing",desc:"Si 20.4.1.2 es una vez al dia, indicar la hora del dia en que se toma la medicion; en otro caso dejar en blanco",vals:"",dtype:"Texto",file:"DataFile_20a",freq:"Trimestral 12 meses",aplica:"na",just:"Pendiente confirmar: reportar N/A si CCLV no tiene vinculos FMI activos en el periodo."},
-{ref:"20.4.2",sec:"20",title:"Vinculos FMI - Resultados de back-testing",desc:"Numero de observaciones (cuentas multiplicado por dias cubiertos en el back-test)",vals:"",dtype:"Numerico 0dp",file:"DataFile_20a",freq:"Trimestral 12 meses",aplica:"na",just:"Pendiente confirmar: reportar N/A si CCLV no tiene vinculos FMI activos en el periodo."},
-{ref:"20.4.3",sec:"20",title:"Vinculos FMI - Resultados de back-testing",desc:"Nivel de cobertura alcanzado para el back-testing de vinculos FMI",vals:"",dtype:"Numerico 2dp, %",file:"DataFile_20a",freq:"Trimestral 12 meses",aplica:"na",just:"Pendiente confirmar: reportar N/A si CCLV no tiene vinculos FMI activos en el periodo."},
-{ref:"20.5.1.1",sec:"20",title:"Vinculos FMI - Recursos adicionales aportados",desc:"Recursos financieros prefundados adicionales (si los hay) mas alla del margen inicial aportados a cada CCP vinculada",vals:"",dtype:"Numerico 2dp, Moneda",file:"DataFile_20a",freq:"Cierre trimestre",aplica:"na",just:"Pendiente confirmar: reportar N/A si CCLV no tiene vinculos FMI activos en el periodo."},
-{ref:"20.5.1.2",sec:"20",title:"Vinculos FMI - Recursos adicionales aportados",desc:"Si forman parte del fondo de default estandar, son adicionales a el o estan separados",vals:"",dtype:"Texto",file:"DataFile_20a",freq:"Cierre trimestre",aplica:"na",just:"Pendiente confirmar: reportar N/A si CCLV no tiene vinculos FMI activos en el periodo."},
-{ref:"20.6.1.1",sec:"20",title:"Vinculos FMI - Recursos adicionales recibidos",desc:"Recursos financieros prefundados adicionales (si los hay) mas alla del margen inicial recibidos de cada CCP vinculada",vals:"",dtype:"Numerico 2dp, Moneda",file:"DataFile_20a",freq:"Cierre trimestre",aplica:"na",just:"Pendiente confirmar: reportar N/A si CCLV no tiene vinculos FMI activos en el periodo."},
-{ref:"20.6.1.2",sec:"20",title:"Vinculos FMI - Recursos adicionales recibidos",desc:"Si forman parte del fondo de default estandar, son adicionales a el o estan separados",vals:"",dtype:"Texto",file:"DataFile_20a",freq:"Cierre trimestre",aplica:"na",just:"Pendiente confirmar: reportar N/A si CCLV no tiene vinculos FMI activos en el periodo."},
-{ref:"20.7.1",sec:"20",title:"Vinculos FMI - Compensacion cruzada de margenes",desc:"Valor de operaciones sujetas a compensacion cruzada de margenes como porcentaje del total de valores compensados",vals:"",dtype:"Numerico 2dp, %",file:"DataFile_20a",freq:"Cierre trimestre",aplica:"na",just:"Pendiente confirmar: verificar si CCLV opera compensacion cruzada de margenes con otras CCPs."},
-{ref:"20.7.2",sec:"20",title:"Vinculos FMI - Compensacion cruzada de margenes",desc:"Reduccion en el margen inicial total como resultado de la compensacion cruzada como porcentaje del margen que de otra forma se habria exigido",vals:"",dtype:"Numerico 2dp, %",file:"DataFile_20a",freq:"Cierre trimestre",aplica:"na",just:"Pendiente confirmar: verificar si CCLV opera compensacion cruzada de margenes con otras CCPs."},
-{ref:"23.1.1",sec:"23",title:"Volumenes diarios promedio",desc:"Volumenes diarios promedio por clase de activo, instrumento, moneda y OTC o ETD",vals:"OTC o ETD",dtype:"Numerico 0dp",file:"DataFile_23",freq:"Trimestral",aplica:"si",just:""},
-{ref:"23.1.2",sec:"23",title:"Valor nocional promedio",desc:"Valor nocional promedio de operaciones compensadas por clase de activo, moneda y OTC o ETD",vals:"OTC o ETD",dtype:"Numerico 2dp, Moneda",file:"DataFile_23",freq:"Trimestral",aplica:"si",just:""},
-{ref:"23.2.1",sec:"23",title:"Nocional bruto pendiente",desc:"Nocional bruto pendiente/valor de liquidacion de transacciones novadas pero aun no liquidadas por clase de activo, instrumento, moneda y OTC/ETD",vals:"OTC o ETD",dtype:"Numerico 2dp, Moneda",file:"DataFile_23",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"23.2.2",sec:"23",title:"Definicion de clase de activo",desc:"Define la clase de activo para los volumenes reportados en 23.1.1, 23.1.2 y 23.2.1",vals:"Clase de activo: IRS CDS etc.",dtype:"Texto",file:"DataFile_23",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"23.2.3",sec:"23",title:"Definicion de tipo de producto",desc:"Define el tipo de producto para los volumenes reportados en 23.1.1, 23.1.2 y 23.2.1",vals:"Tipo de producto: Indice NombresSingulares Forex",dtype:"Texto",file:"DataFile_23",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"23.2.4",sec:"23",title:"Definicion de codigo de producto",desc:"Define el codigo de producto para los volumenes reportados en 23.1.1, 23.1.2 y 23.2.1",vals:"Codigo de producto:",dtype:"Texto",file:"DataFile_23",freq:"Cierre trimestre",aplica:"si",just:""},
-{ref:"23.3.1",sec:"23",title:"Volumenes por plataforma de ejecucion",desc:"Volumenes diarios promedio por plataforma de ejecucion o lugar de confirmacion/emparejamiento",vals:"Plataforma de Ejecucion",dtype:"Numerico 2dp",file:"DataFile_23_3",freq:"Trimestral",aplica:"si",just:""},
-{ref:"23.3.2",sec:"23",title:"Valores nocionales por plataforma de ejecucion",desc:"Valores nocionales de contratos por plataforma de ejecucion o lugar de confirmacion/emparejamiento",vals:"Plataforma de Ejecucion",dtype:"Numerico 2dp, Moneda",file:"DataFile_23_3",freq:"Trimestral",aplica:"si",just:""}
+
+var D=[
+{ref:"4.1.1",sec:"4",title:"Recursos de default totales",desc:"Capital propio prefundado - Antes (Before)",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_SCC", "d": ""}, {"s": "CCLV_SCL", "d": ""}, {"s": "CCLV_ALL", "d": ""}]},
+{ref:"4.1.2",sec:"4",title:"Recursos de default totales",desc:"Capital propio prefundado - Junto (Alongside)",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_SCC", "d": ""}, {"s": "CCLV_SCL", "d": ""}, {"s": "CCLV_ALL", "d": ""}]},
+{ref:"4.1.3",sec:"4",title:"Recursos de default totales",desc:"Capital propio prefundado - Despues (After)",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_SCC", "d": ""}, {"s": "CCLV_SCL", "d": ""}, {"s": "CCLV_ALL", "d": ""}]},
+{ref:"4.1.4",sec:"4",title:"Recursos de default totales",desc:"Contribuciones prefundadas - Requeridas",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_SCC", "d": ""}, {"s": "CCLV_SCL", "d": ""}, {"s": "CCLV_ALL", "d": ""}]},
+{ref:"4.1.5",sec:"4",title:"Recursos de default totales",desc:"Contribuciones prefundadas - Depositadas post-haircut",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_SCC", "d": ""}, {"s": "CCLV_SCL", "d": ""}, {"s": "CCLV_ALL", "d": ""}]},
+{ref:"4.1.6",sec:"4",title:"Recursos de default totales",desc:"Prefundados - Otros",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_SCC", "d": ""}, {"s": "CCLV_SCL", "d": ""}, {"s": "CCLV_ALL", "d": ""}]},
+{ref:"4.1.7",sec:"4",title:"Recursos de default totales",desc:"Comprometidos - Fondos propios",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_SCC", "d": ""}, {"s": "CCLV_SCL", "d": ""}, {"s": "CCLV_ALL", "d": ""}]},
+{ref:"4.1.8",sec:"4",title:"Recursos de default totales",desc:"Comprometidos - Compromisos de participantes",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_SCC", "d": ""}, {"s": "CCLV_SCL", "d": ""}, {"s": "CCLV_ALL", "d": ""}]},
+{ref:"4.1.9",sec:"4",title:"Recursos de default totales",desc:"Comprometidos - Monto maximo reconstitucion",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_SCC", "d": ""}, {"s": "CCLV_SCL", "d": ""}, {"s": "CCLV_ALL", "d": ""}]},
+{ref:"4.1.10",sec:"4",title:"Recursos de default totales",desc:"Comprometidos - Otros",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_SCC", "d": ""}, {"s": "CCLV_SCL", "d": ""}, {"s": "CCLV_ALL", "d": ""}]},
+{ref:"4.2.1",sec:"4",title:"Kccp",desc:"Solo aplica a qualifying CCP",aplica:"na",just:"CCLV no es qualifying CCP bajo regulacion vigente",df:"AggregatedDataFile",rows:[]},
+{ref:"4.3.1",sec:"4",title:"Default prefundados por tipo",desc:"Efectivo en banco central emisor",aplica:"si",just:"",df:"DataFile_4_3",rows:[{"s": "CCLV_SCC", "d": "PreHaircut"}, {"s": "CCLV_SCC", "d": "PostHaircut"}, {"s": "CCLV_SCL", "d": "PreHaircut"}, {"s": "CCLV_SCL", "d": "PostHaircut"}, {"s": "CCLV_ALL", "d": "PreHaircut"}, {"s": "CCLV_ALL", "d": "PostHaircut"}]},
+{ref:"4.3.2",sec:"4",title:"Default prefundados por tipo",desc:"Efectivo en otros bancos centrales",aplica:"si",just:"",df:"DataFile_4_3",rows:[{"s": "CCLV_SCC", "d": "PreHaircut"}, {"s": "CCLV_SCC", "d": "PostHaircut"}, {"s": "CCLV_SCL", "d": "PreHaircut"}, {"s": "CCLV_SCL", "d": "PostHaircut"}, {"s": "CCLV_ALL", "d": "PreHaircut"}, {"s": "CCLV_ALL", "d": "PostHaircut"}]},
+{ref:"4.3.3",sec:"4",title:"Default prefundados por tipo",desc:"Efectivo asegurado en bancos comerciales",aplica:"si",just:"",df:"DataFile_4_3",rows:[{"s": "CCLV_SCC", "d": "PreHaircut"}, {"s": "CCLV_SCC", "d": "PostHaircut"}, {"s": "CCLV_SCL", "d": "PreHaircut"}, {"s": "CCLV_SCL", "d": "PostHaircut"}, {"s": "CCLV_ALL", "d": "PreHaircut"}, {"s": "CCLV_ALL", "d": "PostHaircut"}]},
+{ref:"4.3.4",sec:"4",title:"Default prefundados por tipo",desc:"Efectivo no asegurado en bancos comerciales",aplica:"si",just:"",df:"DataFile_4_3",rows:[{"s": "CCLV_SCC", "d": "PreHaircut"}, {"s": "CCLV_SCC", "d": "PostHaircut"}, {"s": "CCLV_SCL", "d": "PreHaircut"}, {"s": "CCLV_SCL", "d": "PostHaircut"}, {"s": "CCLV_ALL", "d": "PreHaircut"}, {"s": "CCLV_ALL", "d": "PostHaircut"}]},
+{ref:"4.3.5",sec:"4",title:"Default prefundados por tipo",desc:"Bonos soberanos domesticos",aplica:"si",just:"",df:"DataFile_4_3",rows:[{"s": "CCLV_SCC", "d": "PreHaircut"}, {"s": "CCLV_SCC", "d": "PostHaircut"}, {"s": "CCLV_SCL", "d": "PreHaircut"}, {"s": "CCLV_SCL", "d": "PostHaircut"}, {"s": "CCLV_ALL", "d": "PreHaircut"}, {"s": "CCLV_ALL", "d": "PostHaircut"}]},
+{ref:"4.3.6",sec:"4",title:"Default prefundados por tipo",desc:"Bonos soberanos extranjeros",aplica:"si",just:"",df:"DataFile_4_3",rows:[{"s": "CCLV_SCC", "d": "PreHaircut"}, {"s": "CCLV_SCC", "d": "PostHaircut"}, {"s": "CCLV_SCL", "d": "PreHaircut"}, {"s": "CCLV_SCL", "d": "PostHaircut"}, {"s": "CCLV_ALL", "d": "PreHaircut"}, {"s": "CCLV_ALL", "d": "PostHaircut"}]},
+{ref:"4.3.9",sec:"4",title:"Default prefundados por tipo",desc:"Bonos corporativos",aplica:"si",just:"",df:"DataFile_4_3",rows:[{"s": "CCLV_SCC", "d": "PreHaircut"}, {"s": "CCLV_SCC", "d": "PostHaircut"}, {"s": "CCLV_SCL", "d": "PreHaircut"}, {"s": "CCLV_SCL", "d": "PostHaircut"}, {"s": "CCLV_ALL", "d": "PreHaircut"}, {"s": "CCLV_ALL", "d": "PostHaircut"}]},
+{ref:"4.3.10",sec:"4",title:"Default prefundados por tipo",desc:"Acciones/Equity",aplica:"si",just:"",df:"DataFile_4_3",rows:[{"s": "CCLV_SCC", "d": "PreHaircut"}, {"s": "CCLV_SCC", "d": "PostHaircut"}, {"s": "CCLV_SCL", "d": "PreHaircut"}, {"s": "CCLV_SCL", "d": "PostHaircut"}, {"s": "CCLV_ALL", "d": "PreHaircut"}, {"s": "CCLV_ALL", "d": "PostHaircut"}]},
+{ref:"4.3.14",sec:"4",title:"Default prefundados por tipo",desc:"Otros activos no efectivo",aplica:"si",just:"",df:"DataFile_4_3",rows:[{"s": "CCLV_SCC", "d": "PreHaircut"}, {"s": "CCLV_SCC", "d": "PostHaircut"}, {"s": "CCLV_SCL", "d": "PreHaircut"}, {"s": "CCLV_SCL", "d": "PostHaircut"}, {"s": "CCLV_ALL", "d": "PreHaircut"}, {"s": "CCLV_ALL", "d": "PostHaircut"}]},
+{ref:"4.3.15",sec:"4",title:"Default prefundados - TOTAL",desc:"Total general Pre y Post-Haircut",aplica:"si",just:"",df:"DataFile_4_3",rows:[{"s": "CCLV_SCC", "d": "PreHaircut"}, {"s": "CCLV_SCC", "d": "PostHaircut"}, {"s": "CCLV_SCL", "d": "PreHaircut"}, {"s": "CCLV_SCL", "d": "PostHaircut"}, {"s": "CCLV_ALL", "d": "PreHaircut"}, {"s": "CCLV_ALL", "d": "PostHaircut"}]},
+{ref:"4.4.1",sec:"4",title:"Riesgo de credito",desc:"Cover 1 o Cover 2",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_SCC", "d": ""}, {"s": "CCLV_SCL", "d": ""}, {"s": "CCLV_ALL", "d": ""}]},
+{ref:"4.4.2",sec:"4",title:"Riesgo de credito",desc:"Dias habiles para cerrar default",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_SCC", "d": ""}, {"s": "CCLV_SCL", "d": ""}, {"s": "CCLV_ALL", "d": ""}]},
+{ref:"4.4.3",sec:"4",title:"Riesgo de credito",desc:"Mayor perdida por estres - participante mas grande",aplica:"si",just:"",df:"DataFile_4_4a",rows:[{"s": "CCLV_SCC", "d": "PeakDayAmountInPast12Months"}, {"s": "CCLV_SCC", "d": "MeanAverageOverPrevious12Months"}, {"s": "CCLV_SCL", "d": "PeakDayAmountInPast12Months"}, {"s": "CCLV_SCL", "d": "MeanAverageOverPrevious12Months"}]},
+{ref:"4.4.4",sec:"4",title:"Riesgo de credito",desc:"Dias en que 4.4.3 excedio recursos prefundados",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_SCC", "d": ""}, {"s": "CCLV_SCL", "d": ""}]},
+{ref:"4.4.5",sec:"4",title:"Riesgo de credito",desc:"Monto por el que 4.4.3 excedio recursos",aplica:"si",just:"",df:"DataFile_4_4b",rows:[{"s": "CCLV_SCC", "d": "AmountExceeded"}, {"s": "CCLV_SCL", "d": "AmountExceeded"}, {"s": "CCLV_ALL", "d": "AmountExceeded"}]},
+{ref:"4.4.6",sec:"4",title:"Riesgo de credito",desc:"Mayor exposicion real - participante mas grande",aplica:"si",just:"",df:"DataFile_4_4a",rows:[{"s": "CCLV_SCC", "d": "PeakDayAmountInPast12Months"}, {"s": "CCLV_SCC", "d": "MeanAverageOverPrevious12Months"}, {"s": "CCLV_SCL", "d": "PeakDayAmountInPast12Months"}, {"s": "CCLV_SCL", "d": "MeanAverageOverPrevious12Months"}]},
+{ref:"4.4.7",sec:"4",title:"Riesgo de credito",desc:"Mayor perdida por estres - dos participantes mas grandes",aplica:"si",just:"",df:"DataFile_4_4a",rows:[{"s": "CCLV_SCC", "d": "PeakDayAmountInPast12Months"}, {"s": "CCLV_SCC", "d": "MeanAverageOverPrevious12Months"}, {"s": "CCLV_SCL", "d": "PeakDayAmountInPast12Months"}, {"s": "CCLV_SCL", "d": "MeanAverageOverPrevious12Months"}]},
+{ref:"4.4.8",sec:"4",title:"Riesgo de credito",desc:"Dias en que 4.4.7 excedio recursos prefundados",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_SCC", "d": ""}, {"s": "CCLV_SCL", "d": ""}]},
+{ref:"4.4.9",sec:"4",title:"Riesgo de credito",desc:"Monto por el que 4.4.7 excedio recursos",aplica:"si",just:"",df:"DataFile_4_4b",rows:[{"s": "CCLV_SCC", "d": "AmountExceeded"}, {"s": "CCLV_SCL", "d": "AmountExceeded"}, {"s": "CCLV_ALL", "d": "AmountExceeded"}]},
+{ref:"4.4.10",sec:"4",title:"Riesgo de credito",desc:"Mayor exposicion real - dos participantes mas grandes",aplica:"si",just:"",df:"DataFile_4_4a",rows:[{"s": "CCLV_SCC", "d": "PeakDayAmountInPast12Months"}, {"s": "CCLV_SCC", "d": "MeanAverageOverPrevious12Months"}, {"s": "CCLV_SCL", "d": "PeakDayAmountInPast12Months"}, {"s": "CCLV_SCL", "d": "MeanAverageOverPrevious12Months"}]},
+{ref:"5.1.1",sec:"5",title:"Activos elegibles como IM y haircuts",desc:"Descripcion o enlace de activos aceptados",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_ALL", "d": ""}]},
+{ref:"5.2.1",sec:"5",title:"Activos elegibles para fondo de default",desc:"Activos elegibles para fondo de default y haircuts",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_ALL", "d": ""}]},
+{ref:"5.3.1",sec:"5",title:"Pruebas de haircuts",desc:"Intervalo de confianza objetivo",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_ALL", "d": ""}]},
+{ref:"5.3.2",sec:"5",title:"Pruebas de haircuts",desc:"Periodo de tenencia/liquidacion asumido",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_ALL", "d": ""}]},
+{ref:"5.3.3",sec:"5",title:"Pruebas de haircuts",desc:"Periodo de observacion historica (dias)",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_ALL", "d": ""}]},
+{ref:"5.3.4",sec:"5",title:"Pruebas de haircuts",desc:"Dias en que caida de valor supero el haircut",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_ALL", "d": ""}]},
+{ref:"6.1.1",sec:"6",title:"IM total requerido",desc:"Por servicio: House_Net / Client_Gross / Client_Net / Total",aplica:"si",just:"",df:"DataFile_6_1",rows:[{"s": "CCLV_SCC", "d": "House_Net"}, {"s": "CCLV_SCC", "d": "Client_Gross"}, {"s": "CCLV_SCC", "d": "Client_Net"}, {"s": "CCLV_SCC", "d": "Total"}, {"s": "CCLV_SCL", "d": "House_Net"}, {"s": "CCLV_SCL", "d": "Client_Gross"}, {"s": "CCLV_SCL", "d": "Client_Net"}, {"s": "CCLV_SCL", "d": "Total"}]},
+{ref:"6.2.1",sec:"6",title:"IM mantenido - Efectivo banco central emisor",desc:"HouseIM y ClientIM Pre/Post-Haircut",aplica:"si",just:"",df:"DataFile_6_2",rows:[{"s": "CCLV_SCC", "d": "HouseIM_PreHaircut"}, {"s": "CCLV_SCC", "d": "HouseIM_PostHaircut"}, {"s": "CCLV_SCC", "d": "ClientIM_PreHaircut"}, {"s": "CCLV_SCC", "d": "ClientIM_PostHaircut"}, {"s": "CCLV_SCC", "d": "TotalIM_PreHaircut"}, {"s": "CCLV_SCC", "d": "TotalIM_PostHaircut"}, {"s": "CCLV_SCL", "d": "HouseIM_PreHaircut"}, {"s": "CCLV_SCL", "d": "HouseIM_PostHaircut"}, {"s": "CCLV_SCL", "d": "ClientIM_PreHaircut"}, {"s": "CCLV_SCL", "d": "ClientIM_PostHaircut"}, {"s": "CCLV_SCL", "d": "TotalIM_PreHaircut"}, {"s": "CCLV_SCL", "d": "TotalIM_PostHaircut"}]},
+{ref:"6.2.3",sec:"6",title:"IM mantenido - Efectivo asegurado bancos comerciales",desc:"HouseIM y ClientIM Pre/Post-Haircut",aplica:"si",just:"",df:"DataFile_6_2",rows:[{"s": "CCLV_SCC", "d": "HouseIM_PreHaircut"}, {"s": "CCLV_SCC", "d": "HouseIM_PostHaircut"}, {"s": "CCLV_SCC", "d": "TotalIM_PreHaircut"}, {"s": "CCLV_SCC", "d": "TotalIM_PostHaircut"}, {"s": "CCLV_SCL", "d": "HouseIM_PreHaircut"}, {"s": "CCLV_SCL", "d": "HouseIM_PostHaircut"}, {"s": "CCLV_SCL", "d": "TotalIM_PreHaircut"}, {"s": "CCLV_SCL", "d": "TotalIM_PostHaircut"}]},
+{ref:"6.2.5",sec:"6",title:"IM mantenido - Bonos soberanos domesticos",desc:"HouseIM y ClientIM Pre/Post-Haircut",aplica:"si",just:"",df:"DataFile_6_2",rows:[{"s": "CCLV_SCC", "d": "TotalIM_PreHaircut"}, {"s": "CCLV_SCC", "d": "TotalIM_PostHaircut"}, {"s": "CCLV_SCL", "d": "TotalIM_PreHaircut"}, {"s": "CCLV_SCL", "d": "TotalIM_PostHaircut"}]},
+{ref:"6.2.10",sec:"6",title:"IM mantenido - Acciones/Equity",desc:"HouseIM y ClientIM Pre/Post-Haircut",aplica:"si",just:"",df:"DataFile_6_2",rows:[{"s": "CCLV_SCC", "d": "TotalIM_PreHaircut"}, {"s": "CCLV_SCC", "d": "TotalIM_PostHaircut"}, {"s": "CCLV_SCL", "d": "TotalIM_PreHaircut"}, {"s": "CCLV_SCL", "d": "TotalIM_PostHaircut"}]},
+{ref:"6.2.15",sec:"6",title:"IM mantenido - TOTAL",desc:"Total desglosado por Casa y Cliente",aplica:"si",just:"",df:"DataFile_6_2",rows:[{"s": "CCLV_SCC", "d": "HouseIM_PreHaircut"}, {"s": "CCLV_SCC", "d": "HouseIM_PostHaircut"}, {"s": "CCLV_SCC", "d": "ClientIM_PreHaircut"}, {"s": "CCLV_SCC", "d": "ClientIM_PostHaircut"}, {"s": "CCLV_SCC", "d": "TotalIM_PreHaircut"}, {"s": "CCLV_SCC", "d": "TotalIM_PostHaircut"}, {"s": "CCLV_SCL", "d": "HouseIM_PreHaircut"}, {"s": "CCLV_SCL", "d": "HouseIM_PostHaircut"}, {"s": "CCLV_SCL", "d": "ClientIM_PreHaircut"}, {"s": "CCLV_SCL", "d": "ClientIM_PostHaircut"}, {"s": "CCLV_SCL", "d": "TotalIM_PreHaircut"}, {"s": "CCLV_SCL", "d": "TotalIM_PostHaircut"}]},
+{ref:"6.4.1",sec:"6",title:"Modelo IM - Tipo",desc:"Tipo de modelo por servicio",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_SCC", "d": ""}, {"s": "CCLV_SCL", "d": ""}, {"s": "CCLV_ALL", "d": ""}]},
+{ref:"6.4.5",sec:"6",title:"Modelo IM - Nivel de confianza",desc:"Nivel de confianza unilateral",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_SCC", "d": ""}, {"s": "CCLV_SCL", "d": ""}, {"s": "CCLV_ALL", "d": ""}]},
+{ref:"6.4.7",sec:"6",title:"Modelo IM - Periodo de observacion",desc:"Periodo historico del modelo",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_SCC", "d": ""}, {"s": "CCLV_SCL", "d": ""}, {"s": "CCLV_ALL", "d": ""}]},
+{ref:"6.4.11",sec:"6",title:"Modelo IM - Periodo de cierre",desc:"Dias de cierre/liquidacion",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_SCC", "d": ""}, {"s": "CCLV_SCL", "d": ""}, {"s": "CCLV_ALL", "d": ""}]},
+{ref:"6.4.14",sec:"6",title:"Modelo IM - Frecuencia revision parametros",desc:"Con que frecuencia se revisan",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_ALL", "d": ""}]},
+{ref:"6.5.1.1",sec:"6",title:"Back-testing IM",desc:"Veces cobertura cayo bajo exposicion MtM",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_SCC", "d": ""}, {"s": "CCLV_SCL", "d": ""}]},
+{ref:"6.5.2",sec:"6",title:"Back-testing IM",desc:"Numero de observaciones",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_SCC", "d": ""}, {"s": "CCLV_SCL", "d": ""}]},
+{ref:"6.5.3",sec:"6",title:"Back-testing IM",desc:"Nivel de cobertura alcanzado",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_SCC", "d": ""}, {"s": "CCLV_SCL", "d": ""}]},
+{ref:"6.5.4",sec:"6",title:"Back-testing IM",desc:"Pico exposicion no cubierta 12 meses",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_SCC", "d": ""}, {"s": "CCLV_SCL", "d": ""}]},
+{ref:"6.5.5",sec:"6",title:"Back-testing IM",desc:"Promedio exposicion no cubierta 12 meses",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_SCC", "d": ""}, {"s": "CCLV_SCL", "d": ""}]},
+{ref:"6.6.1",sec:"6",title:"Variacion de margen - Promedio diario",desc:"Promedio diario de variacion de margen total",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_SCC", "d": ""}, {"s": "CCLV_SCL", "d": ""}, {"s": "CCLV_ALL", "d": ""}]},
+{ref:"6.7.1",sec:"6",title:"Variacion de margen - Maximo",desc:"Maximo en cualquier dia habil del periodo",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_SCC", "d": ""}, {"s": "CCLV_SCL", "d": ""}, {"s": "CCLV_ALL", "d": ""}]},
+{ref:"6.8.1",sec:"6",title:"Llamada de margen IM - Maximo",desc:"Maxima llamada de margen en el periodo",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_SCC", "d": ""}, {"s": "CCLV_SCL", "d": ""}, {"s": "CCLV_ALL", "d": ""}]},
+{ref:"7.1.1",sec:"7",title:"Liquidez - Nivel de cobertura",desc:"Cover 1 o Cover 2",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_SCC", "d": ""}, {"s": "CCLV_SCL", "d": ""}]},
+{ref:"7.1.4",sec:"7",title:"Recursos liquidos - Efectivo asegurado bancos comerciales",desc:"Incluye reverse repo",aplica:"si",just:"",df:"DataFile_7_1",rows:[{"s": "CCLV_SCC", "d": "SizeAndCompositionOfQualifyingLiquidResources"}, {"s": "CCLV_SCL", "d": "SizeAndCompositionOfQualifyingLiquidResources"}, {"s": "CCLV_ALL", "d": "SizeAndCompositionOfQualifyingLiquidResources"}]},
+{ref:"7.1.6",sec:"7",title:"Recursos liquidos - Lineas de credito comprometidas aseguradas",desc:"Incl. swaps FX y repos comprometidos",aplica:"si",just:"",df:"DataFile_7_1",rows:[{"s": "CCLV_SCC", "d": "SizeAndCompositionOfQualifyingLiquidResources"}, {"s": "CCLV_SCL", "d": "SizeAndCompositionOfQualifyingLiquidResources"}, {"s": "CCLV_ALL", "d": "SizeAndCompositionOfQualifyingLiquidResources"}]},
+{ref:"7.1.10",sec:"7",title:"Liquidez - Acceso a banco central",desc:"Tiene acceso rutinario a liquidez del banco central",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_ALL", "d": ""}]},
+{ref:"7.2.1",sec:"7",title:"Recursos liquidos suplementarios",desc:"Por encima de los recursos calificados",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_SCC", "d": ""}, {"s": "CCLV_SCL", "d": ""}, {"s": "CCLV_ALL", "d": ""}]},
+{ref:"7.3.1",sec:"7",title:"Mayor obligacion de pago estimada",desc:"SameDayPayment / IntraDay / MultiDay",aplica:"si",just:"",df:"DataFile_7_3",rows:[{"s": "CCLV_ALL", "d": "SameDayPayment_Total"}, {"s": "CCLV_ALL", "d": "IntraDayPayment_Total"}, {"s": "CCLV_ALL", "d": "MultiDayPayment_Total"}]},
+{ref:"7.3.2",sec:"7",title:"Dias de brecha de liquidez",desc:"Dias en que obligacion excedio recursos liquidos",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_SCC", "d": ""}, {"s": "CCLV_SCL", "d": ""}, {"s": "CCLV_ALL", "d": ""}]},
+{ref:"7.3.3",sec:"7",title:"Monto de brecha de liquidez",desc:"Monto del exceso por dia",aplica:"si",just:"",df:"DataFile_7_3a",rows:[{"s": "CCLV_ALL", "d": "AmountExceeded"}]},
+{ref:"7.3.4",sec:"7",title:"Mayor obligacion de pago real historico",desc:"Peak day ultimos 12 meses",aplica:"si",just:"",df:"DataFile_7_3",rows:[{"s": "CCLV_ALL", "d": "SameDayPayment_Total"}, {"s": "CCLV_ALL", "d": "IntraDayPayment_Total"}, {"s": "CCLV_ALL", "d": "MultiDayPayment_Total"}]},
+{ref:"12.1.1",sec:"12",title:"Liquidacion por valor - DvP",desc:"Porcentaje por valor DvP",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_SCC", "d": ""}, {"s": "CCLV_SCL", "d": ""}]},
+{ref:"12.1.2",sec:"12",title:"Liquidacion por valor - DvD",desc:"Porcentaje por valor DvD",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_SCC", "d": ""}, {"s": "CCLV_SCL", "d": ""}]},
+{ref:"12.2.1",sec:"12",title:"Liquidacion por volumen - DvP",desc:"Porcentaje por volumen DvP",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_SCC", "d": ""}, {"s": "CCLV_SCL", "d": ""}]},
+{ref:"12.2.2",sec:"12",title:"Liquidacion por volumen - DvD",desc:"Porcentaje por volumen DvD",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_SCC", "d": ""}, {"s": "CCLV_SCL", "d": ""}]},
+{ref:"13.1.1",sec:"13",title:"Defaults - monto de perdida vs IM",desc:"Por evento de default",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_ALL", "d": ""}]},
+{ref:"13.1.2",sec:"13",title:"Defaults - otros recursos usados",desc:"Mas alla del margen inicial",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_ALL", "d": ""}]},
+{ref:"14.1.1",sec:"14",title:"Segregacion - cuentas individuales",desc:"% del nocional compensado",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_SCC", "d": ""}, {"s": "CCLV_SCL", "d": ""}]},
+{ref:"14.1.2",sec:"14",title:"Segregacion - cuentas omnibus",desc:"Distinto de cuentas LSOC",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_SCC", "d": ""}, {"s": "CCLV_SCL", "d": ""}]},
+{ref:"14.1.4",sec:"14",title:"Segregacion - cuentas mezcladas casa y cliente",desc:"Cuentas conjuntas",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_SCC", "d": ""}, {"s": "CCLV_SCL", "d": ""}]},
+{ref:"15.1.1",sec:"15",title:"Riesgo de negocio - Activos liquidos netos",desc:"Financiados con capital propio",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_ALL", "d": ""}]},
+{ref:"15.1.2",sec:"15",title:"Riesgo de negocio - 6 meses gastos operativos",desc:"Proxy capital plan de cierre",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_ALL", "d": ""}]},
+{ref:"15.2.1",sec:"15",title:"Financieras - Ingresos totales",desc:"Del periodo de reporte",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_ALL", "d": ""}]},
+{ref:"15.2.2",sec:"15",title:"Financieras - Gastos totales",desc:"Del periodo de reporte",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_ALL", "d": ""}]},
+{ref:"15.2.3",sec:"15",title:"Financieras - Utilidades",desc:"Ingresos menos Gastos",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_ALL", "d": ""}]},
+{ref:"15.2.4",sec:"15",title:"Financieras - Activos totales",desc:"En balance",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_ALL", "d": ""}]},
+{ref:"15.2.5",sec:"15",title:"Financieras - Pasivos totales",desc:"En balance",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_ALL", "d": ""}]},
+{ref:"15.2.6",sec:"15",title:"Financieras - Colateral en balance",desc:"Dentro o fuera del balance",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_ALL", "d": ""}]},
+{ref:"15.3.1",sec:"15",title:"Desglose ingresos - Comisiones de compensacion",desc:"% de ingresos totales",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_ALL", "d": ""}]},
+{ref:"15.3.2",sec:"15",title:"Desglose ingresos - Reinversion de activos",desc:"% de ingresos totales",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_ALL", "d": ""}]},
+{ref:"16.1.1",sec:"16",title:"Efectivo recibido - Margen inicial",desc:"Total efectivo no valores",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_SCC", "d": ""}, {"s": "CCLV_SCL", "d": ""}, {"s": "CCLV_ALL", "d": ""}]},
+{ref:"16.1.2",sec:"16",title:"Efectivo recibido - Fondo de default",desc:"Total efectivo no valores",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_SCC", "d": ""}, {"s": "CCLV_SCL", "d": ""}, {"s": "CCLV_ALL", "d": ""}]},
+{ref:"16.2.1",sec:"16",title:"Inversion efectivo - Depositos TOTAL",desc:"% del total de efectivo",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_ALL", "d": ""}]},
+{ref:"16.2.4",sec:"16",title:"Inversion efectivo - Bancos comerciales asegurado",desc:"% mantenido",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_ALL", "d": ""}]},
+{ref:"16.2.5",sec:"16",title:"Inversion efectivo - Bancos comerciales no asegurado",desc:"% mantenido",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_ALL", "d": ""}]},
+{ref:"16.2.6",sec:"16",title:"Inversion efectivo - Fondos monetarios",desc:"% en money market funds",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_ALL", "d": ""}]},
+{ref:"16.2.9",sec:"16",title:"Inversion efectivo - Vencimiento promedio depositos",desc:"Depositos y fondos monetarios",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_ALL", "d": ""}]},
+{ref:"16.2.10",sec:"16",title:"Inversion efectivo - Bonos soberanos domesticos",desc:"% invertido en valores",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_ALL", "d": ""}]},
+{ref:"16.2.20",sec:"16",title:"Inversion efectivo - % en valores no efectivo",desc:"Total participantes",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_ALL", "d": ""}]},
+{ref:"16.3.1",sec:"16",title:"Rehipotecacion - Margen inicial",desc:"Valor total activos rehipotecados",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_ALL", "d": ""}]},
+{ref:"16.3.2",sec:"16",title:"Rehipotecacion - Fondo de default",desc:"Valor total activos rehipotecados",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_ALL", "d": ""}]},
+{ref:"17.1.1",sec:"17",title:"Disponibilidad - Objetivo",desc:"% objetivo en 12 meses",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_ALL", "d": ""}]},
+{ref:"17.2.1",sec:"17",title:"Disponibilidad - Real",desc:"% real en ultimos 12 meses",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_ALL", "d": ""}]},
+{ref:"17.3.1",sec:"17",title:"Fallas del sistema",desc:"Total fallas y duracion 12 meses",aplica:"si",just:"",df:"DataFile_17_3",rows:[{"s": "CCLV_ALL", "d": "Core system"}]},
+{ref:"17.4.1",sec:"17",title:"RTO",desc:"Objetivo de tiempo de recuperacion",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_ALL", "d": ""}]},
+{ref:"18.1.1.1",sec:"18",title:"Miembros compensadores - Generales",desc:"Liquidan por si mismos y clientes",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_SCC", "d": ""}, {"s": "CCLV_SCL", "d": ""}]},
+{ref:"18.1.1.2",sec:"18",title:"Miembros compensadores - Directos",desc:"Liquidan solo por si mismos",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_SCC", "d": ""}, {"s": "CCLV_SCL", "d": ""}]},
+{ref:"18.1.1.3",sec:"18",title:"Miembros compensadores - Otros",desc:"Otras categorias",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_SCC", "d": ""}, {"s": "CCLV_SCL", "d": ""}]},
+{ref:"18.1.2.3",sec:"18",title:"Tipo entidad - Bancos",desc:"Numero de bancos participantes",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_SCC", "d": ""}, {"s": "CCLV_SCL", "d": ""}]},
+{ref:"18.1.2.4",sec:"18",title:"Tipo entidad - Otros",desc:"Otras categorias",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_SCC", "d": ""}, {"s": "CCLV_SCL", "d": ""}]},
+{ref:"18.1.3.1",sec:"18",title:"Geografia - Domesticos",desc:"Constituidos en Chile",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_SCC", "d": ""}, {"s": "CCLV_SCL", "d": ""}]},
+{ref:"18.1.3.2",sec:"18",title:"Geografia - Extranjeros",desc:"Constituidos fuera de Chile",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_SCC", "d": ""}, {"s": "CCLV_SCL", "d": ""}]},
+{ref:"18.2.2",sec:"18",title:"Concentracion posiciones - Top 5 CMs (25+ miembros)",desc:"Promedio y Pico del trimestre",aplica:"si",just:"",df:"DataFile_18_2",rows:[{"s": "CCLV_SCC_RV", "d": "AverageInQuarter"}, {"s": "CCLV_SCC_RV", "d": "PeakInQuarter"}, {"s": "CCLV_SCL_PH", "d": "AverageInQuarter"}, {"s": "CCLV_SCL_PH", "d": "PeakInQuarter"}, {"s": "CCLV_SCL_PM", "d": "AverageInQuarter"}, {"s": "CCLV_SCL_PM", "d": "PeakInQuarter"}, {"s": "CCLV_SCL_SM", "d": "AverageInQuarter"}, {"s": "CCLV_SCL_SM", "d": "PeakInQuarter"}]},
+{ref:"18.2.3",sec:"18",title:"Concentracion posiciones - Top 10 CMs (25+ miembros)",desc:"Promedio y Pico del trimestre",aplica:"si",just:"",df:"DataFile_18_2",rows:[{"s": "CCLV_SCC_RV", "d": "AverageInQuarter"}, {"s": "CCLV_SCC_RV", "d": "PeakInQuarter"}, {"s": "CCLV_SCL_PH", "d": "AverageInQuarter"}, {"s": "CCLV_SCL_PH", "d": "PeakInQuarter"}, {"s": "CCLV_SCL_PM", "d": "AverageInQuarter"}, {"s": "CCLV_SCL_PM", "d": "PeakInQuarter"}, {"s": "CCLV_SCL_SM", "d": "AverageInQuarter"}, {"s": "CCLV_SCL_SM", "d": "PeakInQuarter"}]},
+{ref:"18.3.2",sec:"18",title:"Concentracion IM - Top 5 CMs (25+ miembros)",desc:"Promedio y Pico del trimestre",aplica:"si",just:"",df:"DataFile_18_2",rows:[{"s": "CCLV_SCC_RV", "d": "AverageInQuarter"}, {"s": "CCLV_SCC_RV", "d": "PeakInQuarter"}, {"s": "CCLV_SCL_PH", "d": "AverageInQuarter"}, {"s": "CCLV_SCL_PH", "d": "PeakInQuarter"}, {"s": "CCLV_SCL_PM", "d": "AverageInQuarter"}, {"s": "CCLV_SCL_PM", "d": "PeakInQuarter"}, {"s": "CCLV_SCL_SM", "d": "AverageInQuarter"}, {"s": "CCLV_SCL_SM", "d": "PeakInQuarter"}]},
+{ref:"18.3.3",sec:"18",title:"Concentracion IM - Top 10 CMs (25+ miembros)",desc:"Promedio y Pico del trimestre",aplica:"si",just:"",df:"DataFile_18_2",rows:[{"s": "CCLV_SCC_RV", "d": "AverageInQuarter"}, {"s": "CCLV_SCC_RV", "d": "PeakInQuarter"}, {"s": "CCLV_SCL_PH", "d": "AverageInQuarter"}, {"s": "CCLV_SCL_PH", "d": "PeakInQuarter"}, {"s": "CCLV_SCL_PM", "d": "AverageInQuarter"}, {"s": "CCLV_SCL_PM", "d": "PeakInQuarter"}, {"s": "CCLV_SCL_SM", "d": "AverageInQuarter"}, {"s": "CCLV_SCL_SM", "d": "PeakInQuarter"}]},
+{ref:"18.4.2",sec:"18",title:"Concentracion fondo default - Top 5 CMs (25+ miembros)",desc:"% del fondo",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_SCC", "d": ""}, {"s": "CCLV_SCL", "d": ""}]},
+{ref:"18.4.3",sec:"18",title:"Concentracion fondo default - Top 10 CMs (25+ miembros)",desc:"% del fondo",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_SCC", "d": ""}, {"s": "CCLV_SCL", "d": ""}]},
+{ref:"19.1.1",sec:"19",title:"Clientes - Numero total",desc:"Si es conocido por la CCP",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_SCC", "d": ""}, {"s": "CCLV_SCL", "d": ""}]},
+{ref:"19.1.2",sec:"19",title:"Clientes - Miembros que liquidan para clientes",desc:"Numero",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_SCC", "d": ""}, {"s": "CCLV_SCL", "d": ""}]},
+{ref:"19.1.3.1",sec:"19",title:"Concentracion clientes - Top 5 CMs",desc:"Pico del trimestre",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_SCC", "d": ""}, {"s": "CCLV_SCL", "d": ""}]},
+{ref:"19.1.3.2",sec:"19",title:"Concentracion clientes - Top 5 CMs",desc:"Promedio del trimestre",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_SCC", "d": ""}, {"s": "CCLV_SCL", "d": ""}]},
+{ref:"19.1.4.1",sec:"19",title:"Concentracion clientes - Top 10 CMs",desc:"Pico del trimestre",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_SCC", "d": ""}, {"s": "CCLV_SCL", "d": ""}]},
+{ref:"19.1.4.2",sec:"19",title:"Concentracion clientes - Top 10 CMs",desc:"Promedio del trimestre",aplica:"si",just:"",df:"AggregatedDataFile",rows:[{"s": "CCLV_SCC", "d": ""}, {"s": "CCLV_SCL", "d": ""}]},
+{ref:"23.1.1",sec:"23",title:"Volumenes diarios promedio",desc:"Por clase de activo, instrumento, moneda y OTC/ETD",aplica:"si",just:"",df:"DataFile_23",rows:[{"s": "CCLV_SCC", "d": "ETD_RV_AC"}, {"s": "CCLV_SCC", "d": "ETD_RV_CF"}, {"s": "CCLV_SCL", "d": "ETD_PH_BE"}, {"s": "CCLV_SCL", "d": "ETD_PH_BT"}, {"s": "CCLV_SCL", "d": "ETD_PH_IF"}, {"s": "CCLV_SCL", "d": "ETD_PH_PM"}, {"s": "CCLV_SCL", "d": "ETD_SCL_TOTAL"}]},
+{ref:"23.1.2",sec:"23",title:"Valor nocional promedio",desc:"Por clase de activo, moneda y OTC/ETD",aplica:"si",just:"",df:"DataFile_23",rows:[{"s": "CCLV_SCC", "d": "ETD_RV_AC"}, {"s": "CCLV_SCC", "d": "ETD_RV_CF"}, {"s": "CCLV_SCL", "d": "ETD_PH_BE"}, {"s": "CCLV_SCL", "d": "ETD_PH_BT"}, {"s": "CCLV_SCL", "d": "ETD_PH_IF"}, {"s": "CCLV_SCL", "d": "ETD_PH_PM"}, {"s": "CCLV_SCL", "d": "ETD_SCL_TOTAL"}]},
+{ref:"23.2.1",sec:"23",title:"Nocional bruto pendiente",desc:"Por clase de activo, instrumento, moneda y OTC/ETD",aplica:"si",just:"",df:"DataFile_23",rows:[{"s": "CCLV_SCC", "d": "ETD_RV_AC"}, {"s": "CCLV_SCC", "d": "ETD_RV_CF"}, {"s": "CCLV_SCL", "d": "ETD_PH_BE"}, {"s": "CCLV_SCL", "d": "ETD_PH_BT"}, {"s": "CCLV_SCL", "d": "ETD_PH_IF"}, {"s": "CCLV_SCL", "d": "ETD_PH_PM"}, {"s": "CCLV_SCL", "d": "ETD_SCL_TOTAL"}]},
+{ref:"23.3.1",sec:"23",title:"Volumenes por plataforma de ejecucion",desc:"Promedio diario por plataforma",aplica:"si",just:"",df:"DataFile_23_3",rows:[{"s": "CCLV_SCC_RV", "d": "ETD"}, {"s": "CCLV_SCL_PM", "d": "ETD"}, {"s": "CCLV_SCL_PH", "d": "ETD"}, {"s": "CCLV_SCL_SM", "d": "ETD"}]},
+{ref:"23.3.2",sec:"23",title:"Valores nocionales por plataforma",desc:"Por plataforma de ejecucion",aplica:"si",just:"",df:"DataFile_23_3",rows:[{"s": "CCLV_SCC_RV", "d": "ETD"}, {"s": "CCLV_SCL_PM", "d": "ETD"}, {"s": "CCLV_SCL_PH", "d": "ETD"}, {"s": "CCLV_SCL_SM", "d": "ETD"}]}
 ];
 
-var mapeo = {}, curSec = "ALL", timers = {};
+var mapeo={}, curSec="ALL", timers={}, openCards={};
 
-function sync(s, m) { document.getElementById("dot").className = "dot " + s; document.getElementById("slbl").textContent = m; }
+// ── SUPABASE ──────────────────────────────────────────────────────────────────
+function sync(s,m){document.getElementById("dot").className="dot "+s;document.getElementById("slbl").textContent=m;}
 
-function showToast(m) {
-  var t = document.getElementById("toast"); t.textContent = m; t.classList.add("show");
-  setTimeout(function() { t.classList.remove("show"); }, 2000);
+function saveField(ref,field,value){
+  if(!mapeo[ref])mapeo[ref]={ref:ref};
+  mapeo[ref][field]=value;
+  updateStats();
+  sync("sv","Guardando...");
+  clearTimeout(timers[ref+"_"+field]);
+  timers[ref+"_"+field]=setTimeout(function(){
+    sbUpsert(mapeo[ref])
+      .then(function(){sync("ok","Guardado");showToast("Guardado");})
+      .catch(function(){sync("er","Error al guardar");});
+  },800);
 }
 
-function esc(s) {
-  return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+function loadData(){
+  sync("sv","Cargando...");
+  sbGet().then(function(rows){
+    mapeo={};
+    if(Array.isArray(rows))rows.forEach(function(r){mapeo[r.ref]=r;});
+    renderCards();updateStats();updateSidebarBadges();
+    sync("ok","Conectado - cambios visibles para todo el equipo");
+    showToast("Datos cargados");
+  }).catch(function(e){
+    sync("er","Error: "+e.message);
+    showToast("Error de conexion");
+  });
 }
 
-function updateStats() {
-  var comp=0, parc=0, pend=0, na_count=0;
-  D.forEach(function(d) {
-    var m = mapeo[d.ref] || {};
-    if (d.aplica === "na" && !m.estado) { na_count++; return; }
-    var f = ["sistema","tipo_fuente","query"].filter(function(x){ return m[x] && m[x].trim(); }).length;
-    var e = m.estado || "pendiente";
-    if (e === "completo") comp++;
-    else if (e === "na") na_count++;
-    else if (e === "parcial" || f > 0) parc++;
+// ── STATS ─────────────────────────────────────────────────────────────────────
+function getEstado(ref){
+  var m=mapeo[ref]||{};
+  return m.estado||"pendiente";
+}
+function updateStats(){
+  var filtered=getFiltered();
+  var comp=0,parc=0,pend=0,applicable=0;
+  filtered.forEach(function(d){
+    if(d.aplica==="na")return;
+    applicable++;
+    var e=getEstado(d.ref);
+    if(e==="completo")comp++;
+    else if(e==="parcial")parc++;
     else pend++;
   });
-  document.getElementById("stot").textContent = D.length;
-  document.getElementById("scom").textContent = comp;
-  document.getElementById("spar").textContent = parc;
-  document.getElementById("spen").textContent = pend;
-  document.getElementById("sna").textContent = na_count;
-  var applicable = D.filter(function(d){ return d.aplica === "si"; }).length;
-  var p = applicable > 0 ? Math.round((comp / applicable) * 100) : 0;
-  document.getElementById("pct").textContent = p + "%";
-  document.getElementById("pfi").style.width = p + "%";
+  document.getElementById("st-total").textContent=filtered.length;
+  document.getElementById("st-comp").textContent=comp;
+  document.getElementById("st-parc").textContent=parc;
+  document.getElementById("st-pend").textContent=pend;
+  var pct=applicable>0?Math.round((comp/applicable)*100):0;
+  document.getElementById("st-pct").textContent=pct+"%";
+  document.getElementById("prog-fill").style.width=pct+"%";
 }
 
-function saveField(ref, field, value) {
-  if (!mapeo[ref]) mapeo[ref] = {ref: ref};
-  mapeo[ref][field] = value;
+function updateSidebarBadges(){
+  var secs=["ALL","4","5","6","7","12","13","14","15","16","17","18","19","23"];
+  secs.forEach(function(sec){
+    var items=sec==="ALL"?D:D.filter(function(d){return d.sec===sec;});
+    var applicable=items.filter(function(d){return d.aplica==="si";});
+    var comp=applicable.filter(function(d){return getEstado(d.ref)==="completo";}).length;
+    var pct=applicable.length>0?Math.round((comp/applicable.length)*100):0;
+    var nb=document.getElementById("nb-"+sec);
+    var npf=document.getElementById("npf-"+sec);
+    if(nb)nb.textContent=comp+"/"+applicable.length;
+    if(npf)npf.style.width=pct+"%";
+  });
+}
+
+// ── FILTERING ─────────────────────────────────────────────────────────────────
+function getFiltered(){
+  var q=(document.getElementById("q")||{value:""}).value.toLowerCase();
+  return D.filter(function(d){
+    var secOk=curSec==="ALL"||d.sec===curSec;
+    var qOk=!q||[d.ref,d.title,d.desc].some(function(x){return x.toLowerCase().indexOf(q)>=0;});
+    return secOk&&qOk;
+  });
+}
+
+// ── RENDER CARDS ──────────────────────────────────────────────────────────────
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
+
+function getEstColor(e){return {completo:"#27985F",parcial:"#FFC72F",pendiente:"#B0ADA8",na:"#0069A7"}[e]||"#B0ADA8";}
+
+function renderCards(){
+  var filtered=getFiltered();
+  var container=document.getElementById("cards");
+  if(!filtered.length){
+    container.innerHTML='<div class="empty"><h3>Sin resultados</h3><p>Intenta con otro filtro o busqueda</p></div>';
+    return;
+  }
+  var html="";
+  filtered.forEach(function(d){
+    var m=mapeo[d.ref]||{};
+    var est=d.aplica==="na"?"na":(m.estado||"pendiente");
+    var ec=getEstColor(est);
+    var isOpen=openCards[d.ref]?"open":"";
+    var estLabel={completo:"Completo",parcial:"Parcial",pendiente:"Pendiente",na:"N/A"}[est]||"Pendiente";
+    html+='<div class="disc-card'+(d.aplica==="na"?" na":"")+'" id="card-'+d.ref+'">';
+    html+='<div class="disc-header '+isOpen+'" data-ref="'+d.ref+'">';
+    html+='<div class="disc-ref">'+d.ref+'</div>';
+    html+='<div class="disc-info"><div class="disc-title">'+esc(d.title)+'</div><div class="disc-desc">'+esc(d.desc)+'</div></div>';
+    html+='<div class="disc-tags">';
+    html+='<span class="tag tag-df">'+esc(d.df)+'</span>';
+    html+='<span class="tag '+(d.aplica==="si"?"tag-si":"tag-na")+'">'+(d.aplica==="si"?"Si aplica":"No aplica")+'</span>';
+    html+='<span style="display:inline-flex;align-items:center;gap:4px;font-size:9px;color:'+ec+';font-weight:700">'+
+      '<span style="width:7px;height:7px;border-radius:50%;background:'+ec+';display:inline-block"></span>'+estLabel+'</span>';
+    html+='</div>';
+    html+='<span class="chevron">▶</span>';
+    html+='</div>';
+    if(isOpen){
+      html+=renderCardBody(d,m);
+    }
+    html+='</div>';
+  });
+  container.innerHTML=html;
   updateStats();
-  sync("sv", "Guardando...");
-  clearTimeout(timers[ref]);
-  timers[ref] = setTimeout(function() {
-    sbUpsert(mapeo[ref])
-      .then(function() { sync("ok", "Guardado - visible para todo el equipo"); showToast("Guardado — visible para todo el equipo"); })
-      .catch(function() { sync("er", "Error al guardar"); });
-  }, 800);
 }
 
-document.getElementById("tbody").addEventListener("input", function(e) {
-  var el = e.target, ref = el.getAttribute("data-ref"), field = el.getAttribute("data-field");
-  if (ref && field) saveField(ref, field, el.value);
-});
-document.getElementById("tbody").addEventListener("change", function(e) {
-  var el = e.target, ref = el.getAttribute("data-ref"), field = el.getAttribute("data-field");
-  if (ref && field) { saveField(ref, field, el.value); if (field === "estado") render(); }
-});
-document.getElementById("tabs").addEventListener("click", function(e) {
-  if (!e.target.classList.contains("tab")) return;
-  document.querySelectorAll(".tab").forEach(function(t){ t.classList.remove("active"); });
-  e.target.classList.add("active");
-  curSec = e.target.getAttribute("data-sec");
-  render();
-});
-document.getElementById("q").addEventListener("input", function() { render(); });
-document.getElementById("btn-pipeline").addEventListener("click", exportPipeline);
-document.getElementById("btn-csv").addEventListener("click", exportCSV);
-document.getElementById("btn-refresh").addEventListener("click", loadData);
-document.getElementById("btn-clear").addEventListener("click", clearAll);
-document.getElementById("btn-close-modal").addEventListener("click", function(){ document.getElementById("modal").classList.remove("open"); });
-document.getElementById("btn-close-modal2").addEventListener("click", function(){ document.getElementById("modal").classList.remove("open"); });
-document.getElementById("btn-dl-json").addEventListener("click", downloadJSON);
+function renderCardBody(d,m){
+  var activeTab=(openCards[d.ref+"_tab"])||"mapeo";
+  var html='<div class="disc-body open">';
+  html+='<div class="tabs">';
+  html+='<button class="tab-btn'+(activeTab==="mapeo"?" active":"")+'" data-ref="'+d.ref+'" data-tab="mapeo">Mapeo de fuente</button>';
+  if(d.aplica==="si"&&d.rows.length>0){
+    html+='<button class="tab-btn'+(activeTab==="valores"?" active":"")+'" data-ref="'+d.ref+'" data-tab="valores">Valores 2026Q1</button>';
+  }
+  html+='</div>';
 
-function render() {
-  var q = document.getElementById("q").value.toLowerCase();
-  var rows = D.filter(function(d) {
-    var secMatch = curSec === "ALL" || d.sec === curSec ||
-      (curSec === "SI" && d.aplica === "si") ||
-      (curSec === "NA_DEF" && d.aplica === "na");
-    var qMatch = !q || [d.ref,d.title,d.desc,d.vals,d.file,d.just].some(function(x){ return x.toLowerCase().indexOf(q) >= 0; });
-    return secMatch && qMatch;
+  // MAPEO PANE
+  html+='<div class="tab-pane'+(activeTab==="mapeo"?" active":"")+'" data-ref="'+d.ref+'" data-pane="mapeo">';
+  if(d.aplica==="na"){
+    html+='<div class="na-justif">'+esc(d.just)+'</div>';
+    html+='<div style="margin-top:10px">';
+    html+=fieldGroup("Notas adicionales","full","textarea",d.ref,"notas",m.notas||"","Notas tecnicas o comentarios...");
+    html+='</div>';
+  } else {
+    html+='<div class="mapeo-grid">';
+    html+=fieldGroup("Sistema / BD","","input",d.ref,"sistema",m.sistema||"","Ej: Oracle Risk, Murex...");
+    html+=fieldGroup("Responsable","","input",d.ref,"responsable",m.responsable||"","Nombre o area");
+    html+=estGroup(d.ref,m.estado||"pendiente");
+    html+=fieldGroup("Tipo de fuente","","select",d.ref,"tipo_fuente",m.tipo_fuente||"","");
+    html+=fieldGroup("Conexion / Ruta","wide","input",d.ref,"conexion",m.conexion||"","oracle_risk / /data/im.csv");
+    html+=fieldGroup("Query SQL / Endpoint","full","textarea",d.ref,"query",m.query||"","SELECT ... FROM ... WHERE fecha = :q");
+    html+=fieldGroup("Transformacion","","select2",d.ref,"transformacion",m.transformacion||"","");
+    html+=fieldGroup("Notas tecnicas","wide","input",d.ref,"notas",m.notas||"","Dependencias, validaciones...");
+    html+='</div>';
+  }
+  html+='</div>';
+
+  // VALORES PANE
+  if(d.aplica==="si"&&d.rows.length>0){
+    var vals=m.valores?tryParse(m.valores):{};
+    html+='<div class="tab-pane'+(activeTab==="valores"?" active":"")+'" data-ref="'+d.ref+'" data-pane="valores">';
+    html+='<p class="valores-hint">Ingresa los valores del periodo 2026Q1 (2026-03-31) · Moneda: CLP · DataFile: <strong>'+esc(d.df)+'</strong></p>';
+    html+='<table class="val-table"><thead><tr><th>Servicio</th><th>Sub-campo / Descripcion</th><th>Valor 2026Q1</th><th>Fuente / Referencia</th></tr></thead><tbody>';
+    d.rows.forEach(function(row){
+      var vkey=row.s+(row.d?"_"+row.d:"");
+      var curVal=vals[vkey]||{v:"",f:""};
+      var svcShort=row.s.replace("CCLV_","");
+      html+='<tr>';
+      html+='<td><span class="svc-badge svc-'+svcShort+'">'+esc(row.s)+'</span></td>';
+      html+='<td><span class="desc-lbl">'+esc(row.d||"—")+'</span></td>';
+      html+='<td><input class="val-input" type="text" data-ref="'+d.ref+'" data-vkey="'+esc(vkey)+'" data-field="v" value="'+esc(curVal.v||"")+'" placeholder="Ej: 14,006,410,844"></td>';
+      html+='<td><input class="val-input" type="text" data-ref="'+d.ref+'" data-vkey="'+esc(vkey)+'" data-field="f" value="'+esc(curVal.f||"")+'" placeholder="Sistema / tabla / calculo"></td>';
+      html+='</tr>';
+    });
+    html+='</tbody></table>';
+    html+='</div>';
+  }
+  html+='</div>';
+  return html;
+}
+
+function fieldGroup(label,cls,type,ref,field,val,ph){
+  var html='<div class="field-group'+( cls?" "+cls:"")+'">';
+  html+='<label class="field-label">'+esc(label)+'</label>';
+  if(type==="input"){
+    html+='<input class="field-input" type="text" data-ref="'+ref+'" data-field="'+field+'" value="'+esc(val)+'" placeholder="'+esc(ph)+'">';
+  } else if(type==="textarea"){
+    html+='<textarea class="field-input" rows="2" data-ref="'+ref+'" data-field="'+field+'" placeholder="'+esc(ph)+'">'+esc(val)+'</textarea>';
+  } else if(type==="select"){
+    html+='<select class="field-input" data-ref="'+ref+'" data-field="'+field+'">';
+    [["","— Sin fuente —"],["SQL","SQL"],["API","API"],["CSV/Excel","CSV / Excel"],["Manual","Manual"],["Calculo","Calculo"]].forEach(function(o){
+      html+='<option value="'+o[0]+'"'+(val===o[0]?" selected":"")+'>'+o[1]+'</option>';
+    });
+    html+='</select>';
+  } else if(type==="select2"){
+    html+='<select class="field-input" data-ref="'+ref+'" data-field="'+field+'">';
+    [["","Sin transformacion"],["valor_directo","Valor directo"],["suma","Suma"],["promedio","Promedio"],["maximo","Maximo"],["ratio_pct","Ratio / %"],["logica_compleja","Logica compleja"],["texto_manual","Texto manual"]].forEach(function(o){
+      html+='<option value="'+o[0]+'"'+(val===o[0]?" selected":"")+'>'+o[1]+'</option>';
+    });
+    html+='</select>';
+  }
+  html+='</div>';
+  return html;
+}
+
+function estGroup(ref,val){
+  var html='<div class="field-group">';
+  html+='<label class="field-label">Estado</label>';
+  html+='<select class="field-input est-sel" data-ref="'+ref+'" data-field="estado">';
+  [["pendiente","⬜ Pendiente"],["parcial","🟨 Parcial"],["completo","🟩 Completo"],["na","🟦 N/A"]].forEach(function(o){
+    html+='<option value="'+o[0]+'"'+(val===o[0]?" selected":"")+'>'+o[1]+'</option>';
   });
-  var tbody = document.getElementById("tbody");
-  if (!rows.length) { tbody.innerHTML = "<tr><td colspan=16 class=empty>Sin resultados.</td></tr>"; return; }
-  var parts = [], lastSec = null;
-  rows.forEach(function(d) {
-    if (d.sec !== lastSec) {
-      parts.push("<tr class=secr><td colspan=16>" + SMAP[d.sec].label + "</td></tr>");
-      lastSec = d.sec;
+  html+='</select>';
+  html+='</div>';
+  return html;
+}
+
+function tryParse(s){try{return JSON.parse(s);}catch(e){return {};}}
+
+// ── EVENTS ────────────────────────────────────────────────────────────────────
+document.getElementById("cards").addEventListener("click",function(e){
+  var hdr=e.target.closest(".disc-header");
+  if(hdr){
+    var ref=hdr.getAttribute("data-ref");
+    openCards[ref]=!openCards[ref];
+    renderCards();
+    return;
+  }
+  var tb=e.target.closest(".tab-btn");
+  if(tb){
+    var ref=tb.getAttribute("data-ref");
+    var tab=tb.getAttribute("data-tab");
+    openCards[ref+"_tab"]=tab;
+    renderCards();
+    return;
+  }
+});
+
+document.getElementById("cards").addEventListener("input",function(e){
+  var el=e.target;
+  var ref=el.getAttribute("data-ref");
+  if(!ref)return;
+  var field=el.getAttribute("data-field");
+  var vkey=el.getAttribute("data-vkey");
+  if(vkey){
+    // Value field
+    var m=mapeo[ref]||{};
+    var vals=tryParse(m.valores||"{}");
+    if(!vals[vkey])vals[vkey]={v:"",f:""};
+    vals[vkey][field]=el.value;
+    saveField(ref,"valores",JSON.stringify(vals));
+  } else if(field){
+    saveField(ref,field,el.value);
+    if(field==="estado"){updateStats();updateSidebarBadges();}
+  }
+});
+
+document.getElementById("cards").addEventListener("change",function(e){
+  var el=e.target;
+  var ref=el.getAttribute("data-ref");
+  var field=el.getAttribute("data-field");
+  if(ref&&field){
+    saveField(ref,field,el.value);
+    if(field==="estado"){
+      updateStats();updateSidebarBadges();
+      // Re-render just this card's header dot
+      var card=document.getElementById("card-"+ref);
+      if(card){
+        var hdr=card.querySelector(".disc-header");
+        if(hdr){
+          openCards[ref]=true; // keep open
+          renderCards();
+        }
+      }
     }
-    var m = mapeo[d.ref] || {};
-    var isNaDefault = d.aplica === "na" && !m.estado;
-    var est = m.estado || (isNaDefault ? "na" : "pendiente");
-    var bc = {completo:"#27985F",parcial:"#FFC72F",pendiente:"#B0ADA8",na:"#0069A7"}[est] || "#B0ADA8";
-    var sm = SMAP[d.sec];
-    function opt(field, val, label) {
-      return "<option value=" + val + (m[field] === val || (isNaDefault && val === "na" && field === "estado") ? " selected" : "") + ">" + label + "</option>";
-    }
-    var aplicaBadge = d.aplica === "si"
-      ? "<span class=tag-si>Si aplica</span>"
-      : "<span class=tag-na>No aplica</span>";
-    var justCell = d.aplica === "na"
-      ? "<div class=just-na>" + esc(d.just) + "</div>"
-      : "<div class=just-text></div>";
-    parts.push(
-      "<tr class='" + (d.aplica === "na" ? "row-na" : "") + "' style='border-left:4px solid " + bc + "'>" +
-      "<td><span class=did>" + d.ref + "</span><span class=badge style='background:" + sm.bg + ";color:" + sm.color + ";border-left:2px solid " + sm.color + "'>" + d.sec + "</span></td>" +
-      "<td><div class=dn>" + esc(d.title) + "</div></td>" +
-      "<td><div class=dd>" + esc(d.desc) + "</div></td>" +
-      "<td><div class=dv>" + esc(d.vals || "-") + "</div></td>" +
-      "<td><span class=dty>" + esc(d.dtype) + "</span></td>" +
-      "<td><span class=dfi>" + esc(d.file) + "</span></td>" +
-      "<td><span class=dfr>" + esc(d.freq) + "</span></td>" +
-      "<td class=blc><textarea class=ci rows=1 placeholder='Ej: Oracle Risk, Murex...' data-ref=" + d.ref + " data-field=sistema>" + esc(m.sistema || "") + "</textarea></td>" +
-      "<td><input class=ci type=text style='min-height:22px' placeholder='Nombre o area' value='" + esc(m.responsable || "") + "' data-ref=" + d.ref + " data-field=responsable></td>" +
-      "<td><select class=cs data-ref=" + d.ref + " data-field=estado>" +
-        opt("estado","pendiente","Pendiente") + opt("estado","parcial","Parcial") +
-        opt("estado","completo","Completo") + opt("estado","na","N/A") +
-      "</select></td>" +
-      "<td class=blb><select class=csp data-ref=" + d.ref + " data-field=tipo_fuente>" +
-        "<option value=''" + (!m.tipo_fuente ? " selected" : "") + ">— Sin fuente —</option>" +
-        opt("tipo_fuente","SQL","SQL") + opt("tipo_fuente","API","API") +
-        opt("tipo_fuente","CSV/Excel","CSV/Excel") + opt("tipo_fuente","Manual","Manual") +
-        opt("tipo_fuente","Calculo","Calculo") +
-      "</select></td>" +
-      "<td><textarea class=cp rows=2 placeholder='SELECT ... FROM ... WHERE fecha = :q' data-ref=" + d.ref + " data-field=query>" + esc(m.query || "") + "</textarea></td>" +
-      "<td><select class=csp data-ref=" + d.ref + " data-field=transformacion>" +
-        "<option value=''" + (!m.transformacion ? " selected" : "") + ">Sin transformacion</option>" +
-        opt("transformacion","valor_directo","Valor directo") + opt("transformacion","suma","Suma") +
-        opt("transformacion","promedio","Promedio") + opt("transformacion","maximo","Maximo") +
-        opt("transformacion","ratio_pct","Ratio pct") + opt("transformacion","logica_compleja","Logica compleja") +
-      "</select></td>" +
-      "<td class=bla>" + aplicaBadge + "</td>" +
-      "<td>" + justCell + "</td>" +
-      "<td><textarea class=cp rows=1 placeholder='Notas tecnicas adicionales...' data-ref=" + d.ref + " data-field=notas>" + esc(m.notas || "") + "</textarea></td>" +
-      "</tr>"
-    );
-  });
-  tbody.innerHTML = parts.join("");
-}
+  }
+});
 
-function loadData() {
-  sync("sv", "Cargando...");
-  sbGet().then(function(rows) {
-    mapeo = {};
-    if (Array.isArray(rows)) rows.forEach(function(r){ mapeo[r.ref] = r; });
-    render(); updateStats();
-    sync("ok", "Conectado · cambios guardados para todo el equipo");
-    showToast("Datos cargados correctamente");
-    document.getElementById("ov").style.display = "none";
-  }).catch(function(e) {
-    sync("er", "Error: " + e.message);
-    showToast("Error de conexion");
-    document.getElementById("ov").style.display = "none";
-  });
-}
+document.getElementById("q").addEventListener("input",function(){renderCards();updateStats();});
 
-function buildConfig() {
-  var bf = {};
-  D.forEach(function(d) {
-    var m = mapeo[d.ref] || {};
-    if (!m.tipo_fuente && !m.query) return;
-    if (!bf[d.file]) bf[d.file] = [];
-    bf[d.file].push({
-      disclosure_ref:d.ref, titulo:d.title, tipo_dato:d.dtype, frecuencia:d.freq,
-      aplica_cclv:d.aplica, justificacion_na:d.aplica==="na"?d.just:null,
-      tipo_fuente:m.tipo_fuente||null, sistema:m.sistema||null,
-      query_o_ruta:m.query||null, transformacion:m.transformacion||"valor_directo",
-      responsable:m.responsable||null, estado:m.estado||"pendiente", notas:m.notas||null
+// Sidebar nav
+document.getElementById("sidebar").addEventListener("click",function(e){
+  var item=e.target.closest(".nav-item");
+  if(!item)return;
+  document.querySelectorAll(".nav-item").forEach(function(n){n.classList.remove("active");});
+  item.classList.add("active");
+  curSec=item.getAttribute("data-sec");
+  var title=document.getElementById("sec-title");
+  var desc=document.getElementById("sec-desc");
+  if(curSec==="ALL"){title.textContent="Todos los disclosures";desc.textContent="123 disclosures · Moneda CLP · Fecha reporte 2026-03-31";}
+  else{title.textContent=SMAP[curSec]?SMAP[curSec].label:"Seccion "+curSec;desc.textContent="Seccion "+curSec+" · Moneda CLP · Fecha reporte 2026-03-31";}
+  openCards={};
+  renderCards();updateStats();
+});
+
+// Refresh
+document.getElementById("btn-refresh").addEventListener("click",loadData);
+
+// Export
+document.getElementById("btn-export").addEventListener("click",function(){
+  buildExportModal();
+  document.getElementById("modal").classList.add("open");
+});
+document.getElementById("modal-close").addEventListener("click",function(){document.getElementById("modal").classList.remove("open");});
+document.getElementById("modal-close2").addEventListener("click",function(){document.getElementById("modal").classList.remove("open");});
+document.getElementById("btn-dl-csv").addEventListener("click",downloadCSV);
+document.getElementById("btn-dl-json").addEventListener("click",downloadJSON);
+
+// ── EXPORT ────────────────────────────────────────────────────────────────────
+function buildExportModal(){
+  var total=0,filled=0;
+  D.forEach(function(d){
+    if(d.aplica==="na")return;
+    d.rows.forEach(function(row){
+      total++;
+      var m=mapeo[d.ref]||{};
+      var vals=tryParse(m.valores||"{}");
+      var vkey=row.s+(row.d?"_"+row.d:"");
+      if(vals[vkey]&&vals[vkey].v)filled++;
     });
   });
-  return {version:"2.0",ccp:"CCLV",template:"PQD_v2_CCP_Global_205_disclosures",
-    generado_en:new Date().toISOString(),datafiles:bf};
+  var html='<div style="padding:8px 0 16px">';
+  html+='<div style="display:flex;gap:12px;margin-bottom:16px">';
+  html+='<div style="background:#fff;border-radius:8px;padding:10px 16px;flex:1;border-top:3px solid #FF4201"><div style="font-family:PT Serif,serif;font-size:22px;color:#FF4201;font-weight:700">'+total+'</div><div style="font-size:9px;color:#6B6866;text-transform:uppercase;font-weight:700">Celdas de valor totales</div></div>';
+  html+='<div style="background:#fff;border-radius:8px;padding:10px 16px;flex:1;border-top:3px solid #27985F"><div style="font-family:PT Serif,serif;font-size:22px;color:#27985F;font-weight:700">'+filled+'</div><div style="font-size:9px;color:#6B6866;text-transform:uppercase;font-weight:700">Celdas diligenciadas</div></div>';
+  html+='<div style="background:#fff;border-radius:8px;padding:10px 16px;flex:1;border-top:3px solid #B0ADA8"><div style="font-family:PT Serif,serif;font-size:22px;color:#6B6866;font-weight:700">'+(total-filled)+'</div><div style="font-size:9px;color:#6B6866;text-transform:uppercase;font-weight:700">Pendientes</div></div>';
+  html+='</div>';
+  html+='<p style="font-size:11px;color:#6B6866;margin-bottom:8px">El CSV descargado contiene una fila por cada celda de valor con: ReportDate, DataFile, Servicio, Descripcion, Ref, Valor, Fuente.</p>';
+  html+='</div>';
+  document.getElementById("modal-body").innerHTML=html;
 }
 
-function exportPipeline() {
-  var cfg = buildConfig();
-  if (!Object.keys(cfg.datafiles).length) { showToast("Sin disclosures con fuente configurada"); return; }
-  document.getElementById("jo").textContent = JSON.stringify(cfg, null, 2);
-  document.getElementById("modal").classList.add("open");
-}
-function downloadJSON() {
-  var blob = new Blob([JSON.stringify(buildConfig(),null,2)],{type:"application/json"});
-  var a = document.createElement("a"); a.href = URL.createObjectURL(blob);
-  a.download = "pqd_pipeline_config_" + new Date().toISOString().slice(0,10) + ".json"; a.click();
-  showToast("JSON descargado correctamente");
-}
-
-function exportCSV() {
-  var h = ["Ref","Titulo","DataFile","Frecuencia","AplicaCCLV","JustificacionNA","Sistema","Responsable","Estado","TipoFuente","Query","Transformacion","Notas"];
-  var rows = D.map(function(d) {
-    var m = mapeo[d.ref] || {};
-    var vals = [d.ref,d.title,d.file,d.freq,d.aplica,d.just,
-      m.sistema||"",m.responsable||"",m.estado||"pendiente",
-      m.tipo_fuente||"",m.query||"",m.transformacion||"",m.notas||""];
-    return vals.map(function(v){ return '"' + String(v).replace(/"/g,'""') + '"'; }).join(",");
-  });
-  var csvContent = String.fromCharCode(0xFEFF) + h.join(",") + "\n" + rows.join("\n");
-  var blob = new Blob([csvContent],{type:"text/csv;charset=utf-8;"});
-  var a = document.createElement("a"); a.href = URL.createObjectURL(blob);
-  a.download = "CCLV_PQD_mapeo_completo_" + new Date().toISOString().slice(0,10) + ".csv"; a.click();
-  showToast("CSV exportado correctamente");
-}
-
-function clearAll() {
-  if (!confirm("Borrar TODOS los datos del equipo en Supabase? Esta accion no se puede deshacer.")) return;
-  sbDel().then(function(){ mapeo={}; render(); updateStats(); showToast("Datos borrados de Supabase"); });
-}
-
-setInterval(function(){
-  sbGet().then(function(r){
-    if(Array.isArray(r)){r.forEach(function(x){mapeo[x.ref]=x;});render();updateStats();}
-  }).catch(function(){});
-}, 30000);
-
-loadData();
-
-(function() {
-  var HASH = "e8f0d5c2b7a1f3e6d9c4b8a2f5e1d7c3b6a9f2e8d4c1b7a3f6e2d8c5b9a1f4";
-  function simpleHash(s) {
-    var h = 0;
-    for (var i = 0; i < s.length; i++) {
-      h = (Math.imul(31, h) + s.charCodeAt(i)) | 0;
+function downloadCSV(){
+  var rows=[["ReportDate","DataFile","ReportLevelIdentifier","Description","Disclosure_Ref","Titulo","Valor_2026Q1","Fuente","Estado_Mapeo","Sistema","Responsable"]];
+  D.forEach(function(d){
+    var m=mapeo[d.ref]||{};
+    var vals=tryParse(m.valores||"{}");
+    if(d.aplica==="na"){
+      rows.push(["2026-03-31",d.df,"N/A","N/A",d.ref,d.title,"N/A - "+d.just,"","na",m.sistema||"",m.responsable||""]);
+      return;
     }
-    return Math.abs(h).toString(16).padStart(8,'0');
-  }
-  var correctHash = simpleHash("RISKCCLVPQD");
+    if(d.rows.length===0){
+      rows.push(["2026-03-31",d.df,"CCLV","",d.ref,d.title,vals[""]||"",m.notas||"",m.estado||"pendiente",m.sistema||"",m.responsable||""]);
+      return;
+    }
+    d.rows.forEach(function(row){
+      var vkey=row.s+(row.d?"_"+row.d:"");
+      var curVal=vals[vkey]||{v:"",f:""};
+      rows.push(["2026-03-31",d.df,row.s,row.d,d.ref,d.title,curVal.v||"",curVal.f||"",m.estado||"pendiente",m.sistema||"",m.responsable||""]);
+    });
+  });
+  var csv=rows.map(function(r){return r.map(function(v){return '"'+String(v).replace(/"/g,'""')+'"';}).join(",");}).join("\n");
+  var blob=new Blob([String.fromCharCode(0xFEFF)+csv],{type:"text/csv;charset=utf-8;"});
+  var a=document.createElement("a");a.href=URL.createObjectURL(blob);
+  a.download="CCLV_PQD_2026Q1_reporte.csv";a.click();
+  showToast("CSV descargado");
+}
 
-  function checkPassword() {
-    var val = document.getElementById("pw-input").value;
-    if (simpleHash(val) === correctHash) {
-      document.getElementById("pw-screen").style.display = "none";
-      sessionStorage.setItem("pqd_auth", correctHash);
+function downloadJSON(){
+  var config={version:"1.0",ccp:"CCLV",periodo:"2026Q1",report_date:"2026-03-31",currency:"CLP",generado_en:new Date().toISOString(),datafiles:{}};
+  D.forEach(function(d){
+    var m=mapeo[d.ref]||{};
+    var vals=tryParse(m.valores||"{}");
+    if(!config.datafiles[d.df])config.datafiles[d.df]=[];
+    var entry={disclosure_ref:d.ref,titulo:d.title,aplica_cclv:d.aplica,sistema:m.sistema||null,tipo_fuente:m.tipo_fuente||null,query:m.query||null,transformacion:m.transformacion||null,responsable:m.responsable||null,estado:m.estado||"pendiente",valores:vals};
+    config.datafiles[d.df].push(entry);
+  });
+  var blob=new Blob([JSON.stringify(config,null,2)],{type:"application/json"});
+  var a=document.createElement("a");a.href=URL.createObjectURL(blob);
+  a.download="CCLV_PQD_2026Q1_pipeline_config.json";a.click();
+  showToast("JSON descargado");
+}
+
+// ── TOAST ─────────────────────────────────────────────────────────────────────
+var tt;
+function showToast(m){var t=document.getElementById("toast");t.textContent=m;t.classList.add("show");clearTimeout(tt);tt=setTimeout(function(){t.classList.remove("show");},2000);}
+
+// ── PASSWORD ──────────────────────────────────────────────────────────────────
+(function(){
+  function h(s){var x=0;for(var i=0;i<s.length;i++)x=(Math.imul(31,x)+s.charCodeAt(i))|0;return Math.abs(x).toString(16).padStart(8,"0");}
+  var correct=h("RISKCCLVPQD");
+  if(sessionStorage.getItem("pqd_auth")===correct){document.getElementById("pw").style.display="none";loadData();}
+  document.getElementById("pw-btn").addEventListener("click",function(){
+    if(h(document.getElementById("pw-input").value)===correct){
+      sessionStorage.setItem("pqd_auth",correct);
+      document.getElementById("pw").style.display="none";
+      loadData();
     } else {
-      var err = document.getElementById("pw-error");
-      err.textContent = "Contrasena incorrecta. Intentalo nuevamente.";
-      document.getElementById("pw-input").value = "";
-      document.getElementById("pw-input").focus();
-      setTimeout(function(){ err.textContent = ""; }, 3000);
+      document.getElementById("pw-err").textContent="Contrasena incorrecta.";
+      document.getElementById("pw-input").value="";
+      setTimeout(function(){document.getElementById("pw-err").textContent="";},2500);
     }
-  }
-
-  // Check if already authenticated this session
-  if (sessionStorage.getItem("pqd_auth") === simpleHash("RISKCCLVPQD")) {
-    document.getElementById("pw-screen").style.display = "none";
-  }
-
-  document.getElementById("pw-btn").addEventListener("click", checkPassword);
-  document.getElementById("pw-input").addEventListener("keydown", function(e) {
-    if (e.key === "Enter") checkPassword();
   });
+  document.getElementById("pw-input").addEventListener("keydown",function(e){if(e.key==="Enter")document.getElementById("pw-btn").click();});
   document.getElementById("pw-input").focus();
 })();
 
+// Auto-refresh
+setInterval(function(){
+  sbGet().then(function(r){
+    if(Array.isArray(r)){r.forEach(function(x){mapeo[x.ref]=x;});renderCards();updateStats();updateSidebarBadges();}
+  }).catch(function(){});
+},30000);
 </script>
 </body>
 </html>
