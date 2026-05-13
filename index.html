@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CCLV - PQD v2.0 Mapeo</title>
+<title>CCLV - PQD v2.0 Mapeo Colaborativo (205 disclosures)</title>
 <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{--or:#FF4201;--bk:#28272B;--gr:#27985F;--bl:#0069A7;--yw:#FFC72F;--g1:#F5F4F2;--g2:#E8E6E2;--g4:#B0ADA8;--g6:#6B6866}
@@ -21,9 +21,9 @@ body{font-family:Montserrat,sans-serif;background:var(--g1);color:var(--bk);min-
 @keyframes pu{0%,100%{opacity:1}50%{opacity:.3}}
 .stats{display:flex;gap:10px;flex-wrap:wrap;padding:16px 20px 0}
 .sc{background:#fff;border-radius:10px;box-shadow:0 2px 8px rgba(40,39,43,.07);padding:8px 14px;min-width:80px;border-top:3px solid var(--g2)}
-.sc.or{border-top-color:var(--or)}.sc.gr{border-top-color:var(--gr)}.sc.yw{border-top-color:var(--yw)}
-.sn{font-family:"PT Serif",Georgia,serif;font-size:26px;font-weight:700;line-height:1}
-.sc.or .sn{color:var(--or)}.sc.gr .sn{color:var(--gr)}.sc.yw .sn{color:#b8860b}
+.sc.or{border-top-color:var(--or)}.sc.gr{border-top-color:var(--gr)}.sc.yw{border-top-color:var(--yw)}.sc.bl{border-top-color:var(--bl)}
+.sn{font-family:"PT Serif",Georgia,serif;font-size:24px;font-weight:700;line-height:1}
+.sc.or .sn{color:var(--or)}.sc.gr .sn{color:var(--gr)}.sc.yw .sn{color:#b8860b}.sc.bl .sn{color:var(--bl)}
 .sl{font-size:9px;font-weight:700;color:var(--g6);text-transform:uppercase;letter-spacing:.8px;margin-top:2px}
 .pc{flex:1;min-width:160px;background:#fff;border-radius:10px;box-shadow:0 2px 8px rgba(40,39,43,.07);padding:8px 14px;display:flex;flex-direction:column;justify-content:center}
 .pla{font-size:9px;font-weight:700;color:var(--g6);text-transform:uppercase;margin-bottom:6px;display:flex;justify-content:space-between}
@@ -44,27 +44,33 @@ body{font-family:Montserrat,sans-serif;background:var(--g1);color:var(--bk);min-
 .li{display:flex;align-items:center;gap:4px}
 .ld{width:7px;height:7px;border-radius:2px;display:inline-block}
 .tw{margin:12px 20px 24px;background:#fff;border-radius:10px;box-shadow:0 2px 8px rgba(40,39,43,.07);border:1px solid var(--g2);overflow-x:auto}
-table{border-collapse:collapse;font-size:11px;table-layout:fixed;width:1700px}
-col.c0{width:65px}col.c1{width:145px}col.c2{width:215px}col.c3{width:115px}
-col.c4{width:108px}col.c5{width:115px}col.c6{width:145px}col.c7{width:105px}
-col.c8{width:94px}col.c9{width:94px}col.c10{width:145px}col.c11{width:195px}
-col.c12{width:128px}col.c13{width:145px}
+table{border-collapse:collapse;font-size:11px;table-layout:fixed;width:2000px}
+col.c0{width:70px}col.c1{width:130px}col.c2{width:200px}col.c3{width:120px}
+col.c4{width:100px}col.c5{width:110px}col.c6{width:80px}
+col.c7{width:90px}col.c8{width:90px}col.c9{width:90px}
+col.c10{width:90px}col.c11{width:140px}col.c12{width:90px}col.c13{width:180px}col.c14{width:180px}col.c15{width:160px}
 .thg{padding:6px 10px;font-family:Montserrat,sans-serif;font-size:9px;font-weight:800;letter-spacing:1px;text-transform:uppercase;text-align:center;border-bottom:1px solid rgba(255,255,255,.15)}
-.tgi{background:var(--bk);color:var(--g4)}.tgm{background:var(--or);color:#fff}.tgp{background:var(--bl);color:#fff}
+.tgi{background:var(--bk);color:var(--g4)}.tgm{background:var(--or);color:#fff}.tgp{background:var(--bl);color:#fff}.tga{background:#27985F;color:#fff}
 thead tr.cols{background:var(--g1);border-bottom:2px solid var(--or)}
 th{padding:7px 8px;text-align:left;font-family:Montserrat,sans-serif;font-size:9px;font-weight:700;color:var(--g6);letter-spacing:.5px;text-transform:uppercase;overflow:hidden;white-space:normal;word-break:break-word;vertical-align:bottom;line-height:1.3;border-right:1px solid var(--g1)}
-th.ec{color:var(--or)}th.ep{color:var(--bl)}th.blc{border-left:2px solid var(--or)}th.blb{border-left:2px solid var(--bl)}
+th.ec{color:var(--or)}th.ep{color:var(--bl)}th.ea{color:#27985F}th.blc{border-left:2px solid var(--or)}th.blb{border-left:2px solid var(--bl)}th.bla{border-left:2px solid #27985F}
 tbody tr{border-bottom:1px solid var(--g1)}tbody tr:hover{background:#fff8f6}
+tbody tr.row-na{background:#f8fff8}tbody tr.row-na:hover{background:#f0fff0}
 td{padding:7px 8px;vertical-align:top;border-right:1px solid var(--g1);overflow:hidden}
-td.blc{border-left:2px solid #ffe4da}td.blb{border-left:2px solid #ddeef8}
+td.blc{border-left:2px solid #ffe4da}td.blb{border-left:2px solid #ddeef8}td.bla{border-left:2px solid #d4edda}
 .secr td{padding:4px 10px;font-family:Montserrat,sans-serif;font-size:9px;font-weight:800;letter-spacing:1px;text-transform:uppercase;background:var(--g1);color:var(--g4);border-bottom:1px solid var(--g2)}
 .did{font-family:"PT Serif",Georgia,serif;font-size:11px;font-weight:700;color:var(--or);white-space:nowrap;display:block}
-.dn{font-weight:700;color:var(--bk);font-size:11px;line-height:1.4;overflow-wrap:break-word}
+.dn{font-weight:700;color:var(--bk);font-size:10px;line-height:1.4;overflow-wrap:break-word}
 .dd{font-size:10px;color:var(--g6);line-height:1.4;margin-top:2px;overflow-wrap:break-word}
 .dv{font-size:9px;color:var(--g4);font-family:monospace;margin-top:2px}
 .dty{font-size:9px;color:var(--g6);font-family:monospace}
 .dfi{font-size:9px;color:var(--bl);font-family:monospace;font-weight:600}
-.badge{display:inline-block;padding:2px 7px;border-radius:0 4px 4px 0;font-size:8px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;margin-top:3px}
+.dfr{font-size:9px;color:var(--g4);font-family:monospace}
+.badge{display:inline-block;padding:2px 6px;border-radius:0 4px 4px 0;font-size:8px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;margin-top:3px}
+.tag-si{display:inline-block;padding:2px 8px;border-radius:3px;font-size:9px;font-weight:700;background:#d4edda;color:#155724}
+.tag-na{display:inline-block;padding:2px 8px;border-radius:3px;font-size:9px;font-weight:700;background:#cce5ff;color:#004085}
+.just-text{font-size:9px;color:#155724;line-height:1.4;overflow-wrap:break-word}
+.just-na{font-size:9px;color:#0056b3;line-height:1.4;overflow-wrap:break-word;font-style:italic}
 .ci,.cp{width:100%;display:block;background:transparent;border:none;border-bottom:1.5px solid var(--g2);font-size:11px;padding:2px 3px;outline:none;resize:none;min-height:22px;line-height:1.4;overflow:hidden}
 .ci{font-family:Montserrat,sans-serif;color:var(--bk)}.ci:focus{border-bottom-color:var(--or);background:#fff8f6}
 .ci::placeholder{color:var(--g2)}
@@ -94,7 +100,7 @@ td.blc{border-left:2px solid #ffe4da}td.blb{border-left:2px solid #ddeef8}
 <body>
 <div class="ov" id="ov">
   <div class="oi"><svg viewBox="0 0 22 22" width="28" height="28"><path d="M14 3L6 11.5H11L8 19L16 10.5H11L14 3Z" fill="white"/></svg></div>
-  <h2>Cargando datos...</h2><p>Conectando con Supabase</p>
+  <h2>Cargando datos...</h2><p>Conectando con Supabase - 205 disclosures PQD v2.0</p>
 </div>
 <div class="hdr">
   <div class="brand">
@@ -102,8 +108,8 @@ td.blc{border-left:2px solid #ffe4da}td.blb{border-left:2px solid #ddeef8}
     <div><div class="brand-name">nuam</div><div class="brand-sub">3 paises - 1 mercado</div></div>
   </div>
   <div class="ht">
-    <h1>PQD v2.0 - Mapeo de Fuentes hacia Pipeline</h1>
-    <p><span class="dot ok" id="dot"></span><span id="slbl">Conectado</span></p>
+    <h1>PQD v2.0 - Mapeo Completo CCLV (205 disclosures)</h1>
+    <p><span class="dot ok" id="dot"></span><span id="slbl">Conectado - cambios guardados para todo el equipo</span></p>
   </div>
 </div>
 <div class="stats">
@@ -111,6 +117,7 @@ td.blc{border-left:2px solid #ffe4da}td.blb{border-left:2px solid #ddeef8}
   <div class="sc gr"><div class="sn" id="scom">0</div><div class="sl">Completos</div></div>
   <div class="sc yw"><div class="sn" id="spar">0</div><div class="sl">Parciales</div></div>
   <div class="sc"><div class="sn" id="spen">0</div><div class="sl">Pendientes</div></div>
+  <div class="sc bl"><div class="sn" id="sna">0</div><div class="sl">No aplica</div></div>
   <div class="pc">
     <div class="pla">Progreso del equipo <span id="pct">0%</span></div>
     <div class="ptr"><div class="pfi" id="pfi" style="width:0%"></div></div>
@@ -124,6 +131,8 @@ td.blc{border-left:2px solid #ffe4da}td.blb{border-left:2px solid #ddeef8}
 </div>
 <div class="fi" id="tabs">
   <div class="tab active" data-sec="ALL">Todos</div>
+  <div class="tab" data-sec="SI">Solo aplica</div>
+  <div class="tab" data-sec="NA_DEF">Solo N/A</div>
   <div class="tab" data-sec="4">4 Default</div>
   <div class="tab" data-sec="5">5 Haircuts</div>
   <div class="tab" data-sec="6">6 IM</div>
@@ -136,31 +145,42 @@ td.blc{border-left:2px solid #ffe4da}td.blb{border-left:2px solid #ddeef8}
   <div class="tab" data-sec="17">17 Operacional</div>
   <div class="tab" data-sec="18">18 Participantes</div>
   <div class="tab" data-sec="19">19 Clientes</div>
+  <div class="tab" data-sec="20">20 FMI Links</div>
   <div class="tab" data-sec="23">23 Volumenes</div>
-  <input class="srch" type="text" id="q" placeholder="Buscar...">
+  <input class="srch" type="text" id="q" placeholder="Buscar referencia, titulo o descripcion...">
 </div>
 <div class="leg">
-  <span style="color:var(--g6);font-weight:700;text-transform:uppercase">Estado:</span>
+  <span style="color:var(--g6);font-weight:700;text-transform:uppercase">Estado mapeo:</span>
   <span class="li"><span class="ld" style="background:var(--gr)"></span>Completo</span>
   <span class="li"><span class="ld" style="background:var(--yw)"></span>Parcial</span>
   <span class="li"><span class="ld" style="background:var(--g4)"></span>Pendiente</span>
-  <span class="li"><span class="ld" style="background:var(--bl)"></span>N/A</span>
   <span style="color:var(--g2);margin:0 4px">|</span>
-  <span style="color:var(--bl);font-weight:700">Azul = config pipeline Python</span>
+  <span style="color:var(--gr);font-weight:700">Verde = aplica a CCLV</span>
+  <span style="color:var(--g2);margin:0 4px">|</span>
+  <span style="color:var(--bl);font-weight:700">Azul = no aplica con justificacion</span>
+  <span style="color:var(--g2);margin:0 4px">|</span>
+  <span style="color:var(--bl);font-weight:700">Columnas moradas = config pipeline Python</span>
 </div>
 <div class="tw">
 <table>
-  <colgroup><col class="c0"><col class="c1"><col class="c2"><col class="c3"><col class="c4"><col class="c5"><col class="c6"><col class="c7"><col class="c8"><col class="c9"><col class="c10"><col class="c11"><col class="c12"><col class="c13"></colgroup>
+  <colgroup>
+    <col class="c0"><col class="c1"><col class="c2"><col class="c3"><col class="c4">
+    <col class="c5"><col class="c6"><col class="c7"><col class="c8"><col class="c9">
+    <col class="c10"><col class="c11"><col class="c12"><col class="c13"><col class="c14"><col class="c15">
+  </colgroup>
   <thead>
     <tr>
-      <th colspan="6" class="thg tgi">Informacion del disclosure - solo lectura</th>
+      <th colspan="7" class="thg tgi">Informacion del disclosure PQD v2.0 - solo lectura</th>
       <th colspan="3" class="thg tgm">Mapeo de negocio</th>
-      <th colspan="5" class="thg tgp">Configuracion del pipeline Python</th>
+      <th colspan="3" class="thg tgp">Config pipeline Python</th>
+      <th colspan="3" class="thg tga">Aplicabilidad CCLV</th>
     </tr>
     <tr class="cols">
-      <th>Ref.</th><th>Titulo</th><th>Descripcion</th><th>Sub-campos</th><th>Tipo dato</th><th>DataFile</th>
-      <th class="ec blc">Sistema/BD</th><th class="ec">Responsable</th><th class="ec">Estado</th>
-      <th class="ep blb">Tipo fuente</th><th class="ep">Conexion/Ruta</th><th class="ep">Query SQL</th><th class="ep">Transform</th><th class="ep">Notas</th>
+      <th>Ref.</th><th>Titulo</th><th>Descripcion</th><th>Sub-campos</th>
+      <th>Tipo dato</th><th>DataFile</th><th>Frecuencia</th>
+      <th class="ec blc">Sistema / BD</th><th class="ec">Responsable</th><th class="ec">Estado</th>
+      <th class="ep blb">Tipo fuente</th><th class="ep">Query SQL / Ruta</th><th class="ep">Transform</th>
+      <th class="ea bla">Aplica a CCLV</th><th class="ea">Justificacion si no aplica</th><th class="ea">Notas adicionales</th>
     </tr>
   </thead>
   <tbody id="tbody"></tbody>
@@ -178,319 +198,455 @@ td.blc{border-left:2px solid #ffe4da}td.blb{border-left:2px solid #ddeef8}
 </div>
 <div class="toast" id="toast"></div>
 <script>
-(function() {
-  var SB_URL = "https://bijqiicmdvuwpnqgwmwe.supabase.co";
-  var SB_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJpanFpaWNtZHZ1d3BucWd3bXdlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg2MDU3NTAsImV4cCI6MjA5NDE4MTc1MH0.G-5fJlulaEL5_g8jdUTN74zK6sKGdVEipUAPOnQxdNs";
-  var TBL = "pqd_mapeo";
-  var H = {apikey: SB_KEY, Authorization: "Bearer " + SB_KEY, "Content-Type": "application/json", Prefer: "return=representation"};
+var SB_URL = "https://bijqiicmdvuwpnqgwmwe.supabase.co";
+var SB_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJpanFpaWNtZHZ1d3BucWd3bXdlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg2MDU3NTAsImV4cCI6MjA5NDE4MTc1MH0.G-5fJlulaEL5_g8jdUTN74zK6sKGdVEipUAPOnQxdNs";
+var TBL = "pqd_mapeo";
+var H = {apikey: SB_KEY, Authorization: "Bearer " + SB_KEY, "Content-Type": "application/json", Prefer: "return=representation"};
 
-  function sbGet() { return fetch(SB_URL + "/rest/v1/" + TBL + "?select=*", {headers: H}).then(function(r){return r.json();}); }
-  function sbUpsert(row) { return fetch(SB_URL + "/rest/v1/" + TBL, {method: "POST", headers: Object.assign({}, H, {Prefer: "resolution=merge-duplicates,return=representation"}), body: JSON.stringify(row)}); }
-  function sbDel() { return fetch(SB_URL + "/rest/v1/" + TBL + "?id=gte.0", {method: "DELETE", headers: H}); }
+function sbGet() { return fetch(SB_URL + "/rest/v1/" + TBL + "?select=*", {headers: H}).then(function(r){return r.json();}); }
+function sbUpsert(row) { return fetch(SB_URL + "/rest/v1/" + TBL, {method: "POST", headers: Object.assign({}, H, {Prefer: "resolution=merge-duplicates,return=representation"}), body: JSON.stringify(row)}); }
+function sbDel() { return fetch(SB_URL + "/rest/v1/" + TBL + "?id=gte.0", {method: "DELETE", headers: H}); }
 
-  var SMAP = {
-    "4":  {label:"Seccion 4 - Recursos de Default",    color:"#FF4201", bg:"#fff0ed"},
-    "5":  {label:"Seccion 5 - Colateral y Haircuts",   color:"#27985F", bg:"#edf7f2"},
-    "6":  {label:"Seccion 6 - Initial Margin",         color:"#0069A7", bg:"#e6f2f9"},
-    "7":  {label:"Seccion 7 - Riesgo de Liquidez",     color:"#8B6914", bg:"#fff8e6"},
-    "12": {label:"Seccion 12 - Settlement",            color:"#1a6b40", bg:"#edf7f2"},
-    "13": {label:"Seccion 13 - Defaults",              color:"#c43000", bg:"#fff0ed"},
-    "14": {label:"Seccion 14 - Segregacion",           color:"#2d4fb5", bg:"#f0f4ff"},
-    "15": {label:"Seccion 15 - Negocio",               color:"#6b3db5", bg:"#f5f0ff"},
-    "16": {label:"Seccion 16 - Inversiones",           color:"#7a5c00", bg:"#fdf5e0"},
-    "17": {label:"Seccion 17 - Operacional",           color:"#0069A7", bg:"#e6f2f9"},
-    "18": {label:"Seccion 18 - Participantes",         color:"#FF4201", bg:"#fff0ed"},
-    "19": {label:"Seccion 19 - Clientes",              color:"#27985F", bg:"#edf7f2"},
-    "23": {label:"Seccion 23 - Volumenes",             color:"#7a5c00", bg:"#fdf5e0"}
-  };
+var SMAP = {
+"4":{label:"Sec 4 - Recursos de Default",color:"#FF4201",bg:"#fff0ed"},
+"5":{label:"Sec 5 - Colateral y Haircuts",color:"#27985F",bg:"#edf7f2"},
+"6":{label:"Sec 6 - Initial Margin",color:"#0069A7",bg:"#e6f2f9"},
+"7":{label:"Sec 7 - Riesgo de Liquidez",color:"#8B6914",bg:"#fff8e6"},
+"12":{label:"Sec 12 - Settlement",color:"#1a6b40",bg:"#edf7f2"},
+"13":{label:"Sec 13 - Defaults",color:"#c43000",bg:"#fff0ed"},
+"14":{label:"Sec 14 - Segregacion",color:"#2d4fb5",bg:"#f0f4ff"},
+"15":{label:"Sec 15 - Negocio",color:"#6b3db5",bg:"#f5f0ff"},
+"16":{label:"Sec 16 - Inversiones",color:"#7a5c00",bg:"#fdf5e0"},
+"17":{label:"Sec 17 - Operacional",color:"#0069A7",bg:"#e6f2f9"},
+"18":{label:"Sec 18 - Participantes",color:"#FF4201",bg:"#fff0ed"},
+"19":{label:"Sec 19 - Clientes",color:"#27985F",bg:"#edf7f2"},
+"20":{label:"Sec 20 - FMI Links",color:"#6b3db5",bg:"#f5f0ff"},
+"23":{label:"Sec 23 - Volumenes",color:"#7a5c00",bg:"#fdf5e0"}
+};
+var D = [
+{ref:"4.1.1",sec:"4",title:"Total value of default resources",desc:"Prefunded - Own Capital Before; Reported as at quarter end",vals:"N/A",dtype:"Numeric 2dp, Currency",file:"AggregatedDataFile",freq:"Quarter end",aplica:"si",just:""},
+{ref:"4.1.2",sec:"4",title:"Total value of default resources",desc:"Prefunded - Own Capital Alongside; Reported as at quarter end",vals:"N/A",dtype:"Numeric 2dp, Currency",file:"AggregatedDataFile",freq:"Quarter end",aplica:"si",just:""},
+{ref:"4.1.3",sec:"4",title:"Total value of default resources",desc:"Prefunded - Own Capital After; Reported as at quarter end",vals:"N/A",dtype:"Numeric 2dp, Currency",file:"AggregatedDataFile",freq:"Quarter end",aplica:"si",just:""},
+{ref:"4.1.4",sec:"4",title:"Total value of default resources",desc:"Prefunded - Aggregate Participant Contributions - Required; Reported as at quarter end",vals:"N/A",dtype:"Numeric 2dp, Currency",file:"AggregatedDataFile",freq:"Quarter end",aplica:"si",just:""},
+{ref:"4.1.5",sec:"4",title:"Total value of default resources",desc:"Prefunded - Aggregate Participant Contributions - Post-Haircut Posted; Reported as at quarter end",vals:"N/A",dtype:"Numeric 2dp, Currency",file:"AggregatedDataFile",freq:"Quarter end",aplica:"si",just:""},
+{ref:"4.1.6",sec:"4",title:"Total value of default resources",desc:"Prefunded - Other; Reported as at quarter end",vals:"N/A",dtype:"Numeric 2dp, Currency",file:"AggregatedDataFile",freq:"Quarter end",aplica:"si",just:""},
+{ref:"4.1.7",sec:"4",title:"Total value of default resources",desc:"Committed - Own/parent funds committed to address a participant default",vals:"N/A",dtype:"Numeric 2dp, Currency",file:"AggregatedDataFile",freq:"Quarter end",aplica:"si",just:""},
+{ref:"4.1.8",sec:"4",title:"Total value of default resources",desc:"Committed - Aggregate participant commitments to address an initial participant default",vals:"N/A",dtype:"Numeric 2dp, Currency",file:"AggregatedDataFile",freq:"Quarter end",aplica:"si",just:""},
+{ref:"4.1.9",sec:"4",title:"Total value of default resources",desc:"Committed - Aggregate participant commitments to replenish the default fund after subsequent default",vals:"N/A",dtype:"Text",file:"AggregatedDataFile",freq:"Quarter end",aplica:"si",just:""},
+{ref:"4.1.10",sec:"4",title:"Total value of default resources",desc:"Committed - Other; Reported as at quarter end",vals:"N/A",dtype:"Numeric 2dp, Currency",file:"AggregatedDataFile",freq:"Quarter end",aplica:"si",just:""},
+{ref:"4.2.1",sec:"4",title:"Kccp",desc:"Kccp - only reported by CCPs which are or seek to be a qualifying CCP under relevant law",vals:"N/A",dtype:"Numeric 2dp",file:"AggregatedDataFile",freq:"Quarter end",aplica:"na",just:"CCLV no es ni busca ser una qualifying CCP bajo regulacion vigente. Reportar N/A."},
+{ref:"4.3.1",sec:"4",title:"Pre-funded default resources by type",desc:"Cash deposited at a central bank of issue of the currency; Pre-Haircut and Post-Haircut",vals:"PreHaircut / PostHaircut",dtype:"Numeric 2dp, Currency",file:"DataFile_4_3",freq:"Quarter end",aplica:"si",just:""},
+{ref:"4.3.2",sec:"4",title:"Pre-funded default resources by type",desc:"Cash deposited at other central banks; Pre-Haircut and Post-Haircut",vals:"PreHaircut / PostHaircut",dtype:"Numeric 2dp, Currency",file:"DataFile_4_3",freq:"Quarter end",aplica:"si",just:""},
+{ref:"4.3.3",sec:"4",title:"Pre-funded default resources by type",desc:"Secured cash deposited at commercial banks (including reverse repo); Pre-Haircut and Post-Haircut",vals:"PreHaircut / PostHaircut",dtype:"Numeric 2dp, Currency",file:"DataFile_4_3",freq:"Quarter end",aplica:"si",just:""},
+{ref:"4.3.4",sec:"4",title:"Pre-funded default resources by type",desc:"Unsecured cash deposited at commercial banks; Pre-Haircut and Post-Haircut",vals:"PreHaircut / PostHaircut",dtype:"Numeric 2dp, Currency",file:"DataFile_4_3",freq:"Quarter end",aplica:"si",just:""},
+{ref:"4.3.5",sec:"4",title:"Pre-funded default resources by type",desc:"Non-Cash Sovereign Government Bonds - Domestic; Pre-Haircut and Post-Haircut",vals:"PreHaircut / PostHaircut",dtype:"Numeric 2dp, Currency",file:"DataFile_4_3",freq:"Quarter end",aplica:"si",just:""},
+{ref:"4.3.6",sec:"4",title:"Pre-funded default resources by type",desc:"Non-Cash Sovereign Government Bonds - Other; Pre-Haircut and Post-Haircut",vals:"PreHaircut / PostHaircut",dtype:"Numeric 2dp, Currency",file:"DataFile_4_3",freq:"Quarter end",aplica:"si",just:""},
+{ref:"4.3.7",sec:"4",title:"Pre-funded default resources by type",desc:"Non-Cash Agency Bonds; Pre-Haircut and Post-Haircut",vals:"PreHaircut / PostHaircut",dtype:"Numeric 2dp, Currency",file:"DataFile_4_3",freq:"Quarter end",aplica:"na",just:"CCLV no acepta bonos de agencia como colateral elegible. Reportar N/A."},
+{ref:"4.3.8",sec:"4",title:"Pre-funded default resources by type",desc:"Non-Cash State/municipal bonds; Pre-Haircut and Post-Haircut",vals:"PreHaircut / PostHaircut",dtype:"Numeric 2dp, Currency",file:"DataFile_4_3",freq:"Quarter end",aplica:"na",just:"CCLV no acepta bonos municipales/estatales como colateral elegible. Reportar N/A."},
+{ref:"4.3.9",sec:"4",title:"Pre-funded default resources by type",desc:"Non-Cash Corporate bonds; Pre-Haircut and Post-Haircut",vals:"PreHaircut / PostHaircut",dtype:"Numeric 2dp, Currency",file:"DataFile_4_3",freq:"Quarter end",aplica:"si",just:""},
+{ref:"4.3.10",sec:"4",title:"Pre-funded default resources by type",desc:"Non-Cash Equities; Pre-Haircut and Post-Haircut",vals:"PreHaircut / PostHaircut",dtype:"Numeric 2dp, Currency",file:"DataFile_4_3",freq:"Quarter end",aplica:"si",just:""},
+{ref:"4.3.11",sec:"4",title:"Pre-funded default resources by type",desc:"Non-Cash Commodities - Gold; Pre-Haircut and Post-Haircut",vals:"PreHaircut / PostHaircut",dtype:"Numeric 2dp, Currency",file:"DataFile_4_3",freq:"Quarter end",aplica:"na",just:"CCLV no acepta oro como colateral elegible. Reportar N/A."},
+{ref:"4.3.12",sec:"4",title:"Pre-funded default resources by type",desc:"Non-Cash Commodities - Other; Pre-Haircut and Post-Haircut",vals:"PreHaircut / PostHaircut",dtype:"Numeric 2dp, Currency",file:"DataFile_4_3",freq:"Quarter end",aplica:"na",just:"CCLV no acepta otros commodities como colateral elegible. Reportar N/A."},
+{ref:"4.3.13",sec:"4",title:"Pre-funded default resources by type",desc:"Non-Cash Mutual Funds / UCITs; Pre-Haircut and Post-Haircut",vals:"PreHaircut / PostHaircut",dtype:"Numeric 2dp, Currency",file:"DataFile_4_3",freq:"Quarter end",aplica:"na",just:"CCLV no acepta fondos mutuos ni UCITs como colateral elegible. Reportar N/A."},
+{ref:"4.3.14",sec:"4",title:"Pre-funded default resources by type",desc:"Non-Cash - Other; Pre-Haircut and Post-Haircut",vals:"PreHaircut / PostHaircut",dtype:"Numeric 2dp, Currency",file:"DataFile_4_3",freq:"Quarter end",aplica:"si",just:""},
+{ref:"4.3.15",sec:"4",title:"Pre-funded default resources - TOTAL",desc:"In total. Pre-Haircut and Post-Haircut",vals:"PreHaircut / PostHaircut",dtype:"Numeric 2dp, Currency",file:"DataFile_4_3",freq:"Quarter end",aplica:"si",just:""},
+{ref:"4.4.1",sec:"4",title:"Credit Risk Disclosures",desc:"State whether the CCP is subject to a minimum Cover 1 or Cover 2 requirement",vals:"N/A",dtype:"Text",file:"AggregatedDataFile",freq:"Quarter end",aplica:"si",just:""},
+{ref:"4.4.2",sec:"4",title:"Credit Risk Disclosures",desc:"Number of business days assumed to close out the default when calculating credit exposures for the default fund",vals:"N/A",dtype:"Text",file:"AggregatedDataFile",freq:"Quarter end",aplica:"si",just:""},
+{ref:"4.4.3",sec:"4",title:"Credit Risk Disclosures",desc:"Estimated largest aggregate stress loss caused by default of any single participant - Peak and Mean over 12 months",vals:"PeakDay12M / MeanAvg12M",dtype:"Numeric 2dp",file:"DataFile_4_4a",freq:"Quarterly 12m",aplica:"si",just:""},
+{ref:"4.4.4",sec:"4",title:"Credit Risk Disclosures",desc:"Number of business days on which 4.4.3 exceeded actual pre-funded default resources",vals:"N/A",dtype:"Numeric 0dp",file:"AggregatedDataFile",freq:"Quarter end",aplica:"si",just:""},
+{ref:"4.4.5",sec:"4",title:"Credit Risk Disclosures",desc:"Amount by which 4.4.3 exceeded actual pre-funded default resources",vals:"AmountExceeded",dtype:"Numeric 2dp, Currency",file:"DataFile_4_4b",freq:"Quarter end",aplica:"si",just:""},
+{ref:"4.4.6",sec:"4",title:"Credit Risk Disclosures",desc:"Actual largest aggregate credit exposure to any single participant - Peak and Mean over 12 months",vals:"PeakDay12M / MeanAvg12M",dtype:"Numeric 2dp, Currency",file:"DataFile_4_4a",freq:"Quarter end",aplica:"si",just:""},
+{ref:"4.4.7",sec:"4",title:"Credit Risk Disclosures",desc:"Estimated largest aggregate stress loss caused by default of any TWO participants - Peak and Mean over 12 months",vals:"PeakDay12M / MeanAvg12M",dtype:"Numeric 2dp, Currency",file:"DataFile_4_4a",freq:"Quarterly 12m",aplica:"si",just:""},
+{ref:"4.4.8",sec:"4",title:"Credit Risk Disclosures",desc:"Number of business days on which 4.4.7 exceeded actual pre-funded default resources",vals:"N/A",dtype:"Numeric 0dp",file:"AggregatedDataFile",freq:"Quarter end",aplica:"si",just:""},
+{ref:"4.4.9",sec:"4",title:"Credit Risk Disclosures",desc:"Amount by which 4.4.7 exceeded actual pre-funded default resources",vals:"AmountExceeded",dtype:"Numeric 2dp, Currency",file:"DataFile_4_4b",freq:"Quarter end",aplica:"si",just:""},
+{ref:"4.4.10",sec:"4",title:"Credit Risk Disclosures",desc:"Actual largest aggregate credit exposure to any TWO participants - Peak and Mean over 12 months",vals:"PeakDay12M / MeanAvg12M",dtype:"Numeric 2dp, Currency",file:"DataFile_4_4a",freq:"Quarter end",aplica:"si",just:""},
+{ref:"5.1.1",sec:"5",title:"Assets eligible as IM and haircuts",desc:"Assets eligible as initial margin and the respective haircuts applied",vals:"N/A",dtype:"Text",file:"AggregatedDataFile",freq:"Ad-Hoc",aplica:"si",just:""},
+{ref:"5.2.1",sec:"5",title:"Assets eligible for Default Fund and haircuts",desc:"Assets eligible for pre-funded participant contributions to default resources and haircuts (if different from 5.1)",vals:"N/A",dtype:"Text",file:"AggregatedDataFile",freq:"Ad-Hoc",aplica:"si",just:""},
+{ref:"5.3.1",sec:"5",title:"Results of testing of haircuts",desc:"Confidence interval targeted through the calculation of haircuts",vals:"N/A",dtype:"Numeric 2dp, %",file:"AggregatedDataFile",freq:"Quarter end",aplica:"si",just:""},
+{ref:"5.3.2",sec:"5",title:"Results of testing of haircuts",desc:"Assumed holding/liquidation period for the assets accepted",vals:"N/A",dtype:"Text",file:"AggregatedDataFile",freq:"Quarter end",aplica:"si",just:""},
+{ref:"5.3.3",sec:"5",title:"Results of testing of haircuts",desc:"Look-back period used for testing the haircuts (number of days)",vals:"N/A",dtype:"Numeric 0dp",file:"AggregatedDataFile",freq:"Quarter end",aplica:"si",just:""},
+{ref:"5.3.4",sec:"5",title:"Results of testing of haircuts",desc:"Number of days during the look-back period on which the fall in value exceeded the haircut on an asset",vals:"N/A",dtype:"Numeric 0dp",file:"AggregatedDataFile",freq:"Quarterly",aplica:"si",just:""},
+{ref:"6.1.1",sec:"6",title:"Total IM required",desc:"Total initial margin required split by House_Net Client_Gross Client_Net and Total",vals:"House_Net / Client_Gross / Client_Net / Total",dtype:"Numeric 2dp, Currency",file:"DataFile_6_1",freq:"Quarter end",aplica:"si",just:""},
+{ref:"6.2.1",sec:"6",title:"Total IM held by type",desc:"Cash deposited at a central bank of issue; House and Client; Pre-Haircut and Post-Haircut",vals:"HouseIM Pre/Post / ClientIM Pre/Post / TotalIM Pre/Post",dtype:"Numeric 2dp, Currency",file:"DataFile_6_2",freq:"Quarter end",aplica:"si",just:""},
+{ref:"6.2.2",sec:"6",title:"Total IM held by type",desc:"Cash deposited at other central banks; House and Client; Pre-Haircut and Post-Haircut",vals:"HouseIM Pre/Post / ClientIM Pre/Post / TotalIM Pre/Post",dtype:"Numeric 2dp, Currency",file:"DataFile_6_2",freq:"Quarter end",aplica:"si",just:""},
+{ref:"6.2.3",sec:"6",title:"Total IM held by type",desc:"Secured cash deposited at commercial banks (including reverse repo); Pre-Haircut and Post-Haircut",vals:"HouseIM Pre/Post / ClientIM Pre/Post / TotalIM Pre/Post",dtype:"Numeric 2dp, Currency",file:"DataFile_6_2",freq:"Quarter end",aplica:"si",just:""},
+{ref:"6.2.4",sec:"6",title:"Total IM held by type",desc:"Unsecured cash deposited at commercial banks; House and Client; Pre-Haircut and Post-Haircut",vals:"HouseIM Pre/Post / ClientIM Pre/Post / TotalIM Pre/Post",dtype:"Numeric 2dp, Currency",file:"DataFile_6_2",freq:"Quarter end",aplica:"si",just:""},
+{ref:"6.2.5",sec:"6",title:"Total IM held by type",desc:"Non-Cash Sovereign Government Bonds - Domestic; Pre-Haircut and Post-Haircut",vals:"HouseIM Pre/Post / ClientIM Pre/Post / TotalIM Pre/Post",dtype:"Numeric 2dp, Currency",file:"DataFile_6_2",freq:"Quarter end",aplica:"si",just:""},
+{ref:"6.2.6",sec:"6",title:"Total IM held by type",desc:"Non-Cash Sovereign Government Bonds - Other; Pre-Haircut and Post-Haircut",vals:"HouseIM Pre/Post / ClientIM Pre/Post / TotalIM Pre/Post",dtype:"Numeric 2dp, Currency",file:"DataFile_6_2",freq:"Quarter end",aplica:"si",just:""},
+{ref:"6.2.7",sec:"6",title:"Total IM held by type",desc:"Non-Cash Agency Bonds; House and Client; Pre-Haircut and Post-Haircut",vals:"HouseIM Pre/Post / ClientIM Pre/Post / TotalIM Pre/Post",dtype:"Numeric 2dp, Currency",file:"DataFile_6_2",freq:"Quarter end",aplica:"na",just:"CCLV no acepta bonos de agencia como IM. Reportar N/A."},
+{ref:"6.2.8",sec:"6",title:"Total IM held by type",desc:"Non-Cash State/municipal bonds; House and Client; Pre-Haircut and Post-Haircut",vals:"HouseIM Pre/Post / ClientIM Pre/Post / TotalIM Pre/Post",dtype:"Numeric 2dp, Currency",file:"DataFile_6_2",freq:"Quarter end",aplica:"na",just:"CCLV no acepta bonos municipales/estatales como IM. Reportar N/A."},
+{ref:"6.2.9",sec:"6",title:"Total IM held by type",desc:"Non-Cash Corporate bonds; House and Client; Pre-Haircut and Post-Haircut",vals:"HouseIM Pre/Post / ClientIM Pre/Post / TotalIM Pre/Post",dtype:"Numeric 2dp, Currency",file:"DataFile_6_2",freq:"Quarter end",aplica:"si",just:""},
+{ref:"6.2.10",sec:"6",title:"Total IM held by type",desc:"Non-Cash Equities; House and Client; Pre-Haircut and Post-Haircut",vals:"HouseIM Pre/Post / ClientIM Pre/Post / TotalIM Pre/Post",dtype:"Numeric 2dp, Currency",file:"DataFile_6_2",freq:"Quarter end",aplica:"si",just:""},
+{ref:"6.2.11",sec:"6",title:"Total IM held by type",desc:"Non-Cash Commodities - Gold; House and Client; Pre-Haircut and Post-Haircut",vals:"HouseIM Pre/Post / ClientIM Pre/Post / TotalIM Pre/Post",dtype:"Numeric 2dp, Currency",file:"DataFile_6_2",freq:"Quarter end",aplica:"na",just:"CCLV no acepta oro como colateral de IM. Reportar N/A."},
+{ref:"6.2.12",sec:"6",title:"Total IM held by type",desc:"Non-Cash Commodities - Other; House and Client; Pre-Haircut and Post-Haircut",vals:"HouseIM Pre/Post / ClientIM Pre/Post / TotalIM Pre/Post",dtype:"Numeric 2dp, Currency",file:"DataFile_6_2",freq:"Quarter end",aplica:"na",just:"CCLV no acepta otros commodities como colateral de IM. Reportar N/A."},
+{ref:"6.2.13",sec:"6",title:"Total IM held by type",desc:"Non-Cash Mutual Funds / UCITs; House and Client; Pre-Haircut and Post-Haircut",vals:"HouseIM Pre/Post / ClientIM Pre/Post / TotalIM Pre/Post",dtype:"Numeric 2dp, Currency",file:"DataFile_6_2",freq:"Quarter end",aplica:"na",just:"CCLV no acepta fondos mutuos ni UCITs como colateral de IM. Reportar N/A."},
+{ref:"6.2.14",sec:"6",title:"Total IM held by type",desc:"Non-Cash - Other; House and Client; Pre-Haircut and Post-Haircut",vals:"HouseIM Pre/Post / ClientIM Pre/Post / TotalIM Pre/Post",dtype:"Numeric 2dp, Currency",file:"DataFile_6_2",freq:"Quarter end",aplica:"si",just:""},
+{ref:"6.2.15",sec:"6",title:"Total IM held - TOTAL",desc:"Total IM held split by House and Client (if segregated)",vals:"HouseIM Pre/Post / ClientIM Pre/Post",dtype:"Numeric 2dp, Currency",file:"DataFile_6_2",freq:"Quarter end",aplica:"si",just:""},
+{ref:"6.3.1",sec:"6",title:"IM rates on individual contracts",desc:"IM rates on individual contracts where the CCP sets such rates",vals:"N/A",dtype:"Text",file:"AggregatedDataFile",freq:"Ad-Hoc",aplica:"si",just:""},
+{ref:"6.4.1",sec:"6",title:"IM Model - Type",desc:"Type of IM Model used for each clearing service",vals:"",dtype:"Text",file:"AggregatedDataFile",freq:"Quarterly",aplica:"si",just:""},
+{ref:"6.4.2",sec:"6",title:"IM Model - Type Change Date",desc:"Effective date of the IM Model type change",vals:"",dtype:"ISO 8601 Date YYYY-MM-DD",file:"AggregatedDataFile",freq:"Quarterly",aplica:"si",just:""},
+{ref:"6.4.3",sec:"6",title:"IM Model - Name",desc:"Name of the IM Model applied to each clearing service",vals:"",dtype:"Text",file:"AggregatedDataFile",freq:"Quarterly",aplica:"si",just:""},
+{ref:"6.4.4",sec:"6",title:"IM Model - Name Change Date",desc:"Effective date of the IM Model name change",vals:"",dtype:"ISO 8601 Date YYYY-MM-DD",file:"AggregatedDataFile",freq:"Quarterly",aplica:"si",just:""},
+{ref:"6.4.5",sec:"6",title:"IM Model - Confidence Level",desc:"Single Tailed Confidence Level used in the IM model",vals:"",dtype:"Numeric 2dp, %",file:"AggregatedDataFile",freq:"Quarterly",aplica:"si",just:""},
+{ref:"6.4.6",sec:"6",title:"IM Model - Confidence Level Change Date",desc:"Effective date of the confidence level change",vals:"",dtype:"ISO 8601 Date YYYY-MM-DD",file:"AggregatedDataFile",freq:"Quarterly",aplica:"si",just:""},
+{ref:"6.4.7",sec:"6",title:"IM Model - Look Back Period",desc:"Look Back Period used in the IM model",vals:"",dtype:"Text",file:"AggregatedDataFile",freq:"Quarterly",aplica:"si",just:""},
+{ref:"6.4.8",sec:"6",title:"IM Model - Look Back Period Change Date",desc:"Effective date of the look back period change",vals:"",dtype:"ISO 8601 Date YYYY-MM-DD",file:"AggregatedDataFile",freq:"Quarterly",aplica:"si",just:""},
+{ref:"6.4.9",sec:"6",title:"IM Model - Adjustments",desc:"Adjustments applied to the IM model",vals:"",dtype:"Text",file:"AggregatedDataFile",freq:"Quarterly",aplica:"si",just:""},
+{ref:"6.4.10",sec:"6",title:"IM Model - Adjustments Change Date",desc:"Effective date of the adjustments change",vals:"",dtype:"ISO 8601 Date YYYY-MM-DD",file:"AggregatedDataFile",freq:"Quarterly",aplica:"si",just:""},
+{ref:"6.4.11",sec:"6",title:"IM Model - Close Out Period",desc:"Close Out Period in days",vals:"",dtype:"Text",file:"AggregatedDataFile",freq:"Quarterly",aplica:"si",just:""},
+{ref:"6.4.12",sec:"6",title:"IM Model - Close Out Period Change Date",desc:"Effective date of the close out period change",vals:"",dtype:"ISO 8601 Date YYYY-MM-DD",file:"AggregatedDataFile",freq:"Quarterly",aplica:"si",just:""},
+{ref:"6.4.13",sec:"6",title:"IM Model - IM Rates Link",desc:"Link to IM rates",vals:"",dtype:"Text",file:"AggregatedDataFile",freq:"Quarterly",aplica:"si",just:""},
+{ref:"6.4.14",sec:"6",title:"IM Model - Frequency of Parameter Review",desc:"Frequency at which IM model parameters are reviewed and recalibrated",vals:"",dtype:"Text",file:"AggregatedDataFile",freq:"Quarter end",aplica:"si",just:""},
+{ref:"6.4.15",sec:"6",title:"IM Model - Frequency of Parameter Review Change Date",desc:"Effective date of the frequency of parameter review change",vals:"",dtype:"ISO 8601 Date YYYY-MM-DD",file:"AggregatedDataFile",freq:"Quarterly",aplica:"si",just:""},
+{ref:"6.5.1.1",sec:"6",title:"Back-testing results",desc:"Number of times over the past 12 months that margin coverage fell below the actual MtM exposure of any account",vals:"N/A",dtype:"Numeric 0dp",file:"AggregatedDataFile",freq:"Quarterly 12m",aplica:"si",just:""},
+{ref:"6.5.1.2",sec:"6",title:"Back-testing results",desc:"Frequency of daily back-testing result measurements (intraday/continuously/once-a-day)",vals:"N/A",dtype:"Text",file:"AggregatedDataFile",freq:"Quarterly 12m",aplica:"si",just:""},
+{ref:"6.5.1.3",sec:"6",title:"Back-testing results",desc:"Time of daily back-testing result if measured once a day",vals:"N/A",dtype:"Text",file:"AggregatedDataFile",freq:"Quarterly 12m",aplica:"si",just:""},
+{ref:"6.5.2",sec:"6",title:"Back-testing results",desc:"Number of observations (accounts x days covered in the back test)",vals:"N/A",dtype:"Numeric 0dp",file:"AggregatedDataFile",freq:"Quarterly 12m",aplica:"si",just:""},
+{ref:"6.5.3",sec:"6",title:"Back-testing results",desc:"Achieved coverage level",vals:"N/A",dtype:"Numeric 2dp, %",file:"AggregatedDataFile",freq:"Quarterly 12m",aplica:"si",just:""},
+{ref:"6.5.4",sec:"6",title:"Back-testing results",desc:"Where IM coverage breaches occurred: peak size of uncovered exposure over 12 months",vals:"N/A",dtype:"Numeric 2dp, Currency",file:"AggregatedDataFile",freq:"Quarterly 12m",aplica:"si",just:""},
+{ref:"6.5.5",sec:"6",title:"Back-testing results",desc:"Where IM coverage breaches occurred: average size of uncovered exposure over 12 months",vals:"N/A",dtype:"Numeric 2dp, Currency",file:"AggregatedDataFile",freq:"Quarterly 12m",aplica:"si",just:""},
+{ref:"6.6.1",sec:"6",title:"Average Total Variation Margin paid",desc:"Average Total Variation Margin paid to the CCP by participants each business day",vals:"N/A",dtype:"Numeric 2dp, Currency",file:"AggregatedDataFile",freq:"Quarterly",aplica:"si",just:""},
+{ref:"6.7.1",sec:"6",title:"Maximum Total Variation Margin paid",desc:"Maximum total variation margin paid to the CCP on any given business day over the period",vals:"N/A",dtype:"Numeric 2dp, Currency",file:"AggregatedDataFile",freq:"Quarterly",aplica:"si",just:""},
+{ref:"6.8.1",sec:"6",title:"Maximum aggregate IM call",desc:"Maximum aggregate initial margin call on any given business day over the period",vals:"N/A",dtype:"Numeric 2dp, Currency",file:"AggregatedDataFile",freq:"Quarterly",aplica:"si",just:""},
+{ref:"7.1.1",sec:"7",title:"Liquidity Risk - Cover Level",desc:"State whether the clearing service maintains sufficient liquid resources to Cover 1 or Cover 2",vals:"N/A",dtype:"Text",file:"AggregatedDataFile",freq:"Quarter end",aplica:"si",just:""},
+{ref:"7.1.2",sec:"7",title:"Qualifying liquid resources",desc:"Cash deposited at a central bank of issue of the currency concerned",vals:"SizeAndCompositionOfQualifyingLiquidResources",dtype:"Numeric 2dp, Currency",file:"DataFile_7_1",freq:"Quarter end",aplica:"si",just:""},
+{ref:"7.1.3",sec:"7",title:"Qualifying liquid resources",desc:"Cash deposited at other central banks",vals:"SizeAndCompositionOfQualifyingLiquidResources",dtype:"Numeric 2dp, Currency",file:"DataFile_7_1",freq:"Quarter end",aplica:"si",just:""},
+{ref:"7.1.4",sec:"7",title:"Qualifying liquid resources",desc:"Secured cash deposited at commercial banks (including reverse repo)",vals:"SizeAndCompositionOfQualifyingLiquidResources",dtype:"Numeric 2dp, Currency",file:"DataFile_7_1",freq:"Quarter end",aplica:"si",just:""},
+{ref:"7.1.5",sec:"7",title:"Qualifying liquid resources",desc:"Unsecured cash deposited at commercial banks",vals:"SizeAndCompositionOfQualifyingLiquidResources",dtype:"Numeric 2dp, Currency",file:"DataFile_7_1",freq:"Quarter end",aplica:"si",just:""},
+{ref:"7.1.6",sec:"7",title:"Qualifying liquid resources",desc:"Secured committed lines of credit (including committed FX swaps and repos)",vals:"SizeAndCompositionOfQualifyingLiquidResources",dtype:"Numeric 2dp, Currency",file:"DataFile_7_1",freq:"Quarter end",aplica:"si",just:""},
+{ref:"7.1.7",sec:"7",title:"Qualifying liquid resources",desc:"Unsecured committed lines of credit (drawable without providing collateral)",vals:"SizeAndCompositionOfQualifyingLiquidResources",dtype:"Numeric 2dp, Currency",file:"DataFile_7_1",freq:"Quarter end",aplica:"si",just:""},
+{ref:"7.1.8",sec:"7",title:"Qualifying liquid resources",desc:"Highly marketable collateral held in custody/investments readily convertible to cash with prearranged funding arrangements",vals:"SizeAndCompositionOfQualifyingLiquidResources",dtype:"Numeric 2dp, Currency",file:"DataFile_7_1",freq:"Quarter end",aplica:"si",just:""},
+{ref:"7.1.9",sec:"7",title:"Qualifying liquid resources",desc:"Other qualifying liquid resources",vals:"SizeAndCompositionOfQualifyingLiquidResources",dtype:"Numeric 2dp, Currency",file:"DataFile_7_1",freq:"Quarter end",aplica:"si",just:""},
+{ref:"7.1.10",sec:"7",title:"Liquidity Risk - Central Bank access",desc:"State whether the CCP has routine access to central bank liquidity or facilities",vals:"N/A",dtype:"Text",file:"AggregatedDataFile",freq:"Quarterly",aplica:"si",just:""},
+{ref:"7.1.11",sec:"7",title:"Liquidity Risk - Payment schedule",desc:"Details regarding the schedule of payments and governance arrangement around such decision making",vals:"N/A",dtype:"Text",file:"AggregatedDataFile",freq:"Quarter end",aplica:"si",just:""},
+{ref:"7.2.1",sec:"7",title:"Supplementary liquidity resources",desc:"Size and composition of any supplementary liquidity risk resources above those qualifying liquid resources in 7.1",vals:"N/A",dtype:"Numeric 2dp, Currency",file:"AggregatedDataFile",freq:"Quarter end",aplica:"si",just:""},
+{ref:"7.3.1",sec:"7",title:"Largest payment obligation - Estimated (stress)",desc:"Estimated largest same-day/intraday/multiday payment obligation caused by default of any single participant in extreme conditions - forward looking",vals:"SameDayPayment_Total / SameDayPayment / IntraDayPayment / MultiDayPayment",dtype:"Numeric 2dp, Currency",file:"DataFile_7_3",freq:"Quarterly",aplica:"si",just:""},
+{ref:"7.3.2",sec:"7",title:"Liquidity breach days",desc:"Number of business days on which the estimated payment obligation exceeded qualifying liquid resources",vals:"N/A",dtype:"Numeric 0dp",file:"AggregatedDataFile",freq:"Quarterly",aplica:"si",just:""},
+{ref:"7.3.3",sec:"7",title:"Liquidity breach amounts",desc:"Amount of excess on each day the estimated payment obligation exceeded qualifying liquid resources",vals:"AmountExceeded",dtype:"Numeric 2dp, Currency",file:"DataFile_7_3a",freq:"Quarterly",aplica:"si",just:""},
+{ref:"7.3.4",sec:"7",title:"Largest payment obligation - Actual (historical)",desc:"Actual largest intraday and multiday payment obligation of a single participant over the past 12 months - peak day",vals:"SameDayPayment_Total / SameDayPayment / IntraDayPayment / MultiDayPayment",dtype:"Numeric 2dp, Currency",file:"DataFile_7_3",freq:"Quarterly",aplica:"si",just:""},
+{ref:"7.3.5",sec:"7",title:"Largest payment obligation - by currency (stress)",desc:"Estimated largest same-day/intraday/multiday payment obligation per relevant currency - forward looking",vals:"SameDayPayment_Total / SameDayPayment / IntraDayPayment / MultiDayPayment",dtype:"Numeric 2dp, Currency",file:"DataFile_7_3",freq:"Quarterly",aplica:"si",just:""},
+{ref:"7.3.6",sec:"7",title:"Liquidity breach days by currency",desc:"Number of business days on which amounts exceeded qualifying liquid resources in each relevant currency",vals:"NumberOfDays_USD / NumberOfDays_EUR / NumberOfDays_GBP",dtype:"Numeric 0dp",file:"DataFile_7_3b",freq:"Quarterly",aplica:"si",just:""},
+{ref:"7.3.7",sec:"7",title:"Liquidity breach amounts by currency",desc:"Amount of excess on each day per currency",vals:"AmountExceeded",dtype:"Numeric 2dp, Currency",file:"DataFile_7_3a",freq:"Quarterly",aplica:"si",just:""},
+{ref:"12.1.1",sec:"12",title:"Settlement mechanism by value",desc:"Percentage of settlements by value using DvP (Delivery versus Payment)",vals:"N/A",dtype:"Numeric 2dp, %",file:"AggregatedDataFile",freq:"Quarterly",aplica:"si",just:""},
+{ref:"12.1.2",sec:"12",title:"Settlement mechanism by value",desc:"Percentage of settlements by value using DvD (Delivery versus Delivery)",vals:"N/A",dtype:"Numeric 2dp, %",file:"AggregatedDataFile",freq:"Quarterly",aplica:"si",just:""},
+{ref:"12.1.3",sec:"12",title:"Settlement mechanism by value",desc:"Percentage of settlements by value using PvP (Payment versus Payment)",vals:"N/A",dtype:"Numeric 2dp, %",file:"AggregatedDataFile",freq:"Quarterly",aplica:"na",just:"CCLV no opera mecanismo PvP. Reportar N/A."},
+{ref:"12.2.1",sec:"12",title:"Settlement mechanism by volume",desc:"Percentage of settlements by volume using DvP",vals:"N/A",dtype:"Numeric 2dp, %",file:"AggregatedDataFile",freq:"Quarterly",aplica:"si",just:""},
+{ref:"12.2.2",sec:"12",title:"Settlement mechanism by volume",desc:"Percentage of settlements by volume using DvD",vals:"N/A",dtype:"Numeric 2dp, %",file:"AggregatedDataFile",freq:"Quarterly",aplica:"si",just:""},
+{ref:"12.2.3",sec:"12",title:"Settlement mechanism by volume",desc:"Percentage of settlements by volume using PvP",vals:"N/A",dtype:"Numeric 2dp, %",file:"AggregatedDataFile",freq:"Quarterly",aplica:"na",just:"CCLV no opera mecanismo PvP. Reportar N/A."},
+{ref:"13.1.1",sec:"13",title:"Quantitative info related to defaults",desc:"Amount of loss versus amount of initial margin (for each default event)",vals:"N/A",dtype:"Text",file:"AggregatedDataFile",freq:"Ad-hoc",aplica:"si",just:""},
+{ref:"13.1.2",sec:"13",title:"Quantitative info related to defaults",desc:"Amount of other financial resources used to cover losses (beyond IM)",vals:"N/A",dtype:"Text",file:"AggregatedDataFile",freq:"Ad-hoc",aplica:"si",just:""},
+{ref:"13.1.3.1",sec:"13",title:"Quantitative info related to defaults",desc:"Proportion of client positions closed-out following a default",vals:"N/A",dtype:"Text",file:"AggregatedDataFile",freq:"Ad-hoc",aplica:"si",just:""},
+{ref:"13.1.3.2",sec:"13",title:"Quantitative info related to defaults",desc:"Proportion of client positions ported to a surviving member following a default",vals:"-",dtype:"Text",file:"AggregatedDataFile",freq:"Ad-Hoc",aplica:"si",just:""},
+{ref:"13.1.4",sec:"13",title:"Quantitative info related to defaults",desc:"References to other published material related to the defaults",vals:"-",dtype:"Text",file:"AggregatedDataFile",freq:"Ad-Hoc",aplica:"si",just:""},
+{ref:"14.1.1",sec:"14",title:"Client positions - segregation type",desc:"Total Client Positions held in individually segregated accounts (% of notional)",vals:"N/A",dtype:"Numeric 2dp, %",file:"AggregatedDataFile",freq:"Quarter end",aplica:"si",just:""},
+{ref:"14.1.2",sec:"14",title:"Client positions - segregation type",desc:"Total Client Positions held in omnibus client-only accounts (other than LSOC)",vals:"N/A",dtype:"Numeric 2dp, %",file:"AggregatedDataFile",freq:"Quarter end",aplica:"si",just:""},
+{ref:"14.1.3",sec:"14",title:"Client positions - segregation type",desc:"Total Client Positions held in legally segregated but operationally comingled (LSOC) accounts",vals:"N/A",dtype:"Numeric 2dp, %",file:"AggregatedDataFile",freq:"Quarter end",aplica:"na",just:"CCLV no opera cuentas LSOC. Reportar N/A."},
+{ref:"14.1.4",sec:"14",title:"Client positions - segregation type",desc:"Total Client Positions held in comingled house and client accounts",vals:"N/A",dtype:"Numeric 2dp, %",file:"AggregatedDataFile",freq:"Quarter end",aplica:"si",just:""},
+{ref:"15.1.1",sec:"15",title:"General business risk",desc:"Value of liquid net assets funded by equity",vals:"N/A",dtype:"Numeric 2dp, Currency",file:"AggregatedDataFile",freq:"Annual",aplica:"si",just:""},
+{ref:"15.1.2",sec:"15",title:"General business risk",desc:"Six months of current operating expenses (wind-down capital proxy)",vals:"N/A",dtype:"Numeric 2dp, Currency",file:"AggregatedDataFile",freq:"Annual",aplica:"si",just:""},
+{ref:"15.2.1",sec:"15",title:"Financial Disclosures",desc:"Total Revenue for the reporting period",vals:"N/A",dtype:"Numeric 2dp, Currency",file:"AggregatedDataFile",freq:"Annual",aplica:"si",just:""},
+{ref:"15.2.2",sec:"15",title:"Financial Disclosures",desc:"Total Expenditure for the reporting period",vals:"N/A",dtype:"Numeric 2dp, Currency",file:"AggregatedDataFile",freq:"Annual",aplica:"si",just:""},
+{ref:"15.2.3",sec:"15",title:"Financial Disclosures",desc:"Profits (Total Revenue minus Total Expenditure)",vals:"N/A",dtype:"Numeric 2dp, Currency",file:"AggregatedDataFile",freq:"Annual",aplica:"si",just:""},
+{ref:"15.2.4",sec:"15",title:"Financial Disclosures",desc:"Total Assets on balance sheet",vals:"N/A",dtype:"Numeric 2dp, Currency",file:"AggregatedDataFile",freq:"Annual",aplica:"si",just:""},
+{ref:"15.2.5",sec:"15",title:"Financial Disclosures",desc:"Total Liabilities on balance sheet",vals:"N/A",dtype:"Numeric 2dp, Currency",file:"AggregatedDataFile",freq:"Annual",aplica:"si",just:""},
+{ref:"15.2.6",sec:"15",title:"Financial Disclosures",desc:"Explain if collateral posted by clearing participants is held on or off the CCP balance sheet",vals:"N/A",dtype:"Text",file:"AggregatedDataFile",freq:"Annual",aplica:"si",just:""},
+{ref:"15.2.7",sec:"15",title:"Financial Disclosures",desc:"Additional items as necessary",vals:"N/A",dtype:"Text",file:"AggregatedDataFile",freq:"Annual",aplica:"si",just:""},
+{ref:"15.3.1",sec:"15",title:"Income breakdown",desc:"Percentage of total income from fees related to provision of clearing services",vals:"N/A",dtype:"Numeric 2dp, %",file:"AggregatedDataFile",freq:"Annual",aplica:"si",just:""},
+{ref:"15.3.2",sec:"15",title:"Income breakdown",desc:"Percentage of total income from reinvestment (or rehypothecation) of assets provided by clearing participants",vals:"N/A",dtype:"Numeric 2dp, %",file:"AggregatedDataFile",freq:"Annual",aplica:"si",just:""},
+{ref:"16.1.1",sec:"16",title:"Cash received from participants",desc:"Total cash (not securities) received from participants as initial margin",vals:"N/A",dtype:"Numeric 2dp, Currency",file:"AggregatedDataFile",freq:"Quarter end",aplica:"si",just:""},
+{ref:"16.1.2",sec:"16",title:"Cash received from participants",desc:"Total cash (not securities) received from participants as default fund contribution",vals:"N/A",dtype:"Numeric 2dp, Currency",file:"AggregatedDataFile",freq:"Quarter end",aplica:"si",just:""},
+{ref:"16.2.1",sec:"16",title:"How participant cash is held/invested",desc:"Percentage of total participant cash held as cash deposits (including through reverse repo) - TOTAL",vals:"N/A",dtype:"Numeric 2dp, %",file:"AggregatedDataFile",freq:"Quarter end",aplica:"si",just:""},
+{ref:"16.2.2",sec:"16",title:"How participant cash is held/invested",desc:"% held as cash deposits at central banks of issue of the currency deposited",vals:"N/A",dtype:"Numeric 2dp, %",file:"AggregatedDataFile",freq:"Quarter end",aplica:"si",just:""},
+{ref:"16.2.3",sec:"16",title:"How participant cash is held/invested",desc:"% held as cash deposits at other central banks",vals:"N/A",dtype:"Numeric 2dp, %",file:"AggregatedDataFile",freq:"Quarter end",aplica:"si",just:""},
+{ref:"16.2.4",sec:"16",title:"How participant cash is held/invested",desc:"% held as cash deposits at commercial banks (Secured, including reverse repo)",vals:"N/A",dtype:"Numeric 2dp, %",file:"AggregatedDataFile",freq:"Quarter end",aplica:"si",just:""},
+{ref:"16.2.5",sec:"16",title:"How participant cash is held/invested",desc:"% held as cash deposits at commercial banks (Unsecured)",vals:"N/A",dtype:"Numeric 2dp, %",file:"AggregatedDataFile",freq:"Quarter end",aplica:"si",just:""},
+{ref:"16.2.6",sec:"16",title:"How participant cash is held/invested",desc:"% held in money market funds",vals:"N/A",dtype:"Numeric 2dp, %",file:"AggregatedDataFile",freq:"Quarter end",aplica:"si",just:""},
+{ref:"16.2.7",sec:"16",title:"How participant cash is held/invested",desc:"% held in other forms (not captured above)",vals:"N/A",dtype:"Numeric 2dp, %",file:"AggregatedDataFile",freq:"Quarter end",aplica:"si",just:""},
+{ref:"16.2.8",sec:"16",title:"How participant cash is held/invested",desc:"% split by currency of cash deposits and MMFs - USD EUR GBP and local CCY",vals:"Percentage_USD / Percentage_EUR / Percentage_GBP",dtype:"Numeric 2dp, %",file:"DataFile_16_2",freq:"Quarter end",aplica:"si",just:""},
+{ref:"16.2.9",sec:"16",title:"How participant cash is held/invested",desc:"Weighted average maturity of cash deposits (including reverse repo) and money market funds",vals:"N/A",dtype:"Numeric 2dp",file:"AggregatedDataFile",freq:"Quarter end",aplica:"si",just:""},
+{ref:"16.2.10",sec:"16",title:"How participant cash is held/invested",desc:"% of total participant cash invested in securities - Domestic sovereign government bonds",vals:"N/A",dtype:"Numeric 2dp, %",file:"AggregatedDataFile",freq:"Quarter end",aplica:"si",just:""},
+{ref:"16.2.11",sec:"16",title:"How participant cash is held/invested",desc:"% of total participant cash invested in securities - Other sovereign government bonds",vals:"N/A",dtype:"Numeric 2dp, %",file:"AggregatedDataFile",freq:"Quarter end",aplica:"si",just:""},
+{ref:"16.2.12",sec:"16",title:"How participant cash is held/invested",desc:"% of total participant cash invested in securities - Agency Bonds",vals:"N/A",dtype:"Numeric 2dp, %",file:"AggregatedDataFile",freq:"Quarter end",aplica:"na",just:"CCLV no invierte en bonos de agencia. Reportar N/A."},
+{ref:"16.2.13",sec:"16",title:"How participant cash is held/invested",desc:"% of total participant cash invested in securities - State/municipal bonds",vals:"N/A",dtype:"Numeric 2dp, %",file:"AggregatedDataFile",freq:"Quarter end",aplica:"na",just:"CCLV no invierte en bonos municipales. Reportar N/A."},
+{ref:"16.2.14",sec:"16",title:"How participant cash is held/invested",desc:"% of total participant cash invested in securities - Other instruments",vals:"N/A",dtype:"Numeric 2dp, %",file:"AggregatedDataFile",freq:"Quarter end",aplica:"si",just:""},
+{ref:"16.2.15",sec:"16",title:"How participant cash is held/invested",desc:"% split by currency of securities - Specify local currency in comments",vals:"USD / EUR / GBP",dtype:"Numeric 2dp, %",file:"DataFile_16_2",freq:"Quarter end",aplica:"si",just:""},
+{ref:"16.2.16",sec:"16",title:"How participant cash is held/invested",desc:"Weighted average maturity of securities",vals:"N/A",dtype:"Numeric 2dp",file:"AggregatedDataFile",freq:"Quarter end",aplica:"si",just:""},
+{ref:"16.2.17",sec:"16",title:"How participant cash is held/invested",desc:"Estimate of the risk on the investment portfolio (excl. CB and commercial bank deposits) - 99% one-day VaR or equivalent",vals:"N/A",dtype:"Text",file:"AggregatedDataFile",freq:"Quarter end",aplica:"si",just:""},
+{ref:"16.2.18",sec:"16",title:"How participant cash is held/invested",desc:"State if the investment policy sets a limit on the proportion allocable to a single counterparty and the size of that limit",vals:"N/A",dtype:"Text",file:"AggregatedDataFile",freq:"Quarter end",aplica:"si",just:""},
+{ref:"16.2.19",sec:"16",title:"How participant cash is held/invested",desc:"Number of times over the previous quarter in which the single-counterparty investment limit was exceeded",vals:"N/A",dtype:"Numeric 0dp",file:"AggregatedDataFile",freq:"Quarter end",aplica:"si",just:""},
+{ref:"16.2.20",sec:"16",title:"How participant cash is held/invested",desc:"Percentage of total participant cash held as securities (non-cash)",vals:"N/A",dtype:"Numeric 2dp, %",file:"AggregatedDataFile",freq:"Quarter end",aplica:"si",just:""},
+{ref:"16.3.1",sec:"16",title:"Rehypothecation of participant assets",desc:"Total value of participant non-cash rehypothecated - Initial margin",vals:"N/A",dtype:"Numeric 2dp, Currency",file:"AggregatedDataFile",freq:"Quarter end",aplica:"si",just:""},
+{ref:"16.3.2",sec:"16",title:"Rehypothecation of participant assets",desc:"Total value of participant non-cash rehypothecated - Default fund",vals:"N/A",dtype:"Numeric 2dp, Currency",file:"AggregatedDataFile",freq:"Quarter end",aplica:"si",just:""},
+{ref:"16.3.3",sec:"16",title:"Rehypothecation - maturity buckets (IM)",desc:"Rehypothecated non-cash (IM) split by maturity: O/N-1D 1D-1W 1W-1M 1M-1Y 1Y-2Y 2Y+",vals:"ON_1D / 1D_1W / 1W_1M / 1M_1Y / 1Y_2Y / 2Y+",dtype:"Numeric 2dp, Currency",file:"DataFile_16_3",freq:"Quarter end",aplica:"si",just:""},
+{ref:"16.3.4",sec:"16",title:"Rehypothecation - maturity buckets (DF)",desc:"Rehypothecated non-cash (Default Fund) split by maturity: O/N-1D 1D-1W 1W-1M 1M-1Y 1Y-2Y 2Y+",vals:"ON_1D / 1D_1W / 1W_1M / 1M_1Y / 1Y_2Y / 2Y+",dtype:"Numeric 2dp, Currency",file:"DataFile_16_3",freq:"Quarter end",aplica:"si",just:""},
+{ref:"17.1.1",sec:"17",title:"Operational availability - Target",desc:"Operational availability target for core clearing system(s) over specified period",vals:"N/A",dtype:"Numeric 2dp, %",file:"AggregatedDataFile",freq:"Quarterly 12m",aplica:"si",just:""},
+{ref:"17.2.1",sec:"17",title:"Operational availability - Actual",desc:"Actual availability of the core clearing system(s) over the previous 12-month period",vals:"N/A",dtype:"Numeric 2dp, %",file:"AggregatedDataFile",freq:"Quarterly 12m",aplica:"si",just:""},
+{ref:"17.3.1",sec:"17",title:"System failures",desc:"Total number of failures and duration affecting core clearing system(s) over the previous 12-month period",vals:"DurationOfFailure (HH:MM:SS)",dtype:"Duration HH:MM:SS",file:"DataFile_17_3",freq:"Quarterly 12m",aplica:"si",just:""},
+{ref:"17.4.1",sec:"17",title:"Recovery Time Objective (RTO)",desc:"Recovery time objective(s) for core clearing systems",vals:"N/A",dtype:"Text",file:"AggregatedDataFile",freq:"Quarterly 12m",aplica:"si",just:""},
+{ref:"18.1.1.1",sec:"18",title:"Number of clearing members",desc:"Number of general clearing members",vals:"N/A",dtype:"Numeric 0dp",file:"AggregatedDataFile",freq:"Quarter end",aplica:"si",just:""},
+{ref:"18.1.1.2",sec:"18",title:"Number of clearing members",desc:"Number of direct clearing members",vals:"N/A",dtype:"Numeric 0dp",file:"AggregatedDataFile",freq:"Quarter end",aplica:"si",just:""},
+{ref:"18.1.1.3",sec:"18",title:"Number of clearing members",desc:"Number of others category (Describe in comments)",vals:"N/A",dtype:"Numeric 0dp",file:"AggregatedDataFile",freq:"Quarter end",aplica:"si",just:""},
+{ref:"18.1.2.1",sec:"18",title:"Clearing members - entity type",desc:"Number of central bank participants",vals:"N/A",dtype:"Numeric 0dp",file:"AggregatedDataFile",freq:"Quarter end",aplica:"na",just:"CCLV no tiene bancos centrales como miembros compensadores. Reportar N/A o 0."},
+{ref:"18.1.2.2",sec:"18",title:"Clearing members - entity type",desc:"Number of CCP participants (other CCPs as clearing members)",vals:"N/A",dtype:"Numeric 0dp",file:"AggregatedDataFile",freq:"Quarter end",aplica:"na",just:"CCLV no tiene otras CCPs como miembros compensadores. Reportar N/A o 0."},
+{ref:"18.1.2.3",sec:"18",title:"Clearing members - entity type",desc:"Number of bank participants",vals:"N/A",dtype:"Numeric 0dp",file:"AggregatedDataFile",freq:"Quarter end",aplica:"si",just:""},
+{ref:"18.1.2.4",sec:"18",title:"Clearing members - entity type",desc:"Number of other participants (Describe in comments)",vals:"N/A",dtype:"Numeric 0dp",file:"AggregatedDataFile",freq:"Quarter end",aplica:"si",just:""},
+{ref:"18.1.3.1",sec:"18",title:"Clearing members - geography",desc:"Number of domestic participants",vals:"N/A",dtype:"Numeric 0dp",file:"AggregatedDataFile",freq:"Quarter end",aplica:"si",just:""},
+{ref:"18.1.3.2",sec:"18",title:"Clearing members - geography",desc:"Number of foreign participants",vals:"N/A",dtype:"Numeric 0dp",file:"AggregatedDataFile",freq:"Quarter end",aplica:"si",just:""},
+{ref:"18.2.1",sec:"18",title:"Open Position Concentration (10-24 members)",desc:"% of open positions held by the largest 5 CMs (for services with 10-24 members) - Average and Peak",vals:"AverageInQuarter / PeakInQuarter",dtype:"Numeric 2dp, %",file:"DataFile_18_2",freq:"Quarterly",aplica:"na",just:"CCLV tiene 25 o mas miembros compensadores. Aplica 18.2.2 y 18.2.3. Reportar N/A."},
+{ref:"18.2.2",sec:"18",title:"Open Position Concentration (25+ members)",desc:"% of open positions held by the largest 5 CMs (for services with 25+ members) - Average and Peak",vals:"AverageInQuarter / PeakInQuarter",dtype:"Numeric 2dp, %",file:"DataFile_18_2",freq:"Quarterly",aplica:"si",just:""},
+{ref:"18.2.3",sec:"18",title:"Open Position Concentration (25+ members)",desc:"% of open positions held by the largest 10 CMs (for services with 25+ members) - Average and Peak",vals:"AverageInQuarter / PeakInQuarter",dtype:"Numeric 2dp, %",file:"DataFile_18_2",freq:"Quarterly",aplica:"si",just:""},
+{ref:"18.3.1",sec:"18",title:"IM Concentration (10-24 members)",desc:"% of IM posted by the largest 5 CMs (for services with 10-24 members) - Average and Peak",vals:"AverageInQuarter / PeakInQuarter",dtype:"Numeric 2dp, %",file:"DataFile_18_2",freq:"Quarterly",aplica:"na",just:"CCLV tiene 25 o mas miembros compensadores. Aplica 18.3.2 y 18.3.3. Reportar N/A."},
+{ref:"18.3.2",sec:"18",title:"IM Concentration (25+ members)",desc:"% of IM posted by the largest 5 CMs (for services with 25+ members) - Average and Peak",vals:"AverageInQuarter / PeakInQuarter",dtype:"Numeric 2dp, %",file:"DataFile_18_2",freq:"Quarterly",aplica:"si",just:""},
+{ref:"18.3.3",sec:"18",title:"IM Concentration (25+ members)",desc:"% of IM posted by the largest 10 CMs (for services with 25+ members) - Average and Peak",vals:"AverageInQuarter / PeakInQuarter",dtype:"Numeric 2dp, %",file:"DataFile_18_2",freq:"Quarterly",aplica:"si",just:""},
+{ref:"18.4.1",sec:"18",title:"Default Fund Concentration (10-24 members)",desc:"% of default fund contributed by largest 5 CMs (for segregated funds with 10-24 members)",vals:"N/A",dtype:"Numeric 2dp, %",file:"AggregatedDataFile",freq:"Quarter end",aplica:"na",just:"CCLV tiene 25 o mas miembros compensadores. Aplica 18.4.2 y 18.4.3. Reportar N/A."},
+{ref:"18.4.2",sec:"18",title:"Default Fund Concentration (25+ members)",desc:"% of default fund contributed by largest 5 CMs (for segregated funds with 25+ members)",vals:"N/A",dtype:"Numeric 2dp, %",file:"AggregatedDataFile",freq:"Quarter end",aplica:"si",just:""},
+{ref:"18.4.3",sec:"18",title:"Default Fund Concentration (25+ members)",desc:"% of default fund contributed by largest 10 CMs (for segregated funds with 25+ members)",vals:"N/A",dtype:"Numeric 2dp, %",file:"AggregatedDataFile",freq:"Quarter end",aplica:"si",just:""},
+{ref:"19.1.1",sec:"19",title:"Tiered participation - clients",desc:"Number of clients (if known to the CCP)",vals:"N/A",dtype:"Numeric 0dp",file:"AggregatedDataFile",freq:"Quarter end",aplica:"si",just:""},
+{ref:"19.1.2",sec:"19",title:"Tiered participation - clients",desc:"Number of direct members that clear for clients",vals:"N/A",dtype:"Numeric 0dp",file:"AggregatedDataFile",freq:"Quarter end",aplica:"si",just:""},
+{ref:"19.1.3.1",sec:"19",title:"Client clearing concentration",desc:"% of client transactions attributable to top 5 CMs (if CCP has 10+ members) - Peak",vals:"N/A",dtype:"Numeric 2dp, %",file:"AggregatedDataFile",freq:"Quarterly",aplica:"si",just:""},
+{ref:"19.1.3.2",sec:"19",title:"Client clearing concentration",desc:"% of client transactions attributable to top 5 CMs (if CCP has 10+ members) - Average",vals:"-",dtype:"Numeric 2dp, %",file:"AggregatedDataFile",freq:"Quarterly",aplica:"si",just:""},
+{ref:"19.1.4.1",sec:"19",title:"Client clearing concentration",desc:"% of client transactions attributable to top 10 CMs (if CCP has 25+ members) - Peak",vals:"N/A",dtype:"Numeric 2dp, %",file:"AggregatedDataFile",freq:"Quarterly",aplica:"si",just:""},
+{ref:"19.1.4.2",sec:"19",title:"Client clearing concentration",desc:"% of client transactions attributable to top 10 CMs (if CCP has 25+ members) - Average",vals:"-",dtype:"Numeric 2dp, %",file:"AggregatedDataFile",freq:"Quarterly",aplica:"si",just:""},
+{ref:"20.1.1",sec:"20",title:"FMI Links - Value of Trades",desc:"Value of trades cleared through each link as a share of total trade values/total notional values cleared",vals:"",dtype:"Numeric 2dp, %",file:"DataFile_20a",freq:"Quarter End",aplica:"na",just:"CCLV no tiene vinculos FMI activos en el periodo. Reportar N/A si no aplica."},
+{ref:"20.2.1",sec:"20",title:"FMI Links - IM provided",desc:"IM or equivalent financial resources provided to each linked CCP to cover potential future exposure",vals:"",dtype:"Numeric 2dp, Currency",file:"DataFile_20a",freq:"Quarter End",aplica:"na",just:"CCLV no tiene vinculos FMI activos en el periodo. Reportar N/A si no aplica."},
+{ref:"20.3.1",sec:"20",title:"FMI Links - IM collected",desc:"IM or equivalent financial resources collected from each linked CCP (at market value and post-haircut)",vals:"",dtype:"Numeric 2dp, Currency",file:"DataFile_20b",freq:"Quarter End",aplica:"na",just:"CCLV no tiene vinculos FMI activos en el periodo. Reportar N/A si no aplica."},
+{ref:"20.4.1.1",sec:"20",title:"FMI Links - Back-testing",desc:"Number of times over 12 months that coverage provided fell below actual MtM exposure to linked CCP",vals:"",dtype:"Numeric 0dp",file:"DataFile_20a",freq:"Quarterly 12m",aplica:"na",just:"CCLV no tiene vinculos FMI activos en el periodo. Reportar N/A si no aplica."},
+{ref:"20.4.1.2",sec:"20",title:"FMI Links - Back-testing",desc:"Back-testing results frequency - state if measured intraday/continuously/once a day",vals:"",dtype:"Text",file:"DataFile_20a",freq:"Quarterly 12m",aplica:"na",just:"CCLV no tiene vinculos FMI activos en el periodo. Reportar N/A si no aplica."},
+{ref:"20.4.1.3",sec:"20",title:"FMI Links - Back-testing",desc:"If 20.4.1.2 is once a day then the time of day measure is taken otherwise blank",vals:"",dtype:"Text",file:"DataFile_20a",freq:"Quarterly 12m",aplica:"na",just:"CCLV no tiene vinculos FMI activos en el periodo. Reportar N/A si no aplica."},
+{ref:"20.4.2",sec:"20",title:"FMI Links - Back-testing",desc:"Number of observations (accounts multiplied by number of days covered in the back test)",vals:"",dtype:"Numeric 0dp",file:"DataFile_20a",freq:"Quarterly 12m",aplica:"na",just:"CCLV no tiene vinculos FMI activos en el periodo. Reportar N/A si no aplica."},
+{ref:"20.4.3",sec:"20",title:"FMI Links - Back-testing",desc:"Achieved coverage level for FMI link back-testing",vals:"",dtype:"Numeric 2dp, %",file:"DataFile_20a",freq:"Quarterly 12m",aplica:"na",just:"CCLV no tiene vinculos FMI activos en el periodo. Reportar N/A si no aplica."},
+{ref:"20.5.1.1",sec:"20",title:"FMI Links - Additional resources provided",desc:"Additional pre-funded financial resources beyond IM provided to each linked CCP",vals:"",dtype:"Numeric 2dp, Currency",file:"DataFile_20a",freq:"Quarter end",aplica:"na",just:"CCLV no tiene vinculos FMI activos en el periodo. Reportar N/A si no aplica."},
+{ref:"20.5.1.2",sec:"20",title:"FMI Links - Additional resources provided",desc:"Whether part of additional to or separate from the standard default fund",vals:"",dtype:"Text",file:"DataFile_20a",freq:"Quarter end",aplica:"na",just:"CCLV no tiene vinculos FMI activos en el periodo. Reportar N/A si no aplica."},
+{ref:"20.6.1.1",sec:"20",title:"FMI Links - Additional resources collected",desc:"Additional pre-funded financial resources beyond IM collected from each linked CCP",vals:"",dtype:"Numeric 2dp, Currency",file:"DataFile_20a",freq:"Quarter end",aplica:"na",just:"CCLV no tiene vinculos FMI activos en el periodo. Reportar N/A si no aplica."},
+{ref:"20.6.1.2",sec:"20",title:"FMI Links - Additional resources collected",desc:"Whether part of additional to or separate from the standard default fund",vals:"",dtype:"Text",file:"DataFile_20a",freq:"Quarter end",aplica:"na",just:"CCLV no tiene vinculos FMI activos en el periodo. Reportar N/A si no aplica."},
+{ref:"20.7.1",sec:"20",title:"FMI Links - Cross Margining",desc:"Value of trades subject to cross margining as a % of total trade values/total notional cleared",vals:"",dtype:"Numeric 2dp, %",file:"DataFile_20a",freq:"Quarter end",aplica:"na",just:"CCLV no opera cross margining con otras CCPs. Reportar N/A."},
+{ref:"20.7.2",sec:"20",title:"FMI Links - Cross Margining",desc:"Reduction in total IM held as a result of cross margining as a % of total IM that would otherwise have been held",vals:"",dtype:"Numeric 2dp, %",file:"DataFile_20a",freq:"Quarter end",aplica:"na",just:"CCLV no opera cross margining con otras CCPs. Reportar N/A."},
+{ref:"23.1.1",sec:"23",title:"Average Daily Volumes",desc:"Average Daily Volumes by Asset Class Instrument CCY and OTC or ETD",vals:"OTC or ETD",dtype:"Numeric 0dp",file:"DataFile_23",freq:"Quarterly",aplica:"si",just:""},
+{ref:"23.1.2",sec:"23",title:"Average Notional Value",desc:"Average Notional Value of trades cleared by Asset Class CCY and OTC or ETD",vals:"OTC or ETD",dtype:"Numeric 2dp, Currency",file:"DataFile_23",freq:"Quarterly",aplica:"si",just:""},
+{ref:"23.2.1",sec:"23",title:"Gross notional outstanding",desc:"Gross notional outstanding/settlement value of novated but not-yet-settled transactions by Asset Class Instrument CCY and OTC/ETD",vals:"OTC or ETD",dtype:"Numeric 2dp, Currency",file:"DataFile_23",freq:"Quarter end",aplica:"si",just:""},
+{ref:"23.2.2",sec:"23",title:"Asset Class definition",desc:"Defines the Asset Class for volumes reported in 23.1.1 23.1.2 and 23.2.1",vals:"Asset Class: IRS CDS etc.",dtype:"Text",file:"DataFile_23",freq:"Quarter end",aplica:"si",just:""},
+{ref:"23.2.3",sec:"23",title:"Product Type definition",desc:"Defines the Product Type for volumes reported in 23.1.1 23.1.2 and 23.2.1",vals:"Product Type: Index SingleNames Forex",dtype:"Text",file:"DataFile_23",freq:"Quarter end",aplica:"si",just:""},
+{ref:"23.2.4",sec:"23",title:"Product Code definition",desc:"Defines the Product Code for volumes reported in 23.1.1 23.1.2 and 23.2.1",vals:"Product Code:",dtype:"Text",file:"DataFile_23",freq:"Quarter end",aplica:"si",just:""},
+{ref:"23.3.1",sec:"23",title:"Volumes by Execution Facility",desc:"Average daily volumes submitted by Execution facility or matching/confirmation venue",vals:"<ExecutionVenue>",dtype:"Numeric 2dp",file:"DataFile_23_3",freq:"Quarterly",aplica:"si",just:""},
+{ref:"23.3.2",sec:"23",title:"Notional values by Execution Facility",desc:"Notional contract values submitted by Execution facility or matching/confirmation venue",vals:"<ExecutionVenue>",dtype:"Numeric 2dp, Currency",file:"DataFile_23_3",freq:"Quarterly",aplica:"si",just:""}
+];
 
-  var D = [
-    {ref:"4.1.1",  sec:"4",  title:"Recursos de default totales",       desc:"Capital propio prefundado Antes (Before)",                                   vals:"",                                          dtype:"Numerico 2dp Moneda",  file:"AggregatedDataFile"},
-    {ref:"4.1.2",  sec:"4",  title:"Recursos de default totales",       desc:"Capital propio prefundado Junto (Alongside)",                                vals:"",                                          dtype:"Numerico 2dp Moneda",  file:"AggregatedDataFile"},
-    {ref:"4.1.3",  sec:"4",  title:"Recursos de default totales",       desc:"Capital propio prefundado Despues After. Ej Fondo de Reserva CCLV",          vals:"",                                          dtype:"Numerico 2dp Moneda",  file:"AggregatedDataFile"},
-    {ref:"4.1.4",  sec:"4",  title:"Recursos de default totales",       desc:"Contribuciones prefundadas de participantes Requeridas",                     vals:"",                                          dtype:"Numerico 2dp Moneda",  file:"AggregatedDataFile"},
-    {ref:"4.1.5",  sec:"4",  title:"Recursos de default totales",       desc:"Contribuciones prefundadas Depositadas post-haircut",                        vals:"",                                          dtype:"Numerico 2dp Moneda",  file:"AggregatedDataFile"},
-    {ref:"4.1.7",  sec:"4",  title:"Recursos de default totales",       desc:"Comprometidos Fondos propios para cubrir un default",                        vals:"",                                          dtype:"Numerico 2dp Moneda",  file:"AggregatedDataFile"},
-    {ref:"4.1.8",  sec:"4",  title:"Recursos de default totales",       desc:"Comprometidos Compromisos agregados de participantes para el primer default", vals:"",                                          dtype:"Numerico 2dp Moneda",  file:"AggregatedDataFile"},
-    {ref:"4.3.1",  sec:"4",  title:"Default prefundados por tipo",      desc:"Efectivo en banco central emisor de la moneda",                              vals:"PreHaircut / PostHaircut",                  dtype:"Numerico 2dp Moneda",  file:"DataFile_4_3"},
-    {ref:"4.3.3",  sec:"4",  title:"Default prefundados por tipo",      desc:"Efectivo asegurado en bancos comerciales incl reverse repo",                 vals:"PreHaircut / PostHaircut",                  dtype:"Numerico 2dp Moneda",  file:"DataFile_4_3"},
-    {ref:"4.3.5",  sec:"4",  title:"Default prefundados por tipo",      desc:"Bonos soberanos domesticos no efectivo",                                     vals:"PreHaircut / PostHaircut",                  dtype:"Numerico 2dp Moneda",  file:"DataFile_4_3"},
-    {ref:"4.3.15", sec:"4",  title:"Default prefundados TOTAL",         desc:"Total general Pre y Post-Haircut",                                           vals:"PreHaircut / PostHaircut",                  dtype:"Numerico 2dp Moneda",  file:"DataFile_4_3"},
-    {ref:"4.4.1",  sec:"4",  title:"Riesgo de credito",                 desc:"Indicar si la CCP esta sujeta a Cover 1 o Cover 2",                          vals:"",                                          dtype:"Texto",                file:"AggregatedDataFile"},
-    {ref:"4.4.3",  sec:"4",  title:"Riesgo de credito",                 desc:"Mayor perdida por estres por default del participante mas grande",            vals:"PeakDay12M / MeanAvg12M",                   dtype:"Numerico 2dp",         file:"DataFile_4_4a"},
-    {ref:"4.4.6",  sec:"4",  title:"Riesgo de credito",                 desc:"Mayor exposicion real al participante mas grande Pico y Media 12 meses",      vals:"PeakDay12M / MeanAvg12M",                   dtype:"Numerico 2dp Moneda",  file:"DataFile_4_4a"},
-    {ref:"5.1.1",  sec:"5",  title:"Activos elegibles IM y haircuts",   desc:"Descripcion o link de activos aceptados y sus haircuts",                     vals:"",                                          dtype:"Texto",                file:"AggregatedDataFile"},
-    {ref:"5.3.1",  sec:"5",  title:"Pruebas de haircuts",               desc:"Intervalo de confianza objetivo en el calculo de haircuts",                  vals:"",                                          dtype:"Numerico 2dp pct",     file:"AggregatedDataFile"},
-    {ref:"5.3.3",  sec:"5",  title:"Pruebas de haircuts",               desc:"Periodo de observacion historica para testear los haircuts en dias",          vals:"",                                          dtype:"Numerico 0dp",         file:"AggregatedDataFile"},
-    {ref:"6.1.1",  sec:"6",  title:"IM total requerido",                desc:"IM requerido por servicio House Net Client Gross Client Net Total",           vals:"House_Net / Client_Gross / Client_Net",      dtype:"Numerico 2dp Moneda",  file:"DataFile_6_1"},
-    {ref:"6.2.1",  sec:"6",  title:"IM mantenido por tipo de activo",   desc:"Efectivo en banco central emisor Casa Cliente Pre Post-Haircut",             vals:"HouseIM Pre/Post / ClientIM Pre/Post",       dtype:"Numerico 2dp Moneda",  file:"DataFile_6_2"},
-    {ref:"6.2.3",  sec:"6",  title:"IM mantenido por tipo de activo",   desc:"Efectivo asegurado en bancos comerciales Pre Post-Haircut",                  vals:"HouseIM Pre/Post / ClientIM Pre/Post",       dtype:"Numerico 2dp Moneda",  file:"DataFile_6_2"},
-    {ref:"6.2.15", sec:"6",  title:"IM mantenido TOTAL",                desc:"IM total mantenido desglosado por Casa y Cliente",                           vals:"HouseIM Pre/Post / ClientIM Pre/Post",       dtype:"Numerico 2dp Moneda",  file:"DataFile_6_2"},
-    {ref:"6.4.1",  sec:"6",  title:"Modelo IM Tipo",                    desc:"Tipo de modelo de IM por servicio de compensacion",                          vals:"",                                          dtype:"Texto",                file:"AggregatedDataFile"},
-    {ref:"6.4.5",  sec:"6",  title:"Modelo IM Nivel de confianza",      desc:"Nivel de confianza unilateral del modelo de IM",                             vals:"",                                          dtype:"Numerico 2dp pct",     file:"AggregatedDataFile"},
-    {ref:"6.4.11", sec:"6",  title:"Modelo IM Periodo de cierre",       desc:"Periodo de cierre liquidacion asumido en el modelo en dias",                 vals:"",                                          dtype:"Texto",                file:"AggregatedDataFile"},
-    {ref:"6.5.1.1",sec:"6",  title:"Back-testing del IM",               desc:"Veces en 12 meses en que la cobertura bajo la exposicion MtM real",          vals:"",                                          dtype:"Numerico 0dp",         file:"AggregatedDataFile"},
-    {ref:"6.5.3",  sec:"6",  title:"Back-testing del IM",               desc:"Nivel de cobertura alcanzado realmente",                                     vals:"",                                          dtype:"Numerico 2dp pct",     file:"AggregatedDataFile"},
-    {ref:"6.6.1",  sec:"6",  title:"Variacion de margen Promedio",      desc:"Promedio diario de variacion de margen total pagada en el trimestre",         vals:"",                                          dtype:"Numerico 2dp Moneda",  file:"AggregatedDataFile"},
-    {ref:"6.8.1",  sec:"6",  title:"Llamada de margen IM Maximo",       desc:"Maxima llamada de margen inicial agregada en un dia habil del periodo",       vals:"",                                          dtype:"Numerico 2dp Moneda",  file:"AggregatedDataFile"},
-    {ref:"7.1.1",  sec:"7",  title:"Liquidez Nivel de cobertura",       desc:"Indicar si el servicio mantiene recursos liquidos para Cover 1 o Cover 2",   vals:"",                                          dtype:"Texto",                file:"AggregatedDataFile"},
-    {ref:"7.1.2",  sec:"7",  title:"Recursos liquidos calificados",     desc:"Efectivo en banco central emisor de la moneda",                              vals:"TamanoYComposicion",                        dtype:"Numerico 2dp Moneda",  file:"DataFile_7_1"},
-    {ref:"7.1.4",  sec:"7",  title:"Recursos liquidos calificados",     desc:"Efectivo asegurado en bancos comerciales incl reverse repo",                 vals:"TamanoYComposicion",                        dtype:"Numerico 2dp Moneda",  file:"DataFile_7_1"},
-    {ref:"7.1.6",  sec:"7",  title:"Recursos liquidos calificados",     desc:"Lineas de credito comprometidas aseguradas",                                 vals:"TamanoYComposicion",                        dtype:"Numerico 2dp Moneda",  file:"DataFile_7_1"},
-    {ref:"7.3.1",  sec:"7",  title:"Mayor obligacion de pago estimada", desc:"Mayor obligacion de pago estimada por default del participante mas grande",   vals:"PagoMismoDia / PagoIntraday / PagoMultidia", dtype:"Numerico 2dp Moneda",  file:"DataFile_7_3"},
-    {ref:"7.3.2",  sec:"7",  title:"Dias de brecha de liquidez",        desc:"Dias habiles en que la obligacion estimada excedio los recursos liquidos",    vals:"",                                          dtype:"Numerico 0dp",         file:"AggregatedDataFile"},
-    {ref:"12.1.1", sec:"12", title:"Liquidacion por valor DvP",         desc:"Porcentaje de liquidaciones por valor usando DvP Entrega contra Pago",        vals:"",                                          dtype:"Numerico 2dp pct",     file:"AggregatedDataFile"},
-    {ref:"12.1.2", sec:"12", title:"Liquidacion por valor DvD",         desc:"Porcentaje de liquidaciones por valor usando DvD Entrega contra Entrega",     vals:"",                                          dtype:"Numerico 2dp pct",     file:"AggregatedDataFile"},
-    {ref:"12.2.1", sec:"12", title:"Liquidacion por volumen DvP",       desc:"Porcentaje de liquidaciones por volumen usando DvP",                         vals:"",                                          dtype:"Numerico 2dp pct",     file:"AggregatedDataFile"},
-    {ref:"13.1.1", sec:"13", title:"Defaults cuantitativo",             desc:"Monto de perdida versus monto de margen inicial por evento de default",       vals:"",                                          dtype:"Texto",                file:"AggregatedDataFile"},
-    {ref:"14.1.1", sec:"14", title:"Segregacion de clientes",           desc:"Posiciones en cuentas individualmente segregadas porcentaje del nocional",    vals:"",                                          dtype:"Numerico 2dp pct",     file:"AggregatedDataFile"},
-    {ref:"14.1.2", sec:"14", title:"Segregacion de clientes",           desc:"Posiciones en cuentas omnibus solo-cliente excl LSOC",                       vals:"",                                          dtype:"Numerico 2dp pct",     file:"AggregatedDataFile"},
-    {ref:"15.2.1", sec:"15", title:"Divulgaciones financieras",         desc:"Ingresos totales del periodo",                                               vals:"",                                          dtype:"Numerico 2dp Moneda",  file:"AggregatedDataFile"},
-    {ref:"15.2.2", sec:"15", title:"Divulgaciones financieras",         desc:"Gastos totales del periodo",                                                 vals:"",                                          dtype:"Numerico 2dp Moneda",  file:"AggregatedDataFile"},
-    {ref:"15.2.3", sec:"15", title:"Divulgaciones financieras",         desc:"Utilidades Ingresos menos Gastos",                                           vals:"",                                          dtype:"Numerico 2dp Moneda",  file:"AggregatedDataFile"},
-    {ref:"15.2.4", sec:"15", title:"Divulgaciones financieras",         desc:"Activos totales en balance",                                                 vals:"",                                          dtype:"Numerico 2dp Moneda",  file:"AggregatedDataFile"},
-    {ref:"15.2.5", sec:"15", title:"Divulgaciones financieras",         desc:"Pasivos totales en balance",                                                 vals:"",                                          dtype:"Numerico 2dp Moneda",  file:"AggregatedDataFile"},
-    {ref:"16.1.1", sec:"16", title:"Efectivo recibido participantes",   desc:"Total de efectivo recibido como margen inicial",                             vals:"",                                          dtype:"Numerico 2dp Moneda",  file:"AggregatedDataFile"},
-    {ref:"16.1.2", sec:"16", title:"Efectivo recibido participantes",   desc:"Total de efectivo recibido como contribucion al fondo de default",           vals:"",                                          dtype:"Numerico 2dp Moneda",  file:"AggregatedDataFile"},
-    {ref:"16.2.1", sec:"16", title:"Como se invierte el efectivo",      desc:"Porcentaje del efectivo mantenido como depositos TOTAL",                     vals:"",                                          dtype:"Numerico 2dp pct",     file:"AggregatedDataFile"},
-    {ref:"16.2.6", sec:"16", title:"Como se invierte el efectivo",      desc:"Porcentaje en fondos del mercado monetario money market funds",              vals:"",                                          dtype:"Numerico 2dp pct",     file:"AggregatedDataFile"},
-    {ref:"17.1.1", sec:"17", title:"Disponibilidad Objetivo",           desc:"Objetivo de disponibilidad del sistema de compensacion ej 99.99 pct 12 meses",vals:"",                                         dtype:"Numerico 2dp pct",     file:"AggregatedDataFile"},
-    {ref:"17.2.1", sec:"17", title:"Disponibilidad Real",               desc:"Disponibilidad real del sistema en los ultimos 12 meses",                    vals:"",                                          dtype:"Numerico 2dp pct",     file:"AggregatedDataFile"},
-    {ref:"17.3.1", sec:"17", title:"Fallas del sistema",                desc:"Numero total de fallas y duracion en el sistema ultimos 12 meses",           vals:"DuracionFalla HH:MM:SS",                    dtype:"Duracion HH:MM:SS",    file:"DataFile_17_3"},
-    {ref:"18.1.1.1",sec:"18",title:"Miembros compensadores",            desc:"Miembros compensadores generales liquidan por si mismos y por clientes",     vals:"",                                          dtype:"Numerico 0dp",         file:"AggregatedDataFile"},
-    {ref:"18.1.1.2",sec:"18",title:"Miembros compensadores",            desc:"Miembros compensadores directos liquidan solo por si mismos",                vals:"",                                          dtype:"Numerico 0dp",         file:"AggregatedDataFile"},
-    {ref:"18.1.3.1",sec:"18",title:"Geografia de participantes",        desc:"Numero de participantes domesticos",                                         vals:"",                                          dtype:"Numerico 0dp",         file:"AggregatedDataFile"},
-    {ref:"18.1.3.2",sec:"18",title:"Geografia de participantes",        desc:"Numero de participantes extranjeros",                                        vals:"",                                          dtype:"Numerico 0dp",         file:"AggregatedDataFile"},
-    {ref:"18.2.2", sec:"18", title:"Concentracion posiciones",          desc:"Porcentaje posiciones abiertas en manos de los 5 CMs mas grandes",           vals:"Promedio / Pico",                           dtype:"Numerico 2dp pct",     file:"DataFile_18_2"},
-    {ref:"18.3.2", sec:"18", title:"Concentracion IM",                  desc:"Porcentaje de IM depositado por los 5 CMs mas grandes Promedio y Pico",      vals:"Promedio / Pico",                           dtype:"Numerico 2dp pct",     file:"DataFile_18_2"},
-    {ref:"19.1.1", sec:"19", title:"Participacion escalonada",          desc:"Numero de clientes si es conocido por la CCP",                               vals:"",                                          dtype:"Numerico 0dp",         file:"AggregatedDataFile"},
-    {ref:"19.1.2", sec:"19", title:"Participacion escalonada",          desc:"Numero de miembros directos que liquidan para clientes",                     vals:"",                                          dtype:"Numerico 0dp",         file:"AggregatedDataFile"},
-    {ref:"23.1.1", sec:"23", title:"Volumenes diarios promedio",        desc:"Volumenes diarios promedio por clase de activo instrumento moneda OTC ETD",  vals:"OTC / ETD",                                 dtype:"Numerico 0dp",         file:"DataFile_23"},
-    {ref:"23.1.2", sec:"23", title:"Valor nocional promedio",           desc:"Valor nocional promedio de operaciones compensadas",                         vals:"OTC / ETD",                                 dtype:"Numerico 2dp Moneda",  file:"DataFile_23"},
-    {ref:"23.2.1", sec:"23", title:"Nocional bruto pendiente",          desc:"Nocional bruto pendiente de operaciones novadas pero no liquidadas",         vals:"OTC / ETD",                                 dtype:"Numerico 2dp Moneda",  file:"DataFile_23"}
-  ];
+var mapeo = {}, curSec = "ALL", timers = {};
 
-  var mapeo = {}, curSec = "ALL", timers = {};
+function sync(s, m) { document.getElementById("dot").className = "dot " + s; document.getElementById("slbl").textContent = m; }
 
-  function sync(s, m) {
-    document.getElementById("dot").className = "dot " + s;
-    document.getElementById("slbl").textContent = m;
-  }
+function showToast(m) {
+  var t = document.getElementById("toast"); t.textContent = m; t.classList.add("show");
+  setTimeout(function() { t.classList.remove("show"); }, 2000);
+}
 
-  function showToast(m) {
-    var t = document.getElementById("toast");
-    t.textContent = m;
-    t.classList.add("show");
-    setTimeout(function() { t.classList.remove("show"); }, 2000);
-  }
+function esc(s) {
+  return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+}
 
-  function esc(s) {
-    return String(s)
-      .replace(/&/g, "&amp;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;")
-      .replace(/"/g, "&quot;");
-  }
-
-  function updateStats() {
-    var comp = 0, parc = 0, pend = 0;
-    D.forEach(function(d) {
-      var m = mapeo[d.ref] || {};
-      var f = ["sistema","tipo_fuente","query"].filter(function(x) { return m[x] && m[x].trim(); }).length;
-      var e = m.estado || "pendiente";
-      if (e === "completo" || e === "na") comp++;
-      else if (e === "parcial" || f > 0) parc++;
-      else pend++;
-    });
-    document.getElementById("stot").textContent = D.length;
-    document.getElementById("scom").textContent = comp;
-    document.getElementById("spar").textContent = parc;
-    document.getElementById("spen").textContent = pend;
-    var p = Math.round((comp / D.length) * 100);
-    document.getElementById("pct").textContent = p + "%";
-    document.getElementById("pfi").style.width = p + "%";
-  }
-
-  function saveField(ref, field, value) {
-    if (!mapeo[ref]) mapeo[ref] = {ref: ref};
-    mapeo[ref][field] = value;
-    updateStats();
-    sync("sv", "Guardando...");
-    clearTimeout(timers[ref]);
-    timers[ref] = setTimeout(function() {
-      sbUpsert(mapeo[ref])
-        .then(function() { sync("ok", "Guardado - visible para todo el equipo"); showToast("Guardado"); })
-        .catch(function() { sync("er", "Error al guardar"); });
-    }, 800);
-  }
-
-  // Event delegation — NO inline JS with quotes
-  document.getElementById("tbody").addEventListener("input", function(e) {
-    var el = e.target;
-    var ref = el.getAttribute("data-ref");
-    var field = el.getAttribute("data-field");
-    if (ref && field) saveField(ref, field, el.value);
+function updateStats() {
+  var comp=0, parc=0, pend=0, na_count=0;
+  D.forEach(function(d) {
+    var m = mapeo[d.ref] || {};
+    if (d.aplica === "na" && !m.estado) { na_count++; return; }
+    var f = ["sistema","tipo_fuente","query"].filter(function(x){ return m[x] && m[x].trim(); }).length;
+    var e = m.estado || "pendiente";
+    if (e === "completo") comp++;
+    else if (e === "na") na_count++;
+    else if (e === "parcial" || f > 0) parc++;
+    else pend++;
   });
+  document.getElementById("stot").textContent = D.length;
+  document.getElementById("scom").textContent = comp;
+  document.getElementById("spar").textContent = parc;
+  document.getElementById("spen").textContent = pend;
+  document.getElementById("sna").textContent = na_count;
+  var applicable = D.filter(function(d){ return d.aplica === "si"; }).length;
+  var p = applicable > 0 ? Math.round((comp / applicable) * 100) : 0;
+  document.getElementById("pct").textContent = p + "%";
+  document.getElementById("pfi").style.width = p + "%";
+}
 
-  document.getElementById("tbody").addEventListener("change", function(e) {
-    var el = e.target;
-    var ref = el.getAttribute("data-ref");
-    var field = el.getAttribute("data-field");
-    if (ref && field) {
-      saveField(ref, field, el.value);
-      if (field === "estado") render();
+function saveField(ref, field, value) {
+  if (!mapeo[ref]) mapeo[ref] = {ref: ref};
+  mapeo[ref][field] = value;
+  updateStats();
+  sync("sv", "Guardando...");
+  clearTimeout(timers[ref]);
+  timers[ref] = setTimeout(function() {
+    sbUpsert(mapeo[ref])
+      .then(function() { sync("ok", "Guardado - visible para todo el equipo"); showToast("Guardado"); })
+      .catch(function() { sync("er", "Error al guardar"); });
+  }, 800);
+}
+
+document.getElementById("tbody").addEventListener("input", function(e) {
+  var el = e.target, ref = el.getAttribute("data-ref"), field = el.getAttribute("data-field");
+  if (ref && field) saveField(ref, field, el.value);
+});
+document.getElementById("tbody").addEventListener("change", function(e) {
+  var el = e.target, ref = el.getAttribute("data-ref"), field = el.getAttribute("data-field");
+  if (ref && field) { saveField(ref, field, el.value); if (field === "estado") render(); }
+});
+document.getElementById("tabs").addEventListener("click", function(e) {
+  if (!e.target.classList.contains("tab")) return;
+  document.querySelectorAll(".tab").forEach(function(t){ t.classList.remove("active"); });
+  e.target.classList.add("active");
+  curSec = e.target.getAttribute("data-sec");
+  render();
+});
+document.getElementById("q").addEventListener("input", function() { render(); });
+document.getElementById("btn-pipeline").addEventListener("click", exportPipeline);
+document.getElementById("btn-csv").addEventListener("click", exportCSV);
+document.getElementById("btn-refresh").addEventListener("click", loadData);
+document.getElementById("btn-clear").addEventListener("click", clearAll);
+document.getElementById("btn-close-modal").addEventListener("click", function(){ document.getElementById("modal").classList.remove("open"); });
+document.getElementById("btn-close-modal2").addEventListener("click", function(){ document.getElementById("modal").classList.remove("open"); });
+document.getElementById("btn-dl-json").addEventListener("click", downloadJSON);
+
+function render() {
+  var q = document.getElementById("q").value.toLowerCase();
+  var rows = D.filter(function(d) {
+    var secMatch = curSec === "ALL" || d.sec === curSec ||
+      (curSec === "SI" && d.aplica === "si") ||
+      (curSec === "NA_DEF" && d.aplica === "na");
+    var qMatch = !q || [d.ref,d.title,d.desc,d.vals,d.file,d.just].some(function(x){ return x.toLowerCase().indexOf(q) >= 0; });
+    return secMatch && qMatch;
+  });
+  var tbody = document.getElementById("tbody");
+  if (!rows.length) { tbody.innerHTML = "<tr><td colspan=16 class=empty>Sin resultados.</td></tr>"; return; }
+  var parts = [], lastSec = null;
+  rows.forEach(function(d) {
+    if (d.sec !== lastSec) {
+      parts.push("<tr class=secr><td colspan=16>" + SMAP[d.sec].label + "</td></tr>");
+      lastSec = d.sec;
     }
+    var m = mapeo[d.ref] || {};
+    var isNaDefault = d.aplica === "na" && !m.estado;
+    var est = m.estado || (isNaDefault ? "na" : "pendiente");
+    var bc = {completo:"#27985F",parcial:"#FFC72F",pendiente:"#B0ADA8",na:"#0069A7"}[est] || "#B0ADA8";
+    var sm = SMAP[d.sec];
+    function opt(field, val, label) {
+      return "<option value=" + val + (m[field] === val || (isNaDefault && val === "na" && field === "estado") ? " selected" : "") + ">" + label + "</option>";
+    }
+    var aplicaBadge = d.aplica === "si"
+      ? "<span class=tag-si>Si aplica</span>"
+      : "<span class=tag-na>No aplica</span>";
+    var justCell = d.aplica === "na"
+      ? "<div class=just-na>" + esc(d.just) + "</div>"
+      : "<div class=just-text></div>";
+    parts.push(
+      "<tr class='" + (d.aplica === "na" ? "row-na" : "") + "' style='border-left:4px solid " + bc + "'>" +
+      "<td><span class=did>" + d.ref + "</span><span class=badge style='background:" + sm.bg + ";color:" + sm.color + ";border-left:2px solid " + sm.color + "'>" + d.sec + "</span></td>" +
+      "<td><div class=dn>" + esc(d.title) + "</div></td>" +
+      "<td><div class=dd>" + esc(d.desc) + "</div></td>" +
+      "<td><div class=dv>" + esc(d.vals || "-") + "</div></td>" +
+      "<td><span class=dty>" + esc(d.dtype) + "</span></td>" +
+      "<td><span class=dfi>" + esc(d.file) + "</span></td>" +
+      "<td><span class=dfr>" + esc(d.freq) + "</span></td>" +
+      "<td class=blc><textarea class=ci rows=1 placeholder='Ej: Oracle Risk...' data-ref=" + d.ref + " data-field=sistema>" + esc(m.sistema || "") + "</textarea></td>" +
+      "<td><input class=ci type=text style='min-height:22px' placeholder='Nombre/area' value='" + esc(m.responsable || "") + "' data-ref=" + d.ref + " data-field=responsable></td>" +
+      "<td><select class=cs data-ref=" + d.ref + " data-field=estado>" +
+        opt("estado","pendiente","Pendiente") + opt("estado","parcial","Parcial") +
+        opt("estado","completo","Completo") + opt("estado","na","N/A") +
+      "</select></td>" +
+      "<td class=blb><select class=csp data-ref=" + d.ref + " data-field=tipo_fuente>" +
+        "<option value=''" + (!m.tipo_fuente ? " selected" : "") + ">-</option>" +
+        opt("tipo_fuente","SQL","SQL") + opt("tipo_fuente","API","API") +
+        opt("tipo_fuente","CSV/Excel","CSV/Excel") + opt("tipo_fuente","Manual","Manual") +
+        opt("tipo_fuente","Calculo","Calculo") +
+      "</select></td>" +
+      "<td><textarea class=cp rows=2 placeholder='SELECT ... FROM ...' data-ref=" + d.ref + " data-field=query>" + esc(m.query || "") + "</textarea></td>" +
+      "<td><select class=csp data-ref=" + d.ref + " data-field=transformacion>" +
+        "<option value=''" + (!m.transformacion ? " selected" : "") + ">Sin transformacion</option>" +
+        opt("transformacion","valor_directo","Valor directo") + opt("transformacion","suma","Suma") +
+        opt("transformacion","promedio","Promedio") + opt("transformacion","maximo","Maximo") +
+        opt("transformacion","ratio_pct","Ratio pct") + opt("transformacion","logica_compleja","Logica compleja") +
+      "</select></td>" +
+      "<td class=bla>" + aplicaBadge + "</td>" +
+      "<td>" + justCell + "</td>" +
+      "<td><textarea class=cp rows=1 placeholder='Notas adicionales...' data-ref=" + d.ref + " data-field=notas>" + esc(m.notas || "") + "</textarea></td>" +
+      "</tr>"
+    );
   });
+  tbody.innerHTML = parts.join("");
+}
 
-  document.getElementById("tabs").addEventListener("click", function(e) {
-    if (!e.target.classList.contains("tab")) return;
-    document.querySelectorAll(".tab").forEach(function(t) { t.classList.remove("active"); });
-    e.target.classList.add("active");
-    curSec = e.target.getAttribute("data-sec");
-    render();
+function loadData() {
+  sync("sv", "Cargando...");
+  sbGet().then(function(rows) {
+    mapeo = {};
+    if (Array.isArray(rows)) rows.forEach(function(r){ mapeo[r.ref] = r; });
+    render(); updateStats();
+    sync("ok", "Conectado - 205 disclosures PQD v2.0 - cambios guardados para todo el equipo");
+    showToast("Datos cargados");
+    document.getElementById("ov").style.display = "none";
+  }).catch(function(e) {
+    sync("er", "Error: " + e.message);
+    showToast("Error de conexion");
+    document.getElementById("ov").style.display = "none";
   });
+}
 
-  document.getElementById("q").addEventListener("input", function() { render(); });
-  document.getElementById("btn-pipeline").addEventListener("click", exportPipeline);
-  document.getElementById("btn-csv").addEventListener("click", exportCSV);
-  document.getElementById("btn-refresh").addEventListener("click", loadData);
-  document.getElementById("btn-clear").addEventListener("click", clearAll);
-  document.getElementById("btn-close-modal").addEventListener("click", function() { document.getElementById("modal").classList.remove("open"); });
-  document.getElementById("btn-close-modal2").addEventListener("click", function() { document.getElementById("modal").classList.remove("open"); });
-  document.getElementById("btn-dl-json").addEventListener("click", downloadJSON);
-
-  function render() {
-    var q = document.getElementById("q").value.toLowerCase();
-    var rows = D.filter(function(d) {
-      return (curSec === "ALL" || d.sec === curSec) &&
-        (!q || [d.ref, d.title, d.desc, d.vals, d.file].some(function(x) { return x.toLowerCase().indexOf(q) >= 0; }));
+function buildConfig() {
+  var bf = {};
+  D.forEach(function(d) {
+    var m = mapeo[d.ref] || {};
+    if (!m.tipo_fuente && !m.query) return;
+    if (!bf[d.file]) bf[d.file] = [];
+    bf[d.file].push({
+      disclosure_ref:d.ref, titulo:d.title, tipo_dato:d.dtype, frecuencia:d.freq,
+      aplica_cclv:d.aplica, justificacion_na:d.aplica==="na"?d.just:null,
+      tipo_fuente:m.tipo_fuente||null, sistema:m.sistema||null,
+      query_o_ruta:m.query||null, transformacion:m.transformacion||"valor_directo",
+      responsable:m.responsable||null, estado:m.estado||"pendiente", notas:m.notas||null
     });
-    var tbody = document.getElementById("tbody");
-    if (!rows.length) { tbody.innerHTML = "<tr><td colspan=14 class=empty>Sin resultados.</td></tr>"; return; }
+  });
+  return {version:"2.0",ccp:"CCLV",template:"PQD_v2_CCP_Global_205_disclosures",
+    generado_en:new Date().toISOString(),datafiles:bf};
+}
 
-    var parts = [];
-    var lastSec = null;
+function exportPipeline() {
+  var cfg = buildConfig();
+  if (!Object.keys(cfg.datafiles).length) { showToast("Sin disclosures configurados"); return; }
+  document.getElementById("jo").textContent = JSON.stringify(cfg, null, 2);
+  document.getElementById("modal").classList.add("open");
+}
+function downloadJSON() {
+  var blob = new Blob([JSON.stringify(buildConfig(),null,2)],{type:"application/json"});
+  var a = document.createElement("a"); a.href = URL.createObjectURL(blob);
+  a.download = "pqd_pipeline_config_" + new Date().toISOString().slice(0,10) + ".json"; a.click();
+  showToast("JSON descargado");
+}
 
-    rows.forEach(function(d) {
-      if (d.sec !== lastSec) {
-        parts.push("<tr class=secr><td colspan=14>" + SMAP[d.sec].label + "</td></tr>");
-        lastSec = d.sec;
-      }
-      var m = mapeo[d.ref] || {};
-      var est = m.estado || "pendiente";
-      var bc = {completo:"#27985F", parcial:"#FFC72F", pendiente:"#B0ADA8", na:"#0069A7"}[est] || "#B0ADA8";
-      var sm = SMAP[d.sec];
+function exportCSV() {
+  var h = ["Ref","Titulo","DataFile","Frecuencia","AplicaCCLV","JustificacionNA","Sistema","Responsable","Estado","TipoFuente","Query","Transformacion","Notas"];
+  var rows = D.map(function(d) {
+    var m = mapeo[d.ref] || {};
+    var vals = [d.ref,d.title,d.file,d.freq,d.aplica,d.just,
+      m.sistema||"",m.responsable||"",m.estado||"pendiente",
+      m.tipo_fuente||"",m.query||"",m.transformacion||"",m.notas||""];
+    return vals.map(function(v){ return '"' + String(v).replace(/"/g,'""') + '"'; }).join(",");
+  });
+  var csvContent = String.fromCharCode(0xFEFF) + h.join(",") + "\n" + rows.join("\n");
+  var blob = new Blob([csvContent],{type:"text/csv;charset=utf-8;"});
+  var a = document.createElement("a"); a.href = URL.createObjectURL(blob);
+  a.download = "CCLV_PQD_mapeo_completo_" + new Date().toISOString().slice(0,10) + ".csv"; a.click();
+  showToast("CSV exportado");
+}
 
-      function opt(field, val, label) {
-        return "<option value=" + val + (m[field] === val ? " selected" : "") + ">" + label + "</option>";
-      }
+function clearAll() {
+  if (!confirm("Borrar TODO el mapeo del equipo en Supabase? No se puede deshacer.")) return;
+  sbDel().then(function(){ mapeo={}; render(); updateStats(); showToast("Datos borrados"); });
+}
 
-      var row = "<tr style='border-left:4px solid " + bc + "'>" +
-        "<td><span class=did>" + d.ref + "</span>" +
-            "<span class=badge style='background:" + sm.bg + ";color:" + sm.color + ";border-left:2px solid " + sm.color + "'>" + d.sec + "</span></td>" +
-        "<td><div class=dn>" + esc(d.title) + "</div></td>" +
-        "<td><div class=dd>" + esc(d.desc) + "</div></td>" +
-        "<td><div class=dv>" + esc(d.vals || "-") + "</div></td>" +
-        "<td><span class=dty>" + esc(d.dtype) + "</span></td>" +
-        "<td><span class=dfi>" + esc(d.file) + "</span></td>" +
-        "<td class=blc><textarea class=ci rows=1 placeholder='Ej: Oracle Risk...' data-ref=" + d.ref + " data-field=sistema>" + esc(m.sistema || "") + "</textarea></td>" +
-        "<td><input class=ci type=text style='min-height:22px' placeholder='Nombre/area' value='" + esc(m.responsable || "") + "' data-ref=" + d.ref + " data-field=responsable></td>" +
-        "<td><select class=cs data-ref=" + d.ref + " data-field=estado>" +
-          opt("estado","pendiente","Pendiente") + opt("estado","parcial","Parcial") +
-          opt("estado","completo","Completo") + opt("estado","na","N/A") +
-        "</select></td>" +
-        "<td class=blb><select class=csp data-ref=" + d.ref + " data-field=tipo_fuente>" +
-          "<option value=''" + (!m.tipo_fuente ? " selected" : "") + ">-</option>" +
-          opt("tipo_fuente","SQL","SQL") + opt("tipo_fuente","API","API") +
-          opt("tipo_fuente","CSV/Excel","CSV/Excel") + opt("tipo_fuente","Manual","Manual") +
-          opt("tipo_fuente","Calculo","Calculo") +
-        "</select></td>" +
-        "<td><textarea class=cp rows=1 placeholder='oracle_risk / /data/im.csv' data-ref=" + d.ref + " data-field=conexion>" + esc(m.conexion || "") + "</textarea></td>" +
-        "<td><textarea class=cp rows=2 placeholder='SELECT ... FROM ...' data-ref=" + d.ref + " data-field=query>" + esc(m.query || "") + "</textarea></td>" +
-        "<td><select class=csp data-ref=" + d.ref + " data-field=transformacion>" +
-          "<option value=''" + (!m.transformacion ? " selected" : "") + ">Sin transformacion</option>" +
-          opt("transformacion","valor_directo","Valor directo") + opt("transformacion","suma","Suma") +
-          opt("transformacion","promedio","Promedio") + opt("transformacion","maximo","Maximo") +
-          opt("transformacion","ratio_pct","Ratio pct") + opt("transformacion","logica_compleja","Logica compleja") +
-        "</select></td>" +
-        "<td><textarea class=cp rows=1 placeholder='Notas tecnicas...' data-ref=" + d.ref + " data-field=notas>" + esc(m.notas || "") + "</textarea></td>" +
-        "</tr>";
-      parts.push(row);
-    });
-    tbody.innerHTML = parts.join("");
-  }
+setInterval(function(){
+  sbGet().then(function(r){
+    if(Array.isArray(r)){r.forEach(function(x){mapeo[x.ref]=x;});render();updateStats();}
+  }).catch(function(){});
+}, 30000);
 
-  function loadData() {
-    sync("sv", "Cargando...");
-    sbGet().then(function(rows) {
-      mapeo = {};
-      if (Array.isArray(rows)) rows.forEach(function(r) { mapeo[r.ref] = r; });
-      render();
-      updateStats();
-      sync("ok", "Conectado - cambios guardados para todo el equipo");
-      showToast("Datos cargados");
-      document.getElementById("ov").style.display = "none";
-    }).catch(function(e) {
-      sync("er", "Error: " + e.message);
-      showToast("Error de conexion");
-      document.getElementById("ov").style.display = "none";
-    });
-  }
-
-  function buildConfig() {
-    var bf = {};
-    D.forEach(function(d) {
-      var m = mapeo[d.ref] || {};
-      if (!m.tipo_fuente && !m.query && !m.conexion) return;
-      if (!bf[d.file]) bf[d.file] = [];
-      bf[d.file].push({disclosure_ref:d.ref, titulo:d.title, tipo_dato:d.dtype, tipo_fuente:m.tipo_fuente||null, sistema:m.sistema||null, conexion:m.conexion||null, query_o_ruta:m.query||null, transformacion:m.transformacion||"valor_directo", responsable:m.responsable||null, estado:m.estado||"pendiente", notas:m.notas||null});
-    });
-    return {version:"1.0", ccp:"CCLV", template:"PQD_v2_CCP_Global", generado_en:new Date().toISOString(), datafiles:bf};
-  }
-
-  function exportPipeline() {
-    var cfg = buildConfig();
-    if (!Object.keys(cfg.datafiles).length) { showToast("Sin disclosures configurados"); return; }
-    document.getElementById("jo").textContent = JSON.stringify(cfg, null, 2);
-    document.getElementById("modal").classList.add("open");
-  }
-
-  function downloadJSON() {
-    var b = new Blob([JSON.stringify(buildConfig(), null, 2)], {type:"application/json"});
-    var a = document.createElement("a"); a.href = URL.createObjectURL(b);
-    a.download = "pqd_pipeline_config_" + new Date().toISOString().slice(0,10) + ".json"; a.click();
-    showToast("JSON descargado");
-  }
-
-  function exportCSV() {
-    var h = ["Ref","Titulo","DataFile","Sistema","Responsable","Estado","TipoFuente","Conexion","Query","Transformacion","Notas"];
-    var r = D.map(function(d) {
-      var m = mapeo[d.ref] || {};
-      return [d.ref,d.title,d.file,m.sistema||"",m.responsable||"",m.estado||"pendiente",m.tipo_fuente||"",m.conexion||"",m.query||"",m.transformacion||"",m.notas||""]
-        .map(function(v) { return '"' + String(v).replace(/"/g, '""') + '"'; }).join(",");
-    });
-    var csvContent = String.fromCharCode(0xFEFF) + h.join(",") + "\n" + r.join("\n");
-    var b = new Blob([csvContent], {type:"text/csv;charset=utf-8;"});
-    var a = document.createElement("a"); a.href = URL.createObjectURL(b);
-    a.download = "CCLV_PQD_mapeo_" + new Date().toISOString().slice(0,10) + ".csv"; a.click();
-    showToast("CSV exportado");
-  }
-
-  function clearAll() {
-    if (!confirm("Borrar TODO el mapeo del equipo en Supabase? No se puede deshacer.")) return;
-    sbDel().then(function() {
-      mapeo = {}; render(); updateStats(); showToast("Datos borrados");
-    });
-  }
-
-  setInterval(function() {
-    sbGet().then(function(r) {
-      if (Array.isArray(r)) { r.forEach(function(x) { mapeo[x.ref] = x; }); render(); updateStats(); }
-    }).catch(function() {});
-  }, 30000);
-
-  loadData();
-})();
+loadData();
 </script>
 </body>
 </html>
