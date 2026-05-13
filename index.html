@@ -11,9 +11,9 @@
 body{font-family:Montserrat,sans-serif;background:var(--g1);color:var(--bk);min-height:100vh;font-size:12px}
 .hdr{background:var(--bk);padding:14px 20px 18px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
 .brand{display:flex;align-items:center;gap:10px}
-.brand-icon{width:36px;height:36px;border-radius:50%;background:var(--or);display:flex;align-items:center;justify-content:center}
+.brand-icon{width:36px;height:36px;border-radius:50%;background:var(--or);display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .brand-name{font-family:"PT Serif",Georgia,serif;font-size:18px;font-weight:700;color:#fff}
-.brand-sub{font-size:9px;font-weight:700;color:var(--or);letter-spacing:1.5px;text-transform:uppercase;margin-top:1px}
+.brand-sub{font-size:9px;font-weight:700;color:var(--or);letter-spacing:1.5px;text-transform:uppercase}
 .ht h1{font-family:"PT Serif",Georgia,serif;font-size:13px;font-weight:700;color:#fff;text-align:right;margin:0}
 .ht p{font-size:9px;color:var(--g4);margin-top:2px;text-align:right}
 .dot{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:5px;vertical-align:middle}
@@ -26,7 +26,7 @@ body{font-family:Montserrat,sans-serif;background:var(--g1);color:var(--bk);min-
 .sc.or .sn{color:var(--or)}.sc.gr .sn{color:var(--gr)}.sc.yw .sn{color:#b8860b}
 .sl{font-size:9px;font-weight:700;color:var(--g6);text-transform:uppercase;letter-spacing:.8px;margin-top:2px}
 .pc{flex:1;min-width:160px;background:#fff;border-radius:10px;box-shadow:0 2px 8px rgba(40,39,43,.07);padding:8px 14px;display:flex;flex-direction:column;justify-content:center}
-.pla{font-size:9px;font-weight:700;color:var(--g6);text-transform:uppercase;letter-spacing:.8px;margin-bottom:6px;display:flex;justify-content:space-between}
+.pla{font-size:9px;font-weight:700;color:var(--g6);text-transform:uppercase;margin-bottom:6px;display:flex;justify-content:space-between}
 .pla span{font-family:"PT Serif",Georgia,serif;font-size:14px;color:var(--or)}
 .ptr{height:5px;background:var(--g2);border-radius:3px;overflow:hidden}
 .pfi{height:100%;background:linear-gradient(90deg,var(--or),#ff6b35);border-radius:3px;transition:width .4s}
@@ -36,7 +36,7 @@ body{font-family:Montserrat,sans-serif;background:var(--g1);color:var(--bk);min-
 .bol{background:#fff;color:var(--bk);border:1.5px solid var(--g2)}
 .bred{background:#fff0ed;color:var(--or);border:1.5px solid #ffd0c4}
 .fi{display:flex;gap:5px;flex-wrap:wrap;padding:10px 20px 0}
-.tab{font-family:Montserrat,sans-serif;font-size:9px;font-weight:700;padding:5px 10px;border-radius:0 5px 5px 0;border:1.5px solid var(--g2);background:#fff;color:var(--g6);cursor:pointer;text-transform:uppercase;letter-spacing:.5px;white-space:nowrap}
+.tab{font-family:Montserrat,sans-serif;font-size:9px;font-weight:700;padding:5px 10px;border-radius:0 5px 5px 0;border:1.5px solid var(--g2);background:#fff;color:var(--g6);cursor:pointer;text-transform:uppercase;white-space:nowrap}
 .tab:hover{border-color:var(--or);color:var(--or)}.tab.active{background:var(--or);color:#fff;border-color:var(--or)}
 .srch{flex:1;min-width:200px;font-family:Montserrat,sans-serif;font-size:11px;padding:6px 12px;border:1.5px solid var(--g2);border-radius:0 7px 7px 0;background:#fff;outline:none}
 .srch:focus{border-color:var(--or)}
@@ -61,14 +61,14 @@ td.blc{border-left:2px solid #ffe4da}td.blb{border-left:2px solid #ddeef8}
 .did{font-family:"PT Serif",Georgia,serif;font-size:11px;font-weight:700;color:var(--or);white-space:nowrap;display:block}
 .dn{font-weight:700;color:var(--bk);font-size:11px;line-height:1.4;overflow-wrap:break-word}
 .dd{font-size:10px;color:var(--g6);line-height:1.4;margin-top:2px;overflow-wrap:break-word}
-.dv{font-size:9px;color:var(--g4);font-family:"Courier New",monospace;margin-top:2px}
-.dty{font-size:9px;color:var(--g6);font-family:"Courier New",monospace}
-.dfi{font-size:9px;color:var(--bl);font-family:"Courier New",monospace;font-weight:600}
+.dv{font-size:9px;color:var(--g4);font-family:monospace;margin-top:2px}
+.dty{font-size:9px;color:var(--g6);font-family:monospace}
+.dfi{font-size:9px;color:var(--bl);font-family:monospace;font-weight:600}
 .badge{display:inline-block;padding:2px 7px;border-radius:0 4px 4px 0;font-size:8px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;margin-top:3px}
 .ci,.cp{width:100%;display:block;background:transparent;border:none;border-bottom:1.5px solid var(--g2);font-size:11px;padding:2px 3px;outline:none;resize:none;min-height:22px;line-height:1.4;overflow:hidden}
 .ci{font-family:Montserrat,sans-serif;color:var(--bk)}.ci:focus{border-bottom-color:var(--or);background:#fff8f6}
 .ci::placeholder{color:var(--g2)}
-.cp{font-family:"Courier New",monospace;font-size:10px;color:var(--bl)}.cp:focus{border-bottom-color:var(--bl);background:#f0f7fd}
+.cp{font-family:monospace;font-size:10px;color:var(--bl)}.cp:focus{border-bottom-color:var(--bl);background:#f0f7fd}
 .cp::placeholder{color:#b8d4e8}
 .cs,.csp{width:100%;display:block;font-family:Montserrat,sans-serif;font-size:10px;font-weight:600;padding:3px 5px;border-radius:0 5px 5px 0;outline:none;cursor:pointer}
 .cs{background:var(--g1);border:1.5px solid var(--g2);color:var(--bk)}
@@ -84,7 +84,7 @@ td.blc{border-left:2px solid #ffe4da}td.blb{border-left:2px solid #ddeef8}
 .mdh h2{font-family:"PT Serif",Georgia,serif;font-size:16px;font-weight:700;color:#fff}
 .mdc{background:none;border:none;color:var(--g4);font-size:20px;cursor:pointer}
 .mdb{padding:18px;overflow-y:auto;flex:1;background:var(--g1)}
-.mdb pre{background:var(--bk);border-radius:8px;padding:16px;font-family:"Courier New",monospace;font-size:11px;color:#4ade80;white-space:pre-wrap;word-break:break-all;line-height:1.6}
+.mdb pre{background:var(--bk);border-radius:8px;padding:16px;font-family:monospace;font-size:11px;color:#4ade80;white-space:pre-wrap;word-break:break-all;line-height:1.6}
 .mdf{padding:10px 18px;background:#fff;border-top:1px solid var(--g2);display:flex;gap:8px;justify-content:flex-end}
 .toast{position:fixed;bottom:20px;right:20px;background:var(--bk);color:#fff;border-left:4px solid var(--or);border-radius:0 8px 8px 0;padding:9px 16px;font-family:Montserrat,sans-serif;font-size:11px;font-weight:700;opacity:0;transition:opacity .2s;pointer-events:none;z-index:999}
 .toast.show{opacity:1}
@@ -99,14 +99,11 @@ td.blc{border-left:2px solid #ffe4da}td.blb{border-left:2px solid #ddeef8}
 <div class="hdr">
   <div class="brand">
     <div class="brand-icon"><svg viewBox="0 0 22 22" width="20" height="20"><path d="M14 3L6 11.5H11L8 19L16 10.5H11L14 3Z" fill="white"/></svg></div>
-    <div>
-      <div class="brand-name">nuam</div>
-      <div class="brand-sub">3 paises - 1 mercado</div>
-    </div>
+    <div><div class="brand-name">nuam</div><div class="brand-sub">3 paises - 1 mercado</div></div>
   </div>
   <div class="ht">
     <h1>PQD v2.0 - Mapeo de Fuentes hacia Pipeline</h1>
-    <p><span class="dot ok" id="dot"></span><span id="slbl">Conectado - cambios guardados para todo el equipo</span></p>
+    <p><span class="dot ok" id="dot"></span><span id="slbl">Conectado</span></p>
   </div>
 </div>
 <div class="stats">
@@ -120,38 +117,36 @@ td.blc{border-left:2px solid #ffe4da}td.blb{border-left:2px solid #ddeef8}
   </div>
 </div>
 <div class="tb">
-  <button class="btn bor" onclick="exportPipeline()">Exportar config pipeline JSON</button>
-  <button class="btn bbk" onclick="exportCSV()">Exportar CSV</button>
-  <button class="btn bol" onclick="loadData()">Actualizar</button>
-  <button class="btn bred" onclick="clearAll()">Limpiar todo</button>
+  <button class="btn bor" id="btn-pipeline">Exportar config pipeline JSON</button>
+  <button class="btn bbk" id="btn-csv">Exportar CSV</button>
+  <button class="btn bol" id="btn-refresh">Actualizar</button>
+  <button class="btn bred" id="btn-clear">Limpiar todo</button>
 </div>
-<div class="fi">
-  <div class="tab active" onclick="setSec(this,'ALL')">Todos</div>
-  <div class="tab" onclick="setSec(this,'4')">4 Default</div>
-  <div class="tab" onclick="setSec(this,'5')">5 Haircuts</div>
-  <div class="tab" onclick="setSec(this,'6')">6 IM</div>
-  <div class="tab" onclick="setSec(this,'7')">7 Liquidez</div>
-  <div class="tab" onclick="setSec(this,'12')">12 Settlement</div>
-  <div class="tab" onclick="setSec(this,'13')">13 Defaults</div>
-  <div class="tab" onclick="setSec(this,'14')">14 Segregacion</div>
-  <div class="tab" onclick="setSec(this,'15')">15 Negocio</div>
-  <div class="tab" onclick="setSec(this,'16')">16 Inversiones</div>
-  <div class="tab" onclick="setSec(this,'17')">17 Operacional</div>
-  <div class="tab" onclick="setSec(this,'18')">18 Participantes</div>
-  <div class="tab" onclick="setSec(this,'19')">19 Clientes</div>
-  <div class="tab" onclick="setSec(this,'23')">23 Volumenes</div>
-  <input class="srch" type="text" id="q" placeholder="Buscar..." oninput="render()">
+<div class="fi" id="tabs">
+  <div class="tab active" data-sec="ALL">Todos</div>
+  <div class="tab" data-sec="4">4 Default</div>
+  <div class="tab" data-sec="5">5 Haircuts</div>
+  <div class="tab" data-sec="6">6 IM</div>
+  <div class="tab" data-sec="7">7 Liquidez</div>
+  <div class="tab" data-sec="12">12 Settlement</div>
+  <div class="tab" data-sec="13">13 Defaults</div>
+  <div class="tab" data-sec="14">14 Segregacion</div>
+  <div class="tab" data-sec="15">15 Negocio</div>
+  <div class="tab" data-sec="16">16 Inversiones</div>
+  <div class="tab" data-sec="17">17 Operacional</div>
+  <div class="tab" data-sec="18">18 Participantes</div>
+  <div class="tab" data-sec="19">19 Clientes</div>
+  <div class="tab" data-sec="23">23 Volumenes</div>
+  <input class="srch" type="text" id="q" placeholder="Buscar...">
 </div>
 <div class="leg">
-  <span style="color:var(--g6);font-weight:700;text-transform:uppercase;letter-spacing:.8px">Estado:</span>
+  <span style="color:var(--g6);font-weight:700;text-transform:uppercase">Estado:</span>
   <span class="li"><span class="ld" style="background:var(--gr)"></span>Completo</span>
   <span class="li"><span class="ld" style="background:var(--yw)"></span>Parcial</span>
   <span class="li"><span class="ld" style="background:var(--g4)"></span>Pendiente</span>
   <span class="li"><span class="ld" style="background:var(--bl)"></span>N/A</span>
   <span style="color:var(--g2);margin:0 4px">|</span>
   <span style="color:var(--bl);font-weight:700">Azul = config pipeline Python</span>
-  <span style="color:var(--g2);margin:0 4px">|</span>
-  <span style="color:var(--gr);font-weight:700">Supabase - tiempo real</span>
 </div>
 <div class="tw">
 <table>
@@ -173,261 +168,330 @@ td.blc{border-left:2px solid #ffe4da}td.blb{border-left:2px solid #ddeef8}
 </div>
 <div class="mdbg" id="modal">
   <div class="md">
-    <div class="mdh"><h2>Config Pipeline JSON</h2><button class="mdc" onclick="closeModal()">X</button></div>
+    <div class="mdh"><h2>Config Pipeline JSON</h2><button class="mdc" id="btn-close-modal">X</button></div>
     <div class="mdb"><pre id="jo"></pre></div>
     <div class="mdf">
-      <button class="btn bor" onclick="downloadJSON()">Descargar JSON</button>
-      <button class="btn bol" onclick="closeModal()">Cerrar</button>
+      <button class="btn bor" id="btn-dl-json">Descargar JSON</button>
+      <button class="btn bol" id="btn-close-modal2">Cerrar</button>
     </div>
   </div>
 </div>
 <div class="toast" id="toast"></div>
 <script>
-var SB_URL = "https://bijqiicmdvuwpnqgwmwe.supabase.co";
-var SB_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJpanFpaWNtZHZ1d3BucWd3bXdlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg2MDU3NTAsImV4cCI6MjA5NDE4MTc1MH0.G-5fJlulaEL5_g8jdUTN74zK6sKGdVEipUAPOnQxdNs";
-var TBL = "pqd_mapeo";
-var H = {"apikey":SB_KEY,"Authorization":"Bearer "+SB_KEY,"Content-Type":"application/json","Prefer":"return=representation"};
+(function() {
+  var SB_URL = "https://bijqiicmdvuwpnqgwmwe.supabase.co";
+  var SB_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJpanFpaWNtZHZ1d3BucWd3bXdlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg2MDU3NTAsImV4cCI6MjA5NDE4MTc1MH0.G-5fJlulaEL5_g8jdUTN74zK6sKGdVEipUAPOnQxdNs";
+  var TBL = "pqd_mapeo";
+  var H = {apikey: SB_KEY, Authorization: "Bearer " + SB_KEY, "Content-Type": "application/json", Prefer: "return=representation"};
 
-async function sbGet(){var r=await fetch(SB_URL+"/rest/v1/"+TBL+"?select=*",{headers:H});return r.json();}
-async function sbUpsert(row){await fetch(SB_URL+"/rest/v1/"+TBL,{method:"POST",headers:Object.assign({},H,{"Prefer":"resolution=merge-duplicates,return=representation"}),body:JSON.stringify(row)});}
-async function sbDel(){await fetch(SB_URL+"/rest/v1/"+TBL+"?id=gte.0",{method:"DELETE",headers:H});}
+  function sbGet() { return fetch(SB_URL + "/rest/v1/" + TBL + "?select=*", {headers: H}).then(function(r){return r.json();}); }
+  function sbUpsert(row) { return fetch(SB_URL + "/rest/v1/" + TBL, {method: "POST", headers: Object.assign({}, H, {Prefer: "resolution=merge-duplicates,return=representation"}), body: JSON.stringify(row)}); }
+  function sbDel() { return fetch(SB_URL + "/rest/v1/" + TBL + "?id=gte.0", {method: "DELETE", headers: H}); }
 
-var SMAP={"4":{label:"Seccion 4 - Recursos de Default",color:"#FF4201",bg:"#fff0ed"},"5":{label:"Seccion 5 - Colateral y Haircuts",color:"#27985F",bg:"#edf7f2"},"6":{label:"Seccion 6 - Initial Margin",color:"#0069A7",bg:"#e6f2f9"},"7":{label:"Seccion 7 - Riesgo de Liquidez",color:"#8B6914",bg:"#fff8e6"},"12":{label:"Seccion 12 - Settlement",color:"#1a6b40",bg:"#edf7f2"},"13":{label:"Seccion 13 - Defaults",color:"#c43000",bg:"#fff0ed"},"14":{label:"Seccion 14 - Segregacion",color:"#2d4fb5",bg:"#f0f4ff"},"15":{label:"Seccion 15 - Negocio",color:"#6b3db5",bg:"#f5f0ff"},"16":{label:"Seccion 16 - Inversiones",color:"#7a5c00",bg:"#fdf5e0"},"17":{label:"Seccion 17 - Operacional",color:"#0069A7",bg:"#e6f2f9"},"18":{label:"Seccion 18 - Participantes",color:"#FF4201",bg:"#fff0ed"},"19":{label:"Seccion 19 - Clientes",color:"#27985F",bg:"#edf7f2"},"23":{label:"Seccion 23 - Volumenes",color:"#7a5c00",bg:"#fdf5e0"}};
+  var SMAP = {
+    "4":  {label:"Seccion 4 - Recursos de Default",    color:"#FF4201", bg:"#fff0ed"},
+    "5":  {label:"Seccion 5 - Colateral y Haircuts",   color:"#27985F", bg:"#edf7f2"},
+    "6":  {label:"Seccion 6 - Initial Margin",         color:"#0069A7", bg:"#e6f2f9"},
+    "7":  {label:"Seccion 7 - Riesgo de Liquidez",     color:"#8B6914", bg:"#fff8e6"},
+    "12": {label:"Seccion 12 - Settlement",            color:"#1a6b40", bg:"#edf7f2"},
+    "13": {label:"Seccion 13 - Defaults",              color:"#c43000", bg:"#fff0ed"},
+    "14": {label:"Seccion 14 - Segregacion",           color:"#2d4fb5", bg:"#f0f4ff"},
+    "15": {label:"Seccion 15 - Negocio",               color:"#6b3db5", bg:"#f5f0ff"},
+    "16": {label:"Seccion 16 - Inversiones",           color:"#7a5c00", bg:"#fdf5e0"},
+    "17": {label:"Seccion 17 - Operacional",           color:"#0069A7", bg:"#e6f2f9"},
+    "18": {label:"Seccion 18 - Participantes",         color:"#FF4201", bg:"#fff0ed"},
+    "19": {label:"Seccion 19 - Clientes",              color:"#27985F", bg:"#edf7f2"},
+    "23": {label:"Seccion 23 - Volumenes",             color:"#7a5c00", bg:"#fdf5e0"}
+  };
 
-var D=[
-{ref:"4.1.1",sec:"4",title:"Recursos de default totales",desc:"Capital propio prefundado Antes (Before)",vals:"",dtype:"Numerico 2dp Moneda",file:"AggregatedDataFile"},
-{ref:"4.1.2",sec:"4",title:"Recursos de default totales",desc:"Capital propio prefundado Junto (Alongside)",vals:"",dtype:"Numerico 2dp Moneda",file:"AggregatedDataFile"},
-{ref:"4.1.3",sec:"4",title:"Recursos de default totales",desc:"Capital propio prefundado Despues (After) Ej Fondo de Reserva CCLV",vals:"",dtype:"Numerico 2dp Moneda",file:"AggregatedDataFile"},
-{ref:"4.1.4",sec:"4",title:"Recursos de default totales",desc:"Contribuciones prefundadas de participantes Requeridas",vals:"",dtype:"Numerico 2dp Moneda",file:"AggregatedDataFile"},
-{ref:"4.1.5",sec:"4",title:"Recursos de default totales",desc:"Contribuciones prefundadas Depositadas post-haircut",vals:"",dtype:"Numerico 2dp Moneda",file:"AggregatedDataFile"},
-{ref:"4.1.7",sec:"4",title:"Recursos de default totales",desc:"Comprometidos Fondos propios para cubrir un default",vals:"",dtype:"Numerico 2dp Moneda",file:"AggregatedDataFile"},
-{ref:"4.1.8",sec:"4",title:"Recursos de default totales",desc:"Comprometidos Compromisos agregados de participantes para el primer default",vals:"",dtype:"Numerico 2dp Moneda",file:"AggregatedDataFile"},
-{ref:"4.3.1",sec:"4",title:"Default prefundados por tipo",desc:"Efectivo en banco central emisor de la moneda",vals:"PreHaircut / PostHaircut",dtype:"Numerico 2dp Moneda",file:"DataFile_4_3"},
-{ref:"4.3.3",sec:"4",title:"Default prefundados por tipo",desc:"Efectivo asegurado en bancos comerciales incl reverse repo",vals:"PreHaircut / PostHaircut",dtype:"Numerico 2dp Moneda",file:"DataFile_4_3"},
-{ref:"4.3.5",sec:"4",title:"Default prefundados por tipo",desc:"Bonos soberanos domesticos no efectivo",vals:"PreHaircut / PostHaircut",dtype:"Numerico 2dp Moneda",file:"DataFile_4_3"},
-{ref:"4.3.15",sec:"4",title:"Default prefundados TOTAL",desc:"Total general Pre y Post-Haircut",vals:"PreHaircut / PostHaircut",dtype:"Numerico 2dp Moneda",file:"DataFile_4_3"},
-{ref:"4.4.1",sec:"4",title:"Riesgo de credito",desc:"Indicar si la CCP esta sujeta a Cover 1 o Cover 2",vals:"",dtype:"Texto",file:"AggregatedDataFile"},
-{ref:"4.4.3",sec:"4",title:"Riesgo de credito",desc:"Mayor perdida por estres por default del participante mas grande Pico y Media 12 meses",vals:"PeakDay12M / MeanAvg12M",dtype:"Numerico 2dp",file:"DataFile_4_4a"},
-{ref:"4.4.6",sec:"4",title:"Riesgo de credito",desc:"Mayor exposicion real al participante mas grande Pico y Media 12 meses",vals:"PeakDay12M / MeanAvg12M",dtype:"Numerico 2dp Moneda",file:"DataFile_4_4a"},
-{ref:"5.1.1",sec:"5",title:"Activos elegibles como IM y haircuts",desc:"Descripcion o link de activos aceptados y sus haircuts",vals:"",dtype:"Texto",file:"AggregatedDataFile"},
-{ref:"5.3.1",sec:"5",title:"Pruebas de haircuts",desc:"Intervalo de confianza objetivo en el calculo de haircuts",vals:"",dtype:"Numerico 2dp pct",file:"AggregatedDataFile"},
-{ref:"5.3.3",sec:"5",title:"Pruebas de haircuts",desc:"Periodo de observacion historica para testear los haircuts en dias",vals:"",dtype:"Numerico 0dp",file:"AggregatedDataFile"},
-{ref:"6.1.1",sec:"6",title:"IM total requerido",desc:"IM requerido por servicio House Net Client Gross Client Net Total",vals:"House_Net / Client_Gross / Client_Net / Total",dtype:"Numerico 2dp Moneda",file:"DataFile_6_1"},
-{ref:"6.2.1",sec:"6",title:"IM mantenido por tipo de activo",desc:"Efectivo en banco central emisor Casa Cliente Pre Post-Haircut",vals:"HouseIM Pre/Post / ClientIM Pre/Post",dtype:"Numerico 2dp Moneda",file:"DataFile_6_2"},
-{ref:"6.2.3",sec:"6",title:"IM mantenido por tipo de activo",desc:"Efectivo asegurado en bancos comerciales Pre Post-Haircut",vals:"HouseIM Pre/Post / ClientIM Pre/Post",dtype:"Numerico 2dp Moneda",file:"DataFile_6_2"},
-{ref:"6.2.15",sec:"6",title:"IM mantenido TOTAL",desc:"IM total mantenido desglosado por Casa y Cliente",vals:"HouseIM Pre/Post / ClientIM Pre/Post",dtype:"Numerico 2dp Moneda",file:"DataFile_6_2"},
-{ref:"6.4.1",sec:"6",title:"Modelo IM Tipo",desc:"Tipo de modelo de IM por servicio de compensacion",vals:"",dtype:"Texto",file:"AggregatedDataFile"},
-{ref:"6.4.5",sec:"6",title:"Modelo IM Nivel de confianza",desc:"Nivel de confianza unilateral del modelo de IM",vals:"",dtype:"Numerico 2dp pct",file:"AggregatedDataFile"},
-{ref:"6.4.11",sec:"6",title:"Modelo IM Periodo de cierre",desc:"Periodo de cierre liquidacion asumido en el modelo en dias",vals:"",dtype:"Texto",file:"AggregatedDataFile"},
-{ref:"6.5.1.1",sec:"6",title:"Back-testing del IM",desc:"Veces en 12 meses en que la cobertura de margen bajo la exposicion MtM real",vals:"",dtype:"Numerico 0dp",file:"AggregatedDataFile"},
-{ref:"6.5.3",sec:"6",title:"Back-testing del IM",desc:"Nivel de cobertura alcanzado realmente",vals:"",dtype:"Numerico 2dp pct",file:"AggregatedDataFile"},
-{ref:"6.6.1",sec:"6",title:"Variacion de margen Promedio",desc:"Promedio diario de variacion de margen total pagada en el trimestre",vals:"",dtype:"Numerico 2dp Moneda",file:"AggregatedDataFile"},
-{ref:"6.8.1",sec:"6",title:"Llamada de margen IM Maximo",desc:"Maxima llamada de margen inicial agregada en un dia habil del periodo",vals:"",dtype:"Numerico 2dp Moneda",file:"AggregatedDataFile"},
-{ref:"7.1.1",sec:"7",title:"Liquidez Nivel de cobertura",desc:"Indicar si el servicio mantiene suficientes recursos liquidos para Cover 1 o Cover 2",vals:"",dtype:"Texto",file:"AggregatedDataFile"},
-{ref:"7.1.2",sec:"7",title:"Recursos liquidos calificados",desc:"Efectivo en banco central emisor de la moneda",vals:"TamanoYComposicion",dtype:"Numerico 2dp Moneda",file:"DataFile_7_1"},
-{ref:"7.1.4",sec:"7",title:"Recursos liquidos calificados",desc:"Efectivo asegurado en bancos comerciales incl reverse repo",vals:"TamanoYComposicion",dtype:"Numerico 2dp Moneda",file:"DataFile_7_1"},
-{ref:"7.1.6",sec:"7",title:"Recursos liquidos calificados",desc:"Lineas de credito comprometidas aseguradas",vals:"TamanoYComposicion",dtype:"Numerico 2dp Moneda",file:"DataFile_7_1"},
-{ref:"7.3.1",sec:"7",title:"Mayor obligacion de pago estimada",desc:"Mayor obligacion de pago estimada por default del participante mas grande",vals:"PagoMismoDia / PagoIntraday / PagoMultidia",dtype:"Numerico 2dp Moneda",file:"DataFile_7_3"},
-{ref:"7.3.2",sec:"7",title:"Dias de brecha de liquidez",desc:"Dias habiles en que la obligacion estimada excedio los recursos liquidos",vals:"",dtype:"Numerico 0dp",file:"AggregatedDataFile"},
-{ref:"12.1.1",sec:"12",title:"Liquidacion por valor DvP",desc:"Porcentaje de liquidaciones por valor usando DvP Entrega contra Pago",vals:"",dtype:"Numerico 2dp pct",file:"AggregatedDataFile"},
-{ref:"12.1.2",sec:"12",title:"Liquidacion por valor DvD",desc:"Porcentaje de liquidaciones por valor usando DvD Entrega contra Entrega",vals:"",dtype:"Numerico 2dp pct",file:"AggregatedDataFile"},
-{ref:"12.2.1",sec:"12",title:"Liquidacion por volumen DvP",desc:"Porcentaje de liquidaciones por volumen usando DvP",vals:"",dtype:"Numerico 2dp pct",file:"AggregatedDataFile"},
-{ref:"13.1.1",sec:"13",title:"Defaults cuantitativo",desc:"Monto de perdida versus monto de margen inicial por evento de default",vals:"",dtype:"Texto",file:"AggregatedDataFile"},
-{ref:"14.1.1",sec:"14",title:"Segregacion de clientes",desc:"Posiciones en cuentas individualmente segregadas porcentaje del nocional",vals:"",dtype:"Numerico 2dp pct",file:"AggregatedDataFile"},
-{ref:"14.1.2",sec:"14",title:"Segregacion de clientes",desc:"Posiciones en cuentas omnibus solo-cliente excl LSOC",vals:"",dtype:"Numerico 2dp pct",file:"AggregatedDataFile"},
-{ref:"15.2.1",sec:"15",title:"Divulgaciones financieras",desc:"Ingresos totales del periodo",vals:"",dtype:"Numerico 2dp Moneda",file:"AggregatedDataFile"},
-{ref:"15.2.2",sec:"15",title:"Divulgaciones financieras",desc:"Gastos totales del periodo",vals:"",dtype:"Numerico 2dp Moneda",file:"AggregatedDataFile"},
-{ref:"15.2.3",sec:"15",title:"Divulgaciones financieras",desc:"Utilidades Ingresos menos Gastos",vals:"",dtype:"Numerico 2dp Moneda",file:"AggregatedDataFile"},
-{ref:"15.2.4",sec:"15",title:"Divulgaciones financieras",desc:"Activos totales en balance",vals:"",dtype:"Numerico 2dp Moneda",file:"AggregatedDataFile"},
-{ref:"15.2.5",sec:"15",title:"Divulgaciones financieras",desc:"Pasivos totales en balance",vals:"",dtype:"Numerico 2dp Moneda",file:"AggregatedDataFile"},
-{ref:"16.1.1",sec:"16",title:"Efectivo recibido de participantes",desc:"Total de efectivo recibido como margen inicial",vals:"",dtype:"Numerico 2dp Moneda",file:"AggregatedDataFile"},
-{ref:"16.1.2",sec:"16",title:"Efectivo recibido de participantes",desc:"Total de efectivo recibido como contribucion al fondo de default",vals:"",dtype:"Numerico 2dp Moneda",file:"AggregatedDataFile"},
-{ref:"16.2.1",sec:"16",title:"Como se invierte el efectivo",desc:"Porcentaje del efectivo mantenido como depositos TOTAL",vals:"",dtype:"Numerico 2dp pct",file:"AggregatedDataFile"},
-{ref:"16.2.6",sec:"16",title:"Como se invierte el efectivo",desc:"Porcentaje en fondos del mercado monetario money market funds",vals:"",dtype:"Numerico 2dp pct",file:"AggregatedDataFile"},
-{ref:"17.1.1",sec:"17",title:"Disponibilidad operacional Objetivo",desc:"Objetivo de disponibilidad del sistema de compensacion ej 99.99 pct en 12 meses",vals:"",dtype:"Numerico 2dp pct",file:"AggregatedDataFile"},
-{ref:"17.2.1",sec:"17",title:"Disponibilidad operacional Real",desc:"Disponibilidad real del sistema en los ultimos 12 meses",vals:"",dtype:"Numerico 2dp pct",file:"AggregatedDataFile"},
-{ref:"17.3.1",sec:"17",title:"Fallas del sistema",desc:"Numero total de fallas y duracion en el sistema ultimos 12 meses",vals:"DuracionFalla HH:MM:SS",dtype:"Duracion HH:MM:SS",file:"DataFile_17_3"},
-{ref:"18.1.1.1",sec:"18",title:"Numero de miembros compensadores",desc:"Miembros compensadores generales liquidan por si mismos y por clientes",vals:"",dtype:"Numerico 0dp",file:"AggregatedDataFile"},
-{ref:"18.1.1.2",sec:"18",title:"Numero de miembros compensadores",desc:"Miembros compensadores directos liquidan solo por si mismos",vals:"",dtype:"Numerico 0dp",file:"AggregatedDataFile"},
-{ref:"18.1.3.1",sec:"18",title:"Geografia de participantes",desc:"Numero de participantes domesticos",vals:"",dtype:"Numerico 0dp",file:"AggregatedDataFile"},
-{ref:"18.1.3.2",sec:"18",title:"Geografia de participantes",desc:"Numero de participantes extranjeros",vals:"",dtype:"Numerico 0dp",file:"AggregatedDataFile"},
-{ref:"18.2.2",sec:"18",title:"Concentracion posiciones 25 o mas CMs",desc:"Porcentaje posiciones abiertas en manos de los 5 CMs mas grandes Promedio y Pico",vals:"Promedio / Pico",dtype:"Numerico 2dp pct",file:"DataFile_18_2"},
-{ref:"18.3.2",sec:"18",title:"Concentracion IM 25 o mas CMs",desc:"Porcentaje de IM depositado por los 5 CMs mas grandes Promedio y Pico",vals:"Promedio / Pico",dtype:"Numerico 2dp pct",file:"DataFile_18_2"},
-{ref:"19.1.1",sec:"19",title:"Participacion escalonada",desc:"Numero de clientes si es conocido por la CCP",vals:"",dtype:"Numerico 0dp",file:"AggregatedDataFile"},
-{ref:"19.1.2",sec:"19",title:"Participacion escalonada",desc:"Numero de miembros directos que liquidan para clientes",vals:"",dtype:"Numerico 0dp",file:"AggregatedDataFile"},
-{ref:"23.1.1",sec:"23",title:"Volumenes diarios promedio",desc:"Volumenes diarios promedio por clase de activo instrumento moneda y OTC ETD",vals:"OTC / ETD",dtype:"Numerico 0dp",file:"DataFile_23"},
-{ref:"23.1.2",sec:"23",title:"Valor nocional promedio",desc:"Valor nocional promedio de operaciones compensadas",vals:"OTC / ETD",dtype:"Numerico 2dp Moneda",file:"DataFile_23"},
-{ref:"23.2.1",sec:"23",title:"Nocional bruto pendiente",desc:"Nocional bruto pendiente de operaciones novadas pero no liquidadas",vals:"OTC / ETD",dtype:"Numerico 2dp Moneda",file:"DataFile_23"}
-];
+  var D = [
+    {ref:"4.1.1",  sec:"4",  title:"Recursos de default totales",       desc:"Capital propio prefundado Antes (Before)",                                   vals:"",                                          dtype:"Numerico 2dp Moneda",  file:"AggregatedDataFile"},
+    {ref:"4.1.2",  sec:"4",  title:"Recursos de default totales",       desc:"Capital propio prefundado Junto (Alongside)",                                vals:"",                                          dtype:"Numerico 2dp Moneda",  file:"AggregatedDataFile"},
+    {ref:"4.1.3",  sec:"4",  title:"Recursos de default totales",       desc:"Capital propio prefundado Despues After. Ej Fondo de Reserva CCLV",          vals:"",                                          dtype:"Numerico 2dp Moneda",  file:"AggregatedDataFile"},
+    {ref:"4.1.4",  sec:"4",  title:"Recursos de default totales",       desc:"Contribuciones prefundadas de participantes Requeridas",                     vals:"",                                          dtype:"Numerico 2dp Moneda",  file:"AggregatedDataFile"},
+    {ref:"4.1.5",  sec:"4",  title:"Recursos de default totales",       desc:"Contribuciones prefundadas Depositadas post-haircut",                        vals:"",                                          dtype:"Numerico 2dp Moneda",  file:"AggregatedDataFile"},
+    {ref:"4.1.7",  sec:"4",  title:"Recursos de default totales",       desc:"Comprometidos Fondos propios para cubrir un default",                        vals:"",                                          dtype:"Numerico 2dp Moneda",  file:"AggregatedDataFile"},
+    {ref:"4.1.8",  sec:"4",  title:"Recursos de default totales",       desc:"Comprometidos Compromisos agregados de participantes para el primer default", vals:"",                                          dtype:"Numerico 2dp Moneda",  file:"AggregatedDataFile"},
+    {ref:"4.3.1",  sec:"4",  title:"Default prefundados por tipo",      desc:"Efectivo en banco central emisor de la moneda",                              vals:"PreHaircut / PostHaircut",                  dtype:"Numerico 2dp Moneda",  file:"DataFile_4_3"},
+    {ref:"4.3.3",  sec:"4",  title:"Default prefundados por tipo",      desc:"Efectivo asegurado en bancos comerciales incl reverse repo",                 vals:"PreHaircut / PostHaircut",                  dtype:"Numerico 2dp Moneda",  file:"DataFile_4_3"},
+    {ref:"4.3.5",  sec:"4",  title:"Default prefundados por tipo",      desc:"Bonos soberanos domesticos no efectivo",                                     vals:"PreHaircut / PostHaircut",                  dtype:"Numerico 2dp Moneda",  file:"DataFile_4_3"},
+    {ref:"4.3.15", sec:"4",  title:"Default prefundados TOTAL",         desc:"Total general Pre y Post-Haircut",                                           vals:"PreHaircut / PostHaircut",                  dtype:"Numerico 2dp Moneda",  file:"DataFile_4_3"},
+    {ref:"4.4.1",  sec:"4",  title:"Riesgo de credito",                 desc:"Indicar si la CCP esta sujeta a Cover 1 o Cover 2",                          vals:"",                                          dtype:"Texto",                file:"AggregatedDataFile"},
+    {ref:"4.4.3",  sec:"4",  title:"Riesgo de credito",                 desc:"Mayor perdida por estres por default del participante mas grande",            vals:"PeakDay12M / MeanAvg12M",                   dtype:"Numerico 2dp",         file:"DataFile_4_4a"},
+    {ref:"4.4.6",  sec:"4",  title:"Riesgo de credito",                 desc:"Mayor exposicion real al participante mas grande Pico y Media 12 meses",      vals:"PeakDay12M / MeanAvg12M",                   dtype:"Numerico 2dp Moneda",  file:"DataFile_4_4a"},
+    {ref:"5.1.1",  sec:"5",  title:"Activos elegibles IM y haircuts",   desc:"Descripcion o link de activos aceptados y sus haircuts",                     vals:"",                                          dtype:"Texto",                file:"AggregatedDataFile"},
+    {ref:"5.3.1",  sec:"5",  title:"Pruebas de haircuts",               desc:"Intervalo de confianza objetivo en el calculo de haircuts",                  vals:"",                                          dtype:"Numerico 2dp pct",     file:"AggregatedDataFile"},
+    {ref:"5.3.3",  sec:"5",  title:"Pruebas de haircuts",               desc:"Periodo de observacion historica para testear los haircuts en dias",          vals:"",                                          dtype:"Numerico 0dp",         file:"AggregatedDataFile"},
+    {ref:"6.1.1",  sec:"6",  title:"IM total requerido",                desc:"IM requerido por servicio House Net Client Gross Client Net Total",           vals:"House_Net / Client_Gross / Client_Net",      dtype:"Numerico 2dp Moneda",  file:"DataFile_6_1"},
+    {ref:"6.2.1",  sec:"6",  title:"IM mantenido por tipo de activo",   desc:"Efectivo en banco central emisor Casa Cliente Pre Post-Haircut",             vals:"HouseIM Pre/Post / ClientIM Pre/Post",       dtype:"Numerico 2dp Moneda",  file:"DataFile_6_2"},
+    {ref:"6.2.3",  sec:"6",  title:"IM mantenido por tipo de activo",   desc:"Efectivo asegurado en bancos comerciales Pre Post-Haircut",                  vals:"HouseIM Pre/Post / ClientIM Pre/Post",       dtype:"Numerico 2dp Moneda",  file:"DataFile_6_2"},
+    {ref:"6.2.15", sec:"6",  title:"IM mantenido TOTAL",                desc:"IM total mantenido desglosado por Casa y Cliente",                           vals:"HouseIM Pre/Post / ClientIM Pre/Post",       dtype:"Numerico 2dp Moneda",  file:"DataFile_6_2"},
+    {ref:"6.4.1",  sec:"6",  title:"Modelo IM Tipo",                    desc:"Tipo de modelo de IM por servicio de compensacion",                          vals:"",                                          dtype:"Texto",                file:"AggregatedDataFile"},
+    {ref:"6.4.5",  sec:"6",  title:"Modelo IM Nivel de confianza",      desc:"Nivel de confianza unilateral del modelo de IM",                             vals:"",                                          dtype:"Numerico 2dp pct",     file:"AggregatedDataFile"},
+    {ref:"6.4.11", sec:"6",  title:"Modelo IM Periodo de cierre",       desc:"Periodo de cierre liquidacion asumido en el modelo en dias",                 vals:"",                                          dtype:"Texto",                file:"AggregatedDataFile"},
+    {ref:"6.5.1.1",sec:"6",  title:"Back-testing del IM",               desc:"Veces en 12 meses en que la cobertura bajo la exposicion MtM real",          vals:"",                                          dtype:"Numerico 0dp",         file:"AggregatedDataFile"},
+    {ref:"6.5.3",  sec:"6",  title:"Back-testing del IM",               desc:"Nivel de cobertura alcanzado realmente",                                     vals:"",                                          dtype:"Numerico 2dp pct",     file:"AggregatedDataFile"},
+    {ref:"6.6.1",  sec:"6",  title:"Variacion de margen Promedio",      desc:"Promedio diario de variacion de margen total pagada en el trimestre",         vals:"",                                          dtype:"Numerico 2dp Moneda",  file:"AggregatedDataFile"},
+    {ref:"6.8.1",  sec:"6",  title:"Llamada de margen IM Maximo",       desc:"Maxima llamada de margen inicial agregada en un dia habil del periodo",       vals:"",                                          dtype:"Numerico 2dp Moneda",  file:"AggregatedDataFile"},
+    {ref:"7.1.1",  sec:"7",  title:"Liquidez Nivel de cobertura",       desc:"Indicar si el servicio mantiene recursos liquidos para Cover 1 o Cover 2",   vals:"",                                          dtype:"Texto",                file:"AggregatedDataFile"},
+    {ref:"7.1.2",  sec:"7",  title:"Recursos liquidos calificados",     desc:"Efectivo en banco central emisor de la moneda",                              vals:"TamanoYComposicion",                        dtype:"Numerico 2dp Moneda",  file:"DataFile_7_1"},
+    {ref:"7.1.4",  sec:"7",  title:"Recursos liquidos calificados",     desc:"Efectivo asegurado en bancos comerciales incl reverse repo",                 vals:"TamanoYComposicion",                        dtype:"Numerico 2dp Moneda",  file:"DataFile_7_1"},
+    {ref:"7.1.6",  sec:"7",  title:"Recursos liquidos calificados",     desc:"Lineas de credito comprometidas aseguradas",                                 vals:"TamanoYComposicion",                        dtype:"Numerico 2dp Moneda",  file:"DataFile_7_1"},
+    {ref:"7.3.1",  sec:"7",  title:"Mayor obligacion de pago estimada", desc:"Mayor obligacion de pago estimada por default del participante mas grande",   vals:"PagoMismoDia / PagoIntraday / PagoMultidia", dtype:"Numerico 2dp Moneda",  file:"DataFile_7_3"},
+    {ref:"7.3.2",  sec:"7",  title:"Dias de brecha de liquidez",        desc:"Dias habiles en que la obligacion estimada excedio los recursos liquidos",    vals:"",                                          dtype:"Numerico 0dp",         file:"AggregatedDataFile"},
+    {ref:"12.1.1", sec:"12", title:"Liquidacion por valor DvP",         desc:"Porcentaje de liquidaciones por valor usando DvP Entrega contra Pago",        vals:"",                                          dtype:"Numerico 2dp pct",     file:"AggregatedDataFile"},
+    {ref:"12.1.2", sec:"12", title:"Liquidacion por valor DvD",         desc:"Porcentaje de liquidaciones por valor usando DvD Entrega contra Entrega",     vals:"",                                          dtype:"Numerico 2dp pct",     file:"AggregatedDataFile"},
+    {ref:"12.2.1", sec:"12", title:"Liquidacion por volumen DvP",       desc:"Porcentaje de liquidaciones por volumen usando DvP",                         vals:"",                                          dtype:"Numerico 2dp pct",     file:"AggregatedDataFile"},
+    {ref:"13.1.1", sec:"13", title:"Defaults cuantitativo",             desc:"Monto de perdida versus monto de margen inicial por evento de default",       vals:"",                                          dtype:"Texto",                file:"AggregatedDataFile"},
+    {ref:"14.1.1", sec:"14", title:"Segregacion de clientes",           desc:"Posiciones en cuentas individualmente segregadas porcentaje del nocional",    vals:"",                                          dtype:"Numerico 2dp pct",     file:"AggregatedDataFile"},
+    {ref:"14.1.2", sec:"14", title:"Segregacion de clientes",           desc:"Posiciones en cuentas omnibus solo-cliente excl LSOC",                       vals:"",                                          dtype:"Numerico 2dp pct",     file:"AggregatedDataFile"},
+    {ref:"15.2.1", sec:"15", title:"Divulgaciones financieras",         desc:"Ingresos totales del periodo",                                               vals:"",                                          dtype:"Numerico 2dp Moneda",  file:"AggregatedDataFile"},
+    {ref:"15.2.2", sec:"15", title:"Divulgaciones financieras",         desc:"Gastos totales del periodo",                                                 vals:"",                                          dtype:"Numerico 2dp Moneda",  file:"AggregatedDataFile"},
+    {ref:"15.2.3", sec:"15", title:"Divulgaciones financieras",         desc:"Utilidades Ingresos menos Gastos",                                           vals:"",                                          dtype:"Numerico 2dp Moneda",  file:"AggregatedDataFile"},
+    {ref:"15.2.4", sec:"15", title:"Divulgaciones financieras",         desc:"Activos totales en balance",                                                 vals:"",                                          dtype:"Numerico 2dp Moneda",  file:"AggregatedDataFile"},
+    {ref:"15.2.5", sec:"15", title:"Divulgaciones financieras",         desc:"Pasivos totales en balance",                                                 vals:"",                                          dtype:"Numerico 2dp Moneda",  file:"AggregatedDataFile"},
+    {ref:"16.1.1", sec:"16", title:"Efectivo recibido participantes",   desc:"Total de efectivo recibido como margen inicial",                             vals:"",                                          dtype:"Numerico 2dp Moneda",  file:"AggregatedDataFile"},
+    {ref:"16.1.2", sec:"16", title:"Efectivo recibido participantes",   desc:"Total de efectivo recibido como contribucion al fondo de default",           vals:"",                                          dtype:"Numerico 2dp Moneda",  file:"AggregatedDataFile"},
+    {ref:"16.2.1", sec:"16", title:"Como se invierte el efectivo",      desc:"Porcentaje del efectivo mantenido como depositos TOTAL",                     vals:"",                                          dtype:"Numerico 2dp pct",     file:"AggregatedDataFile"},
+    {ref:"16.2.6", sec:"16", title:"Como se invierte el efectivo",      desc:"Porcentaje en fondos del mercado monetario money market funds",              vals:"",                                          dtype:"Numerico 2dp pct",     file:"AggregatedDataFile"},
+    {ref:"17.1.1", sec:"17", title:"Disponibilidad Objetivo",           desc:"Objetivo de disponibilidad del sistema de compensacion ej 99.99 pct 12 meses",vals:"",                                         dtype:"Numerico 2dp pct",     file:"AggregatedDataFile"},
+    {ref:"17.2.1", sec:"17", title:"Disponibilidad Real",               desc:"Disponibilidad real del sistema en los ultimos 12 meses",                    vals:"",                                          dtype:"Numerico 2dp pct",     file:"AggregatedDataFile"},
+    {ref:"17.3.1", sec:"17", title:"Fallas del sistema",                desc:"Numero total de fallas y duracion en el sistema ultimos 12 meses",           vals:"DuracionFalla HH:MM:SS",                    dtype:"Duracion HH:MM:SS",    file:"DataFile_17_3"},
+    {ref:"18.1.1.1",sec:"18",title:"Miembros compensadores",            desc:"Miembros compensadores generales liquidan por si mismos y por clientes",     vals:"",                                          dtype:"Numerico 0dp",         file:"AggregatedDataFile"},
+    {ref:"18.1.1.2",sec:"18",title:"Miembros compensadores",            desc:"Miembros compensadores directos liquidan solo por si mismos",                vals:"",                                          dtype:"Numerico 0dp",         file:"AggregatedDataFile"},
+    {ref:"18.1.3.1",sec:"18",title:"Geografia de participantes",        desc:"Numero de participantes domesticos",                                         vals:"",                                          dtype:"Numerico 0dp",         file:"AggregatedDataFile"},
+    {ref:"18.1.3.2",sec:"18",title:"Geografia de participantes",        desc:"Numero de participantes extranjeros",                                        vals:"",                                          dtype:"Numerico 0dp",         file:"AggregatedDataFile"},
+    {ref:"18.2.2", sec:"18", title:"Concentracion posiciones",          desc:"Porcentaje posiciones abiertas en manos de los 5 CMs mas grandes",           vals:"Promedio / Pico",                           dtype:"Numerico 2dp pct",     file:"DataFile_18_2"},
+    {ref:"18.3.2", sec:"18", title:"Concentracion IM",                  desc:"Porcentaje de IM depositado por los 5 CMs mas grandes Promedio y Pico",      vals:"Promedio / Pico",                           dtype:"Numerico 2dp pct",     file:"DataFile_18_2"},
+    {ref:"19.1.1", sec:"19", title:"Participacion escalonada",          desc:"Numero de clientes si es conocido por la CCP",                               vals:"",                                          dtype:"Numerico 0dp",         file:"AggregatedDataFile"},
+    {ref:"19.1.2", sec:"19", title:"Participacion escalonada",          desc:"Numero de miembros directos que liquidan para clientes",                     vals:"",                                          dtype:"Numerico 0dp",         file:"AggregatedDataFile"},
+    {ref:"23.1.1", sec:"23", title:"Volumenes diarios promedio",        desc:"Volumenes diarios promedio por clase de activo instrumento moneda OTC ETD",  vals:"OTC / ETD",                                 dtype:"Numerico 0dp",         file:"DataFile_23"},
+    {ref:"23.1.2", sec:"23", title:"Valor nocional promedio",           desc:"Valor nocional promedio de operaciones compensadas",                         vals:"OTC / ETD",                                 dtype:"Numerico 2dp Moneda",  file:"DataFile_23"},
+    {ref:"23.2.1", sec:"23", title:"Nocional bruto pendiente",          desc:"Nocional bruto pendiente de operaciones novadas pero no liquidadas",         vals:"OTC / ETD",                                 dtype:"Numerico 2dp Moneda",  file:"DataFile_23"}
+  ];
 
-var mapeo={},curSec="ALL",timers={};
+  var mapeo = {}, curSec = "ALL", timers = {};
 
-function sync(s,m){document.getElementById("dot").className="dot "+s;document.getElementById("slbl").textContent=m;}
-
-async function loadData(){
-  sync("sv","Cargando...");
-  try{
-    var rows=await sbGet();
-    mapeo={};
-    if(Array.isArray(rows))rows.forEach(function(r){mapeo[r.ref]=r;});
-    render();updateStats();
-    sync("ok","Conectado - cambios guardados para todo el equipo");
-    showToast("Datos cargados");
-  }catch(e){
-    sync("er","Error de conexion: "+e.message);
-    showToast("Error: "+e.message);
+  function sync(s, m) {
+    document.getElementById("dot").className = "dot " + s;
+    document.getElementById("slbl").textContent = m;
   }
-  document.getElementById("ov").style.display="none";
-}
 
-function saveField(ref,field,value){
-  if(!mapeo[ref])mapeo[ref]={ref:ref};
-  mapeo[ref][field]=value;
-  updateStats();
-  sync("sv","Guardando...");
-  clearTimeout(timers[ref]);
-  timers[ref]=setTimeout(async function(){
-    try{await sbUpsert(mapeo[ref]);sync("ok","Guardado");showToast("Guardado");}
-    catch(e){sync("er","Error al guardar");}
-  },800);
-}
+  function showToast(m) {
+    var t = document.getElementById("toast");
+    t.textContent = m;
+    t.classList.add("show");
+    setTimeout(function() { t.classList.remove("show"); }, 2000);
+  }
 
-function setSec(el,sec){
-  document.querySelectorAll(".tab").forEach(function(t){t.classList.remove("active");});
-  el.classList.add("active");curSec=sec;render();
-}
+  function esc(s) {
+    return String(s)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+  }
 
-function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
+  function updateStats() {
+    var comp = 0, parc = 0, pend = 0;
+    D.forEach(function(d) {
+      var m = mapeo[d.ref] || {};
+      var f = ["sistema","tipo_fuente","query"].filter(function(x) { return m[x] && m[x].trim(); }).length;
+      var e = m.estado || "pendiente";
+      if (e === "completo" || e === "na") comp++;
+      else if (e === "parcial" || f > 0) parc++;
+      else pend++;
+    });
+    document.getElementById("stot").textContent = D.length;
+    document.getElementById("scom").textContent = comp;
+    document.getElementById("spar").textContent = parc;
+    document.getElementById("spen").textContent = pend;
+    var p = Math.round((comp / D.length) * 100);
+    document.getElementById("pct").textContent = p + "%";
+    document.getElementById("pfi").style.width = p + "%";
+  }
 
-function render(){
-  var q=document.getElementById("q").value.toLowerCase();
-  var rows=D.filter(function(d){
-    return(curSec==="ALL"||d.sec===curSec)&&(!q||[d.ref,d.title,d.desc,d.vals,d.file].some(function(x){return x.toLowerCase().indexOf(q)>=0;}));
+  function saveField(ref, field, value) {
+    if (!mapeo[ref]) mapeo[ref] = {ref: ref};
+    mapeo[ref][field] = value;
+    updateStats();
+    sync("sv", "Guardando...");
+    clearTimeout(timers[ref]);
+    timers[ref] = setTimeout(function() {
+      sbUpsert(mapeo[ref])
+        .then(function() { sync("ok", "Guardado - visible para todo el equipo"); showToast("Guardado"); })
+        .catch(function() { sync("er", "Error al guardar"); });
+    }, 800);
+  }
+
+  // Event delegation — NO inline JS with quotes
+  document.getElementById("tbody").addEventListener("input", function(e) {
+    var el = e.target;
+    var ref = el.getAttribute("data-ref");
+    var field = el.getAttribute("data-field");
+    if (ref && field) saveField(ref, field, el.value);
   });
-  var tbody=document.getElementById("tbody");
-  if(!rows.length){tbody.innerHTML="<tr><td colspan=14 class=empty>Sin resultados.</td></tr>";return;}
-  var html="",lastSec=null;
-  rows.forEach(function(d){
-    if(d.sec!==lastSec){html+="<tr class=secr><td colspan=14>"+SMAP[d.sec].label+"</td></tr>";lastSec=d.sec;}
-    var m=mapeo[d.ref]||{};
-    var est=m.estado||"pendiente";
-    var bc={completo:"#27985F",parcial:"#FFC72F",pendiente:"#B0ADA8",na:"#0069A7"}[est]||"#B0ADA8";
-    var sm=SMAP[d.sec];
-    var s=function(f,v){return m[f]===v?"selected":"";};
-    html+="<tr style='border-left:4px solid "+bc+"'>"+
-      "<td><span class=did>"+d.ref+"</span><span class=badge style='background:"+sm.bg+";color:"+sm.color+";border-left:2px solid "+sm.color+"'>"+d.sec+"</span></td>"+
-      "<td><div class=dn>"+esc(d.title)+"</div></td>"+
-      "<td><div class=dd>"+esc(d.desc)+"</div></td>"+
-      "<td><div class=dv>"+esc(d.vals||"-")+"</div></td>"+
-      "<td><span class=dty>"+esc(d.dtype)+"</span></td>"+
-      "<td><span class=dfi>"+esc(d.file)+"</span></td>"+
-      "<td class=blc><textarea class=ci rows=1 placeholder='Ej: Oracle Risk...' oninput="saveField('"+d.ref+"','sistema',this.value)">"+esc(m.sistema||"")+"</textarea></td>"+
-      "<td><input class=ci type=text style='min-height:22px' placeholder='Nombre/area' value=""+esc(m.responsable||"")+"" oninput="saveField('"+d.ref+"','responsable',this.value)"></td>"+
-      "<td><select class=cs onchange="saveField('"+d.ref+"','estado',this.value);render()">"+
-        "<option value=pendiente "+s("estado","pendiente")+">Pendiente</option>"+
-        "<option value=parcial "+s("estado","parcial")+">Parcial</option>"+
-        "<option value=completo "+s("estado","completo")+">Completo</option>"+
-        "<option value=na "+s("estado","na")+">N/A</option>"+
-      "</select></td>"+
-      "<td class=blb><select class=csp onchange="saveField('"+d.ref+"','tipo_fuente',this.value)">"+
-        "<option value=''>-</option>"+
-        "<option value=SQL "+s("tipo_fuente","SQL")+">SQL</option>"+
-        "<option value=API "+s("tipo_fuente","API")+">API</option>"+
-        "<option value=CSV/Excel "+s("tipo_fuente","CSV/Excel")+">CSV/Excel</option>"+
-        "<option value=Manual "+s("tipo_fuente","Manual")+">Manual</option>"+
-        "<option value=Calculo "+s("tipo_fuente","Calculo")+">Calculo</option>"+
-      "</select></td>"+
-      "<td><textarea class=cp rows=1 placeholder='oracle_risk / /data/im.csv' oninput="saveField('"+d.ref+"','conexion',this.value)">"+esc(m.conexion||"")+"</textarea></td>"+
-      "<td><textarea class=cp rows=2 placeholder='SELECT ... FROM ...' oninput="saveField('"+d.ref+"','query',this.value)">"+esc(m.query||"")+"</textarea></td>"+
-      "<td><select class=csp onchange="saveField('"+d.ref+"','transformacion',this.value)">"+
-        "<option value=''>Sin transformacion</option>"+
-        "<option value=valor_directo "+s("transformacion","valor_directo")+">Valor directo</option>"+
-        "<option value=suma "+s("transformacion","suma")+">Suma</option>"+
-        "<option value=promedio "+s("transformacion","promedio")+">Promedio</option>"+
-        "<option value=maximo "+s("transformacion","maximo")+">Maximo</option>"+
-        "<option value=ratio_pct "+s("transformacion","ratio_pct")+">Ratio pct</option>"+
-        "<option value=logica_compleja "+s("transformacion","logica_compleja")+">Logica compleja</option>"+
-        "<option value=texto_manual "+s("transformacion","texto_manual")+">Texto manual</option>"+
-      "</select></td>"+
-      "<td><textarea class=cp rows=1 placeholder='Notas tecnicas...' oninput="saveField('"+d.ref+"','notas',this.value)">"+esc(m.notas||"")+"</textarea></td>"+
-    "</tr>";
+
+  document.getElementById("tbody").addEventListener("change", function(e) {
+    var el = e.target;
+    var ref = el.getAttribute("data-ref");
+    var field = el.getAttribute("data-field");
+    if (ref && field) {
+      saveField(ref, field, el.value);
+      if (field === "estado") render();
+    }
   });
-  tbody.innerHTML=html;
-}
 
-function updateStats(){
-  var comp=0,parc=0,pend=0;
-  D.forEach(function(d){
-    var m=mapeo[d.ref]||{};
-    var f=["sistema","tipo_fuente","query"].filter(function(x){return m[x]&&m[x].trim();}).length;
-    var e=m.estado||"pendiente";
-    if(e==="completo"||e==="na")comp++;
-    else if(e==="parcial"||f>0)parc++;
-    else pend++;
+  document.getElementById("tabs").addEventListener("click", function(e) {
+    if (!e.target.classList.contains("tab")) return;
+    document.querySelectorAll(".tab").forEach(function(t) { t.classList.remove("active"); });
+    e.target.classList.add("active");
+    curSec = e.target.getAttribute("data-sec");
+    render();
   });
-  document.getElementById("stot").textContent=D.length;
-  document.getElementById("scom").textContent=comp;
-  document.getElementById("spar").textContent=parc;
-  document.getElementById("spen").textContent=pend;
-  var p=Math.round((comp/D.length)*100);
-  document.getElementById("pct").textContent=p+"%";
-  document.getElementById("pfi").style.width=p+"%";
-}
 
-function buildConfig(){
-  var bf={};
-  D.forEach(function(d){
-    var m=mapeo[d.ref]||{};
-    if(!m.tipo_fuente&&!m.query&&!m.conexion)return;
-    if(!bf[d.file])bf[d.file]=[];
-    bf[d.file].push({disclosure_ref:d.ref,titulo:d.title,tipo_dato:d.dtype,tipo_fuente:m.tipo_fuente||null,sistema:m.sistema||null,conexion:m.conexion||null,query_o_ruta:m.query||null,transformacion:m.transformacion||"valor_directo",responsable:m.responsable||null,estado:m.estado||"pendiente",notas:m.notas||null});
-  });
-  return{version:"1.0",ccp:"CCLV",template:"PQD_v2_CCP_Global",generado_en:new Date().toISOString(),datafiles:bf};
-}
+  document.getElementById("q").addEventListener("input", function() { render(); });
+  document.getElementById("btn-pipeline").addEventListener("click", exportPipeline);
+  document.getElementById("btn-csv").addEventListener("click", exportCSV);
+  document.getElementById("btn-refresh").addEventListener("click", loadData);
+  document.getElementById("btn-clear").addEventListener("click", clearAll);
+  document.getElementById("btn-close-modal").addEventListener("click", function() { document.getElementById("modal").classList.remove("open"); });
+  document.getElementById("btn-close-modal2").addEventListener("click", function() { document.getElementById("modal").classList.remove("open"); });
+  document.getElementById("btn-dl-json").addEventListener("click", downloadJSON);
 
-function exportPipeline(){
-  var cfg=buildConfig();
-  if(!Object.keys(cfg.datafiles).length){showToast("Sin disclosures configurados");return;}
-  document.getElementById("jo").textContent=JSON.stringify(cfg,null,2);
-  document.getElementById("modal").classList.add("open");
-}
-function downloadJSON(){
-  var b=new Blob([JSON.stringify(buildConfig(),null,2)],{type:"application/json"});
-  var a=document.createElement("a");a.href=URL.createObjectURL(b);
-  a.download="pqd_pipeline_config_"+new Date().toISOString().slice(0,10)+".json";a.click();
-  showToast("JSON descargado");
-}
-function closeModal(){document.getElementById("modal").classList.remove("open");}
+  function render() {
+    var q = document.getElementById("q").value.toLowerCase();
+    var rows = D.filter(function(d) {
+      return (curSec === "ALL" || d.sec === curSec) &&
+        (!q || [d.ref, d.title, d.desc, d.vals, d.file].some(function(x) { return x.toLowerCase().indexOf(q) >= 0; }));
+    });
+    var tbody = document.getElementById("tbody");
+    if (!rows.length) { tbody.innerHTML = "<tr><td colspan=14 class=empty>Sin resultados.</td></tr>"; return; }
 
-function exportCSV(){
-  var h=["Ref","Titulo","DataFile","Sistema","Responsable","Estado","TipoFuente","Conexion","Query","Transformacion","Notas"];
-  var r=D.map(function(d){
-    var m=mapeo[d.ref]||{};
-    return[d.ref,d.title,d.file,m.sistema||"",m.responsable||"",m.estado||"pendiente",m.tipo_fuente||"",m.conexion||"",m.query||"",m.transformacion||"",m.notas||""]
-      .map(function(v){return'"'+String(v).replace(/"/g,'""')+'"';}).join(",");
-  });
-  var b=new Blob(["﻿"+h.join(",")+"
-"+r.join("
-")],{type:"text/csv;charset=utf-8;"});
-  var a=document.createElement("a");a.href=URL.createObjectURL(b);
-  a.download="CCLV_PQD_mapeo_"+new Date().toISOString().slice(0,10)+".csv";a.click();
-  showToast("CSV exportado");
-}
+    var parts = [];
+    var lastSec = null;
 
-async function clearAll(){
-  if(!confirm("Borrar TODO el mapeo del equipo en Supabase? No se puede deshacer."))return;
-  await sbDel();mapeo={};render();updateStats();showToast("Datos borrados");
-}
+    rows.forEach(function(d) {
+      if (d.sec !== lastSec) {
+        parts.push("<tr class=secr><td colspan=14>" + SMAP[d.sec].label + "</td></tr>");
+        lastSec = d.sec;
+      }
+      var m = mapeo[d.ref] || {};
+      var est = m.estado || "pendiente";
+      var bc = {completo:"#27985F", parcial:"#FFC72F", pendiente:"#B0ADA8", na:"#0069A7"}[est] || "#B0ADA8";
+      var sm = SMAP[d.sec];
 
-var tt;
-function showToast(m){var t=document.getElementById("toast");t.textContent=m;t.classList.add("show");clearTimeout(tt);tt=setTimeout(function(){t.classList.remove("show");},2000);}
+      function opt(field, val, label) {
+        return "<option value=" + val + (m[field] === val ? " selected" : "") + ">" + label + "</option>";
+      }
 
-setInterval(async function(){
-  try{var r=await sbGet();if(Array.isArray(r)){r.forEach(function(x){mapeo[x.ref]=x;});render();updateStats();}}
-  catch(e){}
-},30000);
+      var row = "<tr style='border-left:4px solid " + bc + "'>" +
+        "<td><span class=did>" + d.ref + "</span>" +
+            "<span class=badge style='background:" + sm.bg + ";color:" + sm.color + ";border-left:2px solid " + sm.color + "'>" + d.sec + "</span></td>" +
+        "<td><div class=dn>" + esc(d.title) + "</div></td>" +
+        "<td><div class=dd>" + esc(d.desc) + "</div></td>" +
+        "<td><div class=dv>" + esc(d.vals || "-") + "</div></td>" +
+        "<td><span class=dty>" + esc(d.dtype) + "</span></td>" +
+        "<td><span class=dfi>" + esc(d.file) + "</span></td>" +
+        "<td class=blc><textarea class=ci rows=1 placeholder='Ej: Oracle Risk...' data-ref=" + d.ref + " data-field=sistema>" + esc(m.sistema || "") + "</textarea></td>" +
+        "<td><input class=ci type=text style='min-height:22px' placeholder='Nombre/area' value='" + esc(m.responsable || "") + "' data-ref=" + d.ref + " data-field=responsable></td>" +
+        "<td><select class=cs data-ref=" + d.ref + " data-field=estado>" +
+          opt("estado","pendiente","Pendiente") + opt("estado","parcial","Parcial") +
+          opt("estado","completo","Completo") + opt("estado","na","N/A") +
+        "</select></td>" +
+        "<td class=blb><select class=csp data-ref=" + d.ref + " data-field=tipo_fuente>" +
+          "<option value=''" + (!m.tipo_fuente ? " selected" : "") + ">-</option>" +
+          opt("tipo_fuente","SQL","SQL") + opt("tipo_fuente","API","API") +
+          opt("tipo_fuente","CSV/Excel","CSV/Excel") + opt("tipo_fuente","Manual","Manual") +
+          opt("tipo_fuente","Calculo","Calculo") +
+        "</select></td>" +
+        "<td><textarea class=cp rows=1 placeholder='oracle_risk / /data/im.csv' data-ref=" + d.ref + " data-field=conexion>" + esc(m.conexion || "") + "</textarea></td>" +
+        "<td><textarea class=cp rows=2 placeholder='SELECT ... FROM ...' data-ref=" + d.ref + " data-field=query>" + esc(m.query || "") + "</textarea></td>" +
+        "<td><select class=csp data-ref=" + d.ref + " data-field=transformacion>" +
+          "<option value=''" + (!m.transformacion ? " selected" : "") + ">Sin transformacion</option>" +
+          opt("transformacion","valor_directo","Valor directo") + opt("transformacion","suma","Suma") +
+          opt("transformacion","promedio","Promedio") + opt("transformacion","maximo","Maximo") +
+          opt("transformacion","ratio_pct","Ratio pct") + opt("transformacion","logica_compleja","Logica compleja") +
+        "</select></td>" +
+        "<td><textarea class=cp rows=1 placeholder='Notas tecnicas...' data-ref=" + d.ref + " data-field=notas>" + esc(m.notas || "") + "</textarea></td>" +
+        "</tr>";
+      parts.push(row);
+    });
+    tbody.innerHTML = parts.join("");
+  }
 
-loadData();
+  function loadData() {
+    sync("sv", "Cargando...");
+    sbGet().then(function(rows) {
+      mapeo = {};
+      if (Array.isArray(rows)) rows.forEach(function(r) { mapeo[r.ref] = r; });
+      render();
+      updateStats();
+      sync("ok", "Conectado - cambios guardados para todo el equipo");
+      showToast("Datos cargados");
+      document.getElementById("ov").style.display = "none";
+    }).catch(function(e) {
+      sync("er", "Error: " + e.message);
+      showToast("Error de conexion");
+      document.getElementById("ov").style.display = "none";
+    });
+  }
+
+  function buildConfig() {
+    var bf = {};
+    D.forEach(function(d) {
+      var m = mapeo[d.ref] || {};
+      if (!m.tipo_fuente && !m.query && !m.conexion) return;
+      if (!bf[d.file]) bf[d.file] = [];
+      bf[d.file].push({disclosure_ref:d.ref, titulo:d.title, tipo_dato:d.dtype, tipo_fuente:m.tipo_fuente||null, sistema:m.sistema||null, conexion:m.conexion||null, query_o_ruta:m.query||null, transformacion:m.transformacion||"valor_directo", responsable:m.responsable||null, estado:m.estado||"pendiente", notas:m.notas||null});
+    });
+    return {version:"1.0", ccp:"CCLV", template:"PQD_v2_CCP_Global", generado_en:new Date().toISOString(), datafiles:bf};
+  }
+
+  function exportPipeline() {
+    var cfg = buildConfig();
+    if (!Object.keys(cfg.datafiles).length) { showToast("Sin disclosures configurados"); return; }
+    document.getElementById("jo").textContent = JSON.stringify(cfg, null, 2);
+    document.getElementById("modal").classList.add("open");
+  }
+
+  function downloadJSON() {
+    var b = new Blob([JSON.stringify(buildConfig(), null, 2)], {type:"application/json"});
+    var a = document.createElement("a"); a.href = URL.createObjectURL(b);
+    a.download = "pqd_pipeline_config_" + new Date().toISOString().slice(0,10) + ".json"; a.click();
+    showToast("JSON descargado");
+  }
+
+  function exportCSV() {
+    var h = ["Ref","Titulo","DataFile","Sistema","Responsable","Estado","TipoFuente","Conexion","Query","Transformacion","Notas"];
+    var r = D.map(function(d) {
+      var m = mapeo[d.ref] || {};
+      return [d.ref,d.title,d.file,m.sistema||"",m.responsable||"",m.estado||"pendiente",m.tipo_fuente||"",m.conexion||"",m.query||"",m.transformacion||"",m.notas||""]
+        .map(function(v) { return '"' + String(v).replace(/"/g, '""') + '"'; }).join(",");
+    });
+    var b = new Blob(["﻿" + h.join(",") + "
+" + r.join("
+")], {type:"text/csv;charset=utf-8;"});
+    var a = document.createElement("a"); a.href = URL.createObjectURL(b);
+    a.download = "CCLV_PQD_mapeo_" + new Date().toISOString().slice(0,10) + ".csv"; a.click();
+    showToast("CSV exportado");
+  }
+
+  function clearAll() {
+    if (!confirm("Borrar TODO el mapeo del equipo en Supabase? No se puede deshacer.")) return;
+    sbDel().then(function() {
+      mapeo = {}; render(); updateStats(); showToast("Datos borrados");
+    });
+  }
+
+  setInterval(function() {
+    sbGet().then(function(r) {
+      if (Array.isArray(r)) { r.forEach(function(x) { mapeo[x.ref] = x; }); render(); updateStats(); }
+    }).catch(function() {});
+  }, 30000);
+
+  loadData();
+})();
 </script>
 </body>
 </html>
