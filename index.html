@@ -469,9 +469,8 @@ td.blc{border-left:2px solid #ffe4da}td.blb{border-left:2px solid #ddeef8}
       return [d.ref,d.title,d.file,m.sistema||"",m.responsable||"",m.estado||"pendiente",m.tipo_fuente||"",m.conexion||"",m.query||"",m.transformacion||"",m.notas||""]
         .map(function(v) { return '"' + String(v).replace(/"/g, '""') + '"'; }).join(",");
     });
-    var b = new Blob(["﻿" + h.join(",") + "
-" + r.join("
-")], {type:"text/csv;charset=utf-8;"});
+    var csvContent = String.fromCharCode(0xFEFF) + h.join(",") + "\n" + r.join("\n");
+    var b = new Blob([csvContent], {type:"text/csv;charset=utf-8;"});
     var a = document.createElement("a"); a.href = URL.createObjectURL(b);
     a.download = "CCLV_PQD_mapeo_" + new Date().toISOString().slice(0,10) + ".csv"; a.click();
     showToast("CSV exportado");
