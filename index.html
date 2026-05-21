@@ -428,7 +428,12 @@ var D=[
 
 var H={apikey:SB_KEY,"Authorization":"Bearer "+SB_KEY,"Content-Type":"application/json","Prefer":"return=representation"};
 function sbGet(){return fetch(SB_URL+"/rest/v1/pqd_mapeo?select=*",{headers:H}).then(function(r){return r.json();});}
-function sbUpsert(row){return fetch(SB_URL+"/rest/v1/pqd_mapeo",{method:"POST",headers:Object.assign({},H,{"Prefer":"resolution=merge-duplicates,return=representation"}),body:JSON.stringify(row)});}
+function sbUpsert(row){
+  var COLS=["ref","sistema","responsable","estado","tipo_fuente","conexion","query","transformacion","notas","valores","aplica","justificacion","instr"];
+  var clean={};
+  COLS.forEach(function(k){if(row[k]!==undefined)clean[k]=row[k];});
+  return fetch(SB_URL+"/rest/v1/pqd_mapeo",{method:"POST",headers:Object.assign({},H,{"Prefer":"resolution=merge-duplicates,return=representation"}),body:JSON.stringify(clean)});
+}
 
 var SMAP={"4":{label:"Sec. 4 - Recursos de Default"},"5":{label:"Sec. 5 - Haircuts"},"6":{label:"Sec. 6 - Margen Inicial"},"7":{label:"Sec. 7 - Liquidez"},"12":{label:"Sec. 12 - Liquidacion"},"13":{label:"Sec. 13 - Defaults"},"14":{label:"Sec. 14 - Segregacion"},"15":{label:"Sec. 15 - Negocio"},"16":{label:"Sec. 16 - Inversiones"},"17":{label:"Sec. 17 - Operacional"},"18":{label:"Sec. 18 - Participantes"},"19":{label:"Sec. 19 - Clientes"},"23":{label:"Sec. 23 - Volumenes"}};
 
