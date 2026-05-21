@@ -593,9 +593,7 @@ function renderBody(d,m,aplica){
   html+='<div class="tabs">';
   if(aplica==="si"){
     html+='<button class="tab-btn'+(activeTab==="mapeo"?" active":"")+'" data-ref="'+d.ref+'" data-tab="mapeo">Mapeo de fuente</button>';
-    if(d.rows.length>0){
-      html+='<button class="tab-btn'+(activeTab==="valores"?" active":"")+'" data-ref="'+d.ref+'" data-tab="valores">Valores 2026Q1</button>';
-    }
+    html+='<button class="tab-btn'+(activeTab==="valores"?" active":"")+'" data-ref="'+d.ref+'" data-tab="valores">Valores 2026Q1</button>';
   }
   html+='</div>';
 
@@ -621,7 +619,14 @@ function renderBody(d,m,aplica){
     html+='</div>';
 
     // VALORES PANE
-    if(d.rows.length>0){
+    var effectiveRows=d.rows.length>0?d.rows:(function(){
+      if(d.df==="AggregatedDataFile")return [{"s":"CCLV_SCC","d":""},{"s":"CCLV_SCL","d":""},{"s":"CCLV_ALL","d":""}];
+      if(d.df==="DataFile_4_3")return [{"s":"CCLV_SCC","d":"PreHaircut"},{"s":"CCLV_SCC","d":"PostHaircut"},{"s":"CCLV_SCL","d":"PreHaircut"},{"s":"CCLV_SCL","d":"PostHaircut"},{"s":"CCLV_ALL","d":"PreHaircut"},{"s":"CCLV_ALL","d":"PostHaircut"}];
+      if(d.df==="DataFile_6_2")return [{"s":"CCLV_SCC","d":"TotalIM_PreHaircut"},{"s":"CCLV_SCC","d":"TotalIM_PostHaircut"},{"s":"CCLV_SCL","d":"TotalIM_PreHaircut"},{"s":"CCLV_SCL","d":"TotalIM_PostHaircut"}];
+      if(d.df==="DataFile_18_2")return [{"s":"CCLV_SCC_RV","d":"AverageInQuarter"},{"s":"CCLV_SCC_RV","d":"PeakInQuarter"},{"s":"CCLV_SCL","d":"AverageInQuarter"},{"s":"CCLV_SCL","d":"PeakInQuarter"}];
+      return [{"s":"CCLV_ALL","d":""}];
+    })();
+    {
       var vals=tryParse(m.valores||"{}");
       html+='<div class="tab-pane'+(activeTab==="valores"?" active":"")+'" data-pane="valores">';
       var dtype_badge='';
@@ -634,7 +639,7 @@ function renderBody(d,m,aplica){
       else dtype_badge='<span style="background:#f5f4f2;color:#6B6866;padding:2px 8px;border-radius:3px;font-size:9px;font-weight:700">'+esc(d.dtype)+'</span>';
       html+='<div class="val-hint">Ingresa los valores del periodo <strong>2026Q1</strong> (2026-03-31) · Tipo: '+dtype_badge+' · DataFile: <strong>'+esc(d.df)+'</strong></div>';
       html+='<table class="val-table"><thead><tr><th>Servicio</th><th>Sub-campo</th><th>Valor 2026Q1</th><th>Fuente / Referencia</th></tr></thead><tbody>';
-      d.rows.forEach(function(row){
+      effectiveRows.forEach(function(row){
         var vkey=row.s+(row.d?"__"+row.d:"");
         var curVal=vals[vkey]||{v:"",f:""};
         var svcShort=row.s.replace("CCLV_","");
